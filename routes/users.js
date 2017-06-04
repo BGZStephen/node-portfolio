@@ -71,6 +71,75 @@ router.post("/deleteOne", (req, res, next) => {
   })
 })
 
+router.get("/getAll", (req, res, next) => {
+
+  let getAll = async (function (userObject) {
+    return User.getAll();
+  })
+
+  getAll(userObject)
+  .then(result => {
+    res.json(result)
+  }).catch(error => {
+    console.log(error)
+    res.json({success: false, message: error.message})
+  })
+})
+
+router.post("/getEmail", (req, res, next) => {
+  let userObject = {
+    email: req.body.email,
+  }
+
+  let getByEmail = async (function (userObject) {
+    return User.getOne(userObject);
+  })
+
+  getByEmail(userObject)
+  .then(result => {
+    res.json(result)
+  }).catch(error => {
+    console.log(error)
+    res.json({success: false, message: error.message})
+  })
+})
+
+router.post("/getUserById", (req, res, next) => {
+  let userObject = {
+    _id: req.body.userId,
+  }
+
+  let getByUserId = async (function (userObject) {
+    return User.getOne(userObject);
+  })
+
+  getByUserId(userObject)
+  .then(result => {
+    res.json(result)
+  }).catch(error => {
+    console.log(error)
+    res.json({success: false, message: error.message})
+  })
+})
+
+router.post("/getByUsername", (req, res, next) => {
+  let userObject = {
+    username: req.body.username,
+  }
+
+  let getByUsername = async (function (userObject) {
+    return User.getOne(userObject);
+  })
+
+  getByUsername(userObject)
+  .then(result => {
+    res.json(result)
+  }).catch(error => {
+    console.log(error)
+    res.json({success: false, message: error.message})
+  })
+})
+
 router.post("/update", (req, res, next) => {
   let userObject = {
     _id: req.body.userId,
