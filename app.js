@@ -32,6 +32,9 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(bodyParser.json())
 
 // routing
+const users = require("./routes/users")
+
+app.use('/users', users)
 
 // default route
 app.get('*', (req, res) => {
