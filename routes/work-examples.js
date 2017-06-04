@@ -4,16 +4,22 @@ const mongoose = require('mongoose')
 const express = require('express');
 const router = express.Router();
 const config = require('../config/database');
-const Technology = require('../models/user');
+const WorkExample = require('../models/work-example');
 
 router.post("/create", (req, res, next) => {
-  let technologyObject = new Technology({
+  let workExampleObject = new WorkExample({
+    categories: req.body.categories,
     createdOn: new Date(),
+    description: req.body.description,
+    githubUrl: req.body.githubUrl,
     imageUrl: req.body.imageUrl,
-    name: req.body.name
+    technologies: req.body.technologies,
+    title: req.body.title,
+    type: req.body.type,
+    url: req.body.url
   })
 
-  Technology.create(technologyObject)
+  WorkExample.create(workExampleObject)
   .then(result => {
     res.json(result)
   }).catch(error => {
@@ -23,11 +29,11 @@ router.post("/create", (req, res, next) => {
 })
 
 router.post("/deleteOne", (req, res, next) => {
-  let technologyObject = {
-    _id: req.body.technologyId
+  let workExampleObject = {
+    _id: req.body.workExampleId
   }
 
-  Technology.deleteOne(technologyObject)
+  WorkExample.deleteOne(workExampleObject)
   .then(result => {
     res.json(result)
   }).catch(error => {
@@ -38,7 +44,21 @@ router.post("/deleteOne", (req, res, next) => {
 
 router.get("/getAll", (req, res, next) => {
 
-  Technology.getAll()
+  WorkExample.getAll()
+  .then(result => {
+    res.json(result)
+  }).catch(error => {
+    console.log(error)
+    res.json({success: false, message: error.message})
+  })
+})
+
+router.post("/getByType", (req, res, next) => {
+  let workExampleObject = {
+    type: req.body.type
+  }
+
+  WorkExample.getByType(workExampleObject)
   .then(result => {
     res.json(result)
   }).catch(error => {
@@ -48,13 +68,19 @@ router.get("/getAll", (req, res, next) => {
 })
 
 router.post("/update", (req, res, next) => {
-  let technologyObject = {
-    _id: req.body.technologyId,
+  let workExampleObject = {
+    _id: req.body.workExampleId,
+    categories: req.body.categories,
+    description: req.body.description,
+    githubUrl: req.body.githubUrl,
     imageUrl: req.body.imageUrl,
-    name: req.body.name
+    technologies: req.body.technologies,
+    title: req.body.title,
+    type: req.body.type,
+    url: req.body.url
   }
 
-  Technology.updateTechnology(technologyObject)
+  WorkExample.updateWorkExample(workExampleObject)
   .then(result => {
     res.json(result)
   }).catch(error => {

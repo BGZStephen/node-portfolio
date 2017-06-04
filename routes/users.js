@@ -73,7 +73,7 @@ router.post("/deleteOne", (req, res, next) => {
 
 router.get("/getAll", (req, res, next) => {
 
-  User.getAll();
+  User.getAll()
   .then(result => {
     res.json(result)
   }).catch(error => {
@@ -87,7 +87,7 @@ router.post("/getEmail", (req, res, next) => {
     email: req.body.email,
   }
 
-  User.getOne(userObject);
+  User.getOne(userObject)
   .then(result => {
     res.json(result)
   }).catch(error => {
@@ -101,7 +101,7 @@ router.post("/getUserById", (req, res, next) => {
     _id: req.body.userId,
   }
 
-  User.getOne(userObject);
+  User.getOne(userObject)
   .then(result => {
     res.json(result)
   }).catch(error => {
@@ -115,7 +115,7 @@ router.post("/getByUsername", (req, res, next) => {
     username: req.body.username,
   }
 
-  User.getOne(userObject);
+  User.getOne(userObject)
   .then(result => {
     res.json(result)
   }).catch(error => {

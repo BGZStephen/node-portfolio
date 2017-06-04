@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const config = require('../config/database')
+const Technology = require('./technology')
 
 const WorkExampleSchema = mongoose.Schema({
   categories: Array,
@@ -7,7 +8,7 @@ const WorkExampleSchema = mongoose.Schema({
   description: String,
   githubUrl: String,
   imageUrl: String,
-  technologies: Array,
+  technologies: [Technology],
   title: String,
   type: String,
   url: String
