@@ -73,11 +73,11 @@ router.post("/deleteOne", (req, res, next) => {
 
 router.get("/getAll", (req, res, next) => {
 
-  let getAll = async (function (userObject) {
+  let getAll = async (function () {
     return User.getAll();
   })
 
-  getAll(userObject)
+  getAll()
   .then(result => {
     res.json(result)
   }).catch(error => {
