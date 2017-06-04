@@ -19,9 +19,25 @@ async@2.1.4:
   dependencies:
     lodash "^4.14.0"
 
+asyncawait@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/asyncawait/-/asyncawait-1.0.6.tgz#e446cf54e516a416d7423bbe35bf0b4e2b738b67"
+  dependencies:
+    bluebird "^3.1.1"
+    fibers "^1.0.8"
+    lodash v3.10.1
+
+bcryptjs@^2.4.3:
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/bcryptjs/-/bcryptjs-2.4.3.tgz#9ab5627b93e60621ff7cdac5da9733027df1d0cb"
+
 bluebird@2.10.2:
   version "2.10.2"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-2.10.2.tgz#024a5517295308857f14f91f1106fc3b555f446b"
+
+bluebird@^3.1.1:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.0.tgz#791420d7f551eea2897453a8a77653f96606d67c"
 
 body-parser@^1.17.2:
   version "1.17.2"
@@ -150,6 +166,10 @@ express@^4.15.3:
     utils-merge "1.0.0"
     vary "~1.1.1"
 
+fibers@^1.0.8:
+  version "1.0.16"
+  resolved "https://registry.yarnpkg.com/fibers/-/fibers-1.0.16.tgz#ccb48d58ec82eb646a769ab8278f514b85f34ca8"
+
 finalhandler@~1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/finalhandler/-/finalhandler-1.0.3.tgz#ef47e77950e999780e86022a560e3217e0d0cc89"
@@ -210,6 +230,10 @@ kareem@1.4.1:
 lodash@^4.14.0:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
+
+lodash@v3.10.1:
+  version "3.10.1"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
 media-typer@0.3.0:
   version "0.3.0"
