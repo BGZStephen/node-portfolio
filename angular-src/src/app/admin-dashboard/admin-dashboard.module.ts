@@ -7,11 +7,13 @@ import { AdminDashboardViewComponent } from './admin-dashboard-view.component';
 // modules
 import { WorkExamplesModule } from "./work-examples/work-examples.module"
 import { TechnologiesModule } from "./technologies/technologies.module"
-import { ProfileModule } from "./profile/profile.module"
+import { ProfileModule } from "./profile/profile.module";
+import { AdminLoginComponent } from './components/admin-login/admin-login.component'
 
 @NgModule({
   declarations: [
-    AdminDashboardViewComponent
+    AdminDashboardViewComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,

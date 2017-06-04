@@ -2,22 +2,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { router } from "./app.routes"
 
 import { AppComponent } from './app.component';
 
 // modules
 import { AdminDashboardModule } from "./admin-dashboard/admin-dashboard.module";
-import { SiteViewComponent } from './site/site-view.component'
+import { SiteModule } from './site/site.module'
 
 @NgModule({
   declarations: [
     AppComponent,
-    SiteViewComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AdminDashboardModule,
+    SiteModule,
+    router
   ],
   providers: [],
   bootstrap: [AppComponent]
