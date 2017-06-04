@@ -5,9 +5,14 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+// modules
+import { AdminDashboardModule } from "./admin-dashboard/admin-dashboard.module";
+import { SiteViewComponent } from './site/site-view.component'
+
 @NgModule({
   declarations: [
     AppComponent,
+    SiteViewComponent,
   ],
   imports: [
     BrowserModule,
