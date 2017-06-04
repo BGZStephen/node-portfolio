@@ -13,11 +13,7 @@ router.post("/create", (req, res, next) => {
     name: req.body.name
   })
 
-  let createTechnology = async(function(technologyObject) => {
-    return Technology.create(technologyObject)
-  })
-
-  createTechnology(technologyObject)
+  Technology.create(technologyObject)
   .then(result => {
     res.json(result)
   }).catch(error => {
@@ -31,11 +27,7 @@ router.post("/deleteOne", (req, res, next) => {
     _id: req.body.technologyId
   })
 
-  let deleteTechnology = async(function(technologyObject) => {
-    return Technology.deleteOne(technologyObject)
-  })
-
-  deleteTechnology(technologyObject)
+  Technology.deleteOne(technologyObject)
   .then(result => {
     res.json(result)
   }).catch(error => {
@@ -46,11 +38,7 @@ router.post("/deleteOne", (req, res, next) => {
 
 router.get("/getAll", (req, res, next) => {
 
-  let getAllTechnologies = async(function() => {
-    return Technology.getAll()
-  })
-
-  getAllTechnologies()
+  Technology.getAll()
   .then(result => {
     res.json(result)
   }).catch(error => {
@@ -66,11 +54,7 @@ router.post("/update", (req, res, next) => {
     name: req.body.name
   })
 
-  let updateTechnology = async(function(technologyObject) => {
-    return Technology.updateTechnology(technologyObject)
-  })
-
-  updateTechnology(technologyObject)
+  Technology.updateTechnology(technologyObject)
   .then(result => {
     res.json(result)
   }).catch(error => {

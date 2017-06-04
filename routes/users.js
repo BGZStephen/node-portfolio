@@ -73,11 +73,7 @@ router.post("/deleteOne", (req, res, next) => {
 
 router.get("/getAll", (req, res, next) => {
 
-  let getAll = async (function () {
-    return User.getAll();
-  })
-
-  getAll()
+  User.getAll();
   .then(result => {
     res.json(result)
   }).catch(error => {
@@ -91,11 +87,7 @@ router.post("/getEmail", (req, res, next) => {
     email: req.body.email,
   }
 
-  let getByEmail = async (function (userObject) {
-    return User.getOne(userObject);
-  })
-
-  getByEmail(userObject)
+  User.getOne(userObject);
   .then(result => {
     res.json(result)
   }).catch(error => {
@@ -109,11 +101,7 @@ router.post("/getUserById", (req, res, next) => {
     _id: req.body.userId,
   }
 
-  let getByUserId = async (function (userObject) {
-    return User.getOne(userObject);
-  })
-
-  getByUserId(userObject)
+  User.getOne(userObject);
   .then(result => {
     res.json(result)
   }).catch(error => {
@@ -127,11 +115,7 @@ router.post("/getByUsername", (req, res, next) => {
     username: req.body.username,
   }
 
-  let getByUsername = async (function (userObject) {
-    return User.getOne(userObject);
-  })
-
-  getByUsername(userObject)
+  User.getOne(userObject);
   .then(result => {
     res.json(result)
   }).catch(error => {
@@ -149,11 +133,7 @@ router.post("/update", (req, res, next) => {
     username: req.body.username,
   }
 
-  let update = async (function (userObject) {
-    return User.updateUser(userObject)
-  })
-
-  update(userObject)
+  User.updateUser(userObject)
   .then(result => {
     res.json(result)
   }).catch(error => {
