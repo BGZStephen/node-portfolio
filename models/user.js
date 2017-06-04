@@ -110,7 +110,6 @@ module.exports.updateUser = function(userObject) {
       }
     })
     User.update({_id: userObject._id}, userObject).then(result => {
-      console.log(result)
       if(result.nModified == 0) {
         resolve({success: true, message: "Nothing to update"})
       } else if (result.nModified >= 1) {
