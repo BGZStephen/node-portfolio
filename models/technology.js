@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const config = require('../config/database')
 
-const TechnologiesSchema = mongoose.Schema({
+const TechnologySchema = mongoose.Schema({
   createdOn: Date,
   name: String,
   imageUrl: String

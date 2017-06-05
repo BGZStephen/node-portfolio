@@ -33,8 +33,13 @@ app.use(bodyParser.json())
 
 // routing
 const users = require("./routes/users")
+const workExamples = require("./routes/work-examples")
+const technologies = require("./routes/technologies")
 
 app.use('/users', users)
+app.use('/work-examples', workExamples)
+app.use('/technologies', technologies)
+
 
 // default route
 app.get('*', (req, res) => {

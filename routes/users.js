@@ -3,6 +3,7 @@ const await = require('asyncawait/await');
 const mongoose = require('mongoose')
 const express = require('express');
 const router = express.Router();
+const jwt = require('jsonwebtoken')
 const config = require('../config/database');
 const User = require('../models/user');
 
@@ -14,17 +15,28 @@ router.post("/authenticate", (req, res, next) => {
 
   let authenticateUser = async (function (userObject) {
     let userResult = await(User.getOne({email: userObject.email}));
+    userObject.userId = userResult.data._id
+    userObject.username = userResult.data.username
     return User.comparePassword({queryPassword: userObject.password, password: userResult.data.password});
   })
 
   authenticateUser(userObject)
-  .then(result => {
-    res.json(result)
+  .then(() => {
+    const token = jwt.sign(userObject, config.secret, {expiresIn: 604800});
+    return res.json({
+      success: true,
+      message: "Authentication successful",
+      token: "JWT" + token,
+      user: {
+        email: userObject.email,
+        userId: userObject.userId,
+        username: userObject.username
+      }
+    })
   }).catch(error => {
     console.log(error)
     res.json({success: false, message: error.message})
   })
-
 })
 
 router.post("/create", (req, res, next) => {
