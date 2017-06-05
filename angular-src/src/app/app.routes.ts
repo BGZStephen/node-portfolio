@@ -9,10 +9,9 @@ import { SiteViewComponent } from "./site/site-view.component"
 
 const APP_ROUTES: Routes = [
   {path: "", component: SiteViewComponent},
-  {path: "admin", component: AdminLoginComponent, children: [
-    {path: "dashboard", component: AdminDashboardViewComponent, children: [
-
-    ]}
+  {path: "login", component: AdminLoginComponent},
+  {path: "dashboard", component: AdminDashboardViewComponent, children: [
+    {path: "login", component: AdminLoginComponent}
   ]}
 ]
 

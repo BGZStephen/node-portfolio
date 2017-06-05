@@ -2,7 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { router } from "../app.routes"
 import { AdminDashboardViewComponent } from './admin-dashboard-view.component';
+
+// Services
+import { AdminDashboardApiService } from "./admin-dashboard-api.service"
 
 // modules
 import { WorkExamplesModule } from "./work-examples/work-examples.module"
@@ -21,8 +25,9 @@ import { AdminLoginComponent } from './components/admin-login/admin-login.compon
     HttpModule,
     WorkExamplesModule,
     TechnologiesModule,
-    ProfileModule
+    ProfileModule,
+    router
   ],
-  providers: [],
+  providers: [AdminDashboardApiService],
 })
 export class AdminDashboardModule { }
