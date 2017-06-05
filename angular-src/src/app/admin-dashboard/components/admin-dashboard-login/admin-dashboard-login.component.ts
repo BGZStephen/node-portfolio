@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AdminDashboardApiService } from "../../admin-dashboard-api.service"
 
 @Component({
-  selector: 'portfolio-admin-login',
-  templateUrl: './admin-login.component.html',
-  styleUrls: ['./admin-login.component.scss']
+  selector: 'portfolio-admin-dashboard-login',
+  templateUrl: './admin-dashboard-login.component.html',
+  styleUrls: ['./admin-dashboard-login.component.scss']
 })
-export class AdminLoginComponent implements OnInit {
+export class AdminDashboardLoginComponent implements OnInit {
 
   constructor(
     private apiService: AdminDashboardApiService
