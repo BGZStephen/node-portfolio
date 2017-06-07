@@ -1,8 +1,8 @@
 <div class="navbar">
   <div class="logo-container">
-    <a class="fa fa-bars"></a><h2 class="logo">Dashboard</h2>
+    <a class="fa fa-bars" (window:resize)="setMenuStyle()" (click)="menuVisible = !menuVisible"></a><h2 class="logo">Dashboard</h2>
   </div>
-  <ul class="navbar-list">
+  <ul class="navbar-list" [ngStyle]="menuStyle()">
     <li class="navbar-item">
       <div class="navbar-item-content-container">
         <i class="fa fa-home"></i><p>Home</p>
