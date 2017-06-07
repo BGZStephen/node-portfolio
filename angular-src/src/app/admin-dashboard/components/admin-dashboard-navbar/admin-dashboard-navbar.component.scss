@@ -1,0 +1,78 @@
+@import '../../sass/_variables.scss';
+
+.navbar {
+  align-content: flex-start;
+  background: $dashboard-primary-blue-grey;
+  display: flex;
+  flex-wrap: wrap;
+  @media(min-width: 1024px) {
+    min-height: 100vh;
+  }
+}
+
+.logo-container {
+  align-items: center;
+  border-bottom: 2px solid darken($dashboard-primary-blue-grey, 3%);
+  display: flex;
+  height: 50px;
+  width: 100%;
+  @media(min-width: 1024px) {
+    padding-left: 15px;
+  }
+}
+
+.fa-bars {
+  color: $dashboard-primary-yellow;
+  display: block;
+  font-weight: 900;
+  transition: all 0.3s ease;
+  @media(min-width: 1024px) {
+    display: none;
+  }
+}
+
+.fa-bars:hover {
+  background: $dashboard-primary-yellow;
+  color: $dashboard-primary-blue-grey;
+}
+
+.logo {
+  color: $dashboard-primary-yellow;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.navbar-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.navbar-item {
+  border-top: 2px solid lighten($dashboard-primary-blue-grey, 3%);
+  border-bottom: 2px solid darken($dashboard-primary-blue-grey, 3%);
+  color: $dashboard-primary-yellow;
+  display: flex;
+  font-size: 1.2em;
+  font-weight: 900;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.navbar-item-content-container {
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+
+.navbar-item:hover {
+  background: $dashboard-primary-yellow;
+  border-top: 2px solid lighten($dashboard-primary-yellow, 3%);
+  border-bottom: 2px solid darken($dashboard-primary-yellow, 3%);
+  color: $dashboard-primary-blue-grey;
+}
+
+.fa {
+  padding: 15px;
+}
