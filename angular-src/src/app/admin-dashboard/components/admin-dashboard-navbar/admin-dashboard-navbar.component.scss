@@ -35,10 +35,16 @@
 .logo-container:hover .fa-bars,
 .logo-container:hover .logo, {
   color: $dashboard-primary-blue-grey;
+  @media(min-width: 1024px) {
+    color: $dashboard-primary-yellow;
+  }
 }
 
 .logo-container:hover {
   background: $dashboard-primary-yellow;
+  @media(min-width: 1024px) {
+    background: $dashboard-primary-blue-grey;
+  }
 }
 
 .logo {

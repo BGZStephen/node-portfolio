@@ -1,0 +1,39 @@
+@import '../../sass/_variables.scss';
+
+.notification-bar {
+  align-items: center;
+  background: $dashboard-primary-blue-grey;
+  color: $dashboard-primary-yellow;
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.notifications-output-container {
+  display: flex;
+}
+
+.notifications-output-container > p {
+  display: none;
+  @media(min-width: 540px) {
+    display: inline;
+    margin-right: 10px;
+  }
+}
+
+.actions-container {
+  align-items: center;
+  display: flex;
+}
+
+.fa-cog,
+.fa-user,
+.fa-power-off {
+  padding: 10px;
+  transition: all 0.3s ease
+}
+
+.fa-power-off:hover {
+  color: darken(red, 10%)
+}
