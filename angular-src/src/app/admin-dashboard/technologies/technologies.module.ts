@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { TechnologiesManageComponent, TechnologiesAddComponent } from './components/technologies-components-barrel';
 
+import { TechnologiesApiService } from "./technologies-api.service"
+
 @NgModule({
   declarations: [TechnologiesManageComponent, TechnologiesAddComponent],
   imports: [
@@ -11,6 +13,6 @@ import { TechnologiesManageComponent, TechnologiesAddComponent } from './compone
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [TechnologiesApiService],
 })
 export class TechnologiesModule { }

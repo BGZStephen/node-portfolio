@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TechnologiesApiService } from "../../technologies-api.service"
 
 @Component({
   selector: 'portfolio-technologies-add',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TechnologiesAddComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private apiService: TechnologiesApiService
+  ) { }
 
   ngOnInit() {
+  }
+
+  saveTechnology(technologyObject) {
+    this.apiService.saveTechnology(technologyObject)
+    .subscribe(res => {
+      console.log(res)
+    })
   }
 
 }

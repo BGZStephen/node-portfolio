@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const express = require('express');
 const router = express.Router();
 const config = require('../config/database');
-const Technology = require('../models/user');
+const Technology = require('../models/technology');
 
 router.post("/create", (req, res, next) => {
   let technologyObject = new Technology({
