@@ -4,24 +4,75 @@
   </div>
   <ul class="navbar-list" [ngStyle]="menuStyle()">
     <li class="navbar-item">
-      <div class="navbar-item-content-container">
+      <div class="navbar-item-content-container" (click)="setActiveSubMenu(-1)">
         <i class="fa fa-home"></i><p>Home</p>
       </div>
     </li>
     <li class="navbar-item">
-      <div class="navbar-item-content-container">
-        <i class="fa fa-code"></i><p>Work Examples</p>
+      <div class="navbar-item-content-container" (click)="setActiveSubMenu(0)">
+        <i class="fa fa-code"></i><p>Work Examples</p><i class="fa fa-caret-down"></i>
       </div>
+      <ul class="navbar-secondary-list" [ngStyle]="subMenuStyle(0)">
+        <li class="navbar-secondary-item">
+          <div class="navbar-secondary-item-content-container">
+            <i class="fa fa-plus"></i><p>Add</p>
+          </div>
+        </li>
+        <li class="navbar-secondary-item">
+          <div class="navbar-secondary-item-content-container">
+            <i class="fa fa-search"></i><p>View</p>
+          </div>
+        </li>
+        <li class="navbar-secondary-item">
+          <div class="navbar-secondary-item-content-container">
+            <i class="fa fa-cog"></i><p>Manage</p>
+          </div>
+        </li>
+      </ul>
     </li>
     <li class="navbar-item">
-      <div class="navbar-item-content-container">
-        <i class="fa fa-terminal"></i><p>Technologies</p>
+      <div class="navbar-item-content-container" (click)="setActiveSubMenu(1)">
+        <i class="fa fa-terminal"></i><p>Technologies</p><i class="fa fa-caret-down"></i>
       </div>
+      <ul class="navbar-secondary-list" [ngStyle]="subMenuStyle(1)">
+        <li class="navbar-secondary-item">
+          <div class="navbar-secondary-item-content-container">
+            <i class="fa fa-plus"></i><p>Add</p>
+          </div>
+        </li>
+        <li class="navbar-secondary-item">
+          <div class="navbar-secondary-item-content-container">
+            <i class="fa fa-search"></i><p>View</p>
+          </div>
+        </li>
+        <li class="navbar-secondary-item">
+          <div class="navbar-secondary-item-content-container">
+            <i class="fa fa-cog"></i><p>Manage</p>
+          </div>
+        </li>
+      </ul>
     </li>
     <li class="navbar-item">
-      <div class="navbar-item-content-container">
-        <i class="fa fa-css3"></i><p>CSS Workshop</p>
+      <div class="navbar-item-content-container" (click)="setActiveSubMenu(2)">
+        <i class="fa fa-css3"></i><p>CSS Workshop</p><i class="fa fa-caret-down"></i>
       </div>
+      <ul class="navbar-secondary-list" [ngStyle]="subMenuStyle(2)">
+        <li class="navbar-secondary-item">
+          <div class="navbar-secondary-item-content-container">
+            <i class="fa fa-plus"></i><p>Add</p>
+          </div>
+        </li>
+        <li class="navbar-secondary-item">
+          <div class="navbar-secondary-item-content-container">
+            <i class="fa fa-search"></i><p>View</p>
+          </div>
+        </li>
+        <li class="navbar-secondary-item">
+          <div class="navbar-secondary-item-content-container">
+            <i class="fa fa-cog"></i><p>Manage</p>
+          </div>
+        </li>
+      </ul>
     </li>
   </ul>
 </div>
