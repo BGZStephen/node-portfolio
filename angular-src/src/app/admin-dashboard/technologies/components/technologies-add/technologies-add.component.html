@@ -1,0 +1,23 @@
+<div class="main-container">
+  <div class="technologies-add-container">
+    <h2 class="technologies-add-header">Add Technology</h2>
+    <form #f="ngForm" class="technology-add-form">
+      <div class="form-row">
+        <label class="form-label" for="name">Technology name:</label>
+        <input type="text" class="form-input" id="name" #name name="name" ngModel>
+      </div>
+      <div class="form-row">
+        <label class="form-label" for="imgUrl">Image url:</label>
+        <input type="text" class="form-input" id="imgUrl" #imgUrl name="imgUrl" ngModel>
+      </div>
+      <div class="form-row">
+        <h3 class="preview-image-header">Image preview</h3>
+        <img class="preview-image" [src]="imgUrl.value">
+      </div>
+      <div class="form-row">
+        <p class="input-button input-cancel">Cancel</p>
+        <input class="input-button input-submit" type="submit" value="Save">
+      </div>
+    </form>
+  </div>
+</div>

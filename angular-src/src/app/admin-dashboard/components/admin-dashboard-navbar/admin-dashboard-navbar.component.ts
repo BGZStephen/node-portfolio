@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+import { Router } from "@angular/router"
 
 @Component({
   selector: 'portfolio-admin-dashboard-navbar',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminDashboardNavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
@@ -38,6 +41,14 @@ export class AdminDashboardNavbarComponent implements OnInit {
     } else {
       this.activeSubMenu = index
     }
+  }
+
+  clearComponent() {
+    this.router.navigate(['/dashboard', {outlets: {'adminDashboardOutlet': null}}]);
+  }
+
+  setComponent(component) {
+    this.router.navigate(['/dashboard', {outlets: {'adminDashboardOutlet': [component]}}]);
   }
 
   subMenuStyle(index) {

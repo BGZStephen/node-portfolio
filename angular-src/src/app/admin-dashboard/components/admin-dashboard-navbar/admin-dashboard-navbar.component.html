@@ -20,11 +20,6 @@
         </li>
         <li class="navbar-secondary-item">
           <div class="navbar-secondary-item-content-container">
-            <i class="fa fa-search"></i><p>View</p>
-          </div>
-        </li>
-        <li class="navbar-secondary-item">
-          <div class="navbar-secondary-item-content-container">
             <i class="fa fa-cog"></i><p>Manage</p>
           </div>
         </li>
@@ -36,13 +31,8 @@
       </div>
       <ul class="navbar-secondary-list" [ngStyle]="subMenuStyle(1)">
         <li class="navbar-secondary-item">
-          <div class="navbar-secondary-item-content-container">
+          <div class="navbar-secondary-item-content-container" (click)="setComponent('technologies-add')">
             <i class="fa fa-plus"></i><p>Add</p>
-          </div>
-        </li>
-        <li class="navbar-secondary-item">
-          <div class="navbar-secondary-item-content-container">
-            <i class="fa fa-search"></i><p>View</p>
           </div>
         </li>
         <li class="navbar-secondary-item">
@@ -60,11 +50,6 @@
         <li class="navbar-secondary-item">
           <div class="navbar-secondary-item-content-container">
             <i class="fa fa-plus"></i><p>Add</p>
-          </div>
-        </li>
-        <li class="navbar-secondary-item">
-          <div class="navbar-secondary-item-content-container">
-            <i class="fa fa-search"></i><p>View</p>
           </div>
         </li>
         <li class="navbar-secondary-item">
