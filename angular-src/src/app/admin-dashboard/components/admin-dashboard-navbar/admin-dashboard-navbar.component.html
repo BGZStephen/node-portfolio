@@ -4,7 +4,7 @@
   </div>
   <ul class="navbar-list" [ngStyle]="menuStyle()">
     <li class="navbar-item">
-      <div class="navbar-item-content-container" (click)="setActiveSubMenu(-1)">
+      <div class="navbar-item-content-container" (click)="setActiveSubMenu(-1); clearComponent()">
         <i class="fa fa-home"></i><p>Home</p>
       </div>
     </li>

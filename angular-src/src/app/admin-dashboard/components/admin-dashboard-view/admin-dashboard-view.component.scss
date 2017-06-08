@@ -25,6 +25,9 @@
 }
 
 .dashboard-outlet-container {
-  min-height: calc(100vh - 50px);
+  min-height: calc(100vh - 100px);
   width: 100%;
+  @media(min-width: 1024px) {
+    min-height: calc(100vh - 50px);
+  }
 }
