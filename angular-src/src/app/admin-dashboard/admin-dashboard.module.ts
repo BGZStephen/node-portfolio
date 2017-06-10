@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { router } from "../app.routes"
+import { FlashMessagesModule } from "angular2-flash-messages"
 
 // Components
 import { AdminDashboardLoginComponent, AdminDashboardViewComponent } from './components/admin-dashboard-components-barrel'
@@ -28,6 +29,7 @@ import { AdminDashboardNotificationBarComponent } from './components/admin-dashb
     BrowserModule,
     FormsModule,
     HttpModule,
+    FlashMessagesModule,
     WorkExamplesModule,
     TechnologiesModule,
     ProfileModule,

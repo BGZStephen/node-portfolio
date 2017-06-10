@@ -47,9 +47,23 @@ router.get("/getAll", (req, res, next) => {
   })
 })
 
-router.post("/update", (req, res, next) => {
+router.post("/getById", (req, res, next) => {
   let technologyObject = {
     _id: req.body.technologyId,
+  }
+
+  Technology.getOne(technologyObject)
+  .then(result => {
+    res.json(result)
+  }).catch(error => {
+    console.log(error)
+    res.json({success: false, message: error.message})
+  })
+})
+
+router.post("/update", (req, res, next) => {
+  let technologyObject = {
+    _id: req.body._id,
     imageUrl: req.body.imageUrl,
     name: req.body.name
   }

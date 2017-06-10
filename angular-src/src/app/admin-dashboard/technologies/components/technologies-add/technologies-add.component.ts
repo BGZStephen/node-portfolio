@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TechnologiesApiService } from "../../technologies-api.service"
+import { FlashMessagesService } from "angular2-flash-messages"
 
 @Component({
   selector: 'portfolio-technologies-add',
@@ -9,7 +10,8 @@ import { TechnologiesApiService } from "../../technologies-api.service"
 export class TechnologiesAddComponent implements OnInit {
 
   constructor(
-    private apiService: TechnologiesApiService
+    private apiService: TechnologiesApiService,
+    private flashMessage: FlashMessagesService
   ) { }
 
   ngOnInit() {
@@ -18,7 +20,14 @@ export class TechnologiesAddComponent implements OnInit {
   saveTechnology(technologyObject) {
     this.apiService.saveTechnology(technologyObject)
     .subscribe(res => {
-      console.log(res)
+      if(res.success) {
+        this.flashMessage.show("Technology saved", {cssClass: "flash-success--dashboard", timeout: 3000})
+        setTimeout(() => {
+          this.apiService.setComponent('technologies-manage')
+        }, 500)
+      } else {
+        this.flashMessage.show("Technology save failed", {cssClass: "flash-failure--dashboard", timeout: 3000})
+      }
     })
   }
 

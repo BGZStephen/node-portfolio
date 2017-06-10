@@ -12,6 +12,7 @@
 
 .notifications-output-container {
   display: flex;
+  position: relative;
 }
 
 .notifications-output-container > p {
@@ -19,6 +20,7 @@
   @media(min-width: 540px) {
     display: inline;
     margin-right: 10px;
+    padding: 5px;
   }
 }
 

@@ -3,7 +3,7 @@
   <div class="technologies-manage-container" *ngIf="technologies">
     <div class="technology" *ngFor="let technology of technologies">
       <div class="technology-image-container">
-        <img class="technology-image" src="{{technology.imageUrl}}">
+        <img class="technology-image" src="{{technology.imageUrl}}" (click)="apiService.setComponentWithId('technologies-manage', technology._id)">
       </div>
       <p class="technology-name">{{technology.name}}</p>
     </div>

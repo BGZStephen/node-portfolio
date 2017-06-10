@@ -59,7 +59,7 @@ module.exports.getOne = function(technologyObject) {
 
 module.exports.updateTechnology = function(technologyObject) {
   return new Promise((resolve, reject) => {
-    Technology.findOne({_id: technologyObject._id}, technologyObject).then(result => {
+    Technology.update({_id: technologyObject._id}, technologyObject).then(result => {
       if(result.nModified == 0) {
         resolve({success: true, message: "Nothing to update"})
       } else if (result.nModified >= 1) {
