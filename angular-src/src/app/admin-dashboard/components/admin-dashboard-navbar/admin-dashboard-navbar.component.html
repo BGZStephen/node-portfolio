@@ -14,12 +14,12 @@
       </div>
       <ul class="navbar-secondary-list" [ngStyle]="subMenuStyle(0)">
         <li class="navbar-secondary-item">
-          <div class="navbar-secondary-item-content-container">
+          <div class="navbar-secondary-item-content-container" (click)="setComponent('work-examples-add')">
             <i class="fa fa-plus"></i><p>Add</p>
           </div>
         </li>
         <li class="navbar-secondary-item">
-          <div class="navbar-secondary-item-content-container">
+          <div class="navbar-secondary-item-content-container" (click)="setComponent('work-examples-manage')">
             <i class="fa fa-cog"></i><p>Manage</p>
           </div>
         </li>
@@ -36,7 +36,7 @@
           </div>
         </li>
         <li class="navbar-secondary-item">
-          <div class="navbar-secondary-item-content-container">
+          <div class="navbar-secondary-item-content-container" (click)="setComponent('technologies-manage')">
             <i class="fa fa-cog"></i><p>Manage</p>
           </div>
         </li>
@@ -48,12 +48,12 @@
       </div>
       <ul class="navbar-secondary-list" [ngStyle]="subMenuStyle(2)">
         <li class="navbar-secondary-item">
-          <div class="navbar-secondary-item-content-container">
+          <div class="navbar-secondary-item-content-container" (click)="setComponent('css-workshop-add')">
             <i class="fa fa-plus"></i><p>Add</p>
           </div>
         </li>
         <li class="navbar-secondary-item">
-          <div class="navbar-secondary-item-content-container">
+          <div class="navbar-secondary-item-content-container" (click)="setComponent('css-workshop-manage')">
             <i class="fa fa-cog"></i><p>Manage</p>
           </div>
         </li>

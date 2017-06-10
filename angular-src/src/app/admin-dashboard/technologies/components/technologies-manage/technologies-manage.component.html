@@ -1,3 +1,11 @@
-<p>
-  technologies-manage works!
-</p>
+<div class="main-container">
+  <h2 class="technologies-manage-header">Manage Technologies</h2>
+  <div class="technologies-manage-container" *ngIf="technologies">
+    <div class="technology" *ngFor="let technology of technologies">
+      <div class="technology-image-container">
+        <img class="technology-image" src="{{technology.imageUrl}}">
+      </div>
+      <p class="technology-name">{{technology.name}}</p>
+    </div>
+  </div>
+</div>
