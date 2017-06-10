@@ -52,6 +52,20 @@ router.get("/getAll", (req, res, next) => {
   })
 })
 
+router.post("/getById", (req, res, next) => {
+  let workExampleObject = {
+    _id: req.body._id
+  }
+
+  WorkExample.getOne(workExampleObject)
+  .then(result => {
+    res.json(result)
+  }).catch(error => {
+    console.log(error)
+    res.json({success: false, message: error.message})
+  })
+})
+
 router.post("/getByType", (req, res, next) => {
   let workExampleObject = {
     type: req.body.type
@@ -68,8 +82,7 @@ router.post("/getByType", (req, res, next) => {
 
 router.post("/update", (req, res, next) => {
   let workExampleObject = {
-    _id: req.body.workExampleId,
-    categories: req.body.categories,
+    _id: req.body._id,
     description: req.body.description,
     githubUrl: req.body.githubUrl,
     imageUrl: req.body.imageUrl,

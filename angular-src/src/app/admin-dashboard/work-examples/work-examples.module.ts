@@ -4,10 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { WorkExamplesApiService } from "./work-examples-api.service"
 
-import { WorkExamplesManageComponent, WorkExamplesAddComponent } from './components/work-examples-components-barrel';
+import { WorkExamplesManageComponent, WorkExamplesAddComponent, WorkExamplesEditComponent } from './components/work-examples-components-barrel';
 
 @NgModule({
-  declarations: [WorkExamplesManageComponent, WorkExamplesAddComponent],
+  declarations: [WorkExamplesManageComponent, WorkExamplesAddComponent, WorkExamplesEditComponent],
   imports: [
     BrowserModule,
     FormsModule,

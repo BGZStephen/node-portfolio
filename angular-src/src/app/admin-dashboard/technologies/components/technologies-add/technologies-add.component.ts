@@ -21,7 +21,7 @@ export class TechnologiesAddComponent implements OnInit {
     this.apiService.saveTechnology(technologyObject)
     .subscribe(res => {
       if(res.success) {
-        this.flashMessage.show("Technology saved", {cssClass: "flash-success--dashboard", timeout: 3000})
+        this.flashMessage.show(res.message, {cssClass: "flash-success--dashboard", timeout: 3000})
         setTimeout(() => {
           this.apiService.setComponent('technologies-manage')
         }, 500)

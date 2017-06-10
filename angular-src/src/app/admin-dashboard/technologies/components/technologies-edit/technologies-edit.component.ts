@@ -39,7 +39,7 @@ export class TechnologiesEditComponent implements OnInit {
     this.apiService.updateTechnology(technologyObject)
     .subscribe(res => {
       if(res.success) {
-        this.flashMessage.show("Technology updated", {cssClass: "flash-success--dashboard", timeout: 3000})
+        this.flashMessage.show(res.message, {cssClass: "flash-success--dashboard", timeout: 3000})
         setTimeout(() => {
           this.apiService.setComponent('technologies-manage')
         }, 500)

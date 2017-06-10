@@ -77,7 +77,7 @@ module.exports.getOne = function(workExampleObject) {
 
 module.exports.updateWorkExample = function(workExampleObject) {
   return new Promise((resolve, reject) => {
-    WorkExample.findOne({_id: workExampleObject._id}, workExampleObject).then(result => {
+    WorkExample.update({_id: workExampleObject._id}, workExampleObject).then(result => {
       if(result.nModified == 0) {
         resolve({success: true, message: "Nothing to update"})
       } else if (result.nModified >= 1) {

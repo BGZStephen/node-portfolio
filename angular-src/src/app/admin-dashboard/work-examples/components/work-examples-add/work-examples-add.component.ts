@@ -46,7 +46,7 @@ export class WorkExamplesAddComponent implements OnInit {
     this.apiService.saveWorkExample(workExampleObject)
     .subscribe(res => {
       if(res.success) {
-        this.flashMessage.show("Work example saved", {cssClass: "flash-success--dashboard", timeout: 3000})
+        this.flashMessage.show(res.message, {cssClass: "flash-success--dashboard", timeout: 3000})
       } else {
         this.flashMessage.show("Work example save failed", {cssClass: "flash-failure--dashboard", timeout: 3000})
       }

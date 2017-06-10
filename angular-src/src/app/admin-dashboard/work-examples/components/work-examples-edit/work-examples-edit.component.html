@@ -1,0 +1,49 @@
+<div class="main-container">
+  <div class="work-example-edit-container">
+    <h2 class="work-example-edit-header">Add Work Example</h2>
+    <form #f="ngForm" (submit)="updateWorkExample(f.value, workExample._id)" class="work-example-edit-form" *ngIf="workExample">
+      <div class="form-row">
+        <label class="form-label" for="title">Title: </label>
+        <input type="text" class="form-input" id="title" #title name="title" ngModel="{{workExample.title}}">
+      </div>
+      <div class="form-row">
+        <label class="form-label" for="description">Description: </label>
+        <input type="text" class="form-input" id="description" #description name="description" ngModel="{{workExample.description}}">
+      </div>
+      <div class="form-row">
+        <label class="form-label" for="url">Url: </label>
+        <input type="text" class="form-input" id="url" #url name="url" ngModel ="{{workExample.url}}">
+      </div>
+      <div class="form-row">
+        <label class="form-label" for="githubUrl">Github: </label>
+        <input type="text" class="form-input" id="githubUrl" #githubUrl name="githubUrl" ngModel ="{{workExample.githubUrl}}">
+      </div>
+      <div class="form-row">
+        <label class="form-label" for="imageUrl">Image: </label>
+        <input type="text" class="form-input" id="imageUrl" #imageUrl name="imageUrl" ngModel ="{{workExample.imageUrl}}">
+      </div>
+      <div class="form-row">
+        <input type="radio" name="type" value="code-lab" ngModel> Code Lab
+        <input type="radio" name="type" value="work-example" ngModel> Work Example
+      </div>
+      <div class="form-row">
+        <h3 class="preview-image-header">Image preview: </h3>
+      </div>
+      <div class="form-row">
+        <img class="preview-image" [src]="imageUrl.value">
+      </div>
+      <div class="form-row">
+        <h3 class="technologies-header">Technologies: </h3>
+        <div class="technologies-container" *ngIf="technologies">
+          <div class="technology" *ngFor="let technology of technologies" (click)="toggleTechnology(technology)">
+            <img class="technology-image" src="{{technology.imageUrl}}" [ngStyle]="activeTechnologiesStyle(technology._id)">
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <p class="input-button input-cancel" (click)="apiService.setComponent('work-examples-manage')">Cancel</p>
+        <input class="input-button input-submit" type="submit" value="Save">
+      </div>
+    </form>
+  </div>
+</div>
