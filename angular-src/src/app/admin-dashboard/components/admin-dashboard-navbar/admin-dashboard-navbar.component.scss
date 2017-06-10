@@ -6,7 +6,9 @@
   display: flex;
   flex-wrap: wrap;
   @media(min-width: 1024px) {
+    position: fixed;
     min-height: 100vh;
+    width: 280px;
   }
 }
 
@@ -78,6 +80,7 @@
   align-items: center;
   border-top: 2px solid lighten($dashboard-primary-blue-grey, 3%);
   border-bottom: 2px solid darken($dashboard-primary-blue-grey, 3%);
+  cursor: pointer;
   display: flex;
   flex-wrap: wrap;
   font-size: 1.1em;
@@ -86,7 +89,8 @@
   width: 100%;
 }
 
-.navbar-item-content-container:hover {
+.navbar-item-content-container:hover,
+.navbar-secondary-item-content-container:hover {
   background: $dashboard-primary-yellow;
   border-top: 2px solid lighten($dashboard-primary-yellow, 3%);
   border-bottom: 2px solid darken($dashboard-primary-yellow, 3%);

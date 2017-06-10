@@ -5,7 +5,7 @@
       <div class="work-example" *ngFor="let workExample of workExamples">
         <p class="work-example-title" (click)="apiService.setComponentWithId('work-examples-edit', workExample._id)">{{workExample.title}}
         <div class="work-example-image-container">
-          <img class="work-example-image" src="{{workExample.imageUrl}}">
+          <img class="work-example-image" src="{{workExample.imageUrl}}" (click)="apiService.setComponentWithId('work-examples-edit', workExample._id)">
         </div>
         <div class="technologies-container" *ngIf="workExample.technologies">
           <img class="technology-image" *ngFor="let technology of workExample.technologies" src="{{technology.imageUrl}}">
