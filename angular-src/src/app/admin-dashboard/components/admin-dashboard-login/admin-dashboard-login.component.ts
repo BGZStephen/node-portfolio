@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminDashboardApiService } from "../../admin-dashboard-api.service"
+import { Router } from "@angular/router"
 
 @Component({
   selector: 'portfolio-admin-dashboard-login',
@@ -9,7 +10,8 @@ import { AdminDashboardApiService } from "../../admin-dashboard-api.service"
 export class AdminDashboardLoginComponent implements OnInit {
 
   constructor(
-    private apiService: AdminDashboardApiService
+    private apiService: AdminDashboardApiService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -18,8 +20,10 @@ export class AdminDashboardLoginComponent implements OnInit {
   login(userObject) {
     this.apiService.login(userObject)
     .subscribe(res => {
-      if(res.success)
-      this.apiService.storeToken(res)
+      if(res.success) {
+        this.apiService.storeToken(res)
+        this.router.navigate(['/dashboard'])
+      }
     })
   }
 

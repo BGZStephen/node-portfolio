@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminDashboardApiService } from "../../admin-dashboard-api.service"
 
 @Component({
   selector: 'portfolio-admin-dashboard-notification-bar',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminDashboardNotificationBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private apiService: AdminDashboardApiService,
+  ) { }
 
   ngOnInit() {
+  }
+
+  logout() {
+    this.apiService.logout()
   }
 
 }

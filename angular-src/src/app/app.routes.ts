@@ -1,5 +1,7 @@
 import { Routes, RouterModule } from "@angular/router"
 
+import { AuthGuard } from "./guards/auth.guard"
+
 // dashboard specific
 import { AdminDashboardViewComponent, AdminDashboardLoginComponent } from "./admin-dashboard/components/admin-dashboard-components-barrel"
 
@@ -22,7 +24,7 @@ const APP_ROUTES: Routes = [
     {path: "work-examples-add", component: WorkExamplesAddComponent, outlet: "adminDashboardOutlet"},
     {path: "work-examples-manage", component: WorkExamplesManageComponent, outlet: "adminDashboardOutlet"},
     {path: "work-examples-edit/:workExampleId", component: WorkExamplesEditComponent, outlet: "adminDashboardOutlet"},
-  ]}
+  ], canActivate: [AuthGuard]}
 ]
 
 export const router = RouterModule.forRoot(APP_ROUTES)

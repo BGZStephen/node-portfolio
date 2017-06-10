@@ -18,20 +18,16 @@ export class AdminDashboardNavbarComponent implements OnInit {
   menuVisible: boolean = true;
   activeSubMenu: number = -1;
 
+  clearComponent() {
+    this.router.navigate(['/dashboard', {outlets: {'adminDashboardOutlet': null}}]);
+  }
+
   menuStyle() {
     if(this.menuVisible == false) {
       return {"max-height": "0", "min-height": "0"}
     } else {
       let minHeight = document.getElementsByClassName("navbar-list")[0].children.length * 53;
       return {"max-height": "100vh", "min-height": minHeight + "px"}
-    }
-  }
-
-  setMenuStyle() {
-    if(screen.width > 1024) {
-      this.menuVisible = true;
-    } else {
-      this.menuVisible = false;
     }
   }
 
@@ -43,8 +39,12 @@ export class AdminDashboardNavbarComponent implements OnInit {
     }
   }
 
-  clearComponent() {
-    this.router.navigate(['/dashboard', {outlets: {'adminDashboardOutlet': null}}]);
+  setMenuStyle() {
+    if(screen.width > 1024) {
+      this.menuVisible = true;
+    } else {
+      this.menuVisible = false;
+    }
   }
 
   setComponent(component) {
