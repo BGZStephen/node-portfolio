@@ -21,6 +21,11 @@ export class WorkExamplesApiService {
     .map(res => res.json())
   }
 
+  loadWorkExamples() {
+    return this.http.get(this.baseUrl + "work-examples/getAll")
+    .map(res => res.json())
+  }
+
   saveWorkExample(workExampleObject) {
     return this.http.post(this.baseUrl + "work-examples/create", workExampleObject)
     .map(res => res.json())

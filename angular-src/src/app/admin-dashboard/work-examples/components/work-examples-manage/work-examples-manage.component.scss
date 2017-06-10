@@ -1,0 +1,76 @@
+@import '../../../sass/_variables.scss';
+
+.main-container {
+  padding: 10px;
+}
+
+.work-examples-manage-container {
+
+}
+
+.work-examples-manage-header {
+  margin-bottom: 20px;
+}
+
+.work-examples-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.work-example {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  width: 100%;
+  @media(min-width: 768px) {
+    width: 50%;
+  }
+  @media(min-width: 1024px) {
+    width: 50%;
+  }
+  @media(min-width: 1200px) {
+    width: 33%;
+  }
+}
+
+.work-example-image-container {
+  width: 100%;
+}
+
+.work-example-image {
+  width: 100%;
+}
+
+.work-example-title {
+
+}
+
+.technologies-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.technology-image {
+  height: 50px;
+  padding: 5px;
+  width: 50px;
+  @media(min-width: 1024px) {
+    width: 55px;
+    height: 55px;
+  }
+}
+
+
+.actions-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.fa {
+  font-size: 1.6em;
+  padding: 5px 10px;
+}

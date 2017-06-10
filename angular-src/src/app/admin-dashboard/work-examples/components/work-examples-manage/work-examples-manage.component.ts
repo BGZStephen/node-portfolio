@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WorkExamplesApiService } from "../../work-examples-api.service"
 
 @Component({
   selector: 'portfolio-work-examples-manage',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorkExamplesManageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private apiService: WorkExamplesApiService
+  ) { }
 
   ngOnInit() {
+    this.loadWorkExamples()
+  }
+
+  workExamples: Array<object>
+
+  loadWorkExamples() {
+    this.apiService.loadWorkExamples()
+    .subscribe(res => {
+      console.log(res)
+      this.workExamples = res.data
+    })
   }
 
 }

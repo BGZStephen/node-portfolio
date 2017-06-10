@@ -1,3 +1,22 @@
-<p>
-  work-examples-manage works!
-</p>
+<div class="main-container">
+  <div class="work-examples-manage-container">
+    <h2 class="work-examples-manage-header">Manage Work Examples</h2>
+    <div class="work-examples-container" *ngIf="workExamples">
+      <div class="work-example" *ngFor="let workExample of workExamples">
+        <p class="work-example-title">{{workExample.title}}
+        <div class="work-example-image-container">
+          <img class="work-example-image" src="{{workExample.imageUrl}}">
+        </div>
+        <div class="technologies-container" *ngIf="workExample.technologies">
+          <img class="technology-image" *ngFor="let technology of workExample.technologies" src="{{technology.imageUrl}}">
+        </div>
+        <div class="actions-container">
+          <i class="fa fa-github"></i>
+          <i class="fa fa-link"></i>
+          <i class="fa fa-pencil"></i>
+          <i class="fa fa-trash"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
