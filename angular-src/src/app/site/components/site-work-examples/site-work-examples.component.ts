@@ -16,17 +16,23 @@ export class SiteWorkExamplesComponent implements OnInit {
 
   constructor(
     private apiService: SiteApiService
-  ) { }
+  ) {
+    this.loadWorkExamples()
+  }
 
   ngOnInit() {
+    this.bars.classList.toggle("work-samples-color")
+    this.terminal.classList.toggle("work-samples-color")
+    this.menuContainer.classList.toggle("work-samples-background-color")
+  }
+
+  loadWorkExamples() {
+    console.log("triggered")
     this.apiService.loadWorkExamples()
     .subscribe(res => {
       console.log(res)
       this.workExamples = res.data
     })
-    this.bars.classList.toggle("work-samples-color")
-    this.terminal.classList.toggle("work-samples-color")
-    this.menuContainer.classList.toggle("work-samples-background-color")
   }
 
   ngOnDestroy() {

@@ -16,6 +16,12 @@ export class SiteApiService {
     this.router.navigate(['/home', {outlets: {'siteOutlet': null}}]);
   }
 
+  loadCodeLab() {
+    let query = {type: "code-lab"}
+    return this.http.post(this.baseUrl + "work-examples/getByType", query)
+    .map(res => res.json())
+  }
+
   loadWorkExamples() {
     let query = {type: "work-example"}
     return this.http.post(this.baseUrl + "work-examples/getByType", query)

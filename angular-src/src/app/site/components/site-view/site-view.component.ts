@@ -10,15 +10,9 @@ export class SiteViewComponent implements OnInit {
 
   constructor(
     private apiService: SiteApiService
-  ) {
-  }
+  ) {}
 
   ngOnInit() {
-    this.setHomeComponent()
-  }
-
-  setHomeComponent() {
-    this.apiService.setComponent('intro')
   }
 
 }

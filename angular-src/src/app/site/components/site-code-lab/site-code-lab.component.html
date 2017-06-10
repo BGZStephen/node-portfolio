@@ -1,3 +1,23 @@
-<p>
-  site-code-lab works!
-</p>
+<div class="main-container">
+  <h2 class="main-header">Code Lab</h2>
+  <div class="items-container" *ngIf="codelabExamples">
+    <div class="item" *ngFor="let example of codelabExamples">
+      <div class="item-image-container">
+        <a href="{{example.url}}" target="_blank"><img class="item-image" src="{{example.imageUrl}}"></a>
+        <span class="fa-stack fa-2x">
+          <a href="{{example.githubUrl}}" target="_blank" class="fa fa-circle fa-stack-2x"></a>
+          <a href="{{example.githubUrl}}" target="_blank" class="fa fa-github fa-stack-1x fa-inverse"></a>
+        </span>
+        <span class="fa-stack fa-2x">
+          <a href="{{example.url}}" target="_blank" class="fa fa-circle fa-stack-2x"></a>
+          <a href="{{example.url}}" target="_blank" class="fa fa-link fa-stack-1x fa-inverse"></a>
+        </span>
+      </div>
+      <div class="item-content-container">
+        <h3 class="item-header">{{example.name}}</h3>
+        <hr class="item-seperator">
+        <p class="item-description">{{example.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>
