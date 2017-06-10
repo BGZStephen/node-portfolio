@@ -6,6 +6,9 @@ import { AdminDashboardViewComponent, AdminDashboardLoginComponent } from "./adm
 // technologies specific
 import { TechnologiesAddComponent, TechnologiesManageComponent, TechnologiesEditComponent } from "./admin-dashboard/technologies/components/technologies-components-barrel"
 
+// work-example specific
+import { WorkExamplesAddComponent } from "./admin-dashboard/work-examples/components/work-examples-components-barrel"
+
 //site specifics
 import { SiteViewComponent } from "./site/site-view.component"
 
@@ -15,7 +18,8 @@ const APP_ROUTES: Routes = [
   {path: "dashboard", component: AdminDashboardViewComponent, children: [
     {path: "technologies-add", component: TechnologiesAddComponent, outlet: "adminDashboardOutlet"},
     {path: "technologies-manage", component: TechnologiesManageComponent, outlet: "adminDashboardOutlet"},
-    {path: "technologies-manage/:technologyId", component: TechnologiesEditComponent, outlet: "adminDashboardOutlet"}
+    {path: "technologies-manage/:technologyId", component: TechnologiesEditComponent, outlet: "adminDashboardOutlet"},
+    {path: "work-examples-add", component: WorkExamplesAddComponent, outlet: "adminDashboardOutlet"},
   ]}
 ]
 

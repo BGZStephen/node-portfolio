@@ -8,7 +8,6 @@ const WorkExample = require('../models/work-example');
 
 router.post("/create", (req, res, next) => {
   let workExampleObject = new WorkExample({
-    categories: req.body.categories,
     createdOn: new Date(),
     description: req.body.description,
     githubUrl: req.body.githubUrl,

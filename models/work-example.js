@@ -3,7 +3,6 @@ const config = require('../config/database')
 const TechnologySchema = require('./technology').schema
 
 const WorkExampleSchema = mongoose.Schema({
-  categories: Array,
   createdOn: Date,
   description: String,
   githubUrl: String,
