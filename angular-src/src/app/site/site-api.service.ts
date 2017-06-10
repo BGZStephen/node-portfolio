@@ -10,7 +10,7 @@ export class SiteApiService {
     private router: Router
   ) { }
 
-  baseUrl: string = "http://localhost:9000/"
+  baseUrl: string = ""
 
   clearComponent() {
     this.router.navigate(['/home', {outlets: {'siteOutlet': null}}]);

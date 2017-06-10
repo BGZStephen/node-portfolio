@@ -2,3 +2,7 @@
 config/database\.js
 
 node_modules/
+
+angular-src/src/assets/
+
+public/assets/
