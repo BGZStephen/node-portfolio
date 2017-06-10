@@ -1,0 +1,209 @@
+@import '../../sass/_variables';
+
+.navbar-main-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.navbar {
+  cursor: pointer;
+  display: flex;
+}
+
+.fa-bars {
+  color: $home-primary-font;
+  font-size: 1.8em;
+  font-weight: bold;
+  padding: 5px 0 5px 5px;
+}
+
+.menu-toggle {
+  color: $primary-font-inverse;
+  display: none;
+  font-size: 1.8em;
+  font-weight: bold;
+  padding-left: 10px;
+  transition: color 0.8s ease;
+}
+
+.menu-container {
+  align-items: center;
+  background: $home-primary-font;
+  bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: -100%;
+  position: fixed;
+  top: 10px;
+  transition: all 0.5s ease;
+  width: 100%;
+  z-index: 100;
+}
+
+.fa-times {
+  cursor: pointer;
+  font-size: 2em;
+  left: 10px;
+  position: absolute;
+  top: 5px;
+}
+
+.menu-list {
+  list-style: none;
+  text-align: center;
+}
+
+.menu-item {
+  cursor: pointer;
+  font-size: 1.8em;
+  font-weight: 700;
+  padding: 15px 25px;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.contact-item {
+  cursor: pointer;
+  font-size: 1.4em;
+  font-weight: 700;
+  margin: 12px 0;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.menu-item:hover,
+.link-active {
+  background: $primary-font;
+  color: $primary-font-inverse;
+}
+
+.contact-list {
+  max-height: 0;
+  list-style: none;
+  overflow: hidden;
+  transition: all 0.5s ease
+}
+
+.contact-toggle:hover ~ .contact-list {
+  max-height: 100px;
+}
+
+.contact-list:hover {
+  max-height: 100px;
+}
+
+.logo-container {
+  display: flex;
+  padding: 5px;
+}
+
+.logo-container > a {
+  color: $home-primary-font;
+  font-size: 1.8em;
+  font-weight: 900;
+  margin-right: 5px;
+  transition: color 0.8s ease;
+}
+
+.logo-container > p {
+  color: $primary-font-inverse;
+  font-size: 1.8em;
+  font-weight: 700;
+  margin-top: -5px;
+  text-transform: uppercase;
+}
+
+.social-container {
+  display: none;
+}
+
+.social-container > a {
+  text-decoration: none;
+}
+
+.fa-facebook,
+.fa-linkedin,
+.fa-github {
+  color: $primary-font-inverse;
+  cursor: pointer;
+  font-size: 1.4em;
+  margin-left: 5px;
+  padding: 5px;
+  transition: color 0.3s ease;
+}
+
+.fa-facebook:hover {
+  color: $facebook-color;
+}
+
+.fa-linkedin:hover {
+  color: $linkedin-color;
+}
+
+.fa-github:hover {
+  color: $work-examples;
+}
+
+@media (min-width: 768px) {
+
+  .social-container {
+    display: inline;
+  }
+
+  .menu-toggle {
+    display: inline;
+  }
+
+  .fa-facebook,
+  .fa-linkedin,
+  .fa-github {
+    font-size: 1.6em;
+    margin-left: 15px;
+    margin-top: -2px;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .navbar-main-container {
+    padding: 20px 40px;
+  }
+
+  .menu-container {
+    bottom: auto;
+    padding: 60px 20px;
+    top: 20px;
+    width: auto;
+  }
+}
+
+// styles for different pages
+
+.work-samples-color {
+  color: $work-examples !important;
+}
+
+.work-samples-background-color {
+  background: $work-examples !important;
+}
+
+.code-lab-color {
+  color: $code-lab !important;
+}
+
+.code-lab-background-color {
+  background: $code-lab !important;
+}
+
+.css-workshop-color {
+  color: $css-workshop !important;
+}
+
+.css-workshop-background-color {
+  background: $css-workshop !important;
+}

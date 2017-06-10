@@ -12,10 +12,16 @@ import { TechnologiesAddComponent, TechnologiesManageComponent, TechnologiesEdit
 import { WorkExamplesAddComponent, WorkExamplesManageComponent, WorkExamplesEditComponent } from "./admin-dashboard/work-examples/components/work-examples-components-barrel"
 
 //site specifics
-import { SiteViewComponent } from "./site/site-view.component"
+import { SiteViewComponent, SiteHomeComponent, SiteWorkExamplesComponent,
+         SiteCodeLabComponent} from "./site/components/site-components-barrel"
 
 const APP_ROUTES: Routes = [
-  {path: "", component: SiteViewComponent},
+  {path: "", redirectTo: "/home/(siteOutlet:intro)", pathMatch: 'full'},
+  {path: "home", component: SiteViewComponent, children: [
+    {path: "intro", component: SiteHomeComponent, outlet: "siteOutlet"},
+    {path: "work-examples", component: SiteWorkExamplesComponent, outlet: "siteOutlet"},
+    {path: "code-lab", component: SiteCodeLabComponent, outlet: "siteOutlet"},
+  ]},
   {path: "login", component: AdminDashboardLoginComponent},
   {path: "dashboard", component: AdminDashboardViewComponent, children: [
     {path: "technologies-add", component: TechnologiesAddComponent, outlet: "adminDashboardOutlet"},

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SiteApiService } from "../../site-api.service"
 
 @Component({
   selector: 'portfolio-site-view',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SiteViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private apiService: SiteApiService
+  ) {
+  }
 
   ngOnInit() {
+    this.setHomeComponent()
+  }
+
+  setHomeComponent() {
+    this.apiService.setComponent('intro')
   }
 
 }
