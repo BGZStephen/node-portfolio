@@ -14,7 +14,12 @@
         </span>
       </div>
       <div class="item-content-container">
-        <h3 class="item-header">{{example.name}}</h3>
+        <div class="item-technologies-container" *ngIf="example.technologies">
+          <div class="item-technology" *ngFor="let technology of example.technologies">
+            <img class="item-technology-image" src="{{technology.imageUrl}}">
+          </div>
+        </div>
+        <h3 class="item-header">{{example.title}}</h3>
         <hr class="item-seperator">
         <p class="item-description">{{example.description}}</p>
       </div>
