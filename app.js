@@ -42,7 +42,7 @@ app.use('/technologies', technologies)
 
 
 // default route
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/index.html'))
 })
 
