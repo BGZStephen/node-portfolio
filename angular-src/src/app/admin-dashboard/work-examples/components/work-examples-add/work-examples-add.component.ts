@@ -18,8 +18,9 @@ export class WorkExamplesAddComponent implements OnInit {
     this.loadTechnologies()
   }
 
-  technologies: Array<object> = []
   activeTechnologies: Array<object> = []
+  activeType: string;
+  technologies: Array<object> = []
 
   activeTechnologiesStyle(technologyId) {
     for(let i = 0; i < this.activeTechnologies.length; i++) {
@@ -43,6 +44,7 @@ export class WorkExamplesAddComponent implements OnInit {
 
   saveWorkExample(workExampleObject) {
     workExampleObject.technologies = this.activeTechnologies
+    workExampleObject.type = this.activeType
     this.apiService.saveWorkExample(workExampleObject)
     .subscribe(res => {
       if(res.success) {
@@ -65,6 +67,22 @@ export class WorkExamplesAddComponent implements OnInit {
         }
       }
       this.activeTechnologies.push(technologyObject)
+    }
+  }
+
+  toggleType(type) {
+    if(this.activeType == type) {
+      this.activeType = ""
+    } else {
+      this.activeType = type
+    }
+  }
+
+  typeStyle(type) {
+    if(type == this.activeType) {
+      return {"background": "#ffd777", "border": "4px solid #424a5d", "color": "#424a5d"}
+    } else {
+      return {"background": "#424a5d", "border": "4px solid #424a5d", "color": "#ffd777"}
     }
   }
 

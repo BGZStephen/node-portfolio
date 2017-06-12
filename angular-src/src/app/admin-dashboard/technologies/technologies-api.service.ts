@@ -10,7 +10,7 @@ export class TechnologiesApiService {
     private router: Router
   ) { }
 
-  baseUrl: string = ""
+  baseUrl: string = "http://localhost:9000/"
 
   clearComponent() {
     this.router.navigate(['/dashboard', {outlets: {'adminDashboardOutlet': null}}]);

@@ -21,9 +21,10 @@ export class WorkExamplesEditComponent implements OnInit {
     this.loadTechnologies()
   }
 
-  workExample: object = {}
-  technologies: Array<object> = []
-  activeTechnologies: Array<object> = []
+  activeTechnologies: Array<object> = [];
+  activeType: string;
+  technologies: Array<object> = [];
+  workExample: object = {};
 
   activeTechnologiesStyle(technologyId) {
     for(let i = 0; i < this.activeTechnologies.length; i++) {
@@ -53,8 +54,8 @@ export class WorkExamplesEditComponent implements OnInit {
       .subscribe(res => {
         if(res.success) {
           this.workExample = res.data
-          console.log(this.workExample)
           this.setActiveTechnologies()
+          this.setActiveType()
         } else {
           this.workExample = {}
         }
@@ -64,6 +65,10 @@ export class WorkExamplesEditComponent implements OnInit {
 
   setActiveTechnologies() {
     this.activeTechnologies = this.workExample['technologies']
+  }
+
+  setActiveType() {
+    this.activeType = this.workExample['type']
   }
 
   toggleTechnology(technologyObject, index) {
@@ -81,20 +86,36 @@ export class WorkExamplesEditComponent implements OnInit {
     }
   }
 
+  toggleType(type) {
+    if(this.activeType == type) {
+      this.activeType = ""
+    } else {
+      this.activeType = type
+    }
+  }
+
+  typeStyle(type) {
+    if(type == this.activeType) {
+      return {"background": "#ffd777", "border": "4px solid #424a5d", "color": "#424a5d"}
+    } else {
+      return {"background": "#424a5d", "border": "4px solid #424a5d", "color": "#ffd777"}
+    }
+  }
+
   updateWorkExample(workExampleObject, workExampleId) {
     workExampleObject._id = workExampleId
     workExampleObject.technologies = this.activeTechnologies
+    workExampleObject.type = this.activeType
     this.apiService.updateWorkExample(workExampleObject)
     .subscribe(res => {
-      console.log(res)
-        if(res.success) {
-          this.flashMessage.show(res.message, {cssClass: "flash-success--dashboard", timeout: 3000})
-          setTimeout(() => {
-            this.apiService.setComponent('work-examples-manage')
-          }, 500)
-        } else {
-          this.flashMessage.show("Work example update failed", {cssClass: "flash-failure--dashboard", timeout: 3000})
-        }
+      if(res.success) {
+        this.flashMessage.show(res.message, {cssClass: "flash-success--dashboard", timeout: 3000})
+        setTimeout(() => {
+          this.apiService.setComponent('work-examples-manage')
+        }, 500)
+      } else {
+        this.flashMessage.show("Work example update failed", {cssClass: "flash-failure--dashboard", timeout: 3000})
+      }
     })
   }
 

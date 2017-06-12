@@ -623,8 +623,8 @@ var WorkExamplesAddComponent = (function () {
     function WorkExamplesAddComponent(apiService, flashMessage) {
         this.apiService = apiService;
         this.flashMessage = flashMessage;
-        this.technologies = [];
         this.activeTechnologies = [];
+        this.technologies = [];
     }
     WorkExamplesAddComponent.prototype.ngOnInit = function () {
         this.loadTechnologies();
@@ -652,6 +652,7 @@ var WorkExamplesAddComponent = (function () {
     WorkExamplesAddComponent.prototype.saveWorkExample = function (workExampleObject) {
         var _this = this;
         workExampleObject.technologies = this.activeTechnologies;
+        workExampleObject.type = this.activeType;
         this.apiService.saveWorkExample(workExampleObject)
             .subscribe(function (res) {
             if (res.success) {
@@ -676,6 +677,22 @@ var WorkExamplesAddComponent = (function () {
                 }
             }
             this.activeTechnologies.push(technologyObject);
+        }
+    };
+    WorkExamplesAddComponent.prototype.toggleType = function (type) {
+        if (this.activeType == type) {
+            this.activeType = "";
+        }
+        else {
+            this.activeType = type;
+        }
+    };
+    WorkExamplesAddComponent.prototype.typeStyle = function (type) {
+        if (type == this.activeType) {
+            return { "background": "#ffd777", "border": "4px solid #424a5d", "color": "#424a5d" };
+        }
+        else {
+            return { "background": "#424a5d", "border": "4px solid #424a5d", "color": "#ffd777" };
         }
     };
     return WorkExamplesAddComponent;
@@ -722,9 +739,9 @@ var WorkExamplesEditComponent = (function () {
         this.activatedRoute = activatedRoute;
         this.apiService = apiService;
         this.flashMessage = flashMessage;
-        this.workExample = {};
-        this.technologies = [];
         this.activeTechnologies = [];
+        this.technologies = [];
+        this.workExample = {};
     }
     WorkExamplesEditComponent.prototype.ngOnInit = function () {
         this.loadWorkExample();
@@ -759,8 +776,8 @@ var WorkExamplesEditComponent = (function () {
                 .subscribe(function (res) {
                 if (res.success) {
                     _this.workExample = res.data;
-                    console.log(_this.workExample);
                     _this.setActiveTechnologies();
+                    _this.setActiveType();
                 }
                 else {
                     _this.workExample = {};
@@ -770,6 +787,9 @@ var WorkExamplesEditComponent = (function () {
     };
     WorkExamplesEditComponent.prototype.setActiveTechnologies = function () {
         this.activeTechnologies = this.workExample['technologies'];
+    };
+    WorkExamplesEditComponent.prototype.setActiveType = function () {
+        this.activeType = this.workExample['type'];
     };
     WorkExamplesEditComponent.prototype.toggleTechnology = function (technologyObject, index) {
         if (this.activeTechnologies.length == 0) {
@@ -787,13 +807,29 @@ var WorkExamplesEditComponent = (function () {
             this.activeTechnologies.push(technologyObject);
         }
     };
+    WorkExamplesEditComponent.prototype.toggleType = function (type) {
+        if (this.activeType == type) {
+            this.activeType = "";
+        }
+        else {
+            this.activeType = type;
+        }
+    };
+    WorkExamplesEditComponent.prototype.typeStyle = function (type) {
+        if (type == this.activeType) {
+            return { "background": "#ffd777", "border": "4px solid #424a5d", "color": "#424a5d" };
+        }
+        else {
+            return { "background": "#424a5d", "border": "4px solid #424a5d", "color": "#ffd777" };
+        }
+    };
     WorkExamplesEditComponent.prototype.updateWorkExample = function (workExampleObject, workExampleId) {
         var _this = this;
         workExampleObject._id = workExampleId;
         workExampleObject.technologies = this.activeTechnologies;
+        workExampleObject.type = this.activeType;
         this.apiService.updateWorkExample(workExampleObject)
             .subscribe(function (res) {
-            console.log(res);
             if (res.success) {
                 _this.flashMessage.show(res.message, { cssClass: "flash-success--dashboard", timeout: 3000 });
                 setTimeout(function () {
@@ -1461,7 +1497,7 @@ exports = module.exports = __webpack_require__(7)();
 
 
 // module
-exports.push([module.i, ".main-container {\n  padding: 10px; }\n\n.work-example-add-header {\n  margin-bottom: 20px; }\n\n.form-row {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  margin: 10px 0; }\n\n.form-label {\n  font-size: 1.2em;\n  font-weight: 900;\n  margin-right: 10px;\n  padding: 8px 0 8px 0;\n  width: 120px; }\n\n.form-input {\n  background: #424a5d;\n  color: #e1f2f2;\n  border: none;\n  font-size: 1.2em;\n  font-weight: 900;\n  padding: 8px;\n  width: 350px; }\n\n.preview-image-header {\n  margin-bottom: 15px;\n  margin-top: 20px;\n  max-width: 320px;\n  width: 100%; }\n\n.preview-image {\n  max-width: 320px;\n  max-height: 180px;\n  margin-top: 5px;\n  margin-bottom: 10px; }\n\n.technologies-header {\n  width: 100%; }\n\n.technologies-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  margin: 15px 0 5px;\n  width: 400px; }\n\n.technology {\n  padding: 5px;\n  width: 80px; }\n\n.technology-image {\n  border: 3px solid white;\n  padding: 5px;\n  width: 100%; }\n\n.input-button {\n  border: none;\n  cursor: pointer;\n  font-size: 1.2em;\n  font-weight: 900;\n  margin-right: 10px;\n  padding: 10px 15px; }\n\n.input-cancel {\n  background: #424a5d;\n  color: #ffd777; }\n\n.input-submit {\n  background: #ffd777;\n  color: #424a5d; }\n", ""]);
+exports.push([module.i, ".main-container {\n  padding: 10px; }\n\n.work-example-add-header {\n  margin-bottom: 20px; }\n\n.form-row {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  margin: 10px 0; }\n\n.form-label {\n  font-size: 1.2em;\n  font-weight: 900;\n  margin-right: 10px;\n  padding: 8px 0 8px 0;\n  width: 120px; }\n\n.form-input {\n  background: #424a5d;\n  color: #e1f2f2;\n  border: none;\n  font-size: 1.2em;\n  font-weight: 900;\n  padding: 8px;\n  width: 350px; }\n\n.work-example-type {\n  background: #424a5d;\n  font-weight: 900;\n  margin: 20px 10px 0 0;\n  padding: 15px 20px; }\n\n.preview-image-header {\n  margin-bottom: 15px;\n  margin-top: 20px;\n  max-width: 320px;\n  width: 100%; }\n\n.preview-image {\n  max-width: 320px;\n  max-height: 180px;\n  margin-top: 5px;\n  margin-bottom: 10px; }\n\n.technologies-header {\n  width: 100%; }\n\n.technologies-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  margin: 15px 0 5px;\n  width: 400px; }\n\n.technology {\n  padding: 5px;\n  width: 80px; }\n\n.technology-image {\n  border: 3px solid white;\n  padding: 5px;\n  width: 100%; }\n\n.input-button {\n  border: none;\n  cursor: pointer;\n  font-size: 1.2em;\n  font-weight: 900;\n  margin-right: 10px;\n  padding: 10px 15px; }\n\n.input-cancel {\n  background: #424a5d;\n  color: #ffd777; }\n\n.input-submit {\n  background: #ffd777;\n  color: #424a5d; }\n", ""]);
 
 // exports
 
@@ -1479,7 +1515,7 @@ exports = module.exports = __webpack_require__(7)();
 
 
 // module
-exports.push([module.i, ".main-container {\n  padding: 10px; }\n\n.work-example-edit-header {\n  margin-bottom: 20px; }\n\n.form-row {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  margin: 10px 0; }\n\n.form-label {\n  font-size: 1.2em;\n  font-weight: 900;\n  margin-right: 10px;\n  padding: 8px 0 8px 0;\n  width: 120px; }\n\n.form-input {\n  background: #424a5d;\n  color: #e1f2f2;\n  border: none;\n  font-size: 1.2em;\n  font-weight: 900;\n  padding: 8px;\n  width: 350px; }\n\n.preview-image-header {\n  margin-bottom: 15px;\n  margin-top: 20px;\n  max-width: 320px;\n  width: 100%; }\n\n.preview-image {\n  max-width: 320px;\n  max-height: 180px;\n  margin-top: 5px;\n  margin-bottom: 10px; }\n\n.technologies-header {\n  width: 100%; }\n\n.technologies-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  margin: 15px 0 5px;\n  width: 400px; }\n\n.technology {\n  padding: 5px;\n  width: 80px; }\n\n.technology-image {\n  border: 3px solid white;\n  padding: 5px;\n  width: 100%; }\n\n.input-button {\n  border: none;\n  cursor: pointer;\n  font-size: 1.2em;\n  font-weight: 900;\n  margin-right: 10px;\n  padding: 10px 15px; }\n\n.input-cancel {\n  background: #424a5d;\n  color: #ffd777; }\n\n.input-submit {\n  background: #ffd777;\n  color: #424a5d; }\n", ""]);
+exports.push([module.i, ".main-container {\n  padding: 10px; }\n\n.work-example-edit-header {\n  margin-bottom: 20px; }\n\n.form-row {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  margin: 10px 0; }\n\n.form-label {\n  font-size: 1.2em;\n  font-weight: 900;\n  margin-right: 10px;\n  padding: 8px 0 8px 0;\n  width: 120px; }\n\n.form-input {\n  background: #424a5d;\n  color: #e1f2f2;\n  border: none;\n  font-size: 1.2em;\n  font-weight: 900;\n  padding: 8px;\n  width: 350px; }\n\n.work-example-type {\n  background: #424a5d;\n  font-weight: 900;\n  margin: 20px 10px 0 0;\n  padding: 15px 20px; }\n\n.preview-image-header {\n  margin-bottom: 15px;\n  margin-top: 20px;\n  max-width: 320px;\n  width: 100%; }\n\n.preview-image {\n  max-width: 320px;\n  max-height: 180px;\n  margin-top: 5px;\n  margin-bottom: 10px; }\n\n.technologies-header {\n  width: 100%; }\n\n.technologies-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  margin: 15px 0 5px;\n  width: 400px; }\n\n.technology {\n  padding: 5px;\n  width: 80px; }\n\n.technology-image {\n  border: 3px solid white;\n  padding: 5px;\n  width: 100%; }\n\n.input-button {\n  border: none;\n  cursor: pointer;\n  font-size: 1.2em;\n  font-weight: 900;\n  margin-right: 10px;\n  padding: 10px 15px; }\n\n.input-cancel {\n  background: #424a5d;\n  color: #ffd777; }\n\n.input-submit {\n  background: #ffd777;\n  color: #424a5d; }\n", ""]);
 
 // exports
 
@@ -1667,14 +1703,14 @@ module.exports = "<div class=\"main-container\">\n  <h2 class=\"technologies-man
 /***/ 260:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-container\">\n  <div class=\"work-example-add-container\">\n    <h2 class=\"work-example-add-header\">Add Work Example</h2>\n    <form #f=\"ngForm\" (submit)=\"saveWorkExample(f.value)\" class=\"work-example-add-form\">\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"title\">Title: </label>\n        <input type=\"text\" class=\"form-input\" id=\"title\" #title name=\"title\" ngModel>\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"description\">Description: </label>\n        <input type=\"text\" class=\"form-input\" id=\"description\" #description name=\"description\" ngModel>\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"url\">Url: </label>\n        <input type=\"text\" class=\"form-input\" id=\"url\" #url name=\"url\" ngModel>\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"githubUrl\">Github: </label>\n        <input type=\"text\" class=\"form-input\" id=\"githubUrl\" #githubUrl name=\"githubUrl\" ngModel>\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"imageUrl\">Image: </label>\n        <input type=\"text\" class=\"form-input\" id=\"imageUrl\" #imageUrl name=\"imageUrl\" ngModel>\n      </div>\n      <div class=\"form-row\">\n        <input type=\"radio\" name=\"type\" value=\"code-lab\" ngModel> Code Lab\n        <input type=\"radio\" name=\"type\" value=\"work-example\" ngModel> Work Example\n      </div>\n      <div class=\"form-row\">\n        <h3 class=\"preview-image-header\">Image preview: </h3>\n      </div>\n      <div class=\"form-row\">\n        <img class=\"preview-image\" [src]=\"imageUrl.value\">\n      </div>\n      <div class=\"form-row\">\n        <h3 class=\"technologies-header\">Technologies: </h3>\n        <div class=\"technologies-container\" *ngIf=\"technologies\">\n          <div class=\"technology\" *ngFor=\"let technology of technologies\" (click)=\"toggleTechnology(technology)\">\n            <img class=\"technology-image\" src=\"{{technology.imageUrl}}\" [ngStyle]=\"activeTechnologiesStyle(technology._id)\">\n          </div>\n        </div>\n      </div>\n      <div class=\"form-row\">\n        <p class=\"input-button input-cancel\" (click)=\"apiService.clearComponent()\">Cancel</p>\n        <input class=\"input-button input-submit\" type=\"submit\" value=\"Save\">\n      </div>\n    </form>\n  </div>\n</div>\n"
+module.exports = "<div class=\"main-container\">\n  <div class=\"work-example-add-container\">\n    <h2 class=\"work-example-add-header\">Add Work Example</h2>\n    <form #f=\"ngForm\" (submit)=\"saveWorkExample(f.value)\" class=\"work-example-add-form\">\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"title\">Title: </label>\n        <input type=\"text\" class=\"form-input\" id=\"title\" #title name=\"title\" ngModel>\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"description\">Description: </label>\n        <input type=\"text\" class=\"form-input\" id=\"description\" #description name=\"description\" ngModel>\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"url\">Url: </label>\n        <input type=\"text\" class=\"form-input\" id=\"url\" #url name=\"url\" ngModel>\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"githubUrl\">Github: </label>\n        <input type=\"text\" class=\"form-input\" id=\"githubUrl\" #githubUrl name=\"githubUrl\" ngModel>\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"imageUrl\">Image: </label>\n        <input type=\"text\" class=\"form-input\" id=\"imageUrl\" #imageUrl name=\"imageUrl\" ngModel>\n      </div>\n      <div class=\"form-row\">\n        <p class=\"work-example-type\" (click)=\"toggleType('code-lab')\" [ngStyle]=\"typeStyle('code-lab')\">Code Lab</p>\n        <p class=\"work-example-type\" (click)=\"toggleType('work-example')\" [ngStyle]=\"typeStyle('work-example')\">Work Example</p>\n      </div>\n      <div class=\"form-row\">\n        <h3 class=\"preview-image-header\">Image preview: </h3>\n      </div>\n      <div class=\"form-row\">\n        <img class=\"preview-image\" [src]=\"imageUrl.value\">\n      </div>\n      <div class=\"form-row\">\n        <h3 class=\"technologies-header\">Technologies: </h3>\n        <div class=\"technologies-container\" *ngIf=\"technologies\">\n          <div class=\"technology\" *ngFor=\"let technology of technologies\" (click)=\"toggleTechnology(technology)\">\n            <img class=\"technology-image\" src=\"{{technology.imageUrl}}\" [ngStyle]=\"activeTechnologiesStyle(technology._id)\">\n          </div>\n        </div>\n      </div>\n      <div class=\"form-row\">\n        <p class=\"input-button input-cancel\" (click)=\"apiService.clearComponent()\">Cancel</p>\n        <input class=\"input-button input-submit\" type=\"submit\" value=\"Save\">\n      </div>\n    </form>\n  </div>\n</div>\n"
 
 /***/ }),
 
 /***/ 261:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-container\">\n  <div class=\"work-example-edit-container\">\n    <h2 class=\"work-example-edit-header\">Add Work Example</h2>\n    <form #f=\"ngForm\" (submit)=\"updateWorkExample(f.value, workExample._id)\" class=\"work-example-edit-form\" *ngIf=\"workExample\">\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"title\">Title: </label>\n        <input type=\"text\" class=\"form-input\" id=\"title\" #title name=\"title\" ngModel=\"{{workExample.title}}\">\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"description\">Description: </label>\n        <input type=\"text\" class=\"form-input\" id=\"description\" #description name=\"description\" ngModel=\"{{workExample.description}}\">\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"url\">Url: </label>\n        <input type=\"text\" class=\"form-input\" id=\"url\" #url name=\"url\" ngModel =\"{{workExample.url}}\">\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"githubUrl\">Github: </label>\n        <input type=\"text\" class=\"form-input\" id=\"githubUrl\" #githubUrl name=\"githubUrl\" ngModel =\"{{workExample.githubUrl}}\">\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"imageUrl\">Image: </label>\n        <input type=\"text\" class=\"form-input\" id=\"imageUrl\" #imageUrl name=\"imageUrl\" ngModel =\"{{workExample.imageUrl}}\">\n      </div>\n      <div class=\"form-row\">\n        <input type=\"radio\" name=\"type\" value=\"code-lab\" ngModel> Code Lab\n        <input type=\"radio\" name=\"type\" value=\"work-example\" ngModel> Work Example\n      </div>\n      <div class=\"form-row\">\n        <h3 class=\"preview-image-header\">Image preview: </h3>\n      </div>\n      <div class=\"form-row\">\n        <img class=\"preview-image\" [src]=\"imageUrl.value\">\n      </div>\n      <div class=\"form-row\">\n        <h3 class=\"technologies-header\">Technologies: </h3>\n        <div class=\"technologies-container\" *ngIf=\"technologies\">\n          <div class=\"technology\" *ngFor=\"let technology of technologies\" (click)=\"toggleTechnology(technology)\">\n            <img class=\"technology-image\" src=\"{{technology.imageUrl}}\" [ngStyle]=\"activeTechnologiesStyle(technology._id)\">\n          </div>\n        </div>\n      </div>\n      <div class=\"form-row\">\n        <p class=\"input-button input-cancel\" (click)=\"apiService.setComponent('work-examples-manage')\">Cancel</p>\n        <input class=\"input-button input-submit\" type=\"submit\" value=\"Save\">\n      </div>\n    </form>\n  </div>\n</div>\n"
+module.exports = "<div class=\"main-container\">\n  <div class=\"work-example-edit-container\">\n    <h2 class=\"work-example-edit-header\">Add Work Example</h2>\n    <form #f=\"ngForm\" (submit)=\"updateWorkExample(f.value, workExample._id)\" class=\"work-example-edit-form\" *ngIf=\"workExample\">\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"title\">Title: </label>\n        <input type=\"text\" class=\"form-input\" id=\"title\" #title name=\"title\" ngModel=\"{{workExample.title}}\">\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"description\">Description: </label>\n        <input type=\"text\" class=\"form-input\" id=\"description\" #description name=\"description\" ngModel=\"{{workExample.description}}\">\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"url\">Url: </label>\n        <input type=\"text\" class=\"form-input\" id=\"url\" #url name=\"url\" ngModel =\"{{workExample.url}}\">\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"githubUrl\">Github: </label>\n        <input type=\"text\" class=\"form-input\" id=\"githubUrl\" #githubUrl name=\"githubUrl\" ngModel =\"{{workExample.githubUrl}}\">\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"imageUrl\">Image: </label>\n        <input type=\"text\" class=\"form-input\" id=\"imageUrl\" #imageUrl name=\"imageUrl\" ngModel =\"{{workExample.imageUrl}}\">\n      </div>\n      <div class=\"form-row\">\n        <p class=\"work-example-type\" (click)=\"toggleType('code-lab')\" [ngStyle]=\"typeStyle('code-lab')\">Code Lab</p>\n        <p class=\"work-example-type\" (click)=\"toggleType('work-example')\" [ngStyle]=\"typeStyle('work-example')\">Work Example</p>\n      </div>\n      <div class=\"form-row\">\n        <h3 class=\"preview-image-header\">Image preview: </h3>\n      </div>\n      <div class=\"form-row\">\n        <img class=\"preview-image\" [src]=\"imageUrl.value\">\n      </div>\n      <div class=\"form-row\">\n        <h3 class=\"technologies-header\">Technologies: </h3>\n        <div class=\"technologies-container\" *ngIf=\"technologies\">\n          <div class=\"technology\" *ngFor=\"let technology of technologies\" (click)=\"toggleTechnology(technology)\">\n            <img class=\"technology-image\" src=\"{{technology.imageUrl}}\" [ngStyle]=\"activeTechnologiesStyle(technology._id)\">\n          </div>\n        </div>\n      </div>\n      <div class=\"form-row\">\n        <p class=\"input-button input-cancel\" (click)=\"apiService.setComponent('work-examples-manage')\">Cancel</p>\n        <input class=\"input-button input-submit\" type=\"submit\" value=\"Save\">\n      </div>\n    </form>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1751,7 +1787,7 @@ var SiteApiService = (function () {
     function SiteApiService(http, router) {
         this.http = http;
         this.router = router;
-        this.baseUrl = "";
+        this.baseUrl = "http://localhost:9000/";
     }
     SiteApiService.prototype.clearComponent = function () {
         this.router.navigate(['/home', { outlets: { 'siteOutlet': null } }]);
@@ -1808,7 +1844,7 @@ var TechnologiesApiService = (function () {
     function TechnologiesApiService(http, router) {
         this.http = http;
         this.router = router;
-        this.baseUrl = "";
+        this.baseUrl = "http://localhost:9000/";
     }
     TechnologiesApiService.prototype.clearComponent = function () {
         this.router.navigate(['/dashboard', { outlets: { 'adminDashboardOutlet': null } }]);
@@ -1871,7 +1907,7 @@ var WorkExamplesApiService = (function () {
     function WorkExamplesApiService(http, router) {
         this.http = http;
         this.router = router;
-        this.baseUrl = "";
+        this.baseUrl = "http://localhost:9000/";
     }
     WorkExamplesApiService.prototype.clearComponent = function () {
         this.router.navigate(['/dashboard', { outlets: { 'adminDashboardOutlet': null } }]);
@@ -1949,7 +1985,7 @@ var AdminDashboardApiService = (function () {
     function AdminDashboardApiService(http, router) {
         this.http = http;
         this.router = router;
-        this.baseUrl = "";
+        this.baseUrl = "http://localhost:9000/";
     }
     AdminDashboardApiService.prototype.login = function (userObject) {
         return this.http.post(this.baseUrl + "users/authenticate", userObject)

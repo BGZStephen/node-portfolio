@@ -23,8 +23,8 @@
         <input type="text" class="form-input" id="imageUrl" #imageUrl name="imageUrl" ngModel>
       </div>
       <div class="form-row">
-        <input type="radio" name="type" value="code-lab" ngModel> Code Lab
-        <input type="radio" name="type" value="work-example" ngModel> Work Example
+        <p class="work-example-type" (click)="toggleType('code-lab')" [ngStyle]="typeStyle('code-lab')">Code Lab</p>
+        <p class="work-example-type" (click)="toggleType('work-example')" [ngStyle]="typeStyle('work-example')">Work Example</p>
       </div>
       <div class="form-row">
         <h3 class="preview-image-header">Image preview: </h3>
