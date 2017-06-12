@@ -10,10 +10,15 @@ export class WorkExamplesApiService {
     private router: Router
   ) { }
 
-  baseUrl: string = "http://localhost:9000/"
+  baseUrl: string = ""
 
   clearComponent() {
     this.router.navigate(['/dashboard', {outlets: {'adminDashboardOutlet': null}}]);
+  }
+
+  deleteWorkExample(workExampleObject) {
+    return this.http.post(this.baseUrl + "work-examples/deleteOne", workExampleObject)
+    .map(res => res.json())
   }
 
   loadTechnologies() {

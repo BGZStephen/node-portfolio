@@ -29,7 +29,7 @@ router.post("/create", (req, res, next) => {
 
 router.post("/deleteOne", (req, res, next) => {
   let workExampleObject = {
-    _id: req.body.workExampleId
+    _id: req.body._id
   }
 
   WorkExample.deleteOne(workExampleObject)

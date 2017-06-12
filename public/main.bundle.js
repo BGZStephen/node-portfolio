@@ -44,7 +44,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_routes__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_admin_dashboard_components_barrel__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__admin_dashboard_api_service__ = __webpack_require__(65);
@@ -367,7 +367,7 @@ ProfileModule = __decorate([
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__technologies_api_service__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TechnologiesAddComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -427,7 +427,7 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__technologies_api_service__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TechnologiesEditComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -604,7 +604,7 @@ TechnologiesModule = __decorate([
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__work_examples_api_service__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WorkExamplesAddComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -718,7 +718,7 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__work_examples_api_service__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WorkExamplesEditComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -863,6 +863,8 @@ var _a, _b, _c;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__work_examples_api_service__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WorkExamplesManageComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -875,12 +877,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var WorkExamplesManageComponent = (function () {
-    function WorkExamplesManageComponent(apiService) {
+    function WorkExamplesManageComponent(apiService, flashMessage) {
         this.apiService = apiService;
+        this.flashMessage = flashMessage;
     }
     WorkExamplesManageComponent.prototype.ngOnInit = function () {
         this.loadWorkExamples();
+    };
+    WorkExamplesManageComponent.prototype.deleteWorkExample = function (workExampleObject) {
+        var _this = this;
+        this.apiService.deleteWorkExample(workExampleObject)
+            .subscribe(function (res) {
+            if (res.success) {
+                _this.flashMessage.show(res.message, { cssClass: "flash-success--dashboard", timeout: 3000 });
+                _this.loadWorkExamples();
+            }
+            else {
+                _this.flashMessage.show("Work example deletion failed", { cssClass: "flash-failure--dashboard", timeout: 3000 });
+            }
+        });
     };
     WorkExamplesManageComponent.prototype.loadWorkExamples = function () {
         var _this = this;
@@ -898,10 +915,10 @@ WorkExamplesManageComponent = __decorate([
         template: __webpack_require__(262),
         styles: [__webpack_require__(246)]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__work_examples_api_service__["a" /* WorkExamplesApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__work_examples_api_service__["a" /* WorkExamplesApiService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__work_examples_api_service__["a" /* WorkExamplesApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__work_examples_api_service__["a" /* WorkExamplesApiService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object])
 ], WorkExamplesManageComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=work-examples-manage.component.js.map
 
 /***/ }),
@@ -1043,7 +1060,7 @@ AppModule = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__site_api_service__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__site_api_service__ = __webpack_require__(33);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SiteCodeLabComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1140,7 +1157,7 @@ SiteHomeComponent = __decorate([
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__site_api_service__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__site_api_service__ = __webpack_require__(33);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SiteNavbarComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1197,7 +1214,7 @@ var _a, _b;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__site_api_service__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__site_api_service__ = __webpack_require__(33);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SiteViewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1237,7 +1254,7 @@ var _a;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__site_api_service__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__site_api_service__ = __webpack_require__(33);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SiteWorkExamplesComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1302,7 +1319,7 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_routes__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__site_api_service__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__site_api_service__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_site_components_barrel__ = __webpack_require__(97);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SiteModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1717,7 +1734,7 @@ module.exports = "<div class=\"main-container\">\n  <div class=\"work-example-ed
 /***/ 262:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-container\">\n  <div class=\"work-examples-manage-container\">\n    <h2 class=\"work-examples-manage-header\">Manage Work Examples</h2>\n    <div class=\"work-examples-container\" *ngIf=\"workExamples\">\n      <div class=\"work-example\" *ngFor=\"let workExample of workExamples\">\n        <p class=\"work-example-title\" (click)=\"apiService.setComponentWithId('work-examples-edit', workExample._id)\">{{workExample.title}}\n        <div class=\"work-example-image-container\">\n          <img class=\"work-example-image\" src=\"{{workExample.imageUrl}}\" (click)=\"apiService.setComponentWithId('work-examples-edit', workExample._id)\">\n        </div>\n        <div class=\"technologies-container\" *ngIf=\"workExample.technologies\">\n          <img class=\"technology-image\" *ngFor=\"let technology of workExample.technologies\" src=\"{{technology.imageUrl}}\">\n        </div>\n        <div class=\"actions-container\">\n          <i class=\"fa fa-github\"></i>\n          <i class=\"fa fa-link\"></i>\n          <i class=\"fa fa-pencil\"></i>\n          <i class=\"fa fa-trash\"></i>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"main-container\">\n  <div class=\"work-examples-manage-container\">\n    <h2 class=\"work-examples-manage-header\">Manage Work Examples</h2>\n    <div class=\"work-examples-container\" *ngIf=\"workExamples\">\n      <div class=\"work-example\" *ngFor=\"let workExample of workExamples\">\n        <p class=\"work-example-title\" (click)=\"apiService.setComponentWithId('work-examples-edit', workExample._id)\">{{workExample.title}}\n        <div class=\"work-example-image-container\">\n          <img class=\"work-example-image\" src=\"{{workExample.imageUrl}}\" (click)=\"apiService.setComponentWithId('work-examples-edit', workExample._id)\">\n        </div>\n        <div class=\"technologies-container\" *ngIf=\"workExample.technologies\">\n          <img class=\"technology-image\" *ngFor=\"let technology of workExample.technologies\" src=\"{{technology.imageUrl}}\">\n        </div>\n        <div class=\"actions-container\">\n          <i class=\"fa fa-github\"></i>\n          <i class=\"fa fa-link\"></i>\n          <i class=\"fa fa-pencil\"></i>\n          <i class=\"fa fa-trash\" (click)=\"deleteWorkExample({_id: workExample._id})\"></i>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1763,7 +1780,7 @@ module.exports = "<div class=\"main-container\">\n  <h2 class=\"main-header\">Wo
 
 /***/ }),
 
-/***/ 32:
+/***/ 33:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1787,7 +1804,7 @@ var SiteApiService = (function () {
     function SiteApiService(http, router) {
         this.http = http;
         this.router = router;
-        this.baseUrl = "http://localhost:9000/";
+        this.baseUrl = "";
     }
     SiteApiService.prototype.clearComponent = function () {
         this.router.navigate(['/home', { outlets: { 'siteOutlet': null } }]);
@@ -1844,7 +1861,7 @@ var TechnologiesApiService = (function () {
     function TechnologiesApiService(http, router) {
         this.http = http;
         this.router = router;
-        this.baseUrl = "http://localhost:9000/";
+        this.baseUrl = "";
     }
     TechnologiesApiService.prototype.clearComponent = function () {
         this.router.navigate(['/dashboard', { outlets: { 'adminDashboardOutlet': null } }]);
@@ -1907,10 +1924,14 @@ var WorkExamplesApiService = (function () {
     function WorkExamplesApiService(http, router) {
         this.http = http;
         this.router = router;
-        this.baseUrl = "http://localhost:9000/";
+        this.baseUrl = "";
     }
     WorkExamplesApiService.prototype.clearComponent = function () {
         this.router.navigate(['/dashboard', { outlets: { 'adminDashboardOutlet': null } }]);
+    };
+    WorkExamplesApiService.prototype.deleteWorkExample = function (workExampleObject) {
+        return this.http.post(this.baseUrl + "work-examples/deleteOne", workExampleObject)
+            .map(function (res) { return res.json(); });
     };
     WorkExamplesApiService.prototype.loadTechnologies = function () {
         return this.http.get(this.baseUrl + "technologies/getAll")
@@ -1985,7 +2006,7 @@ var AdminDashboardApiService = (function () {
     function AdminDashboardApiService(http, router) {
         this.http = http;
         this.router = router;
-        this.baseUrl = "http://localhost:9000/";
+        this.baseUrl = "";
     }
     AdminDashboardApiService.prototype.login = function (userObject) {
         return this.http.post(this.baseUrl + "users/authenticate", userObject)

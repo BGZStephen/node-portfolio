@@ -11,7 +11,7 @@ export class AdminDashboardApiService {
     private router: Router
   ) { }
 
-  baseUrl: string = "http://localhost:9000/"
+  baseUrl: string = ""
 
   login(userObject) {
     return this.http.post(this.baseUrl + "users/authenticate", userObject)
