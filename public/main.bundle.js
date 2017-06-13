@@ -775,7 +775,7 @@ var WorkExamplesEditComponent = (function () {
             _this.apiService.loadWorkExample({ _id: workExampleId })
                 .subscribe(function (res) {
                 if (res.success) {
-                    _this.workExample = res.data;
+                    _this.workExample = res.data[0];
                     _this.setActiveTechnologies();
                     _this.setActiveType();
                 }

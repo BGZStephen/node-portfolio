@@ -53,7 +53,7 @@ export class WorkExamplesEditComponent implements OnInit {
       this.apiService.loadWorkExample({_id: workExampleId})
       .subscribe(res => {
         if(res.success) {
-          this.workExample = res.data
+          this.workExample = res.data[0]
           this.setActiveTechnologies()
           this.setActiveType()
         } else {
