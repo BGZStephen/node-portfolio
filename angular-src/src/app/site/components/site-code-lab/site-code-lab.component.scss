@@ -20,16 +20,37 @@
 .main-header {
   color: $code-lab;
   margin-top: 80px;
+  @media (min-width: 1024px) {
+    font-size: 2.4em;
+    text-shadow: 2px 2px black;
+  }
+  @media (min-width: 768px) {
+    font-size: 1.8em;
+    margin-top: 100px;
+  }
 }
 
 .items-container {
   width: 100%;
+  @media (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+  }
 }
 
 .item {
   background: $primary-font;
   margin: 30px 15px;
   width: calc(100% - 30px);
+  @media (min-width: 540px) {
+    margin: 30px auto;
+    width: 500px;
+  }
+  @media (min-width: 768px) {
+    margin: 30px auto;
+    width: calc(50% - 30px);
+  }
 }
 
 .item-image-container {
@@ -119,38 +140,4 @@
 
 .item-technology-image {
   width: 100%;
-}
-
-@media (min-width: 540px) {
-  .item {
-    margin: 30px auto;
-    width: 500px;
-  }
-}
-
-@media (min-width: 768px) {
-
-  .main-header {
-    font-size: 1.8em;
-    margin-top: 100px;
-  }
-
-  .items-container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 1200px;
-  }
-
-  .item {
-    margin: 30px auto;
-    width: calc(50% - 30px);
-  }
-}
-
-@media (min-width: 1024px) {
-  .main-header {
-    font-size: 2.4em;
-    text-shadow: 2px 2px black;
-  }
 }

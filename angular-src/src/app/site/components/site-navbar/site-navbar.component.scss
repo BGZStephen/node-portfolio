@@ -7,6 +7,9 @@
   position: absolute;
   top: 0;
   width: 100%;
+  @media (min-width: 1024px) {
+    padding: 20px 40px;
+  }
 }
 
 .navbar {
@@ -43,6 +46,15 @@
   transition: all 0.5s ease;
   width: 100%;
   z-index: 100;
+  @media (min-width: 768px) {
+    display: inline;
+  }
+  @media (min-width: 1024px) {
+    bottom: auto;
+    padding: 60px 20px;
+    top: 20px;
+    width: auto;
+  }
 }
 
 .fa-times {
@@ -120,6 +132,9 @@
 
 .social-container {
   display: none;
+  @media (min-width: 768px) {
+    display: inline;
+  }
 }
 
 .social-container > a {
@@ -135,6 +150,11 @@
   margin-left: 5px;
   padding: 5px;
   transition: color 0.3s ease;
+  @media (min-width: 768px) {
+    font-size: 1.6em;
+    margin-left: 15px;
+    margin-top: -2px;
+  }
 }
 
 .fa-facebook:hover {
@@ -147,39 +167,6 @@
 
 .fa-github:hover {
   color: $work-examples;
-}
-
-@media (min-width: 768px) {
-
-  .social-container {
-    display: inline;
-  }
-
-  .menu-toggle {
-    display: inline;
-  }
-
-  .fa-facebook,
-  .fa-linkedin,
-  .fa-github {
-    font-size: 1.6em;
-    margin-left: 15px;
-    margin-top: -2px;
-  }
-}
-
-@media (min-width: 1024px) {
-
-  .navbar-main-container {
-    padding: 20px 40px;
-  }
-
-  .menu-container {
-    bottom: auto;
-    padding: 60px 20px;
-    top: 20px;
-    width: auto;
-  }
 }
 
 // styles for different pages

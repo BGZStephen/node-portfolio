@@ -19,6 +19,10 @@
 .intro-container {
   padding: 0 15px;
   text-align: center;
+  @media (min-width: 768px) {
+    padding: 0 15px;
+    width: 700px;
+  }
 }
 
 h1 {
@@ -28,6 +32,10 @@ h1 {
   margin-bottom: 10px;
   text-align: center;
   text-transform: uppercase;
+  @media (min-width: 768px) {
+    font-size: 6em;
+    margin-bottom: 30px;
+  }
 }
 
 p {
@@ -35,6 +43,10 @@ p {
   font-size: 1.2em;
   line-height: 1.6;
   margin-bottom: 15px;
+  @media (min-width: 768px) {
+    font-size: 1.5em;
+    margin-bottom: 25px;
+  }
 }
 
 .work-examples,
@@ -76,7 +88,15 @@ p {
 }
 
 .contact-me,
-.contact-me-alt,
+.contact-me-alt {
+  color: $home-primary-font;
+  @media (min-width: 768px) {
+      font-size: 1.5em;
+      line-height: 1.6;
+      margin-bottom: 25px;
+  }
+}
+
 .contact-phone {
   color: $home-primary-font;
 }
@@ -102,28 +122,4 @@ p {
 
 .contact-toggle:hover .contact-me-alt {
   display: inline;
-}
-
-@media (min-width: 768px) {
-  .intro-container {
-    padding: 0 15px;
-    width: 700px;
-  }
-
-  h1 {
-    color: $home-primary-font;
-    font-size: 6em;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    text-align: center;
-    text-transform: uppercase;
-  }
-
-  p,
-  .contact-me,
-  .contact-me-alt {
-    font-size: 1.5em;
-    line-height: 1.6;
-    margin-bottom: 25px;
-  }
 }
