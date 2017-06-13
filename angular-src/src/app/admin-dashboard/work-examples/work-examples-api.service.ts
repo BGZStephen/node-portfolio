@@ -27,12 +27,12 @@ export class WorkExamplesApiService {
   }
 
   loadWorkExample(workExampleObject) {
-    return this.http.post(this.baseUrl + "work-examples/getById", workExampleObject)
+    return this.http.get(this.baseUrl + "work-examples?_id=" + workExampleObject._id)
     .map(res => res.json())
   }
 
   loadWorkExamples() {
-    return this.http.get(this.baseUrl + "work-examples/getAll")
+    return this.http.get(this.baseUrl + "work-examples")
     .map(res => res.json())
   }
 

@@ -6,6 +6,18 @@ const router = express.Router();
 const config = require('../config/database');
 const WorkExample = require('../models/work-example');
 
+router.get("", (req, res, next) => {
+  console.log(req.query)
+
+  WorkExample.getByType(req.query)
+  .then(result => {
+    res.json(result)
+  }).catch(error => {
+    console.log(error)
+    res.json({success: false, message: error.message})
+  })
+})
+
 router.post("/create", (req, res, next) => {
   let workExampleObject = new WorkExample({
     createdOn: new Date(),
