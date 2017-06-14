@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Http } from "@angular/http"
 import { Router } from "@angular/router"
+import { ApiService } from "../../api.service"
 
 @Injectable()
 export class WorkExamplesApiService {
 
   constructor(
+    private apiSettings: ApiService,
     private http: Http,
     private router: Router
   ) { }
 
-  baseUrl: string = ""
+  baseUrl: string = this.apiSettings.baseUrl
 
   clearComponent() {
     this.router.navigate(['/dashboard', {outlets: {'adminDashboardOutlet': null}}]);

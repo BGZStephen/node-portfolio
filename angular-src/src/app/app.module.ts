@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { router } from "./app.routes"
 import { AuthGuard } from "./guards/auth.guard"
+import { ApiService } from "./api.service"
 
 import { AppComponent } from './app.component';
 
@@ -23,7 +24,7 @@ import { SiteModule } from './site/site.module'
     SiteModule,
     router
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

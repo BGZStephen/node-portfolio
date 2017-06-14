@@ -2,16 +2,18 @@ import { Injectable } from '@angular/core';
 import { Http } from "@angular/http"
 import "rxjs/Rx"
 import { Router } from "@angular/router"
+import { ApiService } from "../api.service"
 
 @Injectable()
 export class AdminDashboardApiService {
 
   constructor(
+    private apiSettings: ApiService,
     private http: Http,
     private router: Router
   ) { }
 
-  baseUrl: string = ""
+  baseUrl: string = this.apiSettings.baseUrl
 
   login(userObject) {
     return this.http.post(this.baseUrl + "users/authenticate", userObject)
