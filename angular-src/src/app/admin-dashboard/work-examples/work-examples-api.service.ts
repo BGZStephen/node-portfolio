@@ -24,7 +24,7 @@ export class WorkExamplesApiService {
   }
 
   loadTechnologies() {
-    return this.http.get(this.baseUrl + "technologies/getAll")
+    return this.http.get(this.baseUrl + "technologies")
     .map(res => res.json())
   }
 

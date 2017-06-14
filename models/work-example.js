@@ -39,37 +39,13 @@ module.exports.deleteOne = function(workExampleObject) {
   })
 }
 
-module.exports.getAll = function() {
-  return new Promise((resolve, reject) => {
-    WorkExample.find({}).then(result => {
-      if(result.length == 0) {
-        reject({success: false, message: "Work examples not found", data: result})
-      } else {
-        resolve({success: true, message: "Work examples found", data: result})
-      }
-    })
-  })
-}
-
-module.exports.getByType = function(workExampleObject) {
+module.exports.get = function(workExampleObject) {
   return new Promise((resolve, reject) => {
     WorkExample.find(workExampleObject).then(result => {
       if(result.length == 0) {
         reject({success: false, message: "Work examples not found", data: result})
       } else {
         resolve({success: true, message: "Work examples found", data: result})
-      }
-    })
-  })
-}
-
-module.exports.getOne = function(workExampleObject) {
-  return new Promise((resolve, reject) => {
-    WorkExample.findOne(workExampleObject).then(result => {
-      if(result == null) {
-        reject({success: false, message: "Work example not found, does it exist?", data: result})
-      } else {
-        resolve({success: true, message: "Work example found", data: result})
       }
     })
   })

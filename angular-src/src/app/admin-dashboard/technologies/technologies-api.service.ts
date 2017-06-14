@@ -27,12 +27,12 @@ export class TechnologiesApiService {
   }
 
   loadTechnology(technologyObject) {
-    return this.http.post(this.baseUrl + "technologies/getById", technologyObject)
+    return this.http.get(this.baseUrl + "technologies?_id=" + technologyObject._id)
     .map(res => res.json())
   }
 
   loadTechnologies() {
-    return this.http.get(this.baseUrl + "technologies/getAll")
+    return this.http.get(this.baseUrl + "technologies")
     .map(res => res.json())
   }
 

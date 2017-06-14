@@ -25,10 +25,10 @@ export class TechnologiesEditComponent implements OnInit {
   loadTechnology() {
     this.activatedRoute.params.map(params => params['technologyId'])
     .subscribe(technologyId => {
-      this.apiService.loadTechnology({technologyId: technologyId})
+      this.apiService.loadTechnology({_id: technologyId})
       .subscribe(res => {
         if(res.success) {
-          this.technology = res.data
+          this.technology = res.data[0]
         }
       })
     })

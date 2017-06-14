@@ -19,14 +19,12 @@ export class SiteApiService {
   }
 
   loadCodeLab() {
-    let query = {type: "code-lab"}
-    return this.http.post(this.baseUrl + "work-examples/getByType", query)
+    return this.http.get(this.baseUrl + "work-examples?type=code-lab")
     .map(res => res.json())
   }
 
   loadWorkExamples() {
-    let query = {type: "work-example"}
-    return this.http.post(this.baseUrl + "work-examples/getByType", query)
+    return this.http.get(this.baseUrl + "work-examples?type=work-example")
     .map(res => res.json())
   }
 

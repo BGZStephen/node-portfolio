@@ -1,6 +1,6 @@
 webpackJsonp([1,4],{
 
-/***/ 150:
+/***/ 151:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -9,20 +9,20 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 150;
+webpackEmptyContext.id = 151;
 
 
 /***/ }),
 
-/***/ 151:
+/***/ 152:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(155);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(171);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(178);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(179);
 
 
 
@@ -35,7 +35,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 /***/ }),
 
-/***/ 156:
+/***/ 157:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43,16 +43,16 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_routes__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_routes__ = __webpack_require__(67);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_admin_dashboard_components_barrel__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__admin_dashboard_api_service__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__work_examples_work_examples_module__ = __webpack_require__(169);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__technologies_technologies_module__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__profile_profile_module__ = __webpack_require__(161);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_admin_dashboard_navbar_admin_dashboard_navbar_component__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_admin_dashboard_notification_bar_admin_dashboard_notification_bar_component__ = __webpack_require__(159);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_admin_dashboard_components_barrel__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__admin_dashboard_api_service__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__work_examples_work_examples_module__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__technologies_technologies_module__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__profile_profile_module__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_admin_dashboard_navbar_admin_dashboard_navbar_component__ = __webpack_require__(159);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_admin_dashboard_notification_bar_admin_dashboard_notification_bar_component__ = __webpack_require__(160);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminDashboardModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -107,12 +107,12 @@ AdminDashboardModule = __decorate([
 
 /***/ }),
 
-/***/ 157:
+/***/ 158:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__admin_dashboard_api_service__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__admin_dashboard_api_service__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(16);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminDashboardLoginComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -149,8 +149,8 @@ var AdminDashboardLoginComponent = (function () {
 AdminDashboardLoginComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'portfolio-admin-dashboard-login',
-        template: __webpack_require__(253),
-        styles: [__webpack_require__(237)]
+        template: __webpack_require__(254),
+        styles: [__webpack_require__(238)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__admin_dashboard_api_service__["a" /* AdminDashboardApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__admin_dashboard_api_service__["a" /* AdminDashboardApiService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object])
 ], AdminDashboardLoginComponent);
@@ -160,7 +160,7 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 158:
+/***/ 159:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -231,8 +231,8 @@ var AdminDashboardNavbarComponent = (function () {
 AdminDashboardNavbarComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'portfolio-admin-dashboard-navbar',
-        template: __webpack_require__(254),
-        styles: [__webpack_require__(238)]
+        template: __webpack_require__(255),
+        styles: [__webpack_require__(239)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object])
 ], AdminDashboardNavbarComponent);
@@ -242,12 +242,12 @@ var _a;
 
 /***/ }),
 
-/***/ 159:
+/***/ 160:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__admin_dashboard_api_service__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__admin_dashboard_api_service__ = __webpack_require__(66);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminDashboardNotificationBarComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -274,8 +274,8 @@ var AdminDashboardNotificationBarComponent = (function () {
 AdminDashboardNotificationBarComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'portfolio-admin-dashboard-notification-bar',
-        template: __webpack_require__(255),
-        styles: [__webpack_require__(239)]
+        template: __webpack_require__(256),
+        styles: [__webpack_require__(240)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__admin_dashboard_api_service__["a" /* AdminDashboardApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__admin_dashboard_api_service__["a" /* AdminDashboardApiService */]) === "function" && _a || Object])
 ], AdminDashboardNotificationBarComponent);
@@ -285,7 +285,7 @@ var _a;
 
 /***/ }),
 
-/***/ 160:
+/***/ 161:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -311,8 +311,8 @@ var AdminDashboardViewComponent = (function () {
 AdminDashboardViewComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'portfolio-admin-dashboard-view',
-        template: __webpack_require__(256),
-        styles: [__webpack_require__(240)]
+        template: __webpack_require__(257),
+        styles: [__webpack_require__(241)]
     }),
     __metadata("design:paramtypes", [])
 ], AdminDashboardViewComponent);
@@ -321,7 +321,7 @@ AdminDashboardViewComponent = __decorate([
 
 /***/ }),
 
-/***/ 161:
+/***/ 162:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -361,12 +361,12 @@ ProfileModule = __decorate([
 
 /***/ }),
 
-/***/ 162:
+/***/ 163:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__technologies_api_service__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__technologies_api_service__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TechnologiesAddComponent; });
@@ -409,8 +409,8 @@ var TechnologiesAddComponent = (function () {
 TechnologiesAddComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'portfolio-technologies-add',
-        template: __webpack_require__(257),
-        styles: [__webpack_require__(241)]
+        template: __webpack_require__(258),
+        styles: [__webpack_require__(242)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__technologies_api_service__["a" /* TechnologiesApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__technologies_api_service__["a" /* TechnologiesApiService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object])
 ], TechnologiesAddComponent);
@@ -420,13 +420,13 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 163:
+/***/ 164:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__technologies_api_service__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__technologies_api_service__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TechnologiesEditComponent; });
@@ -457,10 +457,10 @@ var TechnologiesEditComponent = (function () {
         var _this = this;
         this.activatedRoute.params.map(function (params) { return params['technologyId']; })
             .subscribe(function (technologyId) {
-            _this.apiService.loadTechnology({ technologyId: technologyId })
+            _this.apiService.loadTechnology({ _id: technologyId })
                 .subscribe(function (res) {
                 if (res.success) {
-                    _this.technology = res.data;
+                    _this.technology = res.data[0];
                 }
             });
         });
@@ -486,8 +486,8 @@ var TechnologiesEditComponent = (function () {
 TechnologiesEditComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'portfolio-technologies-edit',
-        template: __webpack_require__(258),
-        styles: [__webpack_require__(242)]
+        template: __webpack_require__(259),
+        styles: [__webpack_require__(243)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__technologies_api_service__["a" /* TechnologiesApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__technologies_api_service__["a" /* TechnologiesApiService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object])
 ], TechnologiesEditComponent);
@@ -497,12 +497,12 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 164:
+/***/ 165:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__technologies_api_service__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__technologies_api_service__ = __webpack_require__(49);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TechnologiesManageComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -539,8 +539,8 @@ var TechnologiesManageComponent = (function () {
 TechnologiesManageComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'portfolio-technologies-manage',
-        template: __webpack_require__(259),
-        styles: [__webpack_require__(243)]
+        template: __webpack_require__(260),
+        styles: [__webpack_require__(244)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__technologies_api_service__["a" /* TechnologiesApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__technologies_api_service__["a" /* TechnologiesApiService */]) === "function" && _a || Object])
 ], TechnologiesManageComponent);
@@ -550,7 +550,7 @@ var _a;
 
 /***/ }),
 
-/***/ 165:
+/***/ 166:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -558,8 +558,8 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_technologies_components_barrel__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__technologies_api_service__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_technologies_components_barrel__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__technologies_api_service__ = __webpack_require__(49);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TechnologiesModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -598,12 +598,12 @@ TechnologiesModule = __decorate([
 
 /***/ }),
 
-/***/ 166:
+/***/ 167:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__work_examples_api_service__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__work_examples_api_service__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WorkExamplesAddComponent; });
@@ -700,8 +700,8 @@ var WorkExamplesAddComponent = (function () {
 WorkExamplesAddComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'portfolio-work-examples-add',
-        template: __webpack_require__(260),
-        styles: [__webpack_require__(244)]
+        template: __webpack_require__(261),
+        styles: [__webpack_require__(245)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__work_examples_api_service__["a" /* WorkExamplesApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__work_examples_api_service__["a" /* WorkExamplesApiService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object])
 ], WorkExamplesAddComponent);
@@ -711,13 +711,13 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 167:
+/***/ 168:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__work_examples_api_service__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__work_examples_api_service__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WorkExamplesEditComponent; });
@@ -846,8 +846,8 @@ var WorkExamplesEditComponent = (function () {
 WorkExamplesEditComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'portfolio-work-examples-edit',
-        template: __webpack_require__(261),
-        styles: [__webpack_require__(245)]
+        template: __webpack_require__(262),
+        styles: [__webpack_require__(246)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__work_examples_api_service__["a" /* WorkExamplesApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__work_examples_api_service__["a" /* WorkExamplesApiService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object])
 ], WorkExamplesEditComponent);
@@ -857,12 +857,12 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 168:
+/***/ 169:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__work_examples_api_service__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__work_examples_api_service__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WorkExamplesManageComponent; });
@@ -912,8 +912,8 @@ var WorkExamplesManageComponent = (function () {
 WorkExamplesManageComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'portfolio-work-examples-manage',
-        template: __webpack_require__(262),
-        styles: [__webpack_require__(246)]
+        template: __webpack_require__(263),
+        styles: [__webpack_require__(247)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__work_examples_api_service__["a" /* WorkExamplesApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__work_examples_api_service__["a" /* WorkExamplesApiService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object])
 ], WorkExamplesManageComponent);
@@ -923,7 +923,7 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 169:
+/***/ 170:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -931,8 +931,8 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__work_examples_api_service__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_work_examples_components_barrel__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__work_examples_api_service__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_work_examples_components_barrel__ = __webpack_require__(96);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WorkExamplesModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -967,7 +967,7 @@ WorkExamplesModule = __decorate([
 
 /***/ }),
 
-/***/ 170:
+/***/ 171:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -989,8 +989,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'portfolio-root',
-        template: __webpack_require__(263),
-        styles: [__webpack_require__(247)]
+        template: __webpack_require__(264),
+        styles: [__webpack_require__(248)]
     })
 ], AppComponent);
 
@@ -998,7 +998,7 @@ AppComponent = __decorate([
 
 /***/ }),
 
-/***/ 171:
+/***/ 172:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1006,11 +1006,12 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_routes__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__guards_auth_guard__ = __webpack_require__(96);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(170);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__admin_dashboard_admin_dashboard_module__ = __webpack_require__(156);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__site_site_module__ = __webpack_require__(177);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_routes__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__guards_auth_guard__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__api_service__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__admin_dashboard_admin_dashboard_module__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__site_site_module__ = __webpack_require__(178);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1018,6 +1019,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1036,18 +1038,18 @@ var AppModule = (function () {
 AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
-            __WEBPACK_IMPORTED_MODULE_7__admin_dashboard_admin_dashboard_module__["a" /* AdminDashboardModule */],
-            __WEBPACK_IMPORTED_MODULE_8__site_site_module__["a" /* SiteModule */],
+            __WEBPACK_IMPORTED_MODULE_8__admin_dashboard_admin_dashboard_module__["a" /* AdminDashboardModule */],
+            __WEBPACK_IMPORTED_MODULE_9__site_site_module__["a" /* SiteModule */],
             __WEBPACK_IMPORTED_MODULE_4__app_routes__["a" /* router */]
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_5__guards_auth_guard__["a" /* AuthGuard */]],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
+        providers: [__WEBPACK_IMPORTED_MODULE_5__guards_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_6__api_service__["a" /* ApiService */]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -1055,12 +1057,12 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 172:
+/***/ 173:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__site_api_service__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__site_api_service__ = __webpack_require__(34);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SiteCodeLabComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1104,8 +1106,8 @@ var SiteCodeLabComponent = (function () {
 SiteCodeLabComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'portfolio-site-code-lab',
-        template: __webpack_require__(264),
-        styles: [__webpack_require__(248)]
+        template: __webpack_require__(265),
+        styles: [__webpack_require__(249)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__site_api_service__["a" /* SiteApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__site_api_service__["a" /* SiteApiService */]) === "function" && _a || Object])
 ], SiteCodeLabComponent);
@@ -1115,7 +1117,7 @@ var _a;
 
 /***/ }),
 
-/***/ 173:
+/***/ 174:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1141,8 +1143,8 @@ var SiteHomeComponent = (function () {
 SiteHomeComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'portfolio-site-home',
-        template: __webpack_require__(265),
-        styles: [__webpack_require__(249)]
+        template: __webpack_require__(266),
+        styles: [__webpack_require__(250)]
     }),
     __metadata("design:paramtypes", [])
 ], SiteHomeComponent);
@@ -1151,13 +1153,13 @@ SiteHomeComponent = __decorate([
 
 /***/ }),
 
-/***/ 174:
+/***/ 175:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__site_api_service__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__site_api_service__ = __webpack_require__(34);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SiteNavbarComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1198,8 +1200,8 @@ var SiteNavbarComponent = (function () {
 SiteNavbarComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'portfolio-site-navbar',
-        template: __webpack_require__(266),
-        styles: [__webpack_require__(250)]
+        template: __webpack_require__(267),
+        styles: [__webpack_require__(251)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__site_api_service__["a" /* SiteApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__site_api_service__["a" /* SiteApiService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object])
 ], SiteNavbarComponent);
@@ -1209,12 +1211,12 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 175:
+/***/ 176:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__site_api_service__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__site_api_service__ = __webpack_require__(34);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SiteViewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1238,8 +1240,8 @@ var SiteViewComponent = (function () {
 SiteViewComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'portfolio-site-view',
-        template: __webpack_require__(267),
-        styles: [__webpack_require__(251)]
+        template: __webpack_require__(268),
+        styles: [__webpack_require__(252)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__site_api_service__["a" /* SiteApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__site_api_service__["a" /* SiteApiService */]) === "function" && _a || Object])
 ], SiteViewComponent);
@@ -1249,12 +1251,12 @@ var _a;
 
 /***/ }),
 
-/***/ 176:
+/***/ 177:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__site_api_service__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__site_api_service__ = __webpack_require__(34);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SiteWorkExamplesComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1299,8 +1301,8 @@ var SiteWorkExamplesComponent = (function () {
 SiteWorkExamplesComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'portfolio-site-work-examples',
-        template: __webpack_require__(268),
-        styles: [__webpack_require__(252)]
+        template: __webpack_require__(269),
+        styles: [__webpack_require__(253)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__site_api_service__["a" /* SiteApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__site_api_service__["a" /* SiteApiService */]) === "function" && _a || Object])
 ], SiteWorkExamplesComponent);
@@ -1310,7 +1312,7 @@ var _a;
 
 /***/ }),
 
-/***/ 177:
+/***/ 178:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1318,9 +1320,9 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_routes__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__site_api_service__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_site_components_barrel__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_routes__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__site_api_service__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_site_components_barrel__ = __webpack_require__(98);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SiteModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1363,7 +1365,7 @@ SiteModule = __decorate([
 
 /***/ }),
 
-/***/ 178:
+/***/ 179:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1380,7 +1382,7 @@ var environment = {
 
 /***/ }),
 
-/***/ 237:
+/***/ 238:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)();
@@ -1398,7 +1400,7 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 238:
+/***/ 239:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)();
@@ -1416,7 +1418,7 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 239:
+/***/ 240:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)();
@@ -1434,7 +1436,7 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 240:
+/***/ 241:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)();
@@ -1452,7 +1454,7 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 241:
+/***/ 242:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)();
@@ -1470,7 +1472,7 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 242:
+/***/ 243:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)();
@@ -1488,7 +1490,7 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 243:
+/***/ 244:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)();
@@ -1506,7 +1508,7 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 244:
+/***/ 245:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)();
@@ -1524,7 +1526,7 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 245:
+/***/ 246:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)();
@@ -1542,7 +1544,7 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 246:
+/***/ 247:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)();
@@ -1560,24 +1562,6 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 247:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(7)();
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
 /***/ 248:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1586,7 +1570,7 @@ exports = module.exports = __webpack_require__(7)();
 
 
 // module
-exports.push([module.i, ".main-container {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(\"/assets/node-portfolio/images/code-lab-background.jpg\");\n  background-size: cover;\n  background-position: center;\n  background-attachment: fixed;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  min-height: 100vh;\n  width: 100%; }\n\n.main-header {\n  color: #60579C;\n  margin-top: 80px; }\n  @media (min-width: 1024px) {\n    .main-header {\n      font-size: 2.4em;\n      text-shadow: 2px 2px black; } }\n  @media (min-width: 768px) {\n    .main-header {\n      font-size: 1.8em;\n      margin-top: 100px; } }\n\n.items-container {\n  width: 100%; }\n  @media (min-width: 768px) {\n    .items-container {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -ms-flex-wrap: wrap;\n          flex-wrap: wrap;\n      max-width: 1200px; } }\n\n.item {\n  background: #1A2022;\n  margin: 30px 15px;\n  width: calc(100% - 30px); }\n  @media (min-width: 540px) {\n    .item {\n      margin: 30px auto;\n      width: 500px; } }\n  @media (min-width: 768px) {\n    .item {\n      margin: 30px auto;\n      width: calc(50% - 30px); } }\n\n.item-image-container {\n  position: relative;\n  width: 100%; }\n\n.item-image {\n  width: 100%;\n  vertical-align: bottom; }\n\n.fa-stack {\n  position: absolute;\n  top: calc(50% - 33px); }\n\n.fa-stack > a {\n  text-decoration: none; }\n\n.fa-stack:nth-of-type(odd) {\n  left: 15px; }\n\n.fa-stack:nth-of-type(even) {\n  right: 15px; }\n\n.fa-github,\n.fa-link {\n  color: #60579C;\n  transition: color 0.3s ease; }\n\n.fa-circle {\n  color: #1A2022;\n  transition: color 0.3s ease; }\n\n.fa-stack:hover .fa-github,\n.fa-stack:hover .fa-link {\n  color: #1A2022; }\n\n.fa-stack:hover .fa-circle {\n  color: #60579C; }\n\n.item-content-container {\n  color: #ddd;\n  padding: 5px;\n  text-align: center;\n  width: 100%; }\n\n.item-header {\n  margin-top: 5px; }\n\n.item-seperator {\n  border: 2px solid #60579C;\n  margin: 8px auto;\n  width: 70%; }\n\n.item-description {\n  line-height: 1.6;\n  margin: 5px 0 10px 0;\n  padding: 0 10px; }\n\n.item-technologies-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n\n.item-technology {\n  padding: 2px;\n  width: 12.5%; }\n  @media (min-width: 540px) {\n    .item-technology {\n      padding: 5px;\n      width: 10%; } }\n\n.item-technology-image {\n  width: 100%; }\n", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -1604,7 +1588,7 @@ exports = module.exports = __webpack_require__(7)();
 
 
 // module
-exports.push([module.i, ".main-container {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(\"/assets/node-portfolio/images/background.jpg\");\n  background-size: cover;\n  background-position: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  min-height: 100vh;\n  width: 100%; }\n\n.intro-container {\n  padding: 0 15px;\n  text-align: center; }\n  @media (min-width: 768px) {\n    .intro-container {\n      padding: 0 15px;\n      width: 700px; } }\n\nh1 {\n  color: #7199AD;\n  font-size: 4em;\n  margin-top: 20px;\n  margin-bottom: 10px;\n  text-align: center;\n  text-transform: uppercase; }\n  @media (min-width: 768px) {\n    h1 {\n      font-size: 6em;\n      margin-bottom: 30px; } }\n\np {\n  color: #ddd;\n  font-size: 1.2em;\n  line-height: 1.6;\n  margin-bottom: 15px; }\n  @media (min-width: 768px) {\n    p {\n      font-size: 1.5em;\n      margin-bottom: 25px; } }\n\n.work-examples,\n.code-lab,\n.css-workshop,\n.contact-me,\n.contact-me-alt {\n  cursor: pointer;\n  font-weight: bold;\n  padding: 3px 5px;\n  transition: all 0.2s ease; }\n\n.work-examples {\n  color: #B4313A; }\n\n.work-examples:hover {\n  background: #B4313A;\n  color: #1A2022; }\n\n.code-lab {\n  color: #60579C; }\n\n.code-lab:hover {\n  background: #60579C;\n  color: #1A2022; }\n\n.css-workshop {\n  color: #41683D; }\n\n.css-workshop:hover {\n  background: #41683D;\n  color: #1A2022; }\n\n.contact-me,\n.contact-me-alt {\n  color: #7199AD; }\n  @media (min-width: 768px) {\n    .contact-me,\n    .contact-me-alt {\n      font-size: 1.5em;\n      line-height: 1.6;\n      margin-bottom: 25px; } }\n\n.contact-phone {\n  color: #7199AD; }\n\n.contact-row,\n.contact-toggle {\n  display: inline; }\n\n.contact-me:hover,\n.contact-me-alt:hover {\n  background: #7199AD;\n  color: #1A2022; }\n\n.contact-me-alt {\n  display: none; }\n\n.contact-toggle:hover .contact-me {\n  display: none; }\n\n.contact-toggle:hover .contact-me-alt {\n  display: inline; }\n", ""]);
+exports.push([module.i, ".main-container {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(\"/assets/node-portfolio/images/code-lab-background.jpg\");\n  background-size: cover;\n  background-position: center;\n  background-attachment: fixed;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  min-height: 100vh;\n  width: 100%; }\n\n.main-header {\n  color: #60579C;\n  margin-top: 80px; }\n  @media (min-width: 1024px) {\n    .main-header {\n      font-size: 2.4em;\n      text-shadow: 2px 2px black; } }\n  @media (min-width: 768px) {\n    .main-header {\n      font-size: 1.8em;\n      margin-top: 100px; } }\n\n.items-container {\n  width: 100%; }\n  @media (min-width: 768px) {\n    .items-container {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -ms-flex-wrap: wrap;\n          flex-wrap: wrap;\n      max-width: 1200px; } }\n\n.item {\n  background: #1A2022;\n  margin: 30px 15px;\n  width: calc(100% - 30px); }\n  @media (min-width: 540px) {\n    .item {\n      margin: 30px auto;\n      width: 500px; } }\n  @media (min-width: 768px) {\n    .item {\n      margin: 30px auto;\n      width: calc(50% - 30px); } }\n\n.item-image-container {\n  position: relative;\n  width: 100%; }\n\n.item-image {\n  width: 100%;\n  vertical-align: bottom; }\n\n.fa-stack {\n  position: absolute;\n  top: calc(50% - 33px); }\n\n.fa-stack > a {\n  text-decoration: none; }\n\n.fa-stack:nth-of-type(odd) {\n  left: 15px; }\n\n.fa-stack:nth-of-type(even) {\n  right: 15px; }\n\n.fa-github,\n.fa-link {\n  color: #60579C;\n  transition: color 0.3s ease; }\n\n.fa-circle {\n  color: #1A2022;\n  transition: color 0.3s ease; }\n\n.fa-stack:hover .fa-github,\n.fa-stack:hover .fa-link {\n  color: #1A2022; }\n\n.fa-stack:hover .fa-circle {\n  color: #60579C; }\n\n.item-content-container {\n  color: #ddd;\n  padding: 5px;\n  text-align: center;\n  width: 100%; }\n\n.item-header {\n  margin-top: 5px; }\n\n.item-seperator {\n  border: 2px solid #60579C;\n  margin: 8px auto;\n  width: 70%; }\n\n.item-description {\n  line-height: 1.6;\n  margin: 5px 0 10px 0;\n  padding: 0 10px; }\n\n.item-technologies-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n\n.item-technology {\n  padding: 2px;\n  width: 12.5%; }\n  @media (min-width: 540px) {\n    .item-technology {\n      padding: 5px;\n      width: 10%; } }\n\n.item-technology-image {\n  width: 100%; }\n", ""]);
 
 // exports
 
@@ -1622,7 +1606,7 @@ exports = module.exports = __webpack_require__(7)();
 
 
 // module
-exports.push([module.i, ".navbar-main-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  padding: 10px;\n  position: absolute;\n  top: 0;\n  width: 100%; }\n  @media (min-width: 1024px) {\n    .navbar-main-container {\n      padding: 20px 40px; } }\n\n.navbar {\n  cursor: pointer;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex; }\n\n.fa-bars {\n  color: #7199AD;\n  font-size: 1.8em;\n  font-weight: bold;\n  padding: 5px 0 5px 5px; }\n\n.menu-toggle {\n  color: #ddd;\n  display: none;\n  font-size: 1.8em;\n  font-weight: bold;\n  padding-left: 10px;\n  transition: color 0.8s ease; }\n\n.menu-container {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  background: #7199AD;\n  bottom: 10px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  left: -100%;\n  position: fixed;\n  top: 10px;\n  transition: all 0.5s ease;\n  width: 100%;\n  z-index: 100; }\n  @media (min-width: 768px) {\n    .menu-container {\n      display: inline; } }\n  @media (min-width: 1024px) {\n    .menu-container {\n      bottom: auto;\n      padding: 60px 20px;\n      top: 20px;\n      width: auto; } }\n\n.fa-times {\n  cursor: pointer;\n  font-size: 2em;\n  left: 10px;\n  position: absolute;\n  top: 5px; }\n\n.menu-list {\n  list-style: none;\n  text-align: center; }\n\n.menu-item {\n  cursor: pointer;\n  font-size: 1.8em;\n  font-weight: 700;\n  padding: 15px 25px;\n  text-transform: uppercase;\n  transition: all 0.2s ease; }\n\n.contact-item {\n  cursor: pointer;\n  font-size: 1.4em;\n  font-weight: 700;\n  margin: 12px 0;\n  text-transform: uppercase;\n  transition: all 0.2s ease; }\n\n.menu-item:hover,\n.link-active {\n  background: #1A2022;\n  color: #ddd; }\n\n.contact-list {\n  max-height: 0;\n  list-style: none;\n  overflow: hidden;\n  transition: all 0.5s ease; }\n\n.contact-toggle:hover ~ .contact-list {\n  max-height: 100px; }\n\n.contact-list:hover {\n  max-height: 100px; }\n\n.logo-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 5px; }\n\n.logo-container > a {\n  color: #7199AD;\n  font-size: 1.8em;\n  font-weight: 900;\n  margin-right: 5px;\n  transition: color 0.8s ease; }\n\n.logo-container > p {\n  color: #ddd;\n  font-size: 1.8em;\n  font-weight: 700;\n  margin-top: -5px;\n  text-transform: uppercase; }\n\n.social-container {\n  display: none; }\n  @media (min-width: 768px) {\n    .social-container {\n      display: inline; } }\n\n.social-container > a {\n  text-decoration: none; }\n\n.fa-facebook,\n.fa-linkedin,\n.fa-github {\n  color: #ddd;\n  cursor: pointer;\n  font-size: 1.4em;\n  margin-left: 5px;\n  padding: 5px;\n  transition: color 0.3s ease; }\n  @media (min-width: 768px) {\n    .fa-facebook,\n    .fa-linkedin,\n    .fa-github {\n      font-size: 1.6em;\n      margin-left: 15px;\n      margin-top: -2px; } }\n\n.fa-facebook:hover {\n  color: #3b5998; }\n\n.fa-linkedin:hover {\n  color: #0077B5; }\n\n.fa-github:hover {\n  color: #B4313A; }\n\n.work-samples-color {\n  color: #B4313A !important; }\n\n.work-samples-background-color {\n  background: #B4313A !important; }\n\n.code-lab-color {\n  color: #60579C !important; }\n\n.code-lab-background-color {\n  background: #60579C !important; }\n\n.css-workshop-color {\n  color: #41683D !important; }\n\n.css-workshop-background-color {\n  background: #41683D !important; }\n", ""]);
+exports.push([module.i, ".main-container {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(\"/assets/node-portfolio/images/background.jpg\");\n  background-size: cover;\n  background-position: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  min-height: 100vh;\n  width: 100%; }\n\n.intro-container {\n  padding: 0 15px;\n  text-align: center; }\n  @media (min-width: 768px) {\n    .intro-container {\n      padding: 0 15px;\n      width: 700px; } }\n\nh1 {\n  color: #7199AD;\n  font-size: 4em;\n  margin-top: 20px;\n  margin-bottom: 10px;\n  text-align: center;\n  text-transform: uppercase; }\n  @media (min-width: 768px) {\n    h1 {\n      font-size: 6em;\n      margin-bottom: 30px; } }\n\np {\n  color: #ddd;\n  font-size: 1.2em;\n  line-height: 1.6;\n  margin-bottom: 15px; }\n  @media (min-width: 768px) {\n    p {\n      font-size: 1.5em;\n      margin-bottom: 25px; } }\n\n.work-examples,\n.code-lab,\n.css-workshop,\n.contact-me,\n.contact-me-alt {\n  cursor: pointer;\n  font-weight: bold;\n  padding: 3px 5px;\n  transition: all 0.2s ease; }\n\n.work-examples {\n  color: #B4313A; }\n\n.work-examples:hover {\n  background: #B4313A;\n  color: #1A2022; }\n\n.code-lab {\n  color: #60579C; }\n\n.code-lab:hover {\n  background: #60579C;\n  color: #1A2022; }\n\n.css-workshop {\n  color: #41683D; }\n\n.css-workshop:hover {\n  background: #41683D;\n  color: #1A2022; }\n\n.contact-me,\n.contact-me-alt {\n  color: #7199AD; }\n  @media (min-width: 768px) {\n    .contact-me,\n    .contact-me-alt {\n      font-size: 1.5em;\n      line-height: 1.6;\n      margin-bottom: 25px; } }\n\n.contact-phone {\n  color: #7199AD; }\n\n.contact-row,\n.contact-toggle {\n  display: inline; }\n\n.contact-me:hover,\n.contact-me-alt:hover {\n  background: #7199AD;\n  color: #1A2022; }\n\n.contact-me-alt {\n  display: none; }\n\n.contact-toggle:hover .contact-me {\n  display: none; }\n\n.contact-toggle:hover .contact-me-alt {\n  display: inline; }\n", ""]);
 
 // exports
 
@@ -1640,7 +1624,7 @@ exports = module.exports = __webpack_require__(7)();
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".navbar-main-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  padding: 10px;\n  position: absolute;\n  top: 0;\n  width: 100%; }\n  @media (min-width: 1024px) {\n    .navbar-main-container {\n      padding: 20px 40px; } }\n\n.navbar {\n  cursor: pointer;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex; }\n\n.fa-bars {\n  color: #7199AD;\n  font-size: 1.8em;\n  font-weight: bold;\n  padding: 5px 0 5px 5px; }\n\n.menu-toggle {\n  color: #ddd;\n  display: none;\n  font-size: 1.8em;\n  font-weight: bold;\n  padding-left: 10px;\n  transition: color 0.8s ease; }\n\n.menu-container {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  background: #7199AD;\n  bottom: 10px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  left: -100%;\n  position: fixed;\n  top: 10px;\n  transition: all 0.5s ease;\n  width: 100%;\n  z-index: 100; }\n  @media (min-width: 768px) {\n    .menu-container {\n      display: inline; } }\n  @media (min-width: 1024px) {\n    .menu-container {\n      bottom: auto;\n      padding: 60px 20px;\n      top: 20px;\n      width: auto; } }\n\n.fa-times {\n  cursor: pointer;\n  font-size: 2em;\n  left: 10px;\n  position: absolute;\n  top: 5px; }\n\n.menu-list {\n  list-style: none;\n  text-align: center; }\n\n.menu-item {\n  cursor: pointer;\n  font-size: 1.8em;\n  font-weight: 700;\n  padding: 15px 25px;\n  text-transform: uppercase;\n  transition: all 0.2s ease; }\n\n.contact-item {\n  cursor: pointer;\n  font-size: 1.4em;\n  font-weight: 700;\n  margin: 12px 0;\n  text-transform: uppercase;\n  transition: all 0.2s ease; }\n\n.menu-item:hover,\n.link-active {\n  background: #1A2022;\n  color: #ddd; }\n\n.contact-list {\n  max-height: 0;\n  list-style: none;\n  overflow: hidden;\n  transition: all 0.5s ease; }\n\n.contact-toggle:hover ~ .contact-list {\n  max-height: 100px; }\n\n.contact-list:hover {\n  max-height: 100px; }\n\n.logo-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 5px; }\n\n.logo-container > a {\n  color: #7199AD;\n  font-size: 1.8em;\n  font-weight: 900;\n  margin-right: 5px;\n  transition: color 0.8s ease; }\n\n.logo-container > p {\n  color: #ddd;\n  font-size: 1.8em;\n  font-weight: 700;\n  margin-top: -5px;\n  text-transform: uppercase; }\n\n.social-container {\n  display: none; }\n  @media (min-width: 768px) {\n    .social-container {\n      display: inline; } }\n\n.social-container > a {\n  text-decoration: none; }\n\n.fa-facebook,\n.fa-linkedin,\n.fa-github {\n  color: #ddd;\n  cursor: pointer;\n  font-size: 1.4em;\n  margin-left: 5px;\n  padding: 5px;\n  transition: color 0.3s ease; }\n  @media (min-width: 768px) {\n    .fa-facebook,\n    .fa-linkedin,\n    .fa-github {\n      font-size: 1.6em;\n      margin-left: 15px;\n      margin-top: -2px; } }\n\n.fa-facebook:hover {\n  color: #3b5998; }\n\n.fa-linkedin:hover {\n  color: #0077B5; }\n\n.fa-github:hover {\n  color: #B4313A; }\n\n.work-samples-color {\n  color: #B4313A !important; }\n\n.work-samples-background-color {\n  background: #B4313A !important; }\n\n.code-lab-color {\n  color: #60579C !important; }\n\n.code-lab-background-color {\n  background: #60579C !important; }\n\n.css-workshop-color {\n  color: #41683D !important; }\n\n.css-workshop-background-color {\n  background: #41683D !important; }\n", ""]);
 
 // exports
 
@@ -1658,7 +1642,7 @@ exports = module.exports = __webpack_require__(7)();
 
 
 // module
-exports.push([module.i, ".main-container {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(\"/assets/node-portfolio/images/work-examples-background.jpg\");\n  background-size: cover;\n  background-position: center;\n  background-attachment: fixed;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  min-height: 100vh;\n  width: 100%; }\n\n.main-header {\n  color: #B4313A;\n  margin-top: 80px; }\n  @media (min-width: 1024px) {\n    .main-header {\n      font-size: 2.4em;\n      text-shadow: 2px 2px black; } }\n  @media (min-width: 768px) {\n    .main-header {\n      font-size: 1.8em;\n      margin-top: 100px; } }\n\n.items-container {\n  width: 100%; }\n  @media (min-width: 768px) {\n    .items-container {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -ms-flex-wrap: wrap;\n          flex-wrap: wrap;\n      width: 100%;\n      max-width: 1200px; } }\n\n.item {\n  background: #1A2022;\n  margin: 30px 15px;\n  width: calc(100% - 30px); }\n  @media (min-width: 540px) {\n    .item {\n      margin: 30px auto;\n      width: 500px; } }\n  @media (min-width: 768px) {\n    .item {\n      margin: 30px auto;\n      width: calc(50% - 30px); } }\n\n.item-image-container {\n  position: relative;\n  width: 100%; }\n\n.item-image {\n  width: 100%;\n  vertical-align: bottom; }\n\n.fa-stack {\n  position: absolute;\n  top: calc(50% - 33px); }\n\n.fa-stack > a {\n  text-decoration: none; }\n\n.fa-stack:nth-of-type(odd) {\n  left: 15px; }\n\n.fa-stack:nth-of-type(even) {\n  right: 15px; }\n\n.fa-github,\n.fa-link {\n  color: #B4313A;\n  transition: color .3s ease; }\n\n.fa-circle {\n  color: #1A2022;\n  transition: color .3s ease; }\n\n.fa-stack:hover .fa-github,\n.fa-stack:hover .fa-link {\n  color: #1A2022; }\n\n.fa-stack:hover .fa-circle {\n  color: #B4313A; }\n\n.item-content-container {\n  color: #ddd;\n  padding: 5px;\n  text-align: center;\n  width: 100%; }\n\n.item-header {\n  margin-top: 5px; }\n\n.item-seperator {\n  border: 2px solid #B4313A;\n  margin: 8px auto;\n  width: 70%; }\n\n.item-description {\n  line-height: 1.6;\n  margin: 5px 0 10px 0;\n  padding: 0 10px; }\n\n.item-technologies-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n\n.item-technology {\n  padding: 2px;\n  width: 12.5%; }\n  @media (min-width: 540px) {\n    .item-technology {\n      padding: 5px;\n      width: 10%; } }\n\n.item-technology-image {\n  width: 100%; }\n", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -1669,111 +1653,129 @@ module.exports = module.exports.toString();
 /***/ }),
 
 /***/ 253:
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "<div class=\"main-container\">\n  <div class=\"login-form-container\">\n    <form #f=\"ngForm\" (ngSubmit)=\"login(f.value)\" class=\"login-form\">\n      <div class=\"form-row\">\n        <label for=\"email\" class=\"form-input-label\">Email: </label>\n        <input type=\"text\" class=\"form-input\" placeholder=\"YOU@YOURNAME.COM\" id=\"email\" name=\"email\" #email ngModel>\n      </div>\n      <div class=\"form-row\">\n        <label for=\"password\" class=\"form-input-label\">Password: </label>\n        <input type=\"password\" class=\"form-input\" placeholder=\"---------\" id=\"password\" name=\"password\" #password ngModel>\n      </div>\n      <div class=\"form-row\">\n        <input type=\"submit\" value=\"Login\" class=\"form-submit-button\">\n      </div>\n    </form>\n  </div>\n</div>\n"
+exports = module.exports = __webpack_require__(7)();
+// imports
+
+
+// module
+exports.push([module.i, ".main-container {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(\"/assets/node-portfolio/images/work-examples-background.jpg\");\n  background-size: cover;\n  background-position: center;\n  background-attachment: fixed;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  min-height: 100vh;\n  width: 100%; }\n\n.main-header {\n  color: #B4313A;\n  margin-top: 80px; }\n  @media (min-width: 1024px) {\n    .main-header {\n      font-size: 2.4em;\n      text-shadow: 2px 2px black; } }\n  @media (min-width: 768px) {\n    .main-header {\n      font-size: 1.8em;\n      margin-top: 100px; } }\n\n.items-container {\n  width: 100%; }\n  @media (min-width: 768px) {\n    .items-container {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -ms-flex-wrap: wrap;\n          flex-wrap: wrap;\n      width: 100%;\n      max-width: 1200px; } }\n\n.item {\n  background: #1A2022;\n  margin: 30px 15px;\n  width: calc(100% - 30px); }\n  @media (min-width: 540px) {\n    .item {\n      margin: 30px auto;\n      width: 500px; } }\n  @media (min-width: 768px) {\n    .item {\n      margin: 30px auto;\n      width: calc(50% - 30px); } }\n\n.item-image-container {\n  position: relative;\n  width: 100%; }\n\n.item-image {\n  width: 100%;\n  vertical-align: bottom; }\n\n.fa-stack {\n  position: absolute;\n  top: calc(50% - 33px); }\n\n.fa-stack > a {\n  text-decoration: none; }\n\n.fa-stack:nth-of-type(odd) {\n  left: 15px; }\n\n.fa-stack:nth-of-type(even) {\n  right: 15px; }\n\n.fa-github,\n.fa-link {\n  color: #B4313A;\n  transition: color .3s ease; }\n\n.fa-circle {\n  color: #1A2022;\n  transition: color .3s ease; }\n\n.fa-stack:hover .fa-github,\n.fa-stack:hover .fa-link {\n  color: #1A2022; }\n\n.fa-stack:hover .fa-circle {\n  color: #B4313A; }\n\n.item-content-container {\n  color: #ddd;\n  padding: 5px;\n  text-align: center;\n  width: 100%; }\n\n.item-header {\n  margin-top: 5px; }\n\n.item-seperator {\n  border: 2px solid #B4313A;\n  margin: 8px auto;\n  width: 70%; }\n\n.item-description {\n  line-height: 1.6;\n  margin: 5px 0 10px 0;\n  padding: 0 10px; }\n\n.item-technologies-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n\n.item-technology {\n  padding: 2px;\n  width: 12.5%; }\n  @media (min-width: 540px) {\n    .item-technology {\n      padding: 5px;\n      width: 10%; } }\n\n.item-technology-image {\n  width: 100%; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
 
 /***/ }),
 
 /***/ 254:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"navbar\">\n  <div class=\"logo-container\">\n    <a class=\"fa fa-bars\" (window:resize)=\"setMenuStyle()\" (click)=\"menuVisible = !menuVisible\"></a><h2 class=\"logo\">Dashboard</h2>\n  </div>\n  <ul class=\"navbar-list\" [ngStyle]=\"menuStyle()\">\n    <li class=\"navbar-item\">\n      <div class=\"navbar-item-content-container\" (click)=\"setActiveSubMenu(-1); clearComponent()\">\n        <i class=\"fa fa-home\"></i><p>Home</p>\n      </div>\n    </li>\n    <li class=\"navbar-item\">\n      <div class=\"navbar-item-content-container\" (click)=\"setActiveSubMenu(0)\">\n        <i class=\"fa fa-code\"></i><p>Work Examples</p><i class=\"fa fa-caret-down\"></i>\n      </div>\n      <ul class=\"navbar-secondary-list\" [ngStyle]=\"subMenuStyle(0)\">\n        <li class=\"navbar-secondary-item\">\n          <div class=\"navbar-secondary-item-content-container\" (click)=\"setComponent('work-examples-add')\">\n            <i class=\"fa fa-plus\"></i><p>Add</p>\n          </div>\n        </li>\n        <li class=\"navbar-secondary-item\">\n          <div class=\"navbar-secondary-item-content-container\" (click)=\"setComponent('work-examples-manage')\">\n            <i class=\"fa fa-cog\"></i><p>Manage</p>\n          </div>\n        </li>\n      </ul>\n    </li>\n    <li class=\"navbar-item\">\n      <div class=\"navbar-item-content-container\" (click)=\"setActiveSubMenu(1)\">\n        <i class=\"fa fa-terminal\"></i><p>Technologies</p><i class=\"fa fa-caret-down\"></i>\n      </div>\n      <ul class=\"navbar-secondary-list\" [ngStyle]=\"subMenuStyle(1)\">\n        <li class=\"navbar-secondary-item\">\n          <div class=\"navbar-secondary-item-content-container\" (click)=\"setComponent('technologies-add')\">\n            <i class=\"fa fa-plus\"></i><p>Add</p>\n          </div>\n        </li>\n        <li class=\"navbar-secondary-item\">\n          <div class=\"navbar-secondary-item-content-container\" (click)=\"setComponent('technologies-manage')\">\n            <i class=\"fa fa-cog\"></i><p>Manage</p>\n          </div>\n        </li>\n      </ul>\n    </li>\n    <li class=\"navbar-item\">\n      <div class=\"navbar-item-content-container\" (click)=\"setActiveSubMenu(2)\">\n        <i class=\"fa fa-css3\"></i><p>CSS Workshop</p><i class=\"fa fa-caret-down\"></i>\n      </div>\n      <ul class=\"navbar-secondary-list\" [ngStyle]=\"subMenuStyle(2)\">\n        <li class=\"navbar-secondary-item\">\n          <div class=\"navbar-secondary-item-content-container\" (click)=\"setComponent('css-workshop-add')\">\n            <i class=\"fa fa-plus\"></i><p>Add</p>\n          </div>\n        </li>\n        <li class=\"navbar-secondary-item\">\n          <div class=\"navbar-secondary-item-content-container\" (click)=\"setComponent('css-workshop-manage')\">\n            <i class=\"fa fa-cog\"></i><p>Manage</p>\n          </div>\n        </li>\n      </ul>\n    </li>\n  </ul>\n</div>\n"
+module.exports = "<div class=\"main-container\">\n  <div class=\"login-form-container\">\n    <form #f=\"ngForm\" (ngSubmit)=\"login(f.value)\" class=\"login-form\">\n      <div class=\"form-row\">\n        <label for=\"email\" class=\"form-input-label\">Email: </label>\n        <input type=\"text\" class=\"form-input\" placeholder=\"YOU@YOURNAME.COM\" id=\"email\" name=\"email\" #email ngModel>\n      </div>\n      <div class=\"form-row\">\n        <label for=\"password\" class=\"form-input-label\">Password: </label>\n        <input type=\"password\" class=\"form-input\" placeholder=\"---------\" id=\"password\" name=\"password\" #password ngModel>\n      </div>\n      <div class=\"form-row\">\n        <input type=\"submit\" value=\"Login\" class=\"form-submit-button\">\n      </div>\n    </form>\n  </div>\n</div>\n"
 
 /***/ }),
 
 /***/ 255:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"notification-bar\">\n  <div class=\"notifications-output-container\">\n    <p>Notifications: </p>\n    <flash-messages></flash-messages>\n  </div>\n  <div clas=\"actions-container\">\n    <a class=\"fa fa-cog\"></a>\n    <a class=\"fa fa-user\"></a>\n    <a class=\"fa fa-power-off\" (click)=\"logout()\"></a>\n  </div>\n</div>\n"
+module.exports = "<div class=\"navbar\">\n  <div class=\"logo-container\">\n    <a class=\"fa fa-bars\" (window:resize)=\"setMenuStyle()\" (click)=\"menuVisible = !menuVisible\"></a><h2 class=\"logo\">Dashboard</h2>\n  </div>\n  <ul class=\"navbar-list\" [ngStyle]=\"menuStyle()\">\n    <li class=\"navbar-item\">\n      <div class=\"navbar-item-content-container\" (click)=\"setActiveSubMenu(-1); clearComponent()\">\n        <i class=\"fa fa-home\"></i><p>Home</p>\n      </div>\n    </li>\n    <li class=\"navbar-item\">\n      <div class=\"navbar-item-content-container\" (click)=\"setActiveSubMenu(0)\">\n        <i class=\"fa fa-code\"></i><p>Work Examples</p><i class=\"fa fa-caret-down\"></i>\n      </div>\n      <ul class=\"navbar-secondary-list\" [ngStyle]=\"subMenuStyle(0)\">\n        <li class=\"navbar-secondary-item\">\n          <div class=\"navbar-secondary-item-content-container\" (click)=\"setComponent('work-examples-add')\">\n            <i class=\"fa fa-plus\"></i><p>Add</p>\n          </div>\n        </li>\n        <li class=\"navbar-secondary-item\">\n          <div class=\"navbar-secondary-item-content-container\" (click)=\"setComponent('work-examples-manage')\">\n            <i class=\"fa fa-cog\"></i><p>Manage</p>\n          </div>\n        </li>\n      </ul>\n    </li>\n    <li class=\"navbar-item\">\n      <div class=\"navbar-item-content-container\" (click)=\"setActiveSubMenu(1)\">\n        <i class=\"fa fa-terminal\"></i><p>Technologies</p><i class=\"fa fa-caret-down\"></i>\n      </div>\n      <ul class=\"navbar-secondary-list\" [ngStyle]=\"subMenuStyle(1)\">\n        <li class=\"navbar-secondary-item\">\n          <div class=\"navbar-secondary-item-content-container\" (click)=\"setComponent('technologies-add')\">\n            <i class=\"fa fa-plus\"></i><p>Add</p>\n          </div>\n        </li>\n        <li class=\"navbar-secondary-item\">\n          <div class=\"navbar-secondary-item-content-container\" (click)=\"setComponent('technologies-manage')\">\n            <i class=\"fa fa-cog\"></i><p>Manage</p>\n          </div>\n        </li>\n      </ul>\n    </li>\n    <li class=\"navbar-item\">\n      <div class=\"navbar-item-content-container\" (click)=\"setActiveSubMenu(2)\">\n        <i class=\"fa fa-css3\"></i><p>CSS Workshop</p><i class=\"fa fa-caret-down\"></i>\n      </div>\n      <ul class=\"navbar-secondary-list\" [ngStyle]=\"subMenuStyle(2)\">\n        <li class=\"navbar-secondary-item\">\n          <div class=\"navbar-secondary-item-content-container\" (click)=\"setComponent('css-workshop-add')\">\n            <i class=\"fa fa-plus\"></i><p>Add</p>\n          </div>\n        </li>\n        <li class=\"navbar-secondary-item\">\n          <div class=\"navbar-secondary-item-content-container\" (click)=\"setComponent('css-workshop-manage')\">\n            <i class=\"fa fa-cog\"></i><p>Manage</p>\n          </div>\n        </li>\n      </ul>\n    </li>\n  </ul>\n</div>\n"
 
 /***/ }),
 
 /***/ 256:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-container\">\n  <div class=\"navbar-container\">\n    <portfolio-admin-dashboard-navbar></portfolio-admin-dashboard-navbar>\n  </div>\n  <div class=\"output-container\">\n    <div class=\"notification-bar-container\">\n      <portfolio-admin-dashboard-notification-bar></portfolio-admin-dashboard-notification-bar>\n    </div>\n    <div class=\"dashboard-outlet-container\">\n      <router-outlet name=\"adminDashboardOutlet\"></router-outlet>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"notification-bar\">\n  <div class=\"notifications-output-container\">\n    <p>Notifications: </p>\n    <flash-messages></flash-messages>\n  </div>\n  <div clas=\"actions-container\">\n    <a class=\"fa fa-cog\"></a>\n    <a class=\"fa fa-user\"></a>\n    <a class=\"fa fa-power-off\" (click)=\"logout()\"></a>\n  </div>\n</div>\n"
 
 /***/ }),
 
 /***/ 257:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-container\">\n  <div class=\"technologies-add-container\">\n    <h2 class=\"technologies-add-header\">Add Technology</h2>\n    <form #f=\"ngForm\" (submit)=\"saveTechnology(f.value)\" class=\"technology-add-form\">\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"name\">Technology name:</label>\n        <input type=\"text\" class=\"form-input\" id=\"name\" #name name=\"name\" ngModel>\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"imageUrl\">Image url:</label>\n        <input type=\"text\" class=\"form-input\" id=\"imageUrl\" #imageUrl name=\"imageUrl\" ngModel>\n      </div>\n      <div class=\"form-row\">\n        <h3 class=\"preview-image-header\">Image preview</h3>\n        <img class=\"preview-image\" [src]=\"imageUrl.value\">\n      </div>\n      <div class=\"form-row\">\n        <p class=\"input-button input-cancel\">Cancel</p>\n        <input class=\"input-button input-submit\" type=\"submit\" value=\"Save\">\n      </div>\n    </form>\n  </div>\n</div>\n"
+module.exports = "<div class=\"main-container\">\n  <div class=\"navbar-container\">\n    <portfolio-admin-dashboard-navbar></portfolio-admin-dashboard-navbar>\n  </div>\n  <div class=\"output-container\">\n    <div class=\"notification-bar-container\">\n      <portfolio-admin-dashboard-notification-bar></portfolio-admin-dashboard-notification-bar>\n    </div>\n    <div class=\"dashboard-outlet-container\">\n      <router-outlet name=\"adminDashboardOutlet\"></router-outlet>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
 /***/ 258:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-container\">\n  <div class=\"technologies-edit-container\">\n    <h2 class=\"technologies-edit-header\">Edit Technology</h2>\n    <form #f=\"ngForm\" (submit)=\"updateTechnology(f.value, technology._id)\" class=\"technology-edit-form\" *ngIf=\"technology\">\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"name\">Technology name:</label>\n        <input type=\"text\" class=\"form-input\" id=\"name\" #name name=\"name\" ngModel=\"{{technology.name}}\">\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"imageUrl\">Image url:</label>\n        <input type=\"text\" class=\"form-input\" id=\"imageUrl\" #imageUrl name=\"imageUrl\" ngModel=\"{{technology.imageUrl}}\">\n      </div>\n      <div class=\"form-row\">\n        <h3 class=\"preview-image-header\">Image preview</h3>\n        <img class=\"preview-image\" [src]=\"imageUrl.value\">\n      </div>\n      <div class=\"form-row\">\n        <p class=\"input-button input-cancel\" (click)=\"apiService.setComponent('technologies-manage')\">Cancel</p>\n        <input class=\"input-button input-submit\" type=\"submit\" value=\"Save\">\n      </div>\n    </form>\n  </div>\n</div>\n"
+module.exports = "<div class=\"main-container\">\n  <div class=\"technologies-add-container\">\n    <h2 class=\"technologies-add-header\">Add Technology</h2>\n    <form #f=\"ngForm\" (submit)=\"saveTechnology(f.value)\" class=\"technology-add-form\">\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"name\">Technology name:</label>\n        <input type=\"text\" class=\"form-input\" id=\"name\" #name name=\"name\" ngModel>\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"imageUrl\">Image url:</label>\n        <input type=\"text\" class=\"form-input\" id=\"imageUrl\" #imageUrl name=\"imageUrl\" ngModel>\n      </div>\n      <div class=\"form-row\">\n        <h3 class=\"preview-image-header\">Image preview</h3>\n        <img class=\"preview-image\" [src]=\"imageUrl.value\">\n      </div>\n      <div class=\"form-row\">\n        <p class=\"input-button input-cancel\" (click)=\"apiService.setComponent('technologies-manage')\">Cancel</p>\n        <input class=\"input-button input-submit\" type=\"submit\" value=\"Save\">\n      </div>\n    </form>\n  </div>\n</div>\n"
 
 /***/ }),
 
 /***/ 259:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-container\">\n  <h2 class=\"technologies-manage-header\">Manage Technologies</h2>\n  <div class=\"technologies-manage-container\" *ngIf=\"technologies\">\n    <div class=\"technology\" *ngFor=\"let technology of technologies\">\n      <div class=\"technology-image-container\">\n        <img class=\"technology-image\" src=\"{{technology.imageUrl}}\" (click)=\"apiService.setComponentWithId('technologies-manage', technology._id)\">\n      </div>\n      <p class=\"technology-name\">{{technology.name}}</p>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"main-container\">\n  <div class=\"technologies-edit-container\">\n    <h2 class=\"technologies-edit-header\">Edit Technology</h2>\n    <form #f=\"ngForm\" (submit)=\"updateTechnology(f.value, technology._id)\" class=\"technology-edit-form\" *ngIf=\"technology\">\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"name\">Technology name:</label>\n        <input type=\"text\" class=\"form-input\" id=\"name\" #name name=\"name\" ngModel=\"{{technology.name}}\">\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"imageUrl\">Image url:</label>\n        <input type=\"text\" class=\"form-input\" id=\"imageUrl\" #imageUrl name=\"imageUrl\" ngModel=\"{{technology.imageUrl}}\">\n      </div>\n      <div class=\"form-row\">\n        <h3 class=\"preview-image-header\">Image preview</h3>\n        <img class=\"preview-image\" [src]=\"imageUrl.value\">\n      </div>\n      <div class=\"form-row\">\n        <p class=\"input-button input-cancel\" (click)=\"apiService.setComponent('technologies-manage')\">Cancel</p>\n        <input class=\"input-button input-submit\" type=\"submit\" value=\"Save\">\n      </div>\n    </form>\n  </div>\n</div>\n"
 
 /***/ }),
 
 /***/ 260:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-container\">\n  <div class=\"work-example-add-container\">\n    <h2 class=\"work-example-add-header\">Add Work Example</h2>\n    <form #f=\"ngForm\" (submit)=\"saveWorkExample(f.value)\" class=\"work-example-add-form\">\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"title\">Title: </label>\n        <input type=\"text\" class=\"form-input\" id=\"title\" #title name=\"title\" ngModel>\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"description\">Description: </label>\n        <input type=\"text\" class=\"form-input\" id=\"description\" #description name=\"description\" ngModel>\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"url\">Url: </label>\n        <input type=\"text\" class=\"form-input\" id=\"url\" #url name=\"url\" ngModel>\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"githubUrl\">Github: </label>\n        <input type=\"text\" class=\"form-input\" id=\"githubUrl\" #githubUrl name=\"githubUrl\" ngModel>\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"imageUrl\">Image: </label>\n        <input type=\"text\" class=\"form-input\" id=\"imageUrl\" #imageUrl name=\"imageUrl\" ngModel>\n      </div>\n      <div class=\"form-row\">\n        <p class=\"work-example-type\" (click)=\"toggleType('code-lab')\" [ngStyle]=\"typeStyle('code-lab')\">Code Lab</p>\n        <p class=\"work-example-type\" (click)=\"toggleType('work-example')\" [ngStyle]=\"typeStyle('work-example')\">Work Example</p>\n      </div>\n      <div class=\"form-row\">\n        <h3 class=\"preview-image-header\">Image preview: </h3>\n      </div>\n      <div class=\"form-row\">\n        <img class=\"preview-image\" [src]=\"imageUrl.value\">\n      </div>\n      <div class=\"form-row\">\n        <h3 class=\"technologies-header\">Technologies: </h3>\n        <div class=\"technologies-container\" *ngIf=\"technologies\">\n          <div class=\"technology\" *ngFor=\"let technology of technologies\" (click)=\"toggleTechnology(technology)\">\n            <img class=\"technology-image\" src=\"{{technology.imageUrl}}\" [ngStyle]=\"activeTechnologiesStyle(technology._id)\">\n          </div>\n        </div>\n      </div>\n      <div class=\"form-row\">\n        <p class=\"input-button input-cancel\" (click)=\"apiService.clearComponent()\">Cancel</p>\n        <input class=\"input-button input-submit\" type=\"submit\" value=\"Save\">\n      </div>\n    </form>\n  </div>\n</div>\n"
+module.exports = "<div class=\"main-container\">\n  <h2 class=\"technologies-manage-header\">Manage Technologies</h2>\n  <div class=\"technologies-manage-container\" *ngIf=\"technologies\">\n    <div class=\"technology\" *ngFor=\"let technology of technologies\">\n      <div class=\"technology-image-container\">\n        <img class=\"technology-image\" src=\"{{technology.imageUrl}}\" (click)=\"apiService.setComponentWithId('technologies-manage', technology._id)\">\n      </div>\n      <p class=\"technology-name\">{{technology.name}}</p>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
 /***/ 261:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-container\">\n  <div class=\"work-example-edit-container\">\n    <h2 class=\"work-example-edit-header\">Add Work Example</h2>\n    <form #f=\"ngForm\" (submit)=\"updateWorkExample(f.value, workExample._id)\" class=\"work-example-edit-form\" *ngIf=\"workExample\">\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"title\">Title: </label>\n        <input type=\"text\" class=\"form-input\" id=\"title\" #title name=\"title\" ngModel=\"{{workExample.title}}\">\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"description\">Description: </label>\n        <input type=\"text\" class=\"form-input\" id=\"description\" #description name=\"description\" ngModel=\"{{workExample.description}}\">\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"url\">Url: </label>\n        <input type=\"text\" class=\"form-input\" id=\"url\" #url name=\"url\" ngModel =\"{{workExample.url}}\">\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"githubUrl\">Github: </label>\n        <input type=\"text\" class=\"form-input\" id=\"githubUrl\" #githubUrl name=\"githubUrl\" ngModel =\"{{workExample.githubUrl}}\">\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"imageUrl\">Image: </label>\n        <input type=\"text\" class=\"form-input\" id=\"imageUrl\" #imageUrl name=\"imageUrl\" ngModel =\"{{workExample.imageUrl}}\">\n      </div>\n      <div class=\"form-row\">\n        <p class=\"work-example-type\" (click)=\"toggleType('code-lab')\" [ngStyle]=\"typeStyle('code-lab')\">Code Lab</p>\n        <p class=\"work-example-type\" (click)=\"toggleType('work-example')\" [ngStyle]=\"typeStyle('work-example')\">Work Example</p>\n      </div>\n      <div class=\"form-row\">\n        <h3 class=\"preview-image-header\">Image preview: </h3>\n      </div>\n      <div class=\"form-row\">\n        <img class=\"preview-image\" [src]=\"imageUrl.value\">\n      </div>\n      <div class=\"form-row\">\n        <h3 class=\"technologies-header\">Technologies: </h3>\n        <div class=\"technologies-container\" *ngIf=\"technologies\">\n          <div class=\"technology\" *ngFor=\"let technology of technologies\" (click)=\"toggleTechnology(technology)\">\n            <img class=\"technology-image\" src=\"{{technology.imageUrl}}\" [ngStyle]=\"activeTechnologiesStyle(technology._id)\">\n          </div>\n        </div>\n      </div>\n      <div class=\"form-row\">\n        <p class=\"input-button input-cancel\" (click)=\"apiService.setComponent('work-examples-manage')\">Cancel</p>\n        <input class=\"input-button input-submit\" type=\"submit\" value=\"Save\">\n      </div>\n    </form>\n  </div>\n</div>\n"
+module.exports = "<div class=\"main-container\">\n  <div class=\"work-example-add-container\">\n    <h2 class=\"work-example-add-header\">Add Work Example</h2>\n    <form #f=\"ngForm\" (submit)=\"saveWorkExample(f.value)\" class=\"work-example-add-form\">\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"title\">Title: </label>\n        <input type=\"text\" class=\"form-input\" id=\"title\" #title name=\"title\" ngModel>\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"description\">Description: </label>\n        <input type=\"text\" class=\"form-input\" id=\"description\" #description name=\"description\" ngModel>\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"url\">Url: </label>\n        <input type=\"text\" class=\"form-input\" id=\"url\" #url name=\"url\" ngModel>\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"githubUrl\">Github: </label>\n        <input type=\"text\" class=\"form-input\" id=\"githubUrl\" #githubUrl name=\"githubUrl\" ngModel>\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"imageUrl\">Image: </label>\n        <input type=\"text\" class=\"form-input\" id=\"imageUrl\" #imageUrl name=\"imageUrl\" ngModel>\n      </div>\n      <div class=\"form-row\">\n        <p class=\"work-example-type\" (click)=\"toggleType('code-lab')\" [ngStyle]=\"typeStyle('code-lab')\">Code Lab</p>\n        <p class=\"work-example-type\" (click)=\"toggleType('work-example')\" [ngStyle]=\"typeStyle('work-example')\">Work Example</p>\n      </div>\n      <div class=\"form-row\">\n        <h3 class=\"preview-image-header\">Image preview: </h3>\n      </div>\n      <div class=\"form-row\">\n        <img class=\"preview-image\" [src]=\"imageUrl.value\">\n      </div>\n      <div class=\"form-row\">\n        <h3 class=\"technologies-header\">Technologies: </h3>\n        <div class=\"technologies-container\" *ngIf=\"technologies\">\n          <div class=\"technology\" *ngFor=\"let technology of technologies\" (click)=\"toggleTechnology(technology)\">\n            <img class=\"technology-image\" src=\"{{technology.imageUrl}}\" [ngStyle]=\"activeTechnologiesStyle(technology._id)\">\n          </div>\n        </div>\n      </div>\n      <div class=\"form-row\">\n        <p class=\"input-button input-cancel\" (click)=\"apiService.clearComponent()\">Cancel</p>\n        <input class=\"input-button input-submit\" type=\"submit\" value=\"Save\">\n      </div>\n    </form>\n  </div>\n</div>\n"
 
 /***/ }),
 
 /***/ 262:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-container\">\n  <div class=\"work-examples-manage-container\">\n    <h2 class=\"work-examples-manage-header\">Manage Work Examples</h2>\n    <div class=\"work-examples-container\" *ngIf=\"workExamples\">\n      <div class=\"work-example\" *ngFor=\"let workExample of workExamples\">\n        <p class=\"work-example-title\" (click)=\"apiService.setComponentWithId('work-examples-edit', workExample._id)\">{{workExample.title}}\n        <div class=\"work-example-image-container\">\n          <img class=\"work-example-image\" src=\"{{workExample.imageUrl}}\" (click)=\"apiService.setComponentWithId('work-examples-edit', workExample._id)\">\n        </div>\n        <div class=\"technologies-container\" *ngIf=\"workExample.technologies\">\n          <img class=\"technology-image\" *ngFor=\"let technology of workExample.technologies\" src=\"{{technology.imageUrl}}\">\n        </div>\n        <div class=\"actions-container\">\n          <i class=\"fa fa-github\"></i>\n          <i class=\"fa fa-link\"></i>\n          <i class=\"fa fa-pencil\"></i>\n          <i class=\"fa fa-trash\" (click)=\"deleteWorkExample({_id: workExample._id})\"></i>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"main-container\">\n  <div class=\"work-example-edit-container\">\n    <h2 class=\"work-example-edit-header\">Add Work Example</h2>\n    <form #f=\"ngForm\" (submit)=\"updateWorkExample(f.value, workExample._id)\" class=\"work-example-edit-form\" *ngIf=\"workExample\">\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"title\">Title: </label>\n        <input type=\"text\" class=\"form-input\" id=\"title\" #title name=\"title\" ngModel=\"{{workExample.title}}\">\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"description\">Description: </label>\n        <input type=\"text\" class=\"form-input\" id=\"description\" #description name=\"description\" ngModel=\"{{workExample.description}}\">\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"url\">Url: </label>\n        <input type=\"text\" class=\"form-input\" id=\"url\" #url name=\"url\" ngModel =\"{{workExample.url}}\">\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"githubUrl\">Github: </label>\n        <input type=\"text\" class=\"form-input\" id=\"githubUrl\" #githubUrl name=\"githubUrl\" ngModel =\"{{workExample.githubUrl}}\">\n      </div>\n      <div class=\"form-row\">\n        <label class=\"form-label\" for=\"imageUrl\">Image: </label>\n        <input type=\"text\" class=\"form-input\" id=\"imageUrl\" #imageUrl name=\"imageUrl\" ngModel =\"{{workExample.imageUrl}}\">\n      </div>\n      <div class=\"form-row\">\n        <p class=\"work-example-type\" (click)=\"toggleType('code-lab')\" [ngStyle]=\"typeStyle('code-lab')\">Code Lab</p>\n        <p class=\"work-example-type\" (click)=\"toggleType('work-example')\" [ngStyle]=\"typeStyle('work-example')\">Work Example</p>\n      </div>\n      <div class=\"form-row\">\n        <h3 class=\"preview-image-header\">Image preview: </h3>\n      </div>\n      <div class=\"form-row\">\n        <img class=\"preview-image\" [src]=\"imageUrl.value\">\n      </div>\n      <div class=\"form-row\">\n        <h3 class=\"technologies-header\">Technologies: </h3>\n        <div class=\"technologies-container\" *ngIf=\"technologies\">\n          <div class=\"technology\" *ngFor=\"let technology of technologies\" (click)=\"toggleTechnology(technology)\">\n            <img class=\"technology-image\" src=\"{{technology.imageUrl}}\" [ngStyle]=\"activeTechnologiesStyle(technology._id)\">\n          </div>\n        </div>\n      </div>\n      <div class=\"form-row\">\n        <p class=\"input-button input-cancel\" (click)=\"apiService.setComponent('work-examples-manage')\">Cancel</p>\n        <input class=\"input-button input-submit\" type=\"submit\" value=\"Save\">\n      </div>\n    </form>\n  </div>\n</div>\n"
 
 /***/ }),
 
 /***/ 263:
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>\n"
+module.exports = "<div class=\"main-container\">\n  <div class=\"work-examples-manage-container\">\n    <h2 class=\"work-examples-manage-header\">Manage Work Examples</h2>\n    <div class=\"work-examples-container\" *ngIf=\"workExamples\">\n      <div class=\"work-example\" *ngFor=\"let workExample of workExamples\">\n        <p class=\"work-example-title\" (click)=\"apiService.setComponentWithId('work-examples-edit', workExample._id)\">{{workExample.title}}\n        <div class=\"work-example-image-container\">\n          <img class=\"work-example-image\" src=\"{{workExample.imageUrl}}\" (click)=\"apiService.setComponentWithId('work-examples-edit', workExample._id)\">\n        </div>\n        <div class=\"technologies-container\" *ngIf=\"workExample.technologies\">\n          <img class=\"technology-image\" *ngFor=\"let technology of workExample.technologies\" src=\"{{technology.imageUrl}}\">\n        </div>\n        <div class=\"actions-container\">\n          <i class=\"fa fa-github\"></i>\n          <i class=\"fa fa-link\"></i>\n          <i class=\"fa fa-pencil\"></i>\n          <i class=\"fa fa-trash\" (click)=\"deleteWorkExample({_id: workExample._id})\"></i>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
 /***/ 264:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-container\">\n  <h2 class=\"main-header\">Code Lab</h2>\n  <div class=\"items-container\" *ngIf=\"codelabExamples\">\n    <div class=\"item\" *ngFor=\"let example of codelabExamples\">\n      <div class=\"item-image-container\">\n        <a href=\"{{example.url}}\" target=\"_blank\"><img class=\"item-image\" src=\"{{example.imageUrl}}\"></a>\n        <span class=\"fa-stack fa-2x\">\n          <a href=\"{{example.githubUrl}}\" target=\"_blank\" class=\"fa fa-circle fa-stack-2x\"></a>\n          <a href=\"{{example.githubUrl}}\" target=\"_blank\" class=\"fa fa-github fa-stack-1x fa-inverse\"></a>\n        </span>\n        <span class=\"fa-stack fa-2x\" *ngIf=\"example.url != 'null'\">\n          <a href=\"{{example.url}}\" target=\"_blank\" class=\"fa fa-circle fa-stack-2x\"></a>\n          <a href=\"{{example.url}}\" target=\"_blank\" class=\"fa fa-link fa-stack-1x fa-inverse\"></a>\n        </span>\n      </div>\n      <div class=\"item-content-container\">\n        <div class=\"item-technologies-container\" *ngIf=\"example.technologies\">\n          <div class=\"item-technology\" *ngFor=\"let technology of example.technologies\">\n            <img class=\"item-technology-image\" src=\"{{technology.imageUrl}}\">\n          </div>\n        </div>\n        <h3 class=\"item-header\">{{example.title}}</h3>\n        <hr class=\"item-seperator\">\n        <p class=\"item-description\">{{example.description}}</p>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<router-outlet></router-outlet>\n"
 
 /***/ }),
 
 /***/ 265:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-container\">\n  <div class=\"intro-container\">\n    <h1>Hello,</h1>\n    <p>and welcome to my portfolio. My name is Stephen Wright, an aspiring front-end developer and javascript enthusiast based in Bristol.</p>\n    <p>Interesting things you'll find inside: <span class=\"work-examples\" [routerLink]=\"['/work-examples']\">work examples</span>, <span class=\"code-lab\" [routerLink]=\"['/code-lab']\">code lab</span> and a <span class=\"css-workshop\">css workshop (WIP)</span>.</p>\n    <p class=\"contact-row\">If you're hiring, feel free to </p><div class=\"contact-toggle\"><span class=\"contact-me\">get in contact</span><span class=\"contact-me-alt\">07584 132 200</span></div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"main-container\">\n  <h2 class=\"main-header\">Code Lab</h2>\n  <div class=\"items-container\" *ngIf=\"codelabExamples\">\n    <div class=\"item\" *ngFor=\"let example of codelabExamples\">\n      <div class=\"item-image-container\">\n        <a href=\"{{example.url}}\" target=\"_blank\"><img class=\"item-image\" src=\"{{example.imageUrl}}\"></a>\n        <span class=\"fa-stack fa-2x\">\n          <a href=\"{{example.githubUrl}}\" target=\"_blank\" class=\"fa fa-circle fa-stack-2x\"></a>\n          <a href=\"{{example.githubUrl}}\" target=\"_blank\" class=\"fa fa-github fa-stack-1x fa-inverse\"></a>\n        </span>\n        <span class=\"fa-stack fa-2x\" *ngIf=\"example.url != 'null'\">\n          <a href=\"{{example.url}}\" target=\"_blank\" class=\"fa fa-circle fa-stack-2x\"></a>\n          <a href=\"{{example.url}}\" target=\"_blank\" class=\"fa fa-link fa-stack-1x fa-inverse\"></a>\n        </span>\n      </div>\n      <div class=\"item-content-container\">\n        <div class=\"item-technologies-container\" *ngIf=\"example.technologies\">\n          <div class=\"item-technology\" *ngFor=\"let technology of example.technologies\">\n            <img class=\"item-technology-image\" src=\"{{technology.imageUrl}}\">\n          </div>\n        </div>\n        <h3 class=\"item-header\">{{example.title}}</h3>\n        <hr class=\"item-seperator\">\n        <p class=\"item-description\">{{example.description}}</p>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
 /***/ 266:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"navbar-main-container\">\n  <div class=\"navbar\" (click)=\"menuVisible = !menuVisible\">\n    <a class=\"fa fa-bars\"></a><p class=\"menu-toggle\">MENU</p>\n  </div>\n  <div class=\"menu-container\" (window:resize)=\"toggleMenuVisibility()\" [ngStyle]=\"toggleMenuVisibility()\">\n    <a class=\"fa fa-times\" (click)=\"menuVisible = !menuVisible\"></a>\n    <ul class=\"menu-list\">\n      <li class=\"menu-item\" (click)=\"apiService.setComponent('intro')\" routerLinkActive=\"link-active\" [routerLinkActiveOptions]=\"{exact: true}\" (click)=\"menuVisible = !menuVisible\">Home</li>\n      <li class=\"menu-item\" (click)=\"apiService.setComponent('work-examples')\" routerLinkActive=\"link-active\" (click)=\"menuVisible = !menuVisible\">Work Examples</li>\n      <li class=\"menu-item\" (click)=\"apiService.setComponent('code-lab')\" routerLinkActive=\"link-active\" (click)=\"menuVisible = !menuVisible\">Code Lab</li>\n      <li class=\"menu-item contact-toggle\">Contact</li>\n      <ul class=\"contact-list\">\n        <li class=\"contact-item\"><a class=\"fa fa-phone\"></a>: 07584132200</li>\n        <li class=\"contact-item\"><a class=\"fa fa-envelope\"></a>: sjw948@gmail.com</li>\n      </ul>\n    </ul>\n  </div>\n  <div class=\"logo-container\">\n    <a class=\"fa fa-terminal\"></a><p>Stephen</p>\n  </div>\n  <div class=\"social-container\">\n    <a class=\"fa fa-github\" href=\"https://github.com/BGZStephen\" target=\"_blank\"></a>\n    <a class=\"fa fa-linkedin\" href=\"https://www.linkedin.com/in/javascriptsteve/\" target=\"_blank\"></a>\n  </div>\n</div>\n"
+module.exports = "<div class=\"main-container\">\n  <div class=\"intro-container\">\n    <h1>Hello,</h1>\n    <p>and welcome to my portfolio. My name is Stephen Wright, an aspiring front-end developer and javascript enthusiast based in Bristol.</p>\n    <p>Interesting things you'll find inside: <span class=\"work-examples\" [routerLink]=\"['/work-examples']\">work examples</span>, <span class=\"code-lab\" [routerLink]=\"['/code-lab']\">code lab</span> and a <span class=\"css-workshop\">css workshop (WIP)</span>.</p>\n    <p class=\"contact-row\">If you're hiring, feel free to </p><div class=\"contact-toggle\"><span class=\"contact-me\">get in contact</span><span class=\"contact-me-alt\">07584 132 200</span></div>\n  </div>\n</div>\n"
 
 /***/ }),
 
 /***/ 267:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-container\">\n  <portfolio-site-navbar></portfolio-site-navbar>\n  <router-outlet name=\"siteOutlet\"></router-outlet>\n</div>\n"
+module.exports = "<div class=\"navbar-main-container\">\n  <div class=\"navbar\" (click)=\"menuVisible = !menuVisible\">\n    <a class=\"fa fa-bars\"></a><p class=\"menu-toggle\">MENU</p>\n  </div>\n  <div class=\"menu-container\" (window:resize)=\"toggleMenuVisibility()\" [ngStyle]=\"toggleMenuVisibility()\">\n    <a class=\"fa fa-times\" (click)=\"menuVisible = !menuVisible\"></a>\n    <ul class=\"menu-list\">\n      <li class=\"menu-item\" (click)=\"apiService.setComponent('intro')\" routerLinkActive=\"link-active\" [routerLinkActiveOptions]=\"{exact: true}\" (click)=\"menuVisible = !menuVisible\">Home</li>\n      <li class=\"menu-item\" (click)=\"apiService.setComponent('work-examples')\" routerLinkActive=\"link-active\" (click)=\"menuVisible = !menuVisible\">Work Examples</li>\n      <li class=\"menu-item\" (click)=\"apiService.setComponent('code-lab')\" routerLinkActive=\"link-active\" (click)=\"menuVisible = !menuVisible\">Code Lab</li>\n      <li class=\"menu-item contact-toggle\">Contact</li>\n      <ul class=\"contact-list\">\n        <li class=\"contact-item\"><a class=\"fa fa-phone\"></a>: 07584132200</li>\n        <li class=\"contact-item\"><a class=\"fa fa-envelope\"></a>: sjw948@gmail.com</li>\n      </ul>\n    </ul>\n  </div>\n  <div class=\"logo-container\">\n    <a class=\"fa fa-terminal\"></a><p>Stephen</p>\n  </div>\n  <div class=\"social-container\">\n    <a class=\"fa fa-github\" href=\"https://github.com/BGZStephen\" target=\"_blank\"></a>\n    <a class=\"fa fa-linkedin\" href=\"https://www.linkedin.com/in/javascriptsteve/\" target=\"_blank\"></a>\n  </div>\n</div>\n"
 
 /***/ }),
 
 /***/ 268:
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"main-container\">\n  <portfolio-site-navbar></portfolio-site-navbar>\n  <router-outlet name=\"siteOutlet\"></router-outlet>\n</div>\n"
+
+/***/ }),
+
+/***/ 269:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"main-container\">\n  <h2 class=\"main-header\">Work Examples</h2>\n  <div class=\"items-container\" *ngIf=\"workExamples\">\n    <div class=\"item\" *ngFor=\"let example of workExamples\">\n      <div class=\"item-image-container\">\n        <a href=\"{{example.url}}\" target=\"_blank\"><img class=\"item-image\" src=\"{{example.imageUrl}}\"></a>\n        <span class=\"fa-stack fa-2x\">\n          <a href=\"{{example.githubUrl}}\" target=\"_blank\" class=\"fa fa-circle fa-stack-2x\"></a>\n          <a href=\"{{example.githubUrl}}\" target=\"_blank\" class=\"fa fa-github fa-stack-1x fa-inverse\"></a>\n        </span>\n        <span class=\"fa-stack fa-2x\">\n          <a href=\"{{example.url}}\" target=\"_blank\" class=\"fa fa-circle fa-stack-2x\"></a>\n          <a href=\"{{example.url}}\" target=\"_blank\" class=\"fa fa-link fa-stack-1x fa-inverse\"></a>\n        </span>\n      </div>\n      <div class=\"item-content-container\">\n        <div class=\"item-technologies-container\" *ngIf=\"example.technologies\">\n          <div class=\"item-technology\" *ngFor=\"let technology of example.technologies\">\n            <img class=\"item-technology-image\" src=\"{{technology.imageUrl}}\">\n          </div>\n        </div>\n        <h3 class=\"item-header\">{{example.title}}</h3>\n        <hr class=\"item-seperator\">\n        <p class=\"item-description\">{{example.description}}</p>\n      </div>\n    </div>\n  </div>\n</div>\n"
@@ -1785,8 +1787,40 @@ module.exports = "<div class=\"main-container\">\n  <h2 class=\"main-header\">Wo
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ApiService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ApiService = (function () {
+    function ApiService() {
+        this.baseUrl = "";
+    }
+    return ApiService;
+}());
+ApiService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [])
+], ApiService);
+
+//# sourceMappingURL=api.service.js.map
+
+/***/ }),
+
+/***/ 34:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__api_service__ = __webpack_require__(33);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SiteApiService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1800,23 +1834,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var SiteApiService = (function () {
-    function SiteApiService(http, router) {
+    function SiteApiService(apiSettings, http, router) {
+        this.apiSettings = apiSettings;
         this.http = http;
         this.router = router;
-        this.baseUrl = "";
+        this.baseUrl = this.apiSettings.baseUrl;
     }
     SiteApiService.prototype.clearComponent = function () {
         this.router.navigate(['/home', { outlets: { 'siteOutlet': null } }]);
     };
     SiteApiService.prototype.loadCodeLab = function () {
-        var query = { type: "code-lab" };
-        return this.http.post(this.baseUrl + "work-examples/getByType", query)
+        return this.http.get(this.baseUrl + "work-examples?type=code-lab")
             .map(function (res) { return res.json(); });
     };
     SiteApiService.prototype.loadWorkExamples = function () {
-        var query = { type: "work-example" };
-        return this.http.post(this.baseUrl + "work-examples/getByType", query)
+        return this.http.get(this.baseUrl + "work-examples?type=work-example")
             .map(function (res) { return res.json(); });
     };
     SiteApiService.prototype.setComponent = function (component) {
@@ -1829,21 +1863,22 @@ var SiteApiService = (function () {
 }());
 SiteApiService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__api_service__["a" /* ApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__api_service__["a" /* ApiService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _c || Object])
 ], SiteApiService);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=site-api.service.js.map
 
 /***/ }),
 
-/***/ 48:
+/***/ 49:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__api_service__ = __webpack_require__(33);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TechnologiesApiService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1857,11 +1892,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var TechnologiesApiService = (function () {
-    function TechnologiesApiService(http, router) {
+    function TechnologiesApiService(apiSettings, http, router) {
+        this.apiSettings = apiSettings;
         this.http = http;
         this.router = router;
-        this.baseUrl = "";
+        this.baseUrl = this.apiSettings.baseUrl;
     }
     TechnologiesApiService.prototype.clearComponent = function () {
         this.router.navigate(['/dashboard', { outlets: { 'adminDashboardOutlet': null } }]);
@@ -1873,11 +1910,11 @@ var TechnologiesApiService = (function () {
         this.router.navigate(['/dashboard', { outlets: { 'adminDashboardOutlet': [component, id] } }]);
     };
     TechnologiesApiService.prototype.loadTechnology = function (technologyObject) {
-        return this.http.post(this.baseUrl + "technologies/getById", technologyObject)
+        return this.http.get(this.baseUrl + "technologies?_id=" + technologyObject._id)
             .map(function (res) { return res.json(); });
     };
     TechnologiesApiService.prototype.loadTechnologies = function () {
-        return this.http.get(this.baseUrl + "technologies/getAll")
+        return this.http.get(this.baseUrl + "technologies")
             .map(function (res) { return res.json(); });
     };
     TechnologiesApiService.prototype.updateTechnology = function (technologyObject) {
@@ -1892,21 +1929,22 @@ var TechnologiesApiService = (function () {
 }());
 TechnologiesApiService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__api_service__["a" /* ApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__api_service__["a" /* ApiService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _c || Object])
 ], TechnologiesApiService);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=technologies-api.service.js.map
 
 /***/ }),
 
-/***/ 49:
+/***/ 50:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__api_service__ = __webpack_require__(33);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WorkExamplesApiService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1920,11 +1958,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var WorkExamplesApiService = (function () {
-    function WorkExamplesApiService(http, router) {
+    function WorkExamplesApiService(apiSettings, http, router) {
+        this.apiSettings = apiSettings;
         this.http = http;
         this.router = router;
-        this.baseUrl = "";
+        this.baseUrl = this.apiSettings.baseUrl;
     }
     WorkExamplesApiService.prototype.clearComponent = function () {
         this.router.navigate(['/dashboard', { outlets: { 'adminDashboardOutlet': null } }]);
@@ -1934,7 +1974,7 @@ var WorkExamplesApiService = (function () {
             .map(function (res) { return res.json(); });
     };
     WorkExamplesApiService.prototype.loadTechnologies = function () {
-        return this.http.get(this.baseUrl + "technologies/getAll")
+        return this.http.get(this.baseUrl + "technologies")
             .map(function (res) { return res.json(); });
     };
     WorkExamplesApiService.prototype.loadWorkExample = function (workExampleObject) {
@@ -1963,31 +2003,32 @@ var WorkExamplesApiService = (function () {
 }());
 WorkExamplesApiService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__api_service__["a" /* ApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__api_service__["a" /* ApiService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _c || Object])
 ], WorkExamplesApiService);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=work-examples-api.service.js.map
 
 /***/ }),
 
-/***/ 534:
+/***/ 535:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(151);
+module.exports = __webpack_require__(152);
 
 
 /***/ }),
 
-/***/ 65:
+/***/ 66:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(270);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(271);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__api_service__ = __webpack_require__(33);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminDashboardApiService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2002,11 +2043,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var AdminDashboardApiService = (function () {
-    function AdminDashboardApiService(http, router) {
+    function AdminDashboardApiService(apiSettings, http, router) {
+        this.apiSettings = apiSettings;
         this.http = http;
         this.router = router;
-        this.baseUrl = "";
+        this.baseUrl = this.apiSettings.baseUrl;
     }
     AdminDashboardApiService.prototype.login = function (userObject) {
         return this.http.post(this.baseUrl + "users/authenticate", userObject)
@@ -2024,24 +2067,24 @@ var AdminDashboardApiService = (function () {
 }());
 AdminDashboardApiService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__api_service__["a" /* ApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__api_service__["a" /* ApiService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === "function" && _c || Object])
 ], AdminDashboardApiService);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=admin-dashboard-api.service.js.map
 
 /***/ }),
 
-/***/ 66:
+/***/ 67:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__guards_auth_guard__ = __webpack_require__(96);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__admin_dashboard_components_admin_dashboard_components_barrel__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__admin_dashboard_technologies_components_technologies_components_barrel__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__admin_dashboard_work_examples_components_work_examples_components_barrel__ = __webpack_require__(95);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__site_components_site_components_barrel__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__guards_auth_guard__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__admin_dashboard_components_admin_dashboard_components_barrel__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__admin_dashboard_technologies_components_technologies_components_barrel__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__admin_dashboard_work_examples_components_work_examples_components_barrel__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__site_components_site_components_barrel__ = __webpack_require__(98);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return router; });
 
 
@@ -2075,13 +2118,13 @@ var router = __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* RouterModule *
 
 /***/ }),
 
-/***/ 93:
+/***/ 94:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__admin_dashboard_view_admin_dashboard_view_component__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__admin_dashboard_view_admin_dashboard_view_component__ = __webpack_require__(161);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__admin_dashboard_view_admin_dashboard_view_component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__admin_dashboard_login_admin_dashboard_login_component__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__admin_dashboard_login_admin_dashboard_login_component__ = __webpack_require__(158);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__admin_dashboard_login_admin_dashboard_login_component__["a"]; });
 
 
@@ -2089,15 +2132,15 @@ var router = __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* RouterModule *
 
 /***/ }),
 
-/***/ 94:
+/***/ 95:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__technologies_add_technologies_add_component__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__technologies_add_technologies_add_component__ = __webpack_require__(163);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__technologies_add_technologies_add_component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__technologies_manage_technologies_manage_component__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__technologies_manage_technologies_manage_component__ = __webpack_require__(165);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__technologies_manage_technologies_manage_component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__technologies_edit_technologies_edit_component__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__technologies_edit_technologies_edit_component__ = __webpack_require__(164);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__technologies_edit_technologies_edit_component__["a"]; });
 
 
@@ -2106,15 +2149,15 @@ var router = __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* RouterModule *
 
 /***/ }),
 
-/***/ 95:
+/***/ 96:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__work_examples_add_work_examples_add_component__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__work_examples_add_work_examples_add_component__ = __webpack_require__(167);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__work_examples_add_work_examples_add_component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__work_examples_manage_work_examples_manage_component__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__work_examples_manage_work_examples_manage_component__ = __webpack_require__(169);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__work_examples_manage_work_examples_manage_component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__work_examples_edit_work_examples_edit_component__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__work_examples_edit_work_examples_edit_component__ = __webpack_require__(168);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__work_examples_edit_work_examples_edit_component__["a"]; });
 
 
@@ -2123,13 +2166,13 @@ var router = __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* RouterModule *
 
 /***/ }),
 
-/***/ 96:
+/***/ 97:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_jwt__ = __webpack_require__(183);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_jwt__ = __webpack_require__(184);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_jwt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_jwt__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthGuard; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2169,19 +2212,19 @@ var _a;
 
 /***/ }),
 
-/***/ 97:
+/***/ 98:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__site_view_site_view_component__ = __webpack_require__(175);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__site_view_site_view_component__ = __webpack_require__(176);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__site_view_site_view_component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__site_home_site_home_component__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__site_home_site_home_component__ = __webpack_require__(174);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__site_home_site_home_component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__site_code_lab_site_code_lab_component__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__site_code_lab_site_code_lab_component__ = __webpack_require__(173);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_2__site_code_lab_site_code_lab_component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__site_work_examples_site_work_examples_component__ = __webpack_require__(176);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__site_work_examples_site_work_examples_component__ = __webpack_require__(177);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_3__site_work_examples_site_work_examples_component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__site_navbar_site_navbar_component__ = __webpack_require__(174);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__site_navbar_site_navbar_component__ = __webpack_require__(175);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_4__site_navbar_site_navbar_component__["a"]; });
 
 
@@ -2192,5 +2235,5 @@ var _a;
 
 /***/ })
 
-},[534]);
+},[535]);
 //# sourceMappingURL=main.bundle.js.map

@@ -15,7 +15,7 @@
         <img class="preview-image" [src]="imageUrl.value">
       </div>
       <div class="form-row">
-        <p class="input-button input-cancel">Cancel</p>
+        <p class="input-button input-cancel" (click)="apiService.setComponent('technologies-manage')">Cancel</p>
         <input class="input-button input-submit" type="submit" value="Save">
       </div>
     </form>

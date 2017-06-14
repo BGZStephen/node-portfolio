@@ -6,6 +6,17 @@ const router = express.Router();
 const config = require('../config/database');
 const Technology = require('../models/technology');
 
+router.get("", (req, res, next) => {
+
+  Technology.get(req.query)
+  .then(result => {
+    res.json(result)
+  }).catch(error => {
+    console.log(error)
+    res.json({success: false, message: error.message})
+  })
+})
+
 router.post("/create", (req, res, next) => {
   let technologyObject = new Technology({
     createdOn: new Date(),

@@ -7,9 +7,8 @@ const config = require('../config/database');
 const WorkExample = require('../models/work-example');
 
 router.get("", (req, res, next) => {
-  console.log(req.query)
 
-  WorkExample.getByType(req.query)
+  WorkExample.get(req.query)
   .then(result => {
     res.json(result)
   }).catch(error => {
@@ -45,45 +44,6 @@ router.post("/deleteOne", (req, res, next) => {
   }
 
   WorkExample.deleteOne(workExampleObject)
-  .then(result => {
-    res.json(result)
-  }).catch(error => {
-    console.log(error)
-    res.json({success: false, message: error.message})
-  })
-})
-
-router.get("/getAll", (req, res, next) => {
-
-  WorkExample.getAll()
-  .then(result => {
-    res.json(result)
-  }).catch(error => {
-    console.log(error)
-    res.json({success: false, message: error.message})
-  })
-})
-
-router.post("/getById", (req, res, next) => {
-  let workExampleObject = {
-    _id: req.body._id
-  }
-
-  WorkExample.getOne(workExampleObject)
-  .then(result => {
-    res.json(result)
-  }).catch(error => {
-    console.log(error)
-    res.json({success: false, message: error.message})
-  })
-})
-
-router.post("/getByType", (req, res, next) => {
-  let workExampleObject = {
-    type: req.body.type
-  }
-
-  WorkExample.getByType(workExampleObject)
   .then(result => {
     res.json(result)
   }).catch(error => {

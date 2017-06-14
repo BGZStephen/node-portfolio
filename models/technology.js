@@ -33,21 +33,9 @@ module.exports.deleteOne = function(technologyObject) {
   })
 }
 
-module.exports.getAll = function() {
+module.exports.get = function(technologyObject) {
   return new Promise((resolve, reject) => {
-    Technology.find({}).then(result => {
-      if(result.length == 0) {
-        reject({success: false, message: "Work examples not found", data: result})
-      } else {
-        resolve({success: true, message: "Work examples found", data: result})
-      }
-    })
-  })
-}
-
-module.exports.getOne = function(technologyObject) {
-  return new Promise((resolve, reject) => {
-    Technology.findOne(technologyObject).then(result => {
+    Technology.find(technologyObject).then(result => {
       if(result == null) {
         reject({success: false, message: "Technology not found, does it exist?", data: result})
       } else {
