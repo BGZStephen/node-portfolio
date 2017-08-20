@@ -5,9 +5,9 @@ var helpers = require('./helpers');
 
 module.exports = {
   entry: {
-    'polyfills': './polyfills.ts',
-    'vendor': './vendor.ts',
-    'app': './main.ts'
+    'polyfills': './src/polyfills.ts',
+    'vendor': './src/vendor.ts',
+    'app': './src/main.ts'
   },
 
   resolve: {
@@ -26,6 +26,16 @@ module.exports = {
         ]
       },
       {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['env']
+          }
+        }
+      },
+      {
         test: /\.html$/,
         loader: 'html-loader'
       },
@@ -35,14 +45,24 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        exclude: helpers.root('angular-src', 'app'),
-        loader: 'css-loader?sourceMap'
+        exclude: helpers.root('src', 'app'),
+        loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
       },
       {
         test: /\.css$/,
-        include: helpers.root('angular-src', 'app'),
+        include: helpers.root('src', 'app'),
         loader: 'raw-loader'
-      }
+      },
+      {
+        test: /\.scss$/,
+        use: [{
+            loader: "style-loader" // creates style nodes from JS strings
+        }, {
+            loader: "css-loader" // translates CSS into CommonJS
+        }, {
+            loader: "sass-loader" // compiles Sass to CSS
+        }]
+      },
     ]
   },
 
@@ -51,7 +71,7 @@ module.exports = {
     new webpack.ContextReplacementPlugin(
       // The (\\|\/) piece accounts for path separators in *nix and Windows
       /angular(\\|\/)core(\\|\/)@angular/,
-      helpers.root('./'), // location of your src
+      helpers.root('./src'), // location of your src
       {} // a map of your routes
     ),
 
@@ -60,7 +80,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      template: './index.html'
+      template: 'src/index.html'
     })
   ]
 };
