@@ -11,7 +11,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.ts', '.js']
+    extensions: ['.ts', '.js', '.json', '.css', '.scss', '.html']
   },
 
   module: {
@@ -44,19 +44,12 @@ module.exports = {
         loader: 'file-loader?name=assets/[name]-[hash].[ext]'
       },
       {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract({ loader: [{ loader: "css-loader" }, { loader: "postcss-loader" } ]})
+      },
+      {
         test: /\.scss$/,
-        include: helpers.root('src'),
-        loader: ['css-to-string-loader','css-loader','sass-loader']
-      },
-      {
-        test: /\.css$/,
-        exclude: helpers.root('src'),
-        loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
-      },
-      {
-        test: /\.css$/,
-        include: helpers.root('src'),
-        loader: ['css-to-string-loader','css-loader']
+        loader: ExtractTextPlugin.extract({ loader: [{ loader: "css-loader" }, { loader: "sass-loader" } ] })
       }
     ]
   },
@@ -66,7 +59,7 @@ module.exports = {
     new webpack.ContextReplacementPlugin(
       // The (\\|\/) piece accounts for path separators in *nix and Windows
       /angular(\\|\/)core(\\|\/)@angular/,
-      helpers.root('./src'), // location of your src
+      helpers.root('../src'), // location of your src
       {} // a map of your routes
     ),
 
