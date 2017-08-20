@@ -3,7 +3,7 @@ const await = require('asyncawait/await');
 const mongoose = require('mongoose')
 const express = require('express');
 const router = express.Router();
-const config = require('../config/database');
+const config = require('../config');
 const Technology = require('../models/technology');
 
 router.get("", (req, res, next) => {
