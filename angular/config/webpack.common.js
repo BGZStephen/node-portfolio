@@ -41,28 +41,23 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-        loader: 'file-loader?name=assets/[name].[hash].[ext]'
+        loader: 'file-loader?name=assets/[name]-[hash].[ext]'
+      },
+      {
+        test: /\.scss$/,
+        include: helpers.root('src'),
+        loader: ['css-to-string-loader','css-loader','sass-loader']
       },
       {
         test: /\.css$/,
-        exclude: helpers.root('src', 'app'),
+        exclude: helpers.root('src'),
         loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
       },
       {
         test: /\.css$/,
-        include: helpers.root('src', 'app'),
-        loader: 'raw-loader'
-      },
-      {
-        test: /\.scss$/,
-        use: [{
-            loader: "style-loader" // creates style nodes from JS strings
-        }, {
-            loader: "css-loader" // translates CSS into CommonJS
-        }, {
-            loader: "sass-loader" // compiles Sass to CSS
-        }]
-      },
+        include: helpers.root('src'),
+        loader: ['css-to-string-loader','css-loader']
+      }
     ]
   },
 

@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/nodejs /usr/share/yarn/bin/yarn.js start
+  /usr/bin/nodejs /usr/share/yarn/bin/yarn.js add angular2-jwt
 
 PATH: 
   /home/stephen/bin:/home/stephen/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
@@ -5248,10 +5248,4 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.8.16.tgz#ac31b6c418f88c0f918ad6acd8a402aca9313abb"
 
 Trace: 
-  SyntaxError: /home/stephen/Downloads/node-portfolio/package.json: Unexpected end of JSON input
-      at JSON.parse (<anonymous>)
-      at /usr/share/yarn/lib/yarn-cli.js:747:57
-      at Generator.next (<anonymous>)
-      at step (/usr/share/yarn/lib/yarn-cli.js:91:30)
-      at /usr/share/yarn/lib/yarn-cli.js:102:13
-      at <anonymous>
+  Error: EACCES: permission denied, unlink '/home/stephen/Downloads/node-portfolio/angular/node_modules/.yarn-integrity'

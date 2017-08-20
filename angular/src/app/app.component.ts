@@ -3,8 +3,10 @@ import { Component } from '@angular/core';
 import '../assets/sass/styles.scss';
 
 @Component({
-  selector: 'my-app',
+  selector: 'portfolio-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent { }
+export class AppComponent {
+  title = 'portfolio works!';
+}
