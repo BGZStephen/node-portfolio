@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "dev": "nodemon ./node-src/app.js & webpack-dev-server --progress --colors"
+    "dev": "NODE_ENV=development webpack-dev-server --progress --colors --env=development & nodemon ./node-src/app.js &"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/BGZStephen/node-portfolio#readme",
   "dependencies": {
     "css-loader": "^0.28.5",
+    "file-loader": "^0.11.2",
     "global": "^4.3.2",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
