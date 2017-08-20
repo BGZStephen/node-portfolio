@@ -1,0 +1,78 @@
+@import '../../../../assets/sass/styles';
+
+.main-container {
+  align-items: center;
+  background: $dashboard-primary-blue-grey;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 10px;
+  width: 100%;
+}
+
+.login-form-container {
+  margin: 0 auto;
+  width: 700px;
+}
+
+.login-form {
+  width: 100%;
+}
+
+.form-row {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.form-input-label {
+  color: $dashboard-primary-yellow;
+  font-size: 1.7em;
+  font-weight: 900;
+  margin-bottom: 15px;
+  margin-top: -3px;
+  padding-right: 15px;
+  text-transform: uppercase;
+  width: 100%;
+  @media(min-width: 768px) {
+    font-size: 2.2em;
+    margin-bottom: 0;
+    text-align: right;
+    width: 50%;
+  }
+}
+
+.form-input {
+  background: none;
+  border: none;
+  border-bottom: 4px solid $dashboard-primary-yellow;
+  color: $dashboard-primary-yellow;
+  font-size: 1.5em;
+  font-weight: 900;
+  margin-bottom: 15px;
+  padding-bottom: 4px;
+  width: 100%;
+  @media(min-width: 768px) {
+    font-size: 1.8em;
+    margin-bottom: 0;
+    width: 50%;
+  }
+}
+
+.form-submit-button {
+  background: $dashboard-primary-yellow;
+  border: none;
+  color: $dashboard-primary-blue-grey;
+  font-size: 1.8em;
+  font-weight: 900;
+  margin: 0 auto;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  @media(min-width: 768px) {
+    margin: 15px auto 0;
+    font-size: 1.8em;
+    margin-bottom: 0;
+  }
+}

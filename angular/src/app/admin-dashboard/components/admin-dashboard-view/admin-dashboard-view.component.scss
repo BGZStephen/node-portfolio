@@ -1,0 +1,33 @@
+@import '../../../../assets/sass/styles';
+
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.navbar-container {
+  width: 100%;
+  @media (min-width: 1024px) {
+    width: 280px;
+  }
+}
+
+.output-container {
+  width: 100%;
+  @media (min-width: 1024px) {
+    width: calc(100% - 280px);
+  }
+}
+
+.notification-bar-container {
+  width: 100%;
+}
+
+.dashboard-outlet-container {
+  min-height: calc(100vh - 100px);
+  width: 100%;
+  @media(min-width: 1024px) {
+    min-height: calc(100vh - 50px);
+  }
+}
