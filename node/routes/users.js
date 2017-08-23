@@ -8,6 +8,10 @@ const config = require('../config');
 const User = require('../models/user');
 
 router.post("/authenticate", (req, res, next) => {
+  if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
+    return res.status(401).json({error: "Authorisation token not supplied"})
+  }
+
   let userObject = {
     email: req.body.email,
     password: req.body.password
@@ -40,6 +44,10 @@ router.post("/authenticate", (req, res, next) => {
 })
 
 router.post("/create", (req, res, next) => {
+  if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
+    return res.status(401).json({error: "Authorisation token not supplied"})
+  }
+
   let userObject = new User({
     createdOn: new Date(),
     email: req.body.email,
@@ -65,6 +73,9 @@ router.post("/create", (req, res, next) => {
 })
 
 router.post("/deleteOne", (req, res, next) => {
+  if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
+    return res.status(401).json({error: "Authorisation token not supplied"})
+  }
   let userObject = {
     _id: req.body.userId,
   }
@@ -84,6 +95,9 @@ router.post("/deleteOne", (req, res, next) => {
 })
 
 router.get("/getAll", (req, res, next) => {
+  if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
+    return res.status(401).json({error: "Authorisation token not supplied"})
+  }
 
   User.getAll()
   .then(result => {
@@ -95,6 +109,10 @@ router.get("/getAll", (req, res, next) => {
 })
 
 router.post("/getEmail", (req, res, next) => {
+  if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
+    return res.status(401).json({error: "Authorisation token not supplied"})
+  }
+
   let userObject = {
     email: req.body.email,
   }
@@ -109,6 +127,10 @@ router.post("/getEmail", (req, res, next) => {
 })
 
 router.post("/getUserById", (req, res, next) => {
+  if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
+    return res.status(401).json({error: "Authorisation token not supplied"})
+  }
+
   let userObject = {
     _id: req.body.userId,
   }
@@ -123,6 +145,10 @@ router.post("/getUserById", (req, res, next) => {
 })
 
 router.post("/getByUsername", (req, res, next) => {
+  if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
+    return res.status(401).json({error: "Authorisation token not supplied"})
+  }
+
   let userObject = {
     username: req.body.username,
   }
@@ -137,6 +163,10 @@ router.post("/getByUsername", (req, res, next) => {
 })
 
 router.post("/update", (req, res, next) => {
+  if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
+    return res.status(401).json({error: "Authorisation token not supplied"})
+  }
+
   let userObject = {
     _id: req.body.userId,
     email: req.body.email,
@@ -155,6 +185,10 @@ router.post("/update", (req, res, next) => {
 })
 
 router.post("/updatePassword", (req, res, next) => {
+  if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
+    return res.status(401).json({error: "Authorisation token not supplied"})
+  }
+
   let userObject = {
     _id: req.body.userId,
     queryPassword: req.body.currentPassword,

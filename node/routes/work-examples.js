@@ -7,6 +7,9 @@ const config = require('../config');
 const WorkExample = require('../models/work-example');
 
 router.get("", (req, res, next) => {
+  if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
+    return res.status(401).json({error: "Authorisation token not supplied"})
+  }
 
   WorkExample.get(req.query)
   .then(result => {
@@ -18,6 +21,10 @@ router.get("", (req, res, next) => {
 })
 
 router.post("/create", (req, res, next) => {
+  if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
+    return res.status(401).json({error: "Authorisation token not supplied"})
+  }
+
   let workExampleObject = new WorkExample({
     createdOn: new Date(),
     description: req.body.description,
@@ -39,6 +46,10 @@ router.post("/create", (req, res, next) => {
 })
 
 router.post("/deleteOne", (req, res, next) => {
+  if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
+    return res.status(401).json({error: "Authorisation token not supplied"})
+  }
+
   let workExampleObject = {
     _id: req.body._id
   }
@@ -53,6 +64,10 @@ router.post("/deleteOne", (req, res, next) => {
 })
 
 router.post("/update", (req, res, next) => {
+  if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
+    return res.status(401).json({error: "Authorisation token not supplied"})
+  }
+
   let workExampleObject = {
     _id: req.body._id,
     description: req.body.description,

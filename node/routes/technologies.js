@@ -7,6 +7,9 @@ const config = require('../config');
 const Technology = require('../models/technology');
 
 router.get("", (req, res, next) => {
+  if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
+    return res.status(401).json({error: "Authorisation token not supplied"})
+  }
 
   Technology.get(req.query)
   .then(result => {
@@ -18,6 +21,10 @@ router.get("", (req, res, next) => {
 })
 
 router.post("/create", (req, res, next) => {
+  if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
+    return res.status(401).json({error: "Authorisation token not supplied"})
+  }
+
   let technologyObject = new Technology({
     createdOn: new Date(),
     imageUrl: req.body.imageUrl,
@@ -34,6 +41,10 @@ router.post("/create", (req, res, next) => {
 })
 
 router.post("/deleteOne", (req, res, next) => {
+  if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
+    return res.status(401).json({error: "Authorisation token not supplied"})
+  }
+
   let technologyObject = {
     _id: req.body.technologyId
   }
@@ -48,6 +59,9 @@ router.post("/deleteOne", (req, res, next) => {
 })
 
 router.get("/getAll", (req, res, next) => {
+  if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
+    return res.status(401).json({error: "Authorisation token not supplied"})
+  }
 
   Technology.getAll()
   .then(result => {
@@ -59,6 +73,10 @@ router.get("/getAll", (req, res, next) => {
 })
 
 router.post("/getById", (req, res, next) => {
+  if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
+    return res.status(401).json({error: "Authorisation token not supplied"})
+  }
+
   let technologyObject = {
     _id: req.body.technologyId,
   }
@@ -73,6 +91,10 @@ router.post("/getById", (req, res, next) => {
 })
 
 router.post("/update", (req, res, next) => {
+  if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
+    return res.status(401).json({error: "Authorisation token not supplied"})
+  }
+
   let technologyObject = {
     _id: req.body._id,
     imageUrl: req.body.imageUrl,
