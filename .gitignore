@@ -8,3 +8,5 @@ angular-src/src/assets/
 public/assets/
 
 node/config/
+
+angular/src/environments/

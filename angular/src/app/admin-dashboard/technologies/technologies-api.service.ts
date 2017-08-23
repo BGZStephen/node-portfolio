@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router } from "@angular/router"
-import { Http } from "@angular/http"
+import { Http, Headers } from "@angular/http"
 import { ApiService } from "../../api.service"
+import { environment } from '../../../environments/environment'
 
 @Injectable()
 export class TechnologiesApiService {
@@ -13,6 +14,7 @@ export class TechnologiesApiService {
   ) { }
 
   baseUrl: string = this.apiSettings.baseUrl
+  authorization: String = environment.authorization
 
   clearComponent() {
     this.router.navigate(['/dashboard', {outlets: {'adminDashboardOutlet': null}}]);
@@ -27,22 +29,30 @@ export class TechnologiesApiService {
   }
 
   loadTechnology(technologyObject) {
-    return this.http.get(this.baseUrl + "technologies?_id=" + technologyObject._id)
+    let headers = new Headers()
+    headers.append('Authorization', `${this.authorization}`)
+    return this.http.get(this.baseUrl + "technologies?_id=" + technologyObject._id, {headers: headers})
     .map(res => res.json())
   }
 
   loadTechnologies() {
-    return this.http.get(this.baseUrl + "technologies")
+    let headers = new Headers()
+    headers.append('Authorization', `${this.authorization}`)
+    return this.http.get(this.baseUrl + "technologies", {headers: headers})
     .map(res => res.json())
   }
 
   updateTechnology(technologyObject) {
-    return this.http.post(this.baseUrl + "technologies/update", technologyObject)
+    let headers = new Headers()
+    headers.append('Authorization', `${this.authorization}`)
+    return this.http.post(this.baseUrl + "technologies/update", technologyObject, {headers: headers})
     .map(res => res.json())
   }
 
   saveTechnology(technologyObject) {
-    return this.http.post(this.baseUrl + "technologies/create", technologyObject)
+    let headers = new Headers()
+    headers.append('Authorization', `${this.authorization}`)
+    return this.http.post(this.baseUrl + "technologies/create", technologyObject, {headers: headers})
     .map(res => res.json())
   }
 
