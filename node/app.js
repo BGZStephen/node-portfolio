@@ -32,13 +32,11 @@ app.use(express.static(path.join(__dirname, '../public')))
 app.use(bodyParser.json())
 
 // routing
-const users = require("./routes/users")
-const workExamples = require("./routes/work-examples")
-const technologies = require("./routes/technologies")
+const PUBLIC_ROUTES = require("./routes/public")
+const PRIVATE_ROUTES= require("./routes/private")
 
-app.use('/users', users)
-app.use('/work-examples', workExamples)
-app.use('/technologies', technologies)
+app.use('/', PUBLIC_ROUTES)
+app.use('/', PRIVATE_ROUTES)
 
 
 // default route

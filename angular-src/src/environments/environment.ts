@@ -5,6 +5,6 @@
 
 export const environment = {
   api: 'http://localhost:3000',
-  apiSecret: 'API_SECRET',
+  apiSecret: 'smMsavyzFEWh',
   production: false
 };
