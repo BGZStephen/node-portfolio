@@ -1,12 +1,8 @@
-const async = require('asyncawait/async');
-const await = require('asyncawait/await');
 const mongoose = require('mongoose')
-const express = require('express');
-const router = express.Router();
-const config = require('../config');
-const Technology = require('../models/technology');
+const config = require('../../config');
+const Technology = require('../../models/technology');
 
-router.get("", (req, res, next) => {
+async function getAll (req, res, next) {
   if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
     return res.status(401).json({error: "Authorisation token not supplied"})
   }
@@ -18,9 +14,9 @@ router.get("", (req, res, next) => {
     console.log(error)
     res.json({success: false, message: error.message})
   })
-})
+}
 
-router.post("/create", (req, res, next) => {
+async function create (req, res, next) {
   if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
     return res.status(401).json({error: "Authorisation token not supplied"})
   }
@@ -38,9 +34,9 @@ router.post("/create", (req, res, next) => {
     console.log(error)
     res.json({success: false, message: error.message})
   })
-})
+}
 
-router.post("/deleteOne", (req, res, next) => {
+async function deleteOne (req, res, next) {
   if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
     return res.status(401).json({error: "Authorisation token not supplied"})
   }
@@ -56,23 +52,9 @@ router.post("/deleteOne", (req, res, next) => {
     console.log(error)
     res.json({success: false, message: error.message})
   })
-})
+}
 
-router.get("/getAll", (req, res, next) => {
-  if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
-    return res.status(401).json({error: "Authorisation token not supplied"})
-  }
-
-  Technology.getAll()
-  .then(result => {
-    res.json(result)
-  }).catch(error => {
-    console.log(error)
-    res.json({success: false, message: error.message})
-  })
-})
-
-router.post("/getById", (req, res, next) => {
+async function getOne (req, res, next) {
   if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
     return res.status(401).json({error: "Authorisation token not supplied"})
   }
@@ -88,9 +70,9 @@ router.post("/getById", (req, res, next) => {
     console.log(error)
     res.json({success: false, message: error.message})
   })
-})
+}
 
-router.post("/update", (req, res, next) => {
+async function update (req, res, next) {
   if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
     return res.status(401).json({error: "Authorisation token not supplied"})
   }
@@ -108,6 +90,4 @@ router.post("/update", (req, res, next) => {
     console.log(error)
     res.json({success: false, message: error.message})
   })
-})
-
-module.exports = router
+}

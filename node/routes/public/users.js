@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken')
 const config = require('../../config');
 const User = require('../../models/user');
 
-router.post("/authenticate", (req, res, next) => {
+async function authenticate (req, res, next) {
   if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
     return res.status(401).json({error: "Authorisation token not supplied"})
   }
@@ -13,17 +13,17 @@ router.post("/authenticate", (req, res, next) => {
     password: req.body.password
   }
 
-  let authenticateUser = async (function (userObject) {
-    let userResult = await(User.getOne({email: userObject.email}));
-    userObject.userId = userResult.data._id
-    userObject.username = userResult.data.username
-    return User.comparePassword({queryPassword: userObject.password, password: userResult.data.password});
-  })
 
-  authenticateUser(userObject)
-  .then(() => {
+  let userResult = await(User.getOne({email: userObject.email}));
+  userObject.userId = userResult.data._id
+  userObject.username = userResult.data.username
+
+  await User.comparePassword({queryPassword: userObject.password, password: userResult.data.password});
+
+
+  try {
     const token = jwt.sign(userObject, config.secret, {expiresIn: 604800});
-    return res.json({
+    res.json({
       success: true,
       message: "Authentication successful",
       token: "JWT" + token,
@@ -33,13 +33,13 @@ router.post("/authenticate", (req, res, next) => {
         username: userObject.username
       }
     })
-  }).catch(error => {
+  } catch(error) {
     console.log(error)
     res.json({success: false, message: error.message})
-  })
-})
+  }
+}
 
-router.post("/create", (req, res, next) => {
+async function create (req, res, next) {
   if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
     return res.status(401).json({error: "Authorisation token not supplied"})
   }
@@ -66,4 +66,9 @@ router.post("/create", (req, res, next) => {
     console.log(error)
     res.json({success: false, message: error.message})
   })
-})
+}
+
+module.exports = {
+  authenticate,
+  create,
+}

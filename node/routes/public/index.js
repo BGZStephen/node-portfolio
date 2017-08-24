@@ -3,6 +3,6 @@ const router = require('express').Router()
 const Users = require('./users');
 
 router.post("users/authenticate", Users.authenticate);
-router.put("users", Users.update);
+router.post("users", Users.create);
 
 module.exports = router
