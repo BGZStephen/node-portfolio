@@ -7,13 +7,14 @@ async function getAll (req, res, next) {
     return res.status(401).json({error: "Authorisation token not supplied"})
   }
 
-  Technology.get(req.query)
-  .then(result => {
-    res.json(result)
-  }).catch(error => {
+
+  try {
+    const technology = await Technology.get(req.query)
+    res.json(technology)
+  } catch (error) {
     console.log(error)
-    res.json({success: false, message: error.message})
-  })
+    res.sendStatus(500)
+  }
 }
 
 async function create (req, res, next) {
@@ -21,19 +22,19 @@ async function create (req, res, next) {
     return res.status(401).json({error: "Authorisation token not supplied"})
   }
 
-  let technologyObject = new Technology({
+  const technologyObject = new Technology({
     createdOn: new Date(),
     imageUrl: req.body.imageUrl,
     name: req.body.name
   })
 
-  Technology.create(technologyObject)
-  .then(result => {
-    res.json(result)
-  }).catch(error => {
+  try {
+    await Technology.create(technologyObject)
+    res.sendStatus(200)
+  } catch (error) {
     console.log(error)
-    res.json({success: false, message: error.message})
-  })
+    res.sendStatus(500)
+  }
 }
 
 async function deleteOne (req, res, next) {
@@ -41,17 +42,13 @@ async function deleteOne (req, res, next) {
     return res.status(401).json({error: "Authorisation token not supplied"})
   }
 
-  let technologyObject = {
-    _id: req.body.technologyId
-  }
-
-  Technology.deleteOne(technologyObject)
-  .then(result => {
-    res.json(result)
-  }).catch(error => {
+  try {
+    await Technology.deleteOne({_id: req.body.technologyId})
+    res.sendStatus(200)
+  } catch (error) {
     console.log(error)
-    res.json({success: false, message: error.message})
-  })
+    res.sendStatus(500)
+  }
 }
 
 async function getOne (req, res, next) {
@@ -59,17 +56,13 @@ async function getOne (req, res, next) {
     return res.status(401).json({error: "Authorisation token not supplied"})
   }
 
-  let technologyObject = {
-    _id: req.body.technologyId,
-  }
-
-  Technology.getOne(technologyObject)
-  .then(result => {
-    res.json(result)
-  }).catch(error => {
+  try {
+    const technology = await Technology.getOne({_id: req.body.technologyId})
+    res.json(technology)
+  } catch (error) {
     console.log(error)
-    res.json({success: false, message: error.message})
-  })
+    res.sendStatus(500)
+  }
 }
 
 async function update (req, res, next) {
@@ -83,11 +76,11 @@ async function update (req, res, next) {
     name: req.body.name
   }
 
-  Technology.updateTechnology(technologyObject)
-  .then(result => {
-    res.json(result)
-  }).catch(error => {
+  try {
+    const technology = await Technology.updateTechnology(technologyObject)
+    res.json(technology)
+  } catch (error) {
     console.log(error)
-    res.json({success: false, message: error.message})
-  })
+    res.sendStatus(500)
+  }
 }
