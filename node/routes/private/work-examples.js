@@ -7,13 +7,13 @@ async function getAll (req, res, next) {
     return res.status(401).json({error: "Authorisation token not supplied"})
   }
 
-  WorkExample.get(req.query)
-  .then(result => {
-    res.json(result)
-  }).catch(error => {
+  try {
+    const workExamples = await WorkExample.get(req.query)
+    res.json(workExamples)
+  } catch(error) {
     console.log(error)
-    res.json({success: false, message: error.message})
-  })
+    res.sendStatus(500)
+  }
 }
 
 async function create (req, res, next) {
@@ -21,7 +21,7 @@ async function create (req, res, next) {
     return res.status(401).json({error: "Authorisation token not supplied"})
   }
 
-  let workExampleObject = new WorkExample({
+  const workExampleObject = new WorkExample({
     createdOn: new Date(),
     description: req.body.description,
     githubUrl: req.body.githubUrl,
@@ -32,13 +32,13 @@ async function create (req, res, next) {
     url: req.body.url
   })
 
-  WorkExample.create(workExampleObject)
-  .then(result => {
-    res.json(result)
-  }).catch(error => {
+  try {
+    await WorkExample.create(workExampleObject)
+    res.sendStatus(200)
+  } catch (error) {
     console.log(error)
-    res.json({success: false, message: error.message})
-  })
+    res.sendStatus(500)
+  }
 }
 
 async function deleteOne (req, res, next) {
@@ -46,17 +46,13 @@ async function deleteOne (req, res, next) {
     return res.status(401).json({error: "Authorisation token not supplied"})
   }
 
-  let workExampleObject = {
-    _id: req.body._id
-  }
-
-  WorkExample.deleteOne(workExampleObject)
-  .then(result => {
-    res.json(result)
-  }).catch(error => {
+  try {
+    await WorkExample.deleteOne({_id: req.body._id})
+    res.sendStatus(200)
+  } catch (error) {
     console.log(error)
-    res.json({success: false, message: error.message})
-  })
+    res.sendStatus(500)
+  }
 }
 
 async function update (req, res, next) {
@@ -75,11 +71,11 @@ async function update (req, res, next) {
     url: req.body.url
   }
 
-  WorkExample.updateWorkExample(workExampleObject)
-  .then(result => {
-    res.json(result)
-  }).catch(error => {
+  try {
+    const workExample = await WorkExample.updateWorkExample(workExampleObject)
+    res.json(workExample)
+  } catch (error) {
     console.log(error)
-    res.json({success: false, message: error.message})
-  })
+    res.sendStatus(500)
+  }
 }
