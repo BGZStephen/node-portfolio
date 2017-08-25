@@ -1,6 +1,7 @@
-const mongoose = require('mongoose')
-const jwt = require('jsonwebtoken')
 const config = require('../../config');
+const jwt = require('jsonwebtoken');
+const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 const User = require('../../models/user');
 
 async function authenticate (req, res) {
@@ -13,24 +14,26 @@ async function authenticate (req, res) {
     password: req.body.password
   }
 
-  let userResult = await(User.getOne({email: userObject.email}));
-  userObject.userId = userResult.data._id
-  userObject.username = userResult.data.username
-
-  await User.comparePassword({queryPassword: userObject.password, password: userResult.data.password});
+  const comparisonUser = await(User.getOne({email: userObject.email}));
+  userObject.userId = comparisonUser._id
+  userObject.username = comparisonUser.username
 
   try {
-    const token = jwt.sign(userObject, config.secret, {expiresIn: 604800});
-    res.json({
-      success: true,
-      message: "Authentication successful",
-      token: "JWT" + token,
-      user: {
-        email: userObject.email,
-        userId: userObject.userId,
-        username: userObject.username
-      }
-    })
+    if(await bcrypt.compare(req.body.password, comparisonUser.password)) {
+      const token = jwt.sign(userObject, config.secret, {expiresIn: 604800});
+      res.json({
+        success: true,
+        message: "Authentication successful",
+        token: "JWT" + token,
+        user: {
+          email: userObject.email,
+          userId: userObject.userId,
+          username: userObject.username
+        }
+      })
+    } else {
+      res.sendStatus(403);
+    }
   } catch(error) {
     console.log(error)
     res.json({success: false, message: error.message})
@@ -38,7 +41,6 @@ async function authenticate (req, res) {
 }
 
 async function create (req, res) {
-  console.log(req.get('Authorization'))
   if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
     return res.status(401).json({error: "Authorisation token not supplied"})
   }

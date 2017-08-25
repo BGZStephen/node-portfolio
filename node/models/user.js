@@ -15,18 +15,6 @@ const UserSchema = mongoose.Schema({
 
 const User = module.exports = mongoose.model('User', UserSchema)
 
-module.exports.comparePassword = function(userObject) {
-  return new Promise((resolve, reject) => {
-    bcrypt.compare(userObject.queryPassword, userObject.password).then((result) => {
-      if(result == true) {
-        resolve({success: true, message: "Passwords match"})
-      } else {
-        reject({success: true, message: "Password does not match stored password"})
-      }
-    })
-  });
-}
-
 module.exports.create = function(userObject) {
   // encrypt password
   userObject.password = bcrypt.hashSync(userObject.password, 10)
@@ -73,7 +61,7 @@ module.exports.getOne = function(userObject) {
       if(result == null) {
         reject({success: false, message: "User not found"})
       } else {
-        resolve({success: true, message: "User Found", data: result})
+        resolve(result)
       }
     })
   })
@@ -85,7 +73,7 @@ module.exports.getAll = function() {
       if(result.length == 0) {
         reject({success: false, message: "No users found"})
       } else {
-        resolve({success: true, message: "Users Found", data: result})
+        resolve(result)
       }
     })
   })
