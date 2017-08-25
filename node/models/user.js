@@ -11,10 +11,6 @@ const UserSchema = mongoose.Schema({
   firstName: String,
   lastName: String,
   password: String,
-  username: {
-    type: String,
-    unique: true
-  }
 })
 
 const User = module.exports = mongoose.model('User', UserSchema)
