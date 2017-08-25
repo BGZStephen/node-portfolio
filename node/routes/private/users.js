@@ -7,22 +7,14 @@ async function deleteOne (req, res, next) {
   if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
     return res.status(401).json({error: "Authorisation token not supplied"})
   }
-  let userObject = {
-    _id: req.body.userId,
-  }
 
-  let deleteUser = async (function (userObject) {
+  try {
     await(User.exists(userObject));
-    return User.deleteOne(userObject);
-  })
-
-  deleteUser(userObject)
-  .then(result => {
-    res.json(result)
-  }).catch(error => {
-    console.log(error)
-    res.json({success: false, message: error.message})
-  })
+    res.sendStatus(500);
+  } catch(error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
 }
 
 async function getAll (req, res, next) {
@@ -30,13 +22,14 @@ async function getAll (req, res, next) {
     return res.status(401).json({error: "Authorisation token not supplied"})
   }
 
-  User.getAll()
-  .then(result => {
-    res.json(result)
-  }).catch(error => {
+  try {
+    const users = await User.getAll()
+    res.json(users)
+  } catch(error) {
     console.log(error)
-    res.json({success: false, message: error.message})
-  })
+    res.sendStatus(500)
+  }
+
 }
 
 async function getByEmail (req, res, next) {
@@ -44,17 +37,13 @@ async function getByEmail (req, res, next) {
     return res.status(401).json({error: "Authorisation token not supplied"})
   }
 
-  let userObject = {
-    email: req.body.email,
-  }
-
-  User.getOne(userObject)
-  .then(result => {
-    res.json(result)
-  }).catch(error => {
+  try {
+    const user = await User.getOne(req.body.email)
+    res.json(user)
+  } catch(error) {
     console.log(error)
-    res.json({success: false, message: error.message})
-  })
+    res.sendStatus(500)
+  }
 }
 
 async function getOne (req, res, next) {
@@ -62,35 +51,13 @@ async function getOne (req, res, next) {
     return res.status(401).json({error: "Authorisation token not supplied"})
   }
 
-  let userObject = {
-    _id: req.body.userId,
-  }
-
-  User.getOne(userObject)
-  .then(result => {
-    res.json(result)
-  }).catch(error => {
+  try {
+    const user = await User.getOne({_id: req.body.userId})
+    res.json(user)
+  } catch(error) {
     console.log(error)
-    res.json({success: false, message: error.message})
-  })
-}
-
-async function getByUsername (req, res, next) {
-  if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
-    return res.status(401).json({error: "Authorisation token not supplied"})
+    res.sendStatus(500)
   }
-
-  let userObject = {
-    username: req.body.username,
-  }
-
-  User.getOne(userObject)
-  .then(result => {
-    res.json(result)
-  }).catch(error => {
-    console.log(error)
-    res.json({success: false, message: error.message})
-  })
 }
 
 async function update (req, res, next) {
@@ -106,11 +73,11 @@ async function update (req, res, next) {
     username: req.body.username,
   }
 
-  User.updateUser(userObject)
-  .then(result => {
-    res.json(result)
-  }).catch(error => {
+  try {
+    let user = await User.updateUser(userObject)
+    res.json(user)
+  } catch(error) {
     console.log(error)
-    res.json({success: false, message: error.message})
-  })
+    res.sendStatus(500)
+  }
 }
