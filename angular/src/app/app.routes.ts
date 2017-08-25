@@ -3,17 +3,17 @@ import { Routes, RouterModule } from "@angular/router"
 import { AuthGuard } from "./guards/auth.guard"
 
 // dashboard specific
-import { AdminDashboardViewComponent, AdminDashboardLoginComponent } from "./admin-dashboard/components/admin-dashboard-components-barrel"
+import { AdminDashboardViewComponent, AdminDashboardLoginComponent } from "./modules/admin-dashboard/components/admin-dashboard-components-barrel"
 
 // technologies specific
-import { TechnologiesAddComponent, TechnologiesManageComponent, TechnologiesEditComponent } from "./admin-dashboard/technologies/components/technologies-components-barrel"
+import { TechnologiesAddComponent, TechnologiesManageComponent, TechnologiesEditComponent } from "./modules/admin-dashboard/modules/technologies/components/technologies-components-barrel"
 
 // work-example specific
-import { WorkExamplesAddComponent, WorkExamplesManageComponent, WorkExamplesEditComponent } from "./admin-dashboard/work-examples/components/work-examples-components-barrel"
+import { WorkExamplesAddComponent, WorkExamplesManageComponent, WorkExamplesEditComponent } from "./modules/admin-dashboard/modules/work-examples/components/work-examples-components-barrel"
 
 //site specifics
 import { SiteViewComponent, SiteHomeComponent, SiteWorkExamplesComponent,
-         SiteCodeLabComponent} from "./site/components/site-components-barrel"
+         SiteCodeLabComponent} from "./modules/site/components/site-components-barrel"
 
 const APP_ROUTES: Routes = [
   {path: "", redirectTo: "/home/(siteOutlet:intro)", pathMatch: 'full'},

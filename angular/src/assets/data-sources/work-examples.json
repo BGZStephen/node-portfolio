@@ -1,0 +1,81 @@
+[
+  {
+    "name": "Colours - The colour management app.",
+    "description": "A colour management platform, built by developers, for developers. create colour palettes, add unique descriptions to colours within those palettes, and manage a full colour library. Perfect for managing colours across multiple development projects. Tech: Angular 4.0, Node, Express, Sass, HTML 5 / CSS 3",
+    "url": "http://160.153.226.233:3006/",
+    "imgUrl": "/assets/black-and-white-portfolio/images/work-samples/colours.png",
+    "githubUrl": "https://github.com/BGZStephen/colours"
+  },{
+    "name": "MEAN Stack User Management Boilerplate",
+    "description": "A user management boilerplate for future projects, comprising of a user regiatration / login form and user management dashboard. Tech: Node / Angular, MongoDB, Bcrypt encription, HTML 5, CSS 3, Sass",
+    "url": "http://160.153.226.233:3003/",
+    "imgUrl": "/assets/black-and-white-portfolio/images/work-samples/node-user-boilerplate.png",
+    "githubUrl": "https://github.com/BGZStephen/node-user-boilerplate"
+  },{
+    "name": "MEAN Stack Project Management Application",
+    "description": "My take on expanding popular to-do list applications, you can register for an account, login and manage multiple projects from a single smooth application. Tech: Node, Express, MongoDB, Angular 4.0 + HTML 5 / CSS 3",
+    "url": "http://160.153.226.233:3000/",
+    "imgUrl": "/assets/black-and-white-portfolio/images/work-samples/mean-project-manager.png",
+    "githubUrl": "https://github.com/BGZStephen/angular-project-manager"
+  },{
+    "name": "Shipamax Build",
+    "description": "A full rebuild of the Shipamax site (https://shipamax.com/) using Angular 4.0, HTML 5, CSS 3, OO JS + more. Fully responsive",
+    "url": "/work-samples/shipamax/",
+    "imgUrl": "/assets/black-and-white-portfolio/images/work-samples/shipamax.png",
+    "githubUrl": "https://github.com/BGZStephen/shipamax-build"
+  },{
+    "name": "ngWarcraft Angular Application",
+    "description": "A Warcraft themed web application, built using Angular 4 + custom pipes, HTML 5 / CSS 3 (custom carousel), OO JS. Users can check things such as realm status, current PVP leaderboards as well as the latest news.",
+    "url": "/work-samples/ng-warcraft/",
+    "imgUrl": "/assets/black-and-white-portfolio/images/work-samples/ng-warcraft.png",
+    "githubUrl": "https://github.com/BGZStephen/ng-gaming"
+  },{
+    "name": "Illdy Theme",
+    "description": "A clean, responsive front-end, built from the ground up with HTML 5, CSS 3, Sass jQuery (Slick carousel / smooth scrolling).",
+    "url": "/work-samples/illdy/",
+    "imgUrl": "/assets/black-and-white-portfolio/images/work-samples/illdy-theme.png",
+    "githubUrl": "https://github.com/BGZStephen/illdy-theme"
+  },{
+    "name": "Zerif theme",
+    "description": "A front-end build based on the popular Zerif theme design. built using HTML 5, CSS 3, OO JavaScript (menu toggles), Jquery (Slick / Smooth scrolling), Sass. Fully responsive.",
+    "url": "/work-samples/zerif/",
+    "imgUrl": "/assets/black-and-white-portfolio/images/work-samples/zerif-theme.png",
+    "githubUrl": "https://github.com/BGZStephen/zerif-rebuild"
+  },{
+    "name": "Agencia Theme",
+    "description": "A mock-up for a digital agency site comprising services, portfolio, about, team & contact",
+    "url": "/work-samples/agencia/",
+    "imgUrl": "/assets/black-and-white-portfolio/images/work-samples/agencia-theme.png",
+    "githubUrl": "https://github.com/BGZStephen/portfolio/tree/master/work-samples/agency-site"
+  },{
+    "name": "Start Bootstrap Theme",
+    "description": "A build based on a Bootstrap theme, built from the ground up with HTML 5, CSS 3, Sass & vanilla JS.",
+    "url": "/work-samples/start-bootstrap/",
+    "imgUrl": "/assets/black-and-white-portfolio/images/work-samples/start-bootstrap-theme.png",
+    "githubUrl": "https://github.com/BGZStephen/start-bootstrap-theme"
+  },{
+    "name": "Deliveroo Build",
+    "description": "A rebuild of the deliveroo site, made to be responsive",
+    "url": "/work-samples/deliveroo/",
+    "imgUrl": "/assets/black-and-white-portfolio/images/work-samples/deliveroo-build.png",
+    "githubUrl": "https://github.com/BGZStephen/portfolio/tree/master/work-samples/deliveroo"
+  },{
+    "name": "LoyaltyLion Build",
+    "description": "SaaS Site rebuild based on LoyaltyLion (start-up)",
+    "url": "/work-samples/loyalty-lion/",
+    "imgUrl": "/assets/black-and-white-portfolio/images/work-samples/loyalty-lion-build.png",
+    "githubUrl": "https://github.com/BGZStephen/mock-ups/tree/master/saas%20site"
+  },{
+    "name": "FieldMargin Build",
+    "description": "Fully responsive mock-up, based on the original Fieldmargin site.",
+    "url": "/work-samples/fieldmargin/",
+    "imgUrl": "/assets/black-and-white-portfolio/images/work-samples/field-margin-build.png",
+    "githubUrl": "https://github.com/BGZStephen/portfolio/tree/master/work-samples/fieldmargin"
+  },{
+    "name": "Forty Theme",
+    "description": "Responsive single page theme, re-built from scratch by me.",
+    "url": "/work-samples/forty/",
+    "imgUrl": "/assets/black-and-white-portfolio/images/work-samples/forty-theme.png",
+    "githubUrl": "https://github.com/BGZStephen/mock-ups/tree/master/forty"
+  }
+]

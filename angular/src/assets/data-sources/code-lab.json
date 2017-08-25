@@ -1,0 +1,63 @@
+[
+  {
+    "name": "FireBlog - Blogging App",
+    "description": "A Firebase & Angular 4.0 based Blogging application, built to test features such as authentication, route guards, CRUD on remote databases.",
+    "url": "code-lab/fireblog/",
+    "imgUrl": "/assets/black-and-white-portfolio/images/code-lab/fireblog.png",
+    "githubUrl": "https://github.com/BGZStephen/angular-firebase-blog"
+  },{
+    "name": "ngNews - Angular News Application",
+    "description": "An application that polls multiple news sources utilising the NewsApi.org API, categories: Tech, Entertainment, Sport & Business. Built using Angular 4.0, HTML 5, CSS 3 and some OO JS. Fully responsive",
+    "url": "code-lab/angular-news-app/",
+    "imgUrl": "/assets/black-and-white-portfolio/images/code-lab/ng-news.png",
+    "githubUrl": "https://github.com/BGZStephen/angular-news-application"
+  },{
+    "name": "Movie Search Application",
+    "description": "A movie database search application, built using Angular (4.0), it makes use of Routing, Http parsing, structural directives and is fully responsive to boot!",
+    "url": "code-lab/movie-search/",
+    "imgUrl": "/assets/black-and-white-portfolio/images/code-lab/ng-movie-search.png",
+    "githubUrl": "https://github.com/BGZStephen/angular-movie-app"
+  },{
+    "name": "Recipe Book Angular Application",
+    "description": "A single page application based upon a Recipe Book, you can add, edit, and delete recipes which will be stored on a Firebase NoSQL database. Tech used: Angular(4.0), HTML 5, CSS 3, Bootstrap, Firebase NoSQL DB",
+    "url": "work-samples/angular-recipe-book-app/",
+    "imgUrl": "/assets/black-and-white-portfolio/images/code-lab/ng-recipe-book.png",
+    "githubUrl": "https://github.com/BGZStephen/angular-udemy/tree/master/recipe-book"
+  },{
+    "name": "Spotify Search Angular Application",
+    "description": "A Spotify Search Application built using Angular 4.0 using the Spotify Web API. Simply enter an artists name and view their albums / preview their tracks",
+    "url": "code-lab/angular-spotify-app/",
+    "imgUrl": "/assets/black-and-white-portfolio/images/code-lab/ng-spotify.png",
+    "githubUrl": "https://github.com/BGZStephen/angular-spotify-app"
+  },{
+    "name": "GitHub Search Application",
+    "description": "An Angular application built using Angular 4.0, connecting up with the public github API. Enter a username and you'll be brought a multitude of information about the user.",
+    "url": "code-lab/github-search/",
+    "imgUrl": "/assets/black-and-white-portfolio/images/code-lab/ng-github-search.png",
+    "githubUrl": "https://github.com/BGZStephen/angular-github-search-app"
+  },{
+    "name": "FizzBuzz",
+    "description": "A classic coding challenge, FizzBuzz",
+    "url": "code-lab/fizzbuzz/",
+    "imgUrl": "/assets/black-and-white-portfolio/images/code-lab/fizzbuzz.png",
+    "githubUrl": "https://github.com/BGZStephen/fizzbuzz"
+  },{
+    "name": "String Editor",
+    "description": "A simple application with multiple uses, it allows a user to enter a string and provides options for altering the string.",
+    "url": "code-lab/stringeditor/",
+    "imgUrl": "/assets/black-and-white-portfolio/images/code-lab/string-editor.png",
+    "githubUrl": "https://github.com/BGZStephen/string-editor"
+  },{
+    "name": "Fibonacci Sequence",
+    "description": "A simple app to display the first 100 iterations of the fibonacci sequence",
+    "url": "code-lab/fibonacci-sequence/",
+    "imgUrl": "/assets/black-and-white-portfolio/images/code-lab/fibonacci.png",
+    "githubUrl": "https://github.com/BGZStephen/fibonacci-sequence"
+  },{
+    "name": "JavaScript Calculator",
+    "description": "A JavaScript Calculator built from scratch without the use of a tutorial",
+    "url": "code-lab/javascript-calculator/",
+    "imgUrl": "/assets/black-and-white-portfolio/images/code-lab/calculator.png",
+    "githubUrl": "https://github.com/BGZStephen/javascript-calculator"
+  }
+]
