@@ -1,5 +1,5 @@
-<div class="main-container">
-  <h2 class="main-header">Code Lab</h2>
+<div id="site-code-lab">
+  <h2>Code Lab</h2>
   <div class="items-container" *ngIf="codelabExamples">
     <div class="item" *ngFor="let example of codelabExamples">
       <div class="item-image-container">
@@ -16,12 +16,12 @@
       <div class="item-content-container">
         <div class="item-technologies-container" *ngIf="example.technologies">
           <div class="item-technology" *ngFor="let technology of example.technologies">
-            <img class="item-technology-image" src="{{technology.imageUrl}}">
+            <img src="{{technology.imageUrl}}">
           </div>
         </div>
-        <h3 class="item-header">{{example.title}}</h3>
-        <hr class="item-seperator">
-        <p class="item-description">{{example.description}}</p>
+        <h3>{{example.title}}</h3>
+        <hr>
+        <p>{{example.description}}</p>
       </div>
     </div>
   </div>
