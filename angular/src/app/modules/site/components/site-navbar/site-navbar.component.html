@@ -5,13 +5,13 @@
   <div class="menu-container" (window:resize)="toggleMenuVisibility()" [ngStyle]="toggleMenuVisibility()">
     <a class="fa fa-times" (click)="menuVisible = !menuVisible"></a>
     <ul class="menu-list">
-      <li class="menu-item" (click)="apiService.setComponent('intro')" routerLinkActive="link-active" [routerLinkActiveOptions]="{exact: true}" (click)="menuVisible = !menuVisible">Home</li>
-      <li class="menu-item" (click)="apiService.setComponent('work-examples')" routerLinkActive="link-active" (click)="menuVisible = !menuVisible">Work Examples</li>
-      <li class="menu-item" (click)="apiService.setComponent('code-lab')" routerLinkActive="link-active" (click)="menuVisible = !menuVisible">Code Lab</li>
-      <li class="menu-item contact-toggle">Contact</li>
-      <ul class="contact-list">
-        <li class="contact-item"><a class="fa fa-phone"></a>: 07584132200</li>
-        <li class="contact-item"><a class="fa fa-envelope"></a>: sjw948@gmail.com</li>
+      <li (click)="apiService.setComponent('intro')" routerLinkActive="link-active" [routerLinkActiveOptions]="{exact: true}" (click)="menuVisible = !menuVisible">Home</li>
+      <li (click)="apiService.setComponent('work-examples')" routerLinkActive="link-active" (click)="menuVisible = !menuVisible">Work Examples</li>
+      <li (click)="apiService.setComponent('code-lab')" routerLinkActive="link-active" (click)="menuVisible = !menuVisible">Code Lab</li>
+      <li class="contact-toggle">Contact</li>
+      <ul class="menu-list contact-list">
+        <li><a class="fa fa-phone"></a>: 07584132200</li>
+        <li><a class="fa fa-envelope"></a>: sjw948@gmail.com</li>
       </ul>
     </ul>
   </div>
