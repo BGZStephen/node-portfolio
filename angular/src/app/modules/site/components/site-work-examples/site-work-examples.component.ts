@@ -4,6 +4,7 @@ import { SiteApiService } from "../../services/site-api.service"
 @Component({
   selector: 'portfolio-site-work-examples',
   templateUrl: './site-work-examples.component.html',
+  styleUrls: ['./site-work-examples.component.scss'],
 })
 
 export class SiteWorkExamplesComponent implements OnInit {
