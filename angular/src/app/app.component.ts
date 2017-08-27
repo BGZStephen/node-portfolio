@@ -1,12 +1,8 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-
-import './styles/main.scss';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'portfolio-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./styles/main.scss'],
-  encapsulation: ViewEncapsulation.None
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
   title = 'portfolio works!';

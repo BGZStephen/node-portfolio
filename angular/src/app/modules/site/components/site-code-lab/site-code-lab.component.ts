@@ -4,7 +4,6 @@ import { SiteApiService } from "../../services/site-api.service"
 @Component({
   selector: 'portfolio-site-code-lab',
   templateUrl: './site-code-lab.component.html',
-  styleUrls: ['./site-code-lab.component.scss']
 })
 
 export class SiteCodeLabComponent implements OnInit {
