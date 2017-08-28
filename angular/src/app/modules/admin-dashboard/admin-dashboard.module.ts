@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { router } from "../../app.routes"
-import { FlashMessagesModule } from "angular2-flash-messages"
+import { DashboardRouter } from './dashboard.routes';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 // Components
 import {
@@ -20,8 +20,6 @@ import { AdminDashboardApiService } from "./services/admin-dashboard-api.service
 import { WorkExamplesModule } from "./modules/work-examples/work-examples.module"
 import { TechnologiesModule } from "./modules/technologies/technologies.module"
 import { ProfileModule } from "./modules/profile/profile.module";
-import {  } from './components/admin-dashboard-navbar/admin-dashboard-navbar.component';
-import {  } from './components/admin-dashboard-notification-bar/admin-dashboard-notification-bar.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +36,7 @@ import {  } from './components/admin-dashboard-notification-bar/admin-dashboard-
     WorkExamplesModule,
     TechnologiesModule,
     ProfileModule,
-    router
+    DashboardRouter
   ],
   providers: [AdminDashboardApiService],
 })
