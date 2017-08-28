@@ -1,0 +1,17 @@
+#site-view-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  #navbar-container {
+    width: 100%;
+    @media(min-width: 768px) {
+      width: 75px;
+    }
+  }
+
+  #outlet-container {
+    @media(min-width: 768px) {
+      width: calc(100vw - 75px);
+    }
+  }
+}

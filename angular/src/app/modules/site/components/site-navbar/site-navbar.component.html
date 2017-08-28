@@ -1,25 +1,16 @@
 <div id="site-navbar">
-  <div class="navbar" (click)="menuVisible = !menuVisible">
-    <a class="fa fa-bars"></a><p class="menu-toggle">MENU</p>
-  </div>
-  <div class="menu-container" (window:resize)="toggleMenuVisibility()" [ngStyle]="toggleMenuVisibility()">
-    <a class="fa fa-times" (click)="menuVisible = !menuVisible"></a>
-    <ul class="menu-list">
-      <li (click)="apiService.setComponent('intro')" routerLinkActive="link-active" [routerLinkActiveOptions]="{exact: true}" (click)="menuVisible = !menuVisible">Home</li>
-      <li (click)="apiService.setComponent('work-examples')" routerLinkActive="link-active" (click)="menuVisible = !menuVisible">Work Examples</li>
-      <li (click)="apiService.setComponent('code-lab')" routerLinkActive="link-active" (click)="menuVisible = !menuVisible">Code Lab</li>
-      <li class="contact-toggle">Contact</li>
-      <ul class="menu-list contact-list">
-        <li><a class="fa fa-phone"></a>: 07584132200</li>
-        <li><a class="fa fa-envelope"></a>: sjw948@gmail.com</li>
-      </ul>
-    </ul>
-  </div>
-  <div class="logo-container">
-    <a class="fa fa-terminal"></a><p>Stephen</p>
-  </div>
-  <div class="social-container">
-    <a class="fa fa-github" href="https://github.com/BGZStephen" target="_blank"></a>
-    <a class="fa fa-linkedin" href="https://www.linkedin.com/in/javascriptsteve/" target="_blank"></a>
-  </div>
+  <ul>
+    <li class="navbar-icon--home">
+      <i class="fa fa-home fa-2x"></i>
+    </li>
+    <li class="navbar-icon--html5">
+
+    </li>
+    <li class="navbar-icon--css3">
+
+    </li>
+    <li class="navbar-icon--javascript">
+
+    </li>
+  </ul>
 </div>
