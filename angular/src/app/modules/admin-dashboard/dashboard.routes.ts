@@ -10,7 +10,7 @@ import { TechnologiesAddComponent, TechnologiesManageComponent, TechnologiesEdit
 import { WorkExamplesAddComponent, WorkExamplesManageComponent, WorkExamplesEditComponent } from "./modules/work-examples/components/work-examples-components-barrel"
 
 const DASHBOARD_ROUTES: Routes = [
-  {path: "", component: AdminDashboardViewComponent, children: [
+  {path: "dashboard", component: AdminDashboardViewComponent, children: [
     {path: "technologies-add", component: TechnologiesAddComponent},
     {path: "technologies-manage", component: TechnologiesManageComponent},
     {path: "technologies-manage/:technologyId", component: TechnologiesEditComponent},

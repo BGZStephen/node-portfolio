@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { router } from "./app.routes"
+import { AppRouter } from "./app.routes"
 import { AuthGuard } from "./guards/auth.guard"
 
 import { AppComponent } from './app.component';
@@ -21,7 +21,7 @@ import { SiteModule } from './modules/site/site.module'
     HttpModule,
     AdminDashboardModule,
     SiteModule,
-    router
+    AppRouter
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
