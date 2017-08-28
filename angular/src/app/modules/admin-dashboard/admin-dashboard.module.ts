@@ -11,15 +11,15 @@ import {
   AdminDashboardViewComponent,
   AdminDashboardNotificationBarComponent,
   AdminDashboardNavbarComponent
-} from './components/admin-dashboard-components-barrel'
+} from './components/admin-dashboard-components-barrel';
 
 // Services
-import { AdminDashboardApiService } from "./services/admin-dashboard-api.service"
+import { AdminDashboardApiService } from './services/admin-dashboard-api.service';
 
 // Modules
-import { WorkExamplesModule } from "./modules/work-examples/work-examples.module"
-import { TechnologiesModule } from "./modules/technologies/technologies.module"
-import { ProfileModule } from "./modules/profile/profile.module";
+import { WorkExamplesModule } from './modules/work-examples/work-examples.module';
+import { TechnologiesModule } from './modules/technologies/technologies.module';
+import { ProfileModule } from './modules/profile/profile.module';
 
 @NgModule({
   declarations: [

@@ -1,32 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import { TechnologiesApiService } from "../../technologies-api.service"
+import { TechnologiesApiService } from '../../technologies-api.service';
 
 @Component({
-  selector: 'portfolio-technologies-manage',
+  selector: 'app-technologies-manage',
   templateUrl: './technologies-manage.component.html',
   styleUrls: ['./technologies-manage.component.scss']
 })
 export class TechnologiesManageComponent implements OnInit {
 
-  constructor(
+  technologies: Array<object>;
+
+  constructor (
     private apiService: TechnologiesApiService
   ) { }
 
   ngOnInit() {
-    this.loadTechnologies()
+    this.loadTechnologies();
   }
-
-  technologies: Array<object>
 
   loadTechnologies() {
     this.apiService.loadTechnologies()
     .subscribe(res => {
-      if(res.success) {
-        this.technologies = res.data
+      if (res.success) {
+        this.technologies = res.data;
       } else {
-        this.technologies = []
+        this.technologies = [];
       }
-    })
+    });
   }
 
 }

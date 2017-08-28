@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'portfolio-site-home',
+  selector: 'app-site-home',
   templateUrl: './site-home.component.html',
   styleUrls: ['./site-home.component.scss']
 })

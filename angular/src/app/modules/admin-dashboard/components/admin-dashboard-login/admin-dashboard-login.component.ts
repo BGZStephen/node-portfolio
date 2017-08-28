@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminDashboardApiService } from "../../services/admin-dashboard-api.service"
-import { Router } from "@angular/router"
+import { AdminDashboardApiService } from '../../services/admin-dashboard-api.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'portfolio-admin-dashboard-login',
+  selector: 'app-admin-dashboard-login',
   templateUrl: './admin-dashboard-login.component.html',
   styleUrls: ['./admin-dashboard-login.component.scss']
 })
@@ -20,11 +20,11 @@ export class AdminDashboardLoginComponent implements OnInit {
   login(userObject: Object) {
     this.apiService.login(userObject)
     .subscribe(res => {
-      if(res.success) {
-        this.apiService.storeToken(res)
-        this.router.navigate(['/dashboard'])
+      if (res.success) {
+        this.apiService.storeToken(res);
+        this.router.navigate(['/dashboard']);
       }
-    })
+    });
   }
 
 }

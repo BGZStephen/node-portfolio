@@ -1,56 +1,56 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers } from "@angular/http"
-import { Router } from "@angular/router"
-import { environment } from '../../../../../environments/environment'
+import { Http, Headers } from '@angular/http';
+import { Router } from '@angular/router';
+import { environment } from '../../../../../environments/environment';
 
 @Injectable()
 export class WorkExamplesApiService {
+
+  baseUrl: string = environment.apiUrl;
+  authorization: String = environment.authorization;
 
   constructor(
     private http: Http,
     private router: Router
   ) { }
 
-  baseUrl: string = environment.apiUrl
-  authorization: String = environment.authorization
-
   clearComponent() {
     this.router.navigate(['/dashboard', {outlets: {'adminDashboardOutlet': null}}]);
   }
 
   deleteWorkExample(workExampleObject) {
-    let headers = new Headers()
-    headers.append('Authorization', `${this.authorization}`)
-    return this.http.post(this.baseUrl + "/work-examples/deleteOne", workExampleObject, {headers: headers})
-    .map(res => res.json())
+    const headers = new Headers();
+    headers.append('Authorization', `${this.authorization}`);
+    return this.http.post(this.baseUrl + '/work-examples/deleteOne', workExampleObject, {headers: headers})
+    .map(res => res.json());
   }
 
   loadTechnologies() {
-    let headers = new Headers()
-    headers.append('Authorization', `${this.authorization}`)
-    return this.http.get(this.baseUrl + "/technologies", {headers: headers})
-    .map(res => res.json())
+    const headers = new Headers();
+    headers.append('Authorization', `${this.authorization}`);
+    return this.http.get(this.baseUrl + '/technologies', {headers: headers})
+    .map(res => res.json());
   }
 
   loadWorkExample(workExampleObject) {
-    let headers = new Headers()
-    headers.append('Authorization', `${this.authorization}`)
-    return this.http.get(this.baseUrl + "/work-examples/" + workExampleObject._id, {headers: headers})
-    .map(res => res.json())
+    const headers = new Headers();
+    headers.append('Authorization', `${this.authorization}`);
+    return this.http.get(this.baseUrl + '/work-examples/' + workExampleObject._id, {headers: headers})
+    .map(res => res.json());
   }
 
   loadWorkExamples() {
-    let headers = new Headers()
-    headers.append('Authorization', `${this.authorization}`)
-    return this.http.get(this.baseUrl + "/work-examples", {headers: headers})
-    .map(res => res.json())
+    const headers = new Headers();
+    headers.append('Authorization', `${this.authorization}`);
+    return this.http.get(this.baseUrl + '/work-examples', {headers: headers})
+    .map(res => res.json());
   }
 
   saveWorkExample(workExampleObject) {
-    let headers = new Headers()
-    headers.append('Authorization', `${this.authorization}`)
-    return this.http.post(this.baseUrl + "/work-examples/create", workExampleObject, {headers: headers})
-    .map(res => res.json())
+    const headers = new Headers();
+    headers.append('Authorization', `${this.authorization}`);
+    return this.http.post(this.baseUrl + '/work-examples/create', workExampleObject, {headers: headers})
+    .map(res => res.json());
   }
 
   setComponent(component) {
@@ -62,9 +62,9 @@ export class WorkExamplesApiService {
   }
 
   updateWorkExample(workExampleObject) {
-    let headers = new Headers()
-    headers.append('Authorization', `${this.authorization}`)
-    return this.http.post(this.baseUrl + "/work-examples/update", workExampleObject, {headers: headers})
-    .map(res => res.json())
+    const headers = new Headers();
+    headers.append('Authorization', `${this.authorization}`);
+    return this.http.post(this.baseUrl + '/work-examples/update', workExampleObject, {headers: headers})
+    .map(res => res.json());
   }
 }

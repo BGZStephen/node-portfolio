@@ -1,20 +1,20 @@
-import { Injectable } from "@angular/core"
-import { Router, CanActivate } from "@angular/router"
-import { tokenNotExpired } from "angular2-jwt"
+import { Injectable } from '@angular/core';
+import { Router, CanActivate } from '@angular/router';
+import { tokenNotExpired } from 'angular2-jwt';
 
 @Injectable()
 
 export class AuthGuard implements CanActivate {
 
-  constructor(private router: Router){
-
-  }
+  constructor(
+    private router: Router
+  ) {}
 
   canActivate() {
-    if(tokenNotExpired()) {
+    if (tokenNotExpired()) {
       return true;
     } else {
-      this.router.navigate(['/login'])
+      this.router.navigate(['/login']);
       return false;
     }
   }

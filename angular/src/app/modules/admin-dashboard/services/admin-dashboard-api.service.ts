@@ -1,24 +1,25 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers } from "@angular/http"
-import "rxjs/Rx"
-import { Router } from "@angular/router"
-import { environment } from '../../../../environments/environment'
+import { Http, Headers } from '@angular/http';
+import 'rxjs/Rx';
+import { Router } from '@angular/router';
+import { environment } from '../../../../environments/environment';
 
 @Injectable()
 export class AdminDashboardApiService {
+
+  baseUrl: string = environment.apiUrl;
+  authorization: String = environment.authorization;
 
   constructor(
     private http: Http,
     private router: Router
   ) { }
 
-  baseUrl: string = environment.apiUrl;
-  authorization: String = environment.authorization;
 
   login(userObject) {
-    let headers = new Headers();
+    const headers = new Headers();
     headers.append('Authorization', `${this.authorization}`);
-    return this.http.post(this.baseUrl + "/users/authenticate", userObject, {headers: headers})
+    return this.http.post(this.baseUrl + '/users/authenticate', userObject, {headers: headers})
     .map(res => res.json());
   }
 

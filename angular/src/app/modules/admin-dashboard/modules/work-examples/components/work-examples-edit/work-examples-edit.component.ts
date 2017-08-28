@@ -1,14 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router"
-import { WorkExamplesApiService } from "../../work-examples-api.service"
-import { FlashMessagesService } from "angular2-flash-messages"
+import { ActivatedRoute } from '@angular/router';
+import { WorkExamplesApiService } from '../../work-examples-api.service';
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
-  selector: 'portfolio-work-examples-edit',
+  selector: 'app-work-examples-edit',
   templateUrl: './work-examples-edit.component.html',
   styleUrls: ['./work-examples-edit.component.scss']
 })
 export class WorkExamplesEditComponent implements OnInit {
+
+  activeTechnologies: Array<object> = [];
+  activeType: string;
+  technologies: Array<object> = [];
+  workExample: object = {};
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -17,33 +22,28 @@ export class WorkExamplesEditComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.loadWorkExample()
-    this.loadTechnologies()
+    this.loadWorkExample();
+    this.loadTechnologies();
   }
 
-  activeTechnologies: Array<object> = [];
-  activeType: string;
-  technologies: Array<object> = [];
-  workExample: object = {};
-
   activeTechnologiesStyle(technologyId) {
-    for(let i = 0; i < this.activeTechnologies.length; i++) {
-      if(this.activeTechnologies[i]['_id'] == technologyId) {
-        return {border: "3px solid #424a5d"}
+    for (let i = 0; i < this.activeTechnologies.length; i++) {
+      if (this.activeTechnologies[i]['_id'] === technologyId) {
+        return {border: '3px solid #424a5d'};
       }
     }
-    return {border: "3px solid white"}
+    return {border: '3px solid white'};
   }
 
   loadTechnologies() {
     this.apiService.loadTechnologies()
     .subscribe(res => {
-      if(res.success) {
-        this.technologies = res.data
+      if (res.success) {
+        this.technologies = res.data;
       } else {
-        this.technologies = []
+        this.technologies = [];
       }
-    })
+    });
   }
 
   loadWorkExample() {
@@ -52,71 +52,71 @@ export class WorkExamplesEditComponent implements OnInit {
     .subscribe(workExampleId => {
       this.apiService.loadWorkExample({_id: workExampleId})
       .subscribe(res => {
-        if(res.success) {
-          this.workExample = res.data[0]
-          this.setActiveTechnologies()
-          this.setActiveType()
+        if (res.success) {
+          this.workExample = res.data[0];
+          this.setActiveTechnologies();
+          this.setActiveType();
         } else {
-          this.workExample = {}
+          this.workExample = {};
         }
-      })
-    })
+      });
+    });
   }
 
   setActiveTechnologies() {
-    this.activeTechnologies = this.workExample['technologies']
+    this.activeTechnologies = this.workExample['technologies'];
   }
 
   setActiveType() {
-    this.activeType = this.workExample['type']
+    this.activeType = this.workExample['type'];
   }
 
   toggleTechnology(technologyObject, index) {
-    if(this.activeTechnologies.length == 0) {
-      this.activeTechnologies.push(technologyObject)
+    if (this.activeTechnologies.length === 0) {
+      this.activeTechnologies.push(technologyObject);
     } else {
-      for(let technology of this.activeTechnologies) {
-        if(technology['_id'] == technologyObject._id) {
+      for (const technology of this.activeTechnologies) {
+        if (technology['_id'] === technologyObject._id) {
           return this.activeTechnologies = this.activeTechnologies.filter(function(el) {
             return el['_id'] !== technologyObject._id;
           });
         }
       }
-      this.activeTechnologies.push(technologyObject)
+      this.activeTechnologies.push(technologyObject);
     }
   }
 
   toggleType(type) {
-    if(this.activeType == type) {
-      this.activeType = ""
+    if (this.activeType === type) {
+      this.activeType = '';
     } else {
-      this.activeType = type
+      this.activeType = type;
     }
   }
 
   typeStyle(type) {
-    if(type == this.activeType) {
-      return {"background": "#ffd777", "border": "4px solid #424a5d", "color": "#424a5d"}
+    if (type === this.activeType) {
+      return {'background': '#ffd777', 'border': '4px solid #424a5d', 'color': '#424a5d'};
     } else {
-      return {"background": "#424a5d", "border": "4px solid #424a5d", "color": "#ffd777"}
+      return {'background': '#424a5d', 'border': '4px solid #424a5d', 'color': '#ffd777'};
     }
   }
 
   updateWorkExample(workExampleObject, workExampleId) {
-    workExampleObject._id = workExampleId
-    workExampleObject.technologies = this.activeTechnologies
-    workExampleObject.type = this.activeType
+    workExampleObject._id = workExampleId;
+    workExampleObject.technologies = this.activeTechnologies;
+    workExampleObject.type = this.activeType;
     this.apiService.updateWorkExample(workExampleObject)
     .subscribe(res => {
-      if(res.success) {
-        this.flashMessage.show(res.message, {cssClass: "flash-success--dashboard", timeout: 3000})
+      if (res.success) {
+        this.flashMessage.show(res.message, {cssClass: 'flash-success--dashboard', timeout: 3000});
         setTimeout(() => {
-          this.apiService.setComponent('work-examples-manage')
-        }, 500)
+          this.apiService.setComponent('work-examples-manage');
+        }, 500);
       } else {
-        this.flashMessage.show("Work example update failed", {cssClass: "flash-failure--dashboard", timeout: 3000})
+        this.flashMessage.show('Work example update failed', {cssClass: 'flash-failure--dashboard', timeout: 3000});
       }
-    })
+    });
   }
 
 }

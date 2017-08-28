@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminDashboardApiService } from "../../services/admin-dashboard-api.service"
+import { AdminDashboardApiService } from '../../services/admin-dashboard-api.service';
 
 @Component({
-  selector: 'portfolio-admin-dashboard-notification-bar',
+  selector: 'app-admin-dashboard-notification-bar',
   templateUrl: './admin-dashboard-notification-bar.component.html',
   styleUrls: ['./admin-dashboard-notification-bar.component.scss']
 })
@@ -16,7 +16,7 @@ export class AdminDashboardNotificationBarComponent implements OnInit {
   }
 
   logout() {
-    this.apiService.logout()
+    this.apiService.logout();
   }
 
 }

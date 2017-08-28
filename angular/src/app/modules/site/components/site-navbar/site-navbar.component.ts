@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from "@angular/router"
-import { SiteApiService } from "../../services/site-api.service"
+import { Router } from '@angular/router';
+import { SiteApiService } from '../../services/site-api.service';
 
 @Component({
-  selector: 'portfolio-site-navbar',
+  selector: 'app-site-navbar',
   templateUrl: './site-navbar.component.html',
   styleUrls: ['./site-navbar.component.scss']
 })
 export class SiteNavbarComponent implements OnInit {
+
+  menuVisible = false;
 
   constructor(
     private apiService: SiteApiService,
@@ -15,19 +17,18 @@ export class SiteNavbarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
   }
 
-  menuVisible: boolean = false;
-
   toggleMenuVisibility() {
-    if(this.menuVisible && screen.width < 1024) {
-      return {"left": "0px"}
+    if (this.menuVisible && screen.width < 1024) {
+      return {'left': '0px'};
     } else if (this.menuVisible && screen.width >= 1024) {
-      return {"left": "40px"}
-    } else  if (!this.menuVisible && screen.width < 1024){
-      return {"left": "-100%"}
+      return {'left': '40px'};
+    } else if (!this.menuVisible && screen.width < 1024) {
+      return {'left': '-100%'};
     } else {
-      return {"left": "-400px"}
+      return {'left': '-400px'};
     }
   }
 
