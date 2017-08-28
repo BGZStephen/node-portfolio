@@ -3,9 +3,19 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { SiteRouter } from './site.routes';
-import { SiteApiService } from './services/site-api.service';
-import { SiteViewComponent, SiteWorkExamplesComponent, SiteCodeLabComponent, SiteHomeComponent,
-         SiteNavbarComponent} from './components/site-components-barrel';
+
+// Services
+import { ApiService } from '../../services/api.service';
+
+// Components
+import {
+  SiteViewComponent,
+  SiteWorkExamplesComponent,
+  SiteCodeLabComponent,
+  SiteHomeComponent,
+  SiteNavbarComponent
+} from './components/site-components-barrel';
+
 
 @NgModule({
   declarations: [
@@ -21,6 +31,6 @@ import { SiteViewComponent, SiteWorkExamplesComponent, SiteCodeLabComponent, Sit
     HttpModule,
     SiteRouter
   ],
-  providers: [SiteApiService],
+  providers: [ApiService],
 })
 export class SiteModule { }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WorkExamplesApiService } from '../../work-examples-api.service';
+import { ApiService } from '../../../../../../services/api.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
@@ -14,7 +14,7 @@ export class WorkExamplesAddComponent implements OnInit {
   technologies: Array<object> = [];
 
   constructor(
-    private apiService: WorkExamplesApiService,
+    private apiService: ApiService,
     private flashMessage: FlashMessagesService
   ) { }
 

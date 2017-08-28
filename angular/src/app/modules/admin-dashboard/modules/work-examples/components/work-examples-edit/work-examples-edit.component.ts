@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { WorkExamplesApiService } from '../../work-examples-api.service';
+import { ApiService } from '../../../../../../services/api.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
@@ -17,7 +17,7 @@ export class WorkExamplesEditComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private apiService: WorkExamplesApiService,
+    private apiService: ApiService,
     private flashMessage: FlashMessagesService
   ) { }
 
@@ -103,20 +103,7 @@ export class WorkExamplesEditComponent implements OnInit {
   }
 
   updateWorkExample(workExampleObject, workExampleId) {
-    workExampleObject._id = workExampleId;
-    workExampleObject.technologies = this.activeTechnologies;
-    workExampleObject.type = this.activeType;
-    this.apiService.updateWorkExample(workExampleObject)
-    .subscribe(res => {
-      if (res.success) {
-        this.flashMessage.show(res.message, {cssClass: 'flash-success--dashboard', timeout: 3000});
-        setTimeout(() => {
-          this.apiService.setComponent('work-examples-manage');
-        }, 500);
-      } else {
-        this.flashMessage.show('Work example update failed', {cssClass: 'flash-failure--dashboard', timeout: 3000});
-      }
-    });
+
   }
 
 }

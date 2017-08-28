@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { WorkExamplesApiService } from './work-examples-api.service';
+import { ApiService } from '../../../../services/api.service';
 
 import {
   WorkExamplesManageComponent,
@@ -17,6 +17,6 @@ import {
     FormsModule,
     HttpModule
   ],
-  providers: [WorkExamplesApiService],
+  providers: [ApiService],
 })
 export class WorkExamplesModule { }

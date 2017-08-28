@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/Rx';
 import { Router } from '@angular/router';
-import { environment } from '../../../../environments/environment';
+import { environment } from '../../environments/environment';
 
 @Injectable()
-export class AdminDashboardApiService {
+export class AuthService {
 
   baseUrl: string = environment.apiUrl;
   authorization: String = environment.authorization;
@@ -14,7 +14,6 @@ export class AdminDashboardApiService {
     private http: Http,
     private router: Router
   ) { }
-
 
   login(userObject) {
     const headers = new Headers();
@@ -32,5 +31,4 @@ export class AdminDashboardApiService {
     localStorage.setItem('token', tokenObject['token']);
     localStorage.setItem('user', JSON.stringify(tokenObject['user']));
   }
-
 }

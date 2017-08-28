@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TechnologiesApiService } from '../../technologies-api.service';
+import { ApiService } from '../../../../../../services/api.service';
 
 @Component({
   selector: 'app-technologies-manage',
@@ -11,7 +11,7 @@ export class TechnologiesManageComponent implements OnInit {
   technologies: Array<object>;
 
   constructor (
-    private apiService: TechnologiesApiService
+    private apiService: ApiService
   ) { }
 
   ngOnInit() {

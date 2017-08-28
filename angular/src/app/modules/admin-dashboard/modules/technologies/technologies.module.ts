@@ -8,7 +8,7 @@ import {
   TechnologiesEditComponent
 } from './components/technologies-components-barrel';
 
-import { TechnologiesApiService } from './technologies-api.service';
+import { ApiService } from '../../../../services/api.service';
 
 @NgModule({
   declarations: [
@@ -21,6 +21,6 @@ import { TechnologiesApiService } from './technologies-api.service';
     FormsModule,
     HttpModule
   ],
-  providers: [TechnologiesApiService],
+  providers: [ApiService],
 })
 export class TechnologiesModule { }
