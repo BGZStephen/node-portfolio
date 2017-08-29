@@ -7,10 +7,6 @@ import { AuthGuard } from './guards/auth.guard';
 
 import { AppComponent } from './app.component';
 
-// modules
-import { AdminDashboardModule } from './modules/admin-dashboard/admin-dashboard.module';
-import { SiteModule } from './modules/site/site.module';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,8 +15,6 @@ import { SiteModule } from './modules/site/site.module';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AdminDashboardModule,
-    SiteModule,
     AppRouter
   ],
   providers: [AuthGuard],
