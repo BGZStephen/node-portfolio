@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SiteApiService } from '../../services/site-api.service';
 
 @Component({
   selector: 'app-site-navbar',
@@ -12,7 +11,6 @@ export class SiteNavbarComponent implements OnInit {
   menuVisible = false;
 
   constructor(
-    private apiService: SiteApiService,
     private router: Router,
   ) { }
 

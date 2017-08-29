@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminDashboardApiService } from '../../services/admin-dashboard-api.service';
+import { AuthService } from '../../../../services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class AdminDashboardLoginComponent implements OnInit {
 
   constructor(
-    private apiService: AdminDashboardApiService,
+    private authService: AuthService,
     private router: Router
   ) { }
 
@@ -18,10 +18,10 @@ export class AdminDashboardLoginComponent implements OnInit {
   }
 
   login(userObject: Object) {
-    this.apiService.login(userObject)
+    this.authService.login(userObject)
     .subscribe(res => {
       if (res.success) {
-        this.apiService.storeToken(res);
+        this.authService.storeToken(res);
         this.router.navigate(['/dashboard']);
       }
     });

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SiteApiService } from '../../services/site-api.service';
+import { ApiService } from '../../../../services/api.service';
 
 @Component({
   selector: 'app-site-code-lab',
@@ -15,7 +15,7 @@ export class SiteCodeLabComponent implements OnInit {
   menuContainer = document.getElementsByClassName('menu-container')[0];
 
   constructor(
-    private apiService: SiteApiService
+    private apiService: ApiService
   ) { }
 
   ngOnInit() {
@@ -24,6 +24,7 @@ export class SiteCodeLabComponent implements OnInit {
     this.terminal.classList.toggle('code-lab-color');
     this.menuContainer.classList.toggle('code-lab-background-color');
   }
+
   loadCodeLab() {
     this.apiService.loadCodeLab()
     .subscribe(res => {

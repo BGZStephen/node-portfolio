@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SiteApiService } from '../../services/site-api.service';
+import { ApiService } from '../../../../services/api.service';
 
 @Component({
   selector: 'app-site-work-examples',
@@ -15,7 +15,7 @@ export class SiteWorkExamplesComponent implements OnInit {
   menuContainer = document.getElementsByClassName('menu-container')[0];
 
   constructor(
-    private apiService: SiteApiService
+    private apiService: ApiService
   ) {
     this.loadWorkExamples();
   }
