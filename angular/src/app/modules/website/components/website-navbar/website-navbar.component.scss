@@ -1,0 +1,41 @@
+#site-navbar {
+  ul {
+    align-items: center;
+    background: black;
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    list-style: none;
+  }
+
+  li {
+    p {
+      display: none;
+    }
+
+    .fa {
+      color: white;
+      font-size: 1.4em;
+    }
+
+    .fa-code {
+      color: $green-600;
+    }
+
+    .fa-flask {
+      color: $orange-400;
+    }
+
+    .fa-envelope-o {
+      color: $purple-400;
+    }
+
+    .fa-linkedin {
+      color: $blue-800;
+    }
+
+    text-align: center;
+    width: 20%;
+  }
+  width: 100vw;
+}

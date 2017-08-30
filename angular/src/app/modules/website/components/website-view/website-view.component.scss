@@ -1,0 +1,19 @@
+.primary-container {
+  min-height: 100vh;
+  min-width: 100vw;
+  background: #212121;
+  position: relative;
+}
+
+.navbar-container {
+  position: absolute;
+  bottom: 0;
+  @media(min-width: 768px) {
+    bottom: auto;
+    right: 0;
+  }
+}
+
+.outlet-container {
+
+}

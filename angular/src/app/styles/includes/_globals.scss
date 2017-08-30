@@ -1,7 +1,8 @@
-@import '../vendor/normalize';
+// @import '../vendor/normalize';
 
 * {
+  box-sizing: border-box;
+  font-family: 'Cutive Mono', monospace;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
