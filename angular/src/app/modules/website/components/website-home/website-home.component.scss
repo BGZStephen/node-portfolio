@@ -5,15 +5,16 @@
     color: white;
     margin-bottom: 15px;
     @media(min-width: 768px) {
-      font-size: 1.8em;
+      font-size: 1.5em;
       text-shadow: 4px 4px 4px black;
     }
   }
   p {
-    color: #ccc;
+    color: #CCCCCC;
+    line-height: 1.5;
     margin-bottom: 15px;
     @media(min-width: 768px) {
-      font-size: 1.3em;
+      font-size: 1.2em;
       text-shadow: 3px 3px 6px black;
     }
   }
@@ -25,6 +26,12 @@
 
   @media(min-width: 1024px) {
     max-width: 700px;
+    margin-left: auto;
+    padding: 40px 0 20px 0;
+  }
+
+  @media(min-width: 1440px) {
+    max-width: 900px;
     margin-left: auto;
     padding: 40px 0 20px 0;
   }

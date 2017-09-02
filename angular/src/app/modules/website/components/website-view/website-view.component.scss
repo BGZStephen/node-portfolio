@@ -6,7 +6,7 @@
 }
 
 .navbar-container {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   @media(min-width: 768px) {
     position: fixed;
