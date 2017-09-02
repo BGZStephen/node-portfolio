@@ -1,0 +1,122 @@
+#website-work {
+  margin: 0 auto;
+  padding: 20px 20px 60px 20px;
+
+  #intro-container {
+    h2 {
+      color: white;
+      margin-bottom: 15px;
+      @media(min-width: 768px) {
+        font-size: 1.2em;
+        text-shadow: 4px 4px 4px black;
+      }
+    }
+    p {
+      color: #CCCCCC;
+      line-height: 1.5;
+      margin-bottom: 15px;
+      @media(min-width: 768px) {
+        font-size: 1em;
+        text-shadow: 3px 3px 6px black;
+      }
+    }
+  }
+
+  #work-examples-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .work-example {
+      background: black;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+      min-height: 150px;
+      padding: 25px 15px 0 15px;
+      position: relative;
+      width: 100%;
+
+      h3 {
+        color: white;
+        margin-bottom: 5px;
+        width: 100%;
+      }
+
+      p {
+        color: #CCCCCC;
+        width: 100%;
+      }
+
+      .work-example-overlay {
+        justify-content: center;
+        display: flex;
+        margin: 25px 0;
+        transition: 1.3s ease all;
+        width: 100%;
+        a {
+          border: 2px solid $blue-600;
+          border-radius: 5px;
+          color: $blue-400;
+          padding: 8px 20px;
+          transition: 0.3s ease all;
+          text-decoration: none;
+
+          &:hover {
+            background: $blue-400;
+            color: black;
+          }
+        }
+
+        @media(min-width: 768px) {
+          background: rgba(0,0,0, 0.7);
+          // display: none;
+          visibility: 0;
+          opacity: 0;
+          position: absolute;
+          justify-content: center;
+          align-items: center;
+          bottom: 0;
+          left: 0;
+          top: 0;
+          transition: 0.3s ease all;
+          right: 0;
+        }
+      }
+
+      @media(min-width: 768px) {
+        width: 49%;
+        padding-bottom: 25px;
+
+        &:hover .work-example-overlay {
+          display: flex;
+          visibility: 1;
+          opacity: 1;
+        }
+      }
+
+      @media(min-width: 1024px) {
+        width: 32%;
+      }
+    }
+
+  }
+
+
+  @media(min-width: 768px) {
+    max-width: 550px;
+    margin-left: 0;
+  }
+
+  @media(min-width: 1024px) {
+    max-width: 700px;
+    margin-left: auto;
+    padding: 40px 0 20px 0;
+  }
+
+  @media(min-width: 1440px) {
+    max-width: 900px;
+    margin-left: auto;
+    padding: 40px 0 20px 0;
+  }
+}
