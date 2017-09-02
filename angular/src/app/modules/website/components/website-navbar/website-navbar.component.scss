@@ -23,13 +23,19 @@
     text-align: center;
     width: 20%;
     p {
+      cursor: pointer;
       display: none;
+      transition: 0.3s ease all;
+
+      &:hover {
+        color: $blue-400;
+      }
+
       @media(min-width: 768px) {
         color: white;
         display: inline;
         font-size: 1.6em;
       }
-
     }
 
     .fa {
