@@ -1,3 +1,9 @@
-<p>
-  dashboard-view works!
-</p>
+<div id="dashboard-view">
+  <div class="navbar-container">
+    <app-dashboard-navbar></app-dashboard-navbar>
+  </div>
+  <div class="outlet-container">
+    <!-- <app-dashboard-notification-bar></<app-dashboard-notification-bar> -->
+    <router-outlet></router-outlet>
+  </div>
+</div>

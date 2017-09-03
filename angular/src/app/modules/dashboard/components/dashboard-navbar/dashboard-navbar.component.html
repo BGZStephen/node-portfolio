@@ -1,3 +1,20 @@
-<p>
-  dashboard-navbar works!
-</p>
+<div id="dashboard-navbar">
+  <ul class="primary-menu">
+    <li [routerLink]="['/dashboard']">
+      <i class="fa fa-home"></i>
+      <p>home</p>
+    </li>
+    <li [routerLink]="['/dashboard-work']">
+      <i class="fa fa-code"></i>
+      <p>work examples</p>
+    </li>
+    <li [routerLink]="['/dashboard/lab']">
+      <i class="fa fa-flask"></i>
+      <p>code lab</p>
+    </li>
+    <li [routerLink]="['/dashboard/settings']">
+      <i class="fa fa-cogs"></i>
+      <p>settings</p>
+    </li>
+  </ul>
+</div>

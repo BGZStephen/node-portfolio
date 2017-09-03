@@ -6,7 +6,7 @@ import {
 } from './components/dashboard-components-barrel';
 
 const DASHBOARD_ROUTES: Routes = [
-  {path: 'dashboard', component: DashboardViewComponent, children: [
+  {path: '', component: DashboardViewComponent, children: [
     {path: '', component: DashboardHomeComponent},
   ]},
 ];
