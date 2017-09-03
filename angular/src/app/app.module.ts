@@ -9,6 +9,7 @@ import { AppRouter } from './app.routes';
 
 // modules
 import { WebsiteModule } from './modules/website/website.module';
+import { DashboardModule } from './modules/dashboard/dashboard.module';
 
 // components
 import { AppComponent } from './app.component';
