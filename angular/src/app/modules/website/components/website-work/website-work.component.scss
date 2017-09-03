@@ -59,6 +59,8 @@
           border-radius: 5px;
           color: $blue-400;
           padding: 8px 20px;
+          position: relative;
+          top: 10px;
           transition: 0.3s ease all;
           text-decoration: none;
 
@@ -70,7 +72,6 @@
 
         @media(min-width: 768px) {
           background: rgba(0,0,0, 0.7);
-          // display: none;
           visibility: 0;
           opacity: 0;
           position: absolute;
@@ -79,7 +80,7 @@
           bottom: 0;
           left: 0;
           top: 0;
-          transition: 0.3s ease all;
+          transition: 0.3s ease all, 0.5s ease top;
           right: 0;
         }
       }
@@ -92,6 +93,10 @@
           display: flex;
           visibility: 1;
           opacity: 1;
+
+          a {
+            top: 0;
+          }
         }
       }
 

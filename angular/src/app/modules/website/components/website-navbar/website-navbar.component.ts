@@ -7,11 +7,17 @@ import { OnInit, Component } from '@angular/core';
 })
 export class WebsiteNavbarComponent implements OnInit {
 
+  contactModalVisible: Boolean = false;
+
   constructor() {
 
   }
 
   ngOnInit() {
 
+  }
+
+  toggleContactModalVisibility() {
+    this.contactModalVisible = !this.contactModalVisible;
   }
 }
