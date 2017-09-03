@@ -8,7 +8,7 @@ import {
   WebsiteNavbarComponent,
   WebsiteHomeComponent,
   WebsiteWorkComponent,
-  WebsiteSocialComponent
+  WebsiteLabComponent
 } from './components/website-components-barrel';
 
 @NgModule({
@@ -17,7 +17,7 @@ import {
     WebsiteNavbarComponent,
     WebsiteHomeComponent,
     WebsiteWorkComponent,
-    WebsiteSocialComponent,
+    WebsiteLabComponent,
   ],
   imports: [
     CommonModule,
