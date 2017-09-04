@@ -10,51 +10,30 @@ const TechnologySchema = mongoose.Schema({
 const Technology = module.exports = mongoose.model('Technology', TechnologySchema)
 
 module.exports.create = function(technologyObject) {
-  return new Promise((resolve, reject) => {
-    technologyObject.save().then(result => {
-      if(result == null) {
-        reject("Failed to save work technology")
-      } else {
-        resolve(result)
-      }
-    })
+  technologyObject.save()
+  .then(result => {
+    return technology;
   })
 }
 
 module.exports.deleteOne = function(technologyObject) {
-  return new Promise((resolve, reject) => {
-    Technology.findOne(technologyObject).remove().exec().then(result => {
-      if(JSON.parse(result).n != 1) {
-        reject("Failed to delete technlogy")
-      } else {
-        resolve()
-      }
-    })
+  Technology.findOne(technologyObject)
+  .remove()
+  .then(result => {
+    return result
   })
 }
 
 module.exports.get = function(technologyObject) {
-  return new Promise((resolve, reject) => {
-    Technology.find(technologyObject).then(result => {
-      if(result == null) {
-        reject("Technology not found, does it exist?")
-      } else {
-        resolve(result)
-      }
-    })
+  Technology.find(technologyObject)
+  .then(technology => {
+    return technology
   })
 }
 
 module.exports.updateTechnology = function(technologyObject) {
-  return new Promise((resolve, reject) => {
-    Technology.update({_id: technologyObject._id}, technologyObject).then(result => {
-      if(result.nModified == 0) {
-        reject("Nothing to update")
-      } else if (result.nModified >= 1) {
-        resolve(result)
-      } else {
-        reject("Technology update failed")
-      }
-    })
+  Technology.update({_id: technologyObject._id}, technologyObject)
+  .then(updatedTechnology => {
+    return updatedTechnology
   })
 }
