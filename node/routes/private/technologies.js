@@ -7,7 +7,6 @@ async function getAll (req, res, next) {
     return res.status(401).json({error: "Authorisation token not supplied"})
   }
 
-
   try {
     const technology = await Technology.get(req.query)
     res.json(technology)
@@ -83,4 +82,12 @@ async function update (req, res, next) {
     console.log(error)
     res.sendStatus(500)
   }
+}
+
+module.exports = {
+  getAll,
+  create,
+  deleteOne,
+  getOne,
+  update,
 }

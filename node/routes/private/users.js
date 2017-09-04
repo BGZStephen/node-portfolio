@@ -3,35 +3,6 @@ const jwt = require('jsonwebtoken')
 const config = require('../../config');
 const User = require('../../models/user');
 
-async function deleteOne (req, res, next) {
-  if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
-    return res.status(401).json({error: "Authorisation token not supplied"})
-  }
-
-  try {
-    await(User.exists(userObject));
-    res.sendStatus(500);
-  } catch(error) {
-    console.log(error);
-    res.sendStatus(500);
-  }
-}
-
-async function getAll (req, res, next) {
-  if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
-    return res.status(401).json({error: "Authorisation token not supplied"})
-  }
-
-  try {
-    const users = await User.getAll()
-    res.json(users)
-  } catch(error) {
-    console.log(error)
-    res.sendStatus(500)
-  }
-
-}
-
 async function getByEmail (req, res, next) {
   if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
     return res.status(401).json({error: "Authorisation token not supplied"})
@@ -80,4 +51,10 @@ async function update (req, res, next) {
     console.log(error)
     res.sendStatus(500)
   }
+}
+
+module.exports = {
+  getByEmail,
+  getOne,
+  update
 }
