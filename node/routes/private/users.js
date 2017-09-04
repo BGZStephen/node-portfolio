@@ -45,8 +45,10 @@ async function update (req, res, next) {
   }
 
   try {
-    let user = await User.updateUser(userObject)
-    res.json(user)
+    await User.exists({email: userObject.email})
+    await User.exists({username: userObject.username})
+    const updatedUser = await User.update(userObject)
+    res.json(updatedUser)
   } catch(error) {
     console.log(error)
     res.sendStatus(500)
