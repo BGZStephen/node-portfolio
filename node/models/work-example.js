@@ -51,6 +51,18 @@ module.exports.get = function(workExampleObject) {
   })
 }
 
+module.exports.getOne = function(workExampleId) {
+  return new Promise((resolve, reject) => {
+    WorkExample.findById(workExampleId).then(result => {
+      if(result.length == 0) {
+        reject({success: false, message: "Work example not found", data: result})
+      } else {
+        resolve({success: true, message: "Work example found", data: result})
+      }
+    })
+  })
+}
+
 module.exports.updateWorkExample = function(workExampleObject) {
   return new Promise((resolve, reject) => {
     WorkExample.update({_id: workExampleObject._id}, workExampleObject).then(result => {
