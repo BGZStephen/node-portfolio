@@ -4,25 +4,11 @@
     <p>Welcome, young Skywalker. I have been expecting you. You no longer need those. Guards, leave us. I'm looking forward to completing your training. In time you will call me Master. You're gravely mistaken. You won't convert me as you did my father. Oh, no, my young Jedi.</p>
   </div>
   <div id="work-examples-container">
-    <div class="work-example">
-      <h3>Work example title</h3>
-      <p>Work example description</p>
+    <div class="work-example" *ngFor="let example of workExamples">
+      <h3>{{example.title}}</h3>
+      <p>{{example.description}}</p>
       <div class="work-example-overlay">
-        <a href=#>Work example link</a>
-      </div>
-    </div>
-    <div class="work-example">
-      <h3>Work example title</h3>
-      <p>Work example description</p>
-      <div class="work-example-overlay">
-        <a href=#>Work example link</a>
-      </div>
-    </div>
-    <div class="work-example">
-      <h3>Work example title</h3>
-      <p>Work example description</p>
-      <div class="work-example-overlay">
-        <a href=#>Work example link</a>
+        <a href={{example.githubUrl}} target="_blank">View on github</a>
       </div>
     </div>
   </div>

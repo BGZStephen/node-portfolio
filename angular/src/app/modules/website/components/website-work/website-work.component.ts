@@ -7,6 +7,8 @@ import { ApiService } from '../../../../services/api.service';
 })
 export class WebsiteWorkComponent implements OnInit {
 
+  workExamples = []
+
   constructor(
     private apiService: ApiService
   ) {
@@ -15,8 +17,9 @@ export class WebsiteWorkComponent implements OnInit {
 
   ngOnInit() {
     this.apiService.getWorkExamples()
-    .subscribe(res => {
-      console.log(res);
+    .subscribe(workExamples => {
+      this.workExamples = workExamples;
+      console.log(workExamples)
     });
   }
 }

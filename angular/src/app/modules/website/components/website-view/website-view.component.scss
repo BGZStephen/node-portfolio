@@ -24,4 +24,12 @@
       padding: 0 40px;
     }
   }
+
+  @media(min-width: 768px) {
+    padding-left: 170px;
+  }
+
+  @media(min-width: 1024px) {
+    padding-left: 190px;
+  }
 }
