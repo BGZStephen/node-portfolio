@@ -16,36 +16,21 @@ const WorkExampleSchema = mongoose.Schema({
 const WorkExample = module.exports = mongoose.model('WorkExample', WorkExampleSchema)
 
 module.exports.create = function(workExampleObject) {
-  workExampleObject.save()
-  .then(workExample => {
-    return workExample;
-  })
+  return workExampleObject.save()
 }
 
 module.exports.deleteOne = function(workExampleObject) {
-  WorkExample.findOne(workExampleObject).remove()
-  .then(result => {
-    return result;
-  })
+  return WorkExample.findOne(workExampleObject).remove()
 }
 
 module.exports.getAll = function(workExampleObject) {
-  WorkExample.find(workExampleObject)
-  .then(workExamples => {
-    return workExamples
-  })
+  return WorkExample.find(workExampleObject)
 }
 
 module.exports.getOne = function(workExampleId) {
-  WorkExample.findById(workExampleId)
-  .then(workExample => {
-    return workExample
-  })
+  return WorkExample.findById(workExampleId)
 }
 
 module.exports.updateWorkExample = function(workExampleObject) {
-  WorkExample.update({_id: workExampleObject._id}, workExampleObject)
-  .then(updatedWorkExample => {
-    return updatedWorkExample;
-  })
+  return WorkExample.update({_id: workExampleObject._id}, workExampleObject)
 }

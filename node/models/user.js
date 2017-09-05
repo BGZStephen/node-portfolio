@@ -17,53 +17,31 @@ const User = module.exports = mongoose.model('User', UserSchema)
 
 module.exports.create = function(userObject) {
   userObject.password = bcrypt.hashSync(userObject.password, 10)
-  userObject.save()
-  .then(result => {
-    return result;
-  })
+  return userObject.save()
 }
 
 module.exports.exists = function(userObject) {
   const searchType = Object.keys(userObject)[0]
-  User.findOne(userObject)
-  .then(result => {
-    return result;
-  })
+  return User.findOne(userObject)
 }
 
 module.exports.deleteOne = function(userObject) {
-  User.findOne(userObject)
-  .remove()
-  .then(result => {
-    return result;
-  })
+  return User.findOne(userObject).remove()
 }
 
 module.exports.getOne = function(userObject) {
-  User.findOne(userObject)
-  .then(user => {
-    return user;
-  })
+  return User.findOne(userObject)
 }
 
 module.exports.getAll = function() {
-  User.find({})
-  .then(users => {
-    return users;
-  })
+  return User.find({})
 }
 
 module.exports.updateUser = function(userObject) {
-  User.update({_id: userObject._id}, userObject)
-  .then(result => {
-    return result;
-  })
+  return User.update({_id: userObject._id}, userObject)
 }
 
 module.exports.updatePassword = function(userObject) {
   userObject.newPassword = bcrypt.hashSync(userObject.newPassword, 10)
-  User.update({_id: userObject._id}, {password: userObject.newPassword})
-  .then(updatedUser => {
-    return updatedUser;
-  })
+  return User.update({_id: userObject._id}, {password: userObject.newPassword})
 }

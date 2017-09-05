@@ -8,7 +8,8 @@ async function getAll (req, res, next) {
   }
 
   try {
-    const workExamples = await WorkExample.get(req.query)
+    const workExamples = await WorkExample.getAll()
+    console.log(workExamples)
     res.json(workExamples)
   } catch(error) {
     console.log(error)

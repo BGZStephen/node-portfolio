@@ -10,30 +10,17 @@ const TechnologySchema = mongoose.Schema({
 const Technology = module.exports = mongoose.model('Technology', TechnologySchema)
 
 module.exports.create = function(technologyObject) {
-  technologyObject.save()
-  .then(result => {
-    return technology;
-  })
+  return technologyObject.save()
 }
 
 module.exports.deleteOne = function(technologyObject) {
-  Technology.findOne(technologyObject)
-  .remove()
-  .then(result => {
-    return result
-  })
+  return Technology.findOne(technologyObject).remove()
 }
 
 module.exports.get = function(technologyObject) {
-  Technology.find(technologyObject)
-  .then(technology => {
-    return technology
-  })
+  return Technology.find(technologyObject)
 }
 
 module.exports.updateTechnology = function(technologyObject) {
-  Technology.update({_id: technologyObject._id}, technologyObject)
-  .then(updatedTechnology => {
-    return updatedTechnology
-  })
+  return Technology.update({_id: technologyObject._id}, technologyObject)
 }

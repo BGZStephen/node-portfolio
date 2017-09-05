@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AuthGuard } from './guards/auth.guard';
+import { ApiService } from './services/api.service';
 
 // router
 import { AppRouter } from './app.routes';
@@ -25,7 +26,7 @@ import { AppComponent } from './app.component';
     AppRouter,
     WebsiteModule
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
