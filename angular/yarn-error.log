@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/nodejs /usr/share/yarn/bin/yarn.js install
+  /usr/bin/nodejs /usr/share/yarn/bin/yarn.js add eslint
 
 PATH: 
   /home/stephen/bin:/home/stephen/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
@@ -39,6 +39,7 @@ npm manifest:
       "angular2-flash-messages": "^1.0.8",
       "angular2-jwt": "^0.2.3",
       "core-js": "^2.4.1",
+      "devicon": "^2.0.0",
       "rxjs": "^5.1.0",
       "zone.js": "^0.8.4"
     },
@@ -1409,6 +1410,10 @@ Lockfile:
   detect-node@^2.0.3:
     version "2.0.3"
     resolved "https://registry.yarnpkg.com/detect-node/-/detect-node-2.0.3.tgz#a2033c09cc8e158d37748fbde7507832bd6ce127"
+  
+  devicon@^2.0.0:
+    version "2.0.0"
+    resolved "https://registry.yarnpkg.com/devicon/-/devicon-2.0.0.tgz#6374a28c18561abe15720af01dca5ea0953cd51b"
   
   di@^0.0.1:
     version "0.0.1"
@@ -3233,7 +3238,7 @@ Lockfile:
       tar "^2.2.1"
       tar-pack "^3.4.0"
   
-  node-sass@^4.3.0, node-sass@^4.5.3:
+  node-sass@^4.3.0:
     version "4.5.3"
     resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-4.5.3.tgz#d09c9d1179641239d1b97ffc6231fdcec53e1568"
     dependencies:

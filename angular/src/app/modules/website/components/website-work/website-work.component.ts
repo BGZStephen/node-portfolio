@@ -16,7 +16,7 @@ export class WebsiteWorkComponent implements OnInit {
   ngOnInit() {
     this.apiService.getWorkExamples()
     .subscribe(res => {
-      console.log(res)
-    })
+      console.log(res);
+    });
   }
 }

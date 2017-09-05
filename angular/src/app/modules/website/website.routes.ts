@@ -11,7 +11,7 @@ const WEBSITE_ROUTES: Routes = [
   {path: '', component: WebsiteViewComponent, children: [
     {path: '', component: WebsiteHomeComponent},
     {path: 'work', component: WebsiteWorkComponent},
-    {path: 'lab', component: WebsiteLabComponent,},
+    {path: 'lab', component: WebsiteLabComponent, },
   ]},
 ];
 
