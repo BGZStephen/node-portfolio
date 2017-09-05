@@ -1,43 +1,44 @@
 const express = require('express');
-const path = require('path')
+const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const config = require('./config')
+const config = require('./config');
+const winston = require('winston');
 
 // connect to mongodb
-mongoose.connect(config.database)
+mongoose.connect(config.database);
 
 // once connected
-mongoose.connection.on("connected", () => {
-  console.log("Connected to database successfully");
-})
+mongoose.connection.on('connected', () => {
+  winston.log('Connected to database successfully');
+});
 
 // in case of error
 mongoose.connection.on('error', (err) => {
-  console.log('Error: ' + err);
-})
+  winston.log('Error: ' + err);
+});
 
-const app = express()
+const app = express();
 
 // middleware
 
 // cross origin resource sharing setup
-app.use(cors())
+app.use(cors());
 
 // static folder for public views
-app.use(express.static(path.join(__dirname, '../public')))
+app.use(express.static(path.join(__dirname, '../public')));
 
 // body partser initialize
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 // routing
 app.use(require('./routes/public'));
 app.use(require('./routes/private'));
 
 // define port
-const port = 9000
+const port = 9000;
 
 app.listen(port, () => {
-  console.log("Server started, listening on port " + port)
-})
+  winston.log(`Server started, listening on port: ${port}`);
+});
