@@ -3,3 +3,4 @@ export { WebsiteNavbarComponent } from './website-navbar/website-navbar.componen
 export { WebsiteHomeComponent } from './website-home/website-home.component';
 export { WebsiteWorkComponent } from './website-work/website-work.component';
 export { WebsiteLabComponent } from './website-lab/website-lab.component';
+export { WebsiteWorkExampleComponent } from './website-work-example/website-work-example.component';

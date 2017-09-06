@@ -21,4 +21,11 @@ export class ApiService {
     return this.http.get(`${this.baseUrl}/work-examples`, {headers: headers})
     .map(res => res.json());
   }
+
+  getWorkExample(id) {
+    const headers = new Headers();
+    headers.append('Authorization', `${this.authorization}`);
+    return this.http.get(`${this.baseUrl}/work-examples/${id}`, {headers: headers})
+    .map(res => res.json());
+  }
 }
