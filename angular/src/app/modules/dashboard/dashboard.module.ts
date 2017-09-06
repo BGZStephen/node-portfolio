@@ -6,7 +6,8 @@ import { DashboardRouter } from './dashboard.routes';
 import {
   DashboardViewComponent,
   DashboardHomeComponent,
-  DashboardNavbarComponent
+  DashboardNavbarComponent,
+  DashboardLoginComponent
 } from './components/dashboard-components-barrel';
 
 @NgModule({
@@ -14,6 +15,7 @@ import {
     DashboardViewComponent,
     DashboardHomeComponent,
     DashboardNavbarComponent,
+    DashboardLoginComponent,
   ],
   imports: [
     CommonModule,
