@@ -4,10 +4,11 @@ const TechnologySchema = require('./technology').schema
 
 const WorkExampleSchema = mongoose.Schema({
   createdOn: Date,
-  description: String,
+  description: Array,
   githubUrl: String,
-  imageUrl: String,
-  technologies: [TechnologySchema],
+  images: Array,
+  summary: String,
+  technologies: Array,
   title: String,
   type: String,
   url: String

@@ -51,13 +51,16 @@
       .work-example-overlay {
         justify-content: center;
         display: flex;
+        flex-direction: column;
         margin: 25px 0;
         transition: 1.3s ease all;
         width: 100%;
         a {
           border: 2px solid $blue-600;
           border-radius: 5px;
-          color: $blue-400;
+          color: $blue-600;
+          font-weight: bold;
+          margin: 10px 0;
           padding: 8px 20px;
           position: relative;
           top: 10px;
@@ -65,8 +68,18 @@
           text-decoration: none;
 
           &:hover {
-            background: $blue-400;
+            background: $blue-600;
             color: black;
+          }
+
+          &:nth-of-type(2n) {
+            border: 2px solid $green-600;
+            color: $green-600;
+
+            &:hover {
+              background: $green-600;
+              color: black;
+            }
           }
         }
 
