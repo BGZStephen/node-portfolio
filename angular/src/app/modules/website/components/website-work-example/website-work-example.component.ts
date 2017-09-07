@@ -22,7 +22,8 @@ export class WebsiteWorkExampleComponent implements OnInit {
       let paletteObject = {_id: workExampleId}
       this.apiService.getWorkExample(workExampleId)
       .subscribe(workExample => {
-        this.workExample = workExample.json()
+        console.log(workExample)
+        this.workExample = workExample
       },
       error => {
         console.log(error)
