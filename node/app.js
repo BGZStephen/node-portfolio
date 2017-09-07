@@ -11,12 +11,12 @@ mongoose.connect(config.database);
 
 // once connected
 mongoose.connection.on('connected', () => {
-  winston.log('Connected to database successfully');
+  console.log('Connected to database successfully');
 });
 
 // in case of error
 mongoose.connection.on('error', (err) => {
-  winston.log('Error: ' + err);
+  console.log('Error: ' + err);
 });
 
 const app = express();
@@ -40,5 +40,5 @@ app.use(require('./routes/private'));
 const port = 9000;
 
 app.listen(port, () => {
-  winston.log(`Server started, listening on port: ${port}`);
+  console.log(`Server started, listening on port: ${port}`);
 });

@@ -15,8 +15,12 @@ async function authenticate (req, res) {
   }
 
   const comparisonUser = await(User.getOne({email: userObject.email}));
+
+  if(!comparisonUser) {
+    return res.sendStatus(401);
+  }
+
   userObject.userId = comparisonUser._id
-  userObject.username = comparisonUser.username
 
   try {
     if(await bcrypt.compare(req.body.password, comparisonUser.password)) {
@@ -26,9 +30,7 @@ async function authenticate (req, res) {
         message: "Authentication successful",
         token: "JWT" + token,
         user: {
-          email: userObject.email,
-          userId: userObject.userId,
-          username: userObject.username
+          id: userObject.userId,
         }
       })
     } else {

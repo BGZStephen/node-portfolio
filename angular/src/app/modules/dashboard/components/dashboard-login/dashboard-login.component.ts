@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../../../../services/auth.service';
 
 @Component({
@@ -8,18 +9,15 @@ import { AuthService } from '../../../../services/auth.service';
 export class DashboardLoginComponent implements OnInit {
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit() {
   }
 
   authenticate(credentials) {
-    console.log(credentials)
     this.authService.authenticate(credentials)
-    .subscribe(res => {
-      console.log(res)
-    })
   }
 
 }

@@ -17,7 +17,21 @@ export class AuthService {
   authenticate(credentials) {
     const headers = new Headers()
     headers.append('Authorization', `${this.authorization}`);
-    return this.http.post(`${this.baseUrl}/users/authenticate`, credentials, {headers: headers})
+    this.http.post(`${this.baseUrl}/users/authenticate`, credentials, {headers: headers})
     .map(res => res.json())
+    .subscribe(authenticated => {
+      if (authenticated.success) {
+        this.storeToken(authenticated.token)
+        this.router.navigate(['/dashboard'])
+      }
+    },
+    error => {
+      console.log(error)
+    })
+  }
+
+  storeToken(token) {
+    console.log(token)
+    localStorage.setItem('token', token)
   }
 }
