@@ -2,7 +2,13 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+
+import { AuthService } from '../../services/auth.service';
+
+// router
 import { DashboardRouter } from './dashboard.routes';
+
+// components
 import {
   DashboardViewComponent,
   DashboardHomeComponent,
@@ -23,7 +29,7 @@ import {
     HttpModule,
     DashboardRouter
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: []
 })
 export class DashboardModule { }

@@ -1,13 +1,15 @@
 <div id="dashboard-login">
   <div class="login-form-container">
-    <div class="row">
-      <label>email:</label>
-      <input type="text" placeholder="jon@doe.com" autocomplete="off">
-    </div>
-    <div class="row">
-      <label>password:</label>
-      <input type="password" placeholder="----------" autocomplete="off">
-    </div>
-    <button class="button-login">Login</button>
+    <form #f="ngForm" (ngSubmit)="authenticate(f.value)">
+      <div class="row">
+        <label>email:</label>
+        <input type="text" placeholder="jon@doe.com" autocomplete="off" name="email" ngModel>
+      </div>
+      <div class="row">
+        <label>password:</label>
+        <input type="password" placeholder="----------" autocomplete="off" name="password" ngModel>
+      </div>
+      <button class="button-login">Login</button>
+    </form>
   </div>
 </div>

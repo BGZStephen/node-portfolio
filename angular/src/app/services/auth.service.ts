@@ -13,4 +13,11 @@ export class AuthService {
     private http: Http,
     private router: Router
   ) { }
+
+  authenticate(credentials) {
+    const headers = new Headers()
+    headers.append('Authorization', `${this.authorization}`);
+    return this.http.post(`${this.baseUrl}/users/authenticate`, credentials, {headers: headers})
+    .map(res => res.json())
+  }
 }
