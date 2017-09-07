@@ -108,7 +108,7 @@
 
       @media(min-width: 768px) {
         color: white;
-        display: inline;
+        display: block;
         font-size: 1.2em;
       }
 
@@ -156,12 +156,11 @@
   @media(min-width: 768px) {
     left: 0;
     position: relative;
-    padding: 0 20px 0 5px;
-    width: auto;
+    width: 100%;
   }
 
   @media(min-width: 1024px) {
-    padding-left: 30px;
-    width: 220px;
+    padding: 0 20px;
+    width: 200px;
   }
 }
