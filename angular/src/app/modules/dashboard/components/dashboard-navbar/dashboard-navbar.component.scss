@@ -1,49 +1,91 @@
 #dashboard-navbar {
   background: black;
-  width: 100%;
-  .primary-menu {
-    list-style: none;
-    display: flex;
+  width: 100vw;
 
-    li {
-      align-items: center;
-      border-bottom: 2px solid #212121;
+  ul {
+    align-items: center;
+    background: black;
+    display: flex;
+    height: 60px;
+    list-style: none;
+    width: 100%;
+    @media(min-width: 768px) {
+      background: none;
+      flex-direction: column;
+      height: 100vh;
+    }
+  }
+
+  li {
+    // text-align: center;
+    width: 20%;
+
+    a {
       display: flex;
       justify-content: center;
-      height: 45px;
-      width: 100%;
+      text-decoration: none;
+    }
 
-      p,
-      .fa {
-        color: white;
-      }
+    p {
+      cursor: pointer;
+      display: none;
+      transition: 0.3s ease all;
 
-      p {
-        display: none;
-        font-size: 1.2em;
-
-        @media(min-width: 768px) {
-          display: inline;
-        }
-
-
-      }
-
-      .fa {
-        margin: 0 15px;
+      &:hover {
+        color: $blue-400;
       }
 
       @media(min-width: 768px) {
-        justify-content: flex-start;
+        color: white;
+        display: inline;
+        font-size: 1.2em;
       }
 
     }
-    @media(min-width: 768px) {;
-      flex-direction: column;
+
+    .fa {
+      color: white;
+      font-size: 1.4em;
+      @media(min-width: 768px) {
+        width: 35px;
+      }
+    }
+
+    .fa-code {
+      color: $green-800;
+    }
+
+    .fa-flask {
+      color: $orange-400;
+    }
+
+    .fa-envelope-o {
+      color: $purple-400;
+    }
+
+    .fa-home {
+      color: $blue-800;
+    }
+
+    .desktop-only {
+      display: none;
+
+      @media(min-width: 768px) {
+        display: inline;
+      }
+    }
+
+    @media(min-width: 768px) {
+      display: flex;
+      margin: 15px 0;
+      width: 100%;
     }
   }
 
   @media(min-width: 768px) {
-    height: 100%;
+    left: 0;
+    padding-left: 15px;
+    position: fixed;
+    width: 170px;
   }
 }

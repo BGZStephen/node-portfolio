@@ -3,13 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import {
   DashboardLoginComponent,
   DashboardViewComponent,
-  DashboardHomeComponent
+  DashboardHomeComponent,
+  DashboardWorkComponent
 } from './components/dashboard-components-barrel';
 
 const DASHBOARD_ROUTES: Routes = [
   {path: 'login', component: DashboardLoginComponent },
   {path: '', component: DashboardViewComponent, children: [
     {path: '', component: DashboardHomeComponent},
+    {path: 'work', component: DashboardWorkComponent},
   ]},
 ];
 

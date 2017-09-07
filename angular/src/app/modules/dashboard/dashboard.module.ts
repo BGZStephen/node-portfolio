@@ -13,7 +13,8 @@ import {
   DashboardViewComponent,
   DashboardHomeComponent,
   DashboardNavbarComponent,
-  DashboardLoginComponent
+  DashboardLoginComponent,
+  DashboardWorkComponent,
 } from './components/dashboard-components-barrel';
 
 @NgModule({
@@ -22,6 +23,7 @@ import {
     DashboardHomeComponent,
     DashboardNavbarComponent,
     DashboardLoginComponent,
+    DashboardWorkComponent,
   ],
   imports: [
     CommonModule,
