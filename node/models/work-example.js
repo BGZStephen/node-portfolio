@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 const config = require('../config')
-const TechnologySchema = require('./technology').schema
 
 const WorkExampleSchema = mongoose.Schema({
   createdOn: Date,
