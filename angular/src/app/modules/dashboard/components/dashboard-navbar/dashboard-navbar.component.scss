@@ -84,8 +84,8 @@
 
   @media(min-width: 768px) {
     left: 0;
-    padding-left: 15px;
-    position: fixed;
-    width: 170px;
+    position: relative;
+    padding: 0 15px;
+    width: auto;
   }
 }
