@@ -1,6 +1,4 @@
 #website-work {
-  margin: 0 auto;
-  padding: 20px 20px 60px 20px;
 
   #intro-container {
     h2 {
@@ -23,9 +21,6 @@
   }
 
   #work-examples-container {
-    display: flex;
-    flex-wrap: wrap;
-
     .work-example {
       align-content: flex-start;
       background: black;
@@ -33,7 +28,7 @@
       flex-wrap: wrap;
       margin-bottom: 10px;
       min-height: 150px;
-      padding: 25px 15px 0 15px;
+      padding: 10px;
       position: relative;
       width: 100%;
 
@@ -97,44 +92,6 @@
           right: 0;
         }
       }
-
-      @media(min-width: 768px) {
-        margin: 0.5%;
-        width: 49%;
-        padding-bottom: 25px;
-
-        &:hover .work-example-overlay {
-          display: flex;
-          visibility: 1;
-          opacity: 1;
-
-          a {
-            top: 0;
-          }
-        }
-      }
-
-      @media(min-width: 1024px) {
-        width: 32%;
-      }
     }
-  }
-
-
-  @media(min-width: 768px) {
-    max-width: 550px;
-    margin-left: 0;
-  }
-
-  @media(min-width: 1024px) {
-    max-width: 900px;
-    margin-left: auto;
-    padding: 40px 0 20px 0;
-  }
-
-  @media(min-width: 1440px) {
-    max-width: 1200px;
-    margin-left: auto;
-    padding: 40px 0 20px 0;
   }
 }

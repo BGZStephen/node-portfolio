@@ -1,6 +1,4 @@
 #website-home {
-  margin: 0 auto;
-  padding: 20px 20px 60px 20px;
   h2 {
     color: white;
     margin-bottom: 15px;
@@ -17,22 +15,5 @@
       font-size: 1.2em;
       text-shadow: 3px 3px 6px black;
     }
-  }
-
-  @media(min-width: 768px) {
-    max-width: 550px;
-    margin-left: 0;
-  }
-
-  @media(min-width: 1024px) {
-    max-width: 700px;
-    margin-left: auto;
-    padding: 40px 0 20px 0;
-  }
-
-  @media(min-width: 1440px) {
-    max-width: 900px;
-    margin-left: auto;
-    padding: 40px 0 20px 0;
   }
 }

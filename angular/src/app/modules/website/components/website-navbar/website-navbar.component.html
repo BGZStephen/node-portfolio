@@ -1,36 +1,38 @@
 <div id="site-navbar">
-  <ul>
-    <li [routerLink]="['/']">
-      <i class="fa fa-home"></i>
-      <p>home</p>
-    </li>
-    <li [routerLink]="['/work']">
-      <i class="fa fa-code"></i>
-      <p >work</p>
-    </li>
-    <li [routerLink]="['/lab']">
-      <i class="fa fa-flask"></i>
-      <p>code lab</p>
-    </li>
-    <li>
-      <a href="https://www.github.com/bgzstephen" target="_blank">
-        <i class="fa fa-github"></i>
-        <p>github</p>
-      </a>
-    </li>
-    <li (click)="toggleContactModalVisibility()">
-      <i [routerLink]="['/contact']" class="fa fa-envelope-o"></i>
-      <p>contact</p>
-    </li>
-    <div *ngIf="contactModalVisible" id="contact-modal-container">
-      <div class="modal">
-        <div class="modal-header">
-          <h2>get in touch</h2>
-          <i (click)="toggleContactModalVisibility()" class="fa fa-times"></i>
+  <div class="navbar-container">
+    <ul>
+      <li [routerLink]="['/']">
+        <i class="fa fa-home"></i>
+        <p>home</p>
+      </li>
+      <li [routerLink]="['/work']">
+        <i class="fa fa-code"></i>
+        <p >work</p>
+      </li>
+      <li [routerLink]="['/lab']">
+        <i class="fa fa-flask"></i>
+        <p>code lab</p>
+      </li>
+      <li>
+        <a href="https://www.github.com/bgzstephen" target="_blank">
+          <i class="fa fa-github"></i>
+          <p>github</p>
+        </a>
+      </li>
+      <li (click)="toggleContactModalVisibility()">
+        <i [routerLink]="['/contact']" class="fa fa-envelope-o"></i>
+        <p>contact</p>
+      </li>
+      <div *ngIf="contactModalVisible" id="contact-modal-container">
+        <div class="modal">
+          <div class="modal-header">
+            <h2>get in touch</h2>
+            <i (click)="toggleContactModalVisibility()" class="fa fa-times"></i>
+          </div>
+          <p><i class="fa fa-phone"></i>: 07584132200</p>
+          <p><i class="fa fa-envelope-o"></i>: sjw948@gmail.com</p>
         </div>
-        <p><i class="fa fa-phone"></i>: 07584132200</p>
-        <p><i class="fa fa-envelope-o"></i>: sjw948@gmail.com</p>
       </div>
-    </div>
-  </ul>
+    </ul>
+  </div>
 </div>
