@@ -3,8 +3,7 @@
   background: black;
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 10px;
-  min-height: 150px;
+  min-height: 100px;
   padding: 10px;
   position: relative;
   width: 100%;
@@ -24,7 +23,6 @@
     justify-content: center;
     display: flex;
     flex-direction: column;
-    margin: 25px 0;
     transition: 1.3s ease all;
     width: 100%;
     a {
@@ -35,7 +33,6 @@
       margin: 10px 0;
       padding: 8px 20px;
       position: relative;
-      top: 10px;
       transition: 0.3s ease all;
       text-decoration: none;
 
@@ -67,6 +64,11 @@
       top: 0;
       transition: 0.3s ease all, 0.5s ease top;
       right: 0;
+
+      &:hover {
+        visibility: 1;
+        opacity: 1;
+      }
     }
   }
 }
