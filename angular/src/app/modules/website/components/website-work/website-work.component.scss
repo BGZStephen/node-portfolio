@@ -1,22 +1,19 @@
 #website-work {
-
-  #intro-container {
-    h2 {
-      color: white;
-      margin-bottom: 15px;
-      @media(min-width: 768px) {
-        font-size: 1.2em;
-        text-shadow: 4px 4px 4px black;
-      }
+  h2 {
+    color: white;
+    margin-bottom: 15px;
+    @media(min-width: 768px) {
+      font-size: 1.2em;
+      text-shadow: 4px 4px 4px black;
     }
-    p {
-      color: #CCCCCC;
-      line-height: 1.5;
-      margin-bottom: 15px;
-      @media(min-width: 768px) {
-        font-size: 1em;
-        text-shadow: 3px 3px 6px black;
-      }
+  }
+  p {
+    color: #CCCCCC;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    @media(min-width: 768px) {
+      font-size: 1em;
+      text-shadow: 3px 3px 6px black;
     }
   }
 

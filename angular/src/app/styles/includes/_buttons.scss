@@ -1,0 +1,103 @@
+.button {
+  border-top: none;
+  border-left: none;
+  border-radius: 5px;
+  border-right: none;
+  color: white;
+  margin: 5px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  transition: 0.3s ease all;
+}
+
+.button-small {
+  border-top: none;
+  border-left: none;
+  border-radius: 5px;
+  border-right: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 0.8em;
+  margin: 2px;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  transition: 0.3s ease all;
+  &:hover {
+    border: none;
+    padding-top: 5px;
+    margin: 3px 2px 3px 2px;
+  }
+}
+
+.button-large {
+  border-top: none;
+  border-left: none;
+  border-radius: 5px;
+  border-right: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.2em;
+  margin: 5px;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  transition: 0.3s ease all;
+  &:hover {
+    border: none;
+    padding-top: 15px;
+    margin: 5px 5px 7px 5px;
+  }
+}
+
+// button generator
+
+$colors: (
+    ("success", $success-800, $success-400),
+    ("primary", $primary-800, $primary-400),
+    ("danger", $danger-800, $danger-400),
+    ("warning", $warning-800, $warning-400),
+    ("info", $info-800, $info-400),
+    ("pink", $pink-800, $pink-400),
+    ("violet", $violet-800, $violet-400),
+    ("purple", $purple-800, $purple-400),
+    ("indigo", $indigo-800, $indigo-400),
+    ("blue", $blue-800, $blue-400),
+    ("teal", $teal-800, $teal-400),
+    ("green", $green-800, $green-400),
+    ("orange", $orange-800, $orange-400),
+    ("brown", $brown-800, $brown-400),
+    ("grey", $grey-800, $grey-400),
+    ("slate", $slate-800, $slate-400)
+);
+
+@each $color-name, $bgcolor, $color in $colors {
+  .button--#{$color-name} {
+    @extend .button;
+    background: $color;
+    border-bottom: 4px solid $bgcolor !important;
+    &:hover {
+      border-bottom: 2px solid $bgcolor !important;
+    }
+  }
+}
+
+@each $color-name, $bgcolor, $color in $colors {
+  .button-large--#{$color-name} {
+    @extend .button-large;
+    background: $color;
+    border-bottom: 4px solid $bgcolor !important;
+    &:hover {
+      border-bottom: 2px solid $bgcolor !important;
+    }
+  }
+}
+
+@each $color-name, $bgcolor, $color in $colors {
+  .button-small--#{$color-name} {
+    @extend .button-small;
+    background: $color;
+    border-bottom: 4px solid $bgcolor !important;
+    &:hover {
+      border-bottom: 2px solid $bgcolor !important;
+    }
+  }
+}
