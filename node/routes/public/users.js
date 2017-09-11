@@ -56,8 +56,11 @@ async function create (req, res) {
   })
 
   try {
-    await User.exists({email: userObject.email});
-    await User.exists({username: userObject.username});
+    const userEmailExists = await(User.getOne({email: userObject.email}));
+    if(userEmailExists) {
+      return res.status(500).send('Email address already in use');
+    }
+
     const createdUser = await User.create(userObject)
     res.json(createdUser)
   }

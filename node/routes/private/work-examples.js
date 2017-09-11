@@ -25,8 +25,9 @@ async function create (req, res, next) {
     createdOn: new Date(),
     description: req.body.description,
     githubUrl: req.body.githubUrl,
-    imageUrl: req.body.imageUrl,
+    images: req.body.images,
     technologies: req.body.technologies,
+    summary: req.body.summary,
     title: req.body.title,
     type: req.body.type,
     url: req.body.url
@@ -64,8 +65,9 @@ async function update (req, res, next) {
     _id: req.body._id,
     description: req.body.description,
     githubUrl: req.body.githubUrl,
-    imageUrl: req.body.imageUrl,
+    images: req.body.images,
     technologies: req.body.technologies,
+    summary: req.body.summary,
     title: req.body.title,
     type: req.body.type,
     url: req.body.url

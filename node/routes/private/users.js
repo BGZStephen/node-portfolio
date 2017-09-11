@@ -4,7 +4,7 @@ const config = require('../../config');
 const User = require('../../models/user');
 
 async function getByEmail (req, res, next) {
-  if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
+  if (!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
     return res.status(401).json({error: "Authorisation token not supplied"})
   }
 
@@ -18,7 +18,7 @@ async function getByEmail (req, res, next) {
 }
 
 async function getOne (req, res, next) {
-  if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
+  if (!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
     return res.status(401).json({error: "Authorisation token not supplied"})
   }
 
@@ -32,7 +32,7 @@ async function getOne (req, res, next) {
 }
 
 async function update (req, res, next) {
-  if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
+  if (!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
     return res.status(401).json({error: "Authorisation token not supplied"})
   }
 
@@ -41,12 +41,14 @@ async function update (req, res, next) {
     email: req.body.email,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    username: req.body.username,
   }
 
   try {
-    await User.exists({email: userObject.email})
-    await User.exists({username: userObject.username})
+    const userEmailExists = await(User.getOne({email: userObject.email}));
+    if (userEmailExists && userEmailExists._id != userObject._id) {
+      return res.status(500).send('Email address already in use');
+    }
+
     const updatedUser = await User.update(userObject)
     res.json(updatedUser)
   } catch(error) {
