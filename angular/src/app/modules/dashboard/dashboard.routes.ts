@@ -4,7 +4,6 @@ import {
   DashboardLoginComponent,
   DashboardViewComponent,
   DashboardHomeComponent,
-  DashboardWorkComponent
 } from './components/dashboard-components-barrel';
 
 const DASHBOARD_ROUTES: Routes = [
