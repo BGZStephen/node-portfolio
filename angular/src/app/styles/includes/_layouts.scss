@@ -1,1 +1,45 @@
+// common elements
 
+.outlet-container {
+  display: flex;
+  padding: 10px;
+}
+
+// grid
+
+@for $i from 1 through 12 {
+  $margin: 6px;
+  .col-#{$i} {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% / 12 * #{$i} - #{$margin} * 2);
+    margin: $margin;
+  }
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i}--flush {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% / 12 * #{$i});
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 3px 0;
+
+  &:first-child {
+    margin-top: 6px;
+  }
+
+  &:last-child {
+    margin-bottom: 6px;
+  }
+}
+
+.row--flush {
+  display: flex;
+  flex-wrap: wrap;
+}
