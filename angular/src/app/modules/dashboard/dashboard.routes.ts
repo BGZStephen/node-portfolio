@@ -11,7 +11,7 @@ const DASHBOARD_ROUTES: Routes = [
   {path: 'login', component: DashboardLoginComponent },
   {path: '', component: DashboardViewComponent, children: [
     {path: '', component: DashboardHomeComponent},
-    {path: 'work', component: DashboardWorkComponent},
+    {path: 'work-examples', loadChildren: './modules/work-examples/work-examples.module#WorkExamplesModule'},
   ]},
 ];
 

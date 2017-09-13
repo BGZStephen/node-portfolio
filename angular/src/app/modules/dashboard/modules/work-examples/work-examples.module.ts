@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 // router
-// import { WorkExamplesRouter } from './work-examples.routes';
+import { WorkExamplesRouter } from './work-examples.routes';
 
 // components
 import {
@@ -21,6 +21,7 @@ import {
     CommonModule,
     FormsModule,
     HttpModule,
+    WorkExamplesRouter
   ],
   providers: [],
   bootstrap: []
