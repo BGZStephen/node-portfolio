@@ -8,13 +8,16 @@ import { AuthService } from '../../services/auth.service';
 // router
 import { DashboardRouter } from './dashboard.routes';
 
+// modules
+
+import { WorkExamplesModule } from './modules/work-examples/work-examples.module'
+
 // components
 import {
   DashboardViewComponent,
   DashboardHomeComponent,
   DashboardNavbarComponent,
   DashboardLoginComponent,
-  DashboardWorkComponent,
 } from './components/dashboard-components-barrel';
 
 @NgModule({
@@ -22,8 +25,7 @@ import {
     DashboardViewComponent,
     DashboardHomeComponent,
     DashboardNavbarComponent,
-    DashboardLoginComponent,
-    DashboardWorkComponent,
+    DashboardLoginComponent
   ],
   imports: [
     CommonModule,
