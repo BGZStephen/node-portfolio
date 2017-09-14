@@ -7,6 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorkExamplesIndividualComponent implements OnInit {
 
+  workExample: Object = {
+    content: [
+      {
+        sectionId: 1,
+        sectionType: 'one-column',
+        sectionContent: 'blah blah content'
+      },
+      {
+        sectionId: 2,
+        sectionType: 'one-column',
+        sectionContent: 'blah blah content'
+      },
+      {
+        sectionId: 3,
+        sectionType: 'one-column',
+        sectionContent: 'blah blah content'
+      },
+    ]
+  }
+
   constructor() { }
 
   ngOnInit() {
