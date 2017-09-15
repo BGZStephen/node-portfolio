@@ -1,0 +1,24 @@
+#work-example-individual {
+  h1 {
+    color: white;
+    margin-bottom: 15px;
+  }
+
+  .button--green,
+  .button--danger {
+    color: black;
+    cursor: pointer;
+    font-size: 0.8em;
+    font-weight: bold;
+    padding-left: 30px;
+    position: relative;
+
+    i {
+      position: absolute;
+      left: 10px;
+      top: 11px;
+      font-size: .9em;
+      margin-right: 5px;
+    }
+  }
+}
