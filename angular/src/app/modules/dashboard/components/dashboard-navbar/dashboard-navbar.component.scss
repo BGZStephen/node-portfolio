@@ -1,91 +1,85 @@
 #dashboard-navbar {
-  background: black;
-  width: 100vw;
+  width: 65px;
 
-  ul {
-    align-items: center;
-    background: black;
-    display: flex;
-    height: 60px;
-    list-style: none;
-    width: 100%;
-    @media(min-width: 768px) {
-      background: none;
-      flex-direction: column;
-      height: 100vh;
-    }
-  }
+  .navbar-container {
+    bottom: 0;
+    position: fixed;
 
-  li {
-    // text-align: center;
-    width: 20%;
-
-    a {
+    ul {
+      background: black;
       display: flex;
-      justify-content: center;
-      text-decoration: none;
-    }
-
-    p {
-      cursor: pointer;
-      display: none;
-      transition: 0.3s ease all;
-
-      &:hover {
-        color: $blue-400;
-      }
-
-      @media(min-width: 768px) {
+      justify-content: space-between;
+      list-style: none;
+      padding: 0 10px;
+      width: 100vw;
+      li {
         color: white;
-        display: inline;
-        font-size: 1.2em;
+        i {
+          cursor: pointer;
+          font-size: 1.4em;
+          padding: 15px 10px;
+
+          @media(min-width: 768px) {
+            padding: 20px;
+          }
+        }
+
+        .fa-home {
+          color: $blue-800;
+          @media(min-width: 768px) {
+            transition: 0.3s ease all;
+            &:hover {
+              background: $blue-800;
+              color: black;
+            }
+          }
+        }
+
+        .fa-code {
+          color: $green-800;
+          @media(min-width: 768px) {
+            transition: 0.3s ease all;
+            &:hover {
+              background: $green-800;
+              color: black;
+            }
+          }
+        }
+
+        .fa-flask {
+          color: $orange-400;
+          @media(min-width: 768px) {
+            transition: 0.3s ease all;
+            &:hover {
+              background: $orange-400;
+              color: black;
+            }
+          }
+        }
+
+        .fa-cogs {
+          color: white;
+          @media(min-width: 768px) {
+            transition: 0.3s ease all;
+            &:hover {
+              background: white;
+              color: black;
+            }
+          }
+        }
       }
 
-    }
-
-    .fa {
-      color: white;
-      font-size: 1.4em;
       @media(min-width: 768px) {
-        width: 35px;
-      }
-    }
-
-    .fa-code {
-      color: $green-800;
-    }
-
-    .fa-flask {
-      color: $orange-400;
-    }
-
-    .fa-envelope-o {
-      color: $purple-400;
-    }
-
-    .fa-home {
-      color: $blue-800;
-    }
-
-    .desktop-only {
-      display: none;
-
-      @media(min-width: 768px) {
-        display: inline;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 0;
+        height: 100vh;
+        width: auto;
       }
     }
 
     @media(min-width: 768px) {
-      display: flex;
-      margin: 15px 0;
-      width: 100%;
+      left: 0;
     }
-  }
-
-  @media(min-width: 768px) {
-    left: 0;
-    position: relative;
-    padding: 0 25px;
-    width: auto;
   }
 }

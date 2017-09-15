@@ -1,20 +1,18 @@
 <div id="dashboard-navbar">
-  <ul class="primary-menu">
-    <li [routerLink]="['/dashboard']">
-      <i class="fa fa-home"></i>
-      <p>home</p>
-    </li>
-    <li [routerLink]="['/dashboard/work-examples']">
-      <i class="fa fa-code"></i>
-      <p>work</p>
-    </li>
-    <li [routerLink]="['/dashboard/lab']">
-      <i class="fa fa-flask"></i>
-      <p>code lab</p>
-    </li>
-    <li [routerLink]="['/dashboard/settings']">
-      <i class="fa fa-cogs"></i>
-      <p>settings</p>
-    </li>
-  </ul>
+  <div class="navbar-container">
+    <ul>
+      <li [routerLink]="['/dashboard']">
+        <i class="fa fa-home"></i>
+      </li>
+      <li [routerLink]="['/dashboard/work-examples']">
+        <i class="fa fa-code"></i>
+      </li>
+      <li [routerLink]="['/dashboard/lab']">
+        <i class="fa fa-flask"></i>
+      </li>
+      <li [routerLink]="['/dashboard/settings']">
+        <i class="fa fa-cogs"></i>
+      </li>
+    </ul>
+  </div>
 </div>
