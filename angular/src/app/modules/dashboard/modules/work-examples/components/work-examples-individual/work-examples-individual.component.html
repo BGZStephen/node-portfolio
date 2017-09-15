@@ -1,6 +1,18 @@
-<div id="work-example-individual" class="container">
-  <h1>Work example editor - $title</h1>
+<div id="work-example-individual" *ngIf="workExample" class="container">
+  <h1>Work example editor - {{workExample.title}}</h1>
   <form #f="ngForm" (ngSubmit)="onUpdate(f.value)">
+    <div class="row">
+      <div class="col-12">
+        <label>Title</label>
+        <input type="text" placeholder="title" value="{{workExample.title}}">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <label>Description</label>
+        <textarea value="{{workExample.description}}"></textarea>
+      </div>
+    </div>
     <div class="row" *ngFor="let section of workExample.content">
       <div class="col-12">
         <input type="text" placeholder="title">

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../../../../../services/api.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-work-examples-individual',
@@ -10,9 +12,25 @@ export class WorkExamplesIndividualComponent implements OnInit {
     content: []
   }
 
-  constructor() { }
+  constructor(
+    private apiService: ApiService,
+    private activatedRoute: ActivatedRoute,
+  ) {}
 
   ngOnInit() {
+    this.loadWorkExample()
+  }
+
+  loadWorkExample() {
+    this.activatedRoute.params
+    .map(params => params['id'])
+    .subscribe((workExampleId) => {
+      this.apiService.getWorkExample(workExampleId)
+      .subscribe(workExample => {
+        console.log(workExample)
+        this.workExample = workExample;
+      })
+    })
   }
 
   addSection() {
