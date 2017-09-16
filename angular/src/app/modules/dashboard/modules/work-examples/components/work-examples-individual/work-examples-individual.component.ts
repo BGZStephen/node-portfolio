@@ -2,6 +2,25 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../../../../services/api.service';
 import { ActivatedRoute } from '@angular/router';
 
+class Column {
+  columnType: "text"
+}
+
+const SectionTypes = {
+  oneColumn: {
+    class: "col-12",
+    columns: [new Column()]
+  },
+  twoColumn: {
+    class: "col-6",
+    columns: [new Column(), new Column()]
+  },
+  threeColumn: {
+    class: "col-4",
+    columns: [new Column(), new Column(), new Column()]
+  }
+}
+
 @Component({
   selector: 'app-work-examples-individual',
   templateUrl: './work-examples-individual.component.html'
@@ -36,8 +55,11 @@ export class WorkExamplesIndividualComponent implements OnInit {
 
   onAddSection() {
     this.workExample['content'].push({
-      id: this.generateSectionIndex()
+      id: this.generateSectionIndex(),
+      type: SectionTypes.oneColumn,
+      content: SectionTypes.oneColumn.columns
     })
+    console.log(this.workExample)
   }
 
   onRemoveSection(sectionIndex) {
@@ -58,5 +80,10 @@ export class WorkExamplesIndividualComponent implements OnInit {
     })
 
     return largestIndex + 1
+  }
+
+  updateSectionType(sectionType, sectionIndex) {
+    this.workExample['content'][sectionIndex]['type'] = SectionTypes[sectionType];
+    this.workExample['content'][sectionIndex]['content'] = SectionTypes[sectionType].columns;
   }
 }
