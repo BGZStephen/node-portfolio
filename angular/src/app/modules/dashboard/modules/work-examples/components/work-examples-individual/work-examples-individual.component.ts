@@ -40,8 +40,8 @@ export class WorkExamplesIndividualComponent implements OnInit {
     })
   }
 
-  onRemoveSection() {
-
+  onRemoveSection(sectionIndex) {
+    this.workExample['content'].splice(sectionIndex, 1)
   }
 
   generateSectionIndex() {

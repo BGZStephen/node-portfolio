@@ -13,12 +13,12 @@
         <textarea value="{{workExample.description}}"></textarea>
       </div>
     </div>
-    <div class="row" *ngFor="let section of workExample.content">
+    <div class="row" *ngFor="let section of workExample.content; let i = index">
       <div class="col-12">
         <input type="text" placeholder="title">
+        <a class="button--danger" (click)="onRemoveSection(i)"><i class="fa fa-times"></i>Remove Section</a>
       </div>
     </div>
     <a class="button--green" (click)="onAddSection()"><i class="fa fa-plus"></i>Add Section</a>
-    <a class="button--danger"><i class="fa fa-times"></i>Remove Section</a>
   </form>
 </div>
