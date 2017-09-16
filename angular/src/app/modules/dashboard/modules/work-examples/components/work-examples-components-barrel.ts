@@ -1,2 +1,3 @@
 export { WorkExamplesListComponent } from './work-examples-list/work-examples-list.component';
-export { WorkExamplesIndividualComponent } from './work-examples-individual/work-examples-individual.component';
+export { WorkExamplesEditComponent } from './work-examples-edit/work-examples-edit.component';
+export { WorkExamplesAddComponent } from './work-examples-add/work-examples-add.component';

@@ -9,13 +9,15 @@ import { WorkExamplesRouter } from './work-examples.routes';
 // components
 import {
   WorkExamplesListComponent,
-  WorkExamplesIndividualComponent
+  WorkExamplesEditComponent,
+  WorkExamplesAddComponent
 } from './components/work-examples-components-barrel';
 
 @NgModule({
   declarations: [
     WorkExamplesListComponent,
-    WorkExamplesIndividualComponent
+    WorkExamplesEditComponent,
+    WorkExamplesAddComponent
   ],
   imports: [
     CommonModule,
