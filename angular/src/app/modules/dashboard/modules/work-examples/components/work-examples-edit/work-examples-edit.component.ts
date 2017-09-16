@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../../../../services/api.service';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs/Observable'
 
 class Column {
   columnType: "text"
@@ -27,7 +28,7 @@ const SectionTypes = {
 })
 export class WorkExamplesEditComponent implements OnInit {
 
-  workExample: Object = {};
+  workExample: any;
 
   constructor(
     private apiService: ApiService,
@@ -54,7 +55,7 @@ export class WorkExamplesEditComponent implements OnInit {
   }
 
   onAddSection() {
-    this.workExample['content'].push({
+    this.workExample.content.push({
       id: this.generateSectionIndex(),
       type: SectionTypes.oneColumn,
       content: SectionTypes.oneColumn.columns
@@ -62,19 +63,19 @@ export class WorkExamplesEditComponent implements OnInit {
   }
 
   onRemoveSection(sectionIndex) {
-    this.workExample['content'].splice(sectionIndex, 1)
+    this.workExample.content.splice(sectionIndex, 1)
   }
 
   generateSectionIndex() {
-    if (this.workExample['content'].length === 0) {
+    if (this.workExample.content.length === 0) {
       return 1;
     }
 
-    if (this.workExample['content'].length === 1) {
+    if (this.workExample.content.length === 1) {
       return 2;
     }
 
-    const largestIndex = this.workExample['content'].reduce(function (a, b) {
+    const largestIndex = this.workExample.content.reduce(function (a, b) {
       return a.id > b.id ? a.id : b.id;
     })
 
@@ -82,7 +83,7 @@ export class WorkExamplesEditComponent implements OnInit {
   }
 
   updateSectionType(sectionType, sectionIndex) {
-    this.workExample['content'][sectionIndex]['type'] = SectionTypes[sectionType];
-    this.workExample['content'][sectionIndex]['content'] = SectionTypes[sectionType].columns;
+    this.workExample.content[sectionIndex].content = SectionTypes[sectionType].columns;
+    this.workExample.content[sectionIndex].type = SectionTypes[sectionType];
   }
 }
