@@ -8,9 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class WorkExamplesIndividualComponent implements OnInit {
 
-  workExample: Object = {
-    content: []
-  }
+  workExample: Object = {};
 
   constructor(
     private apiService: ApiService,
@@ -27,19 +25,38 @@ export class WorkExamplesIndividualComponent implements OnInit {
     .subscribe((workExampleId) => {
       this.apiService.getWorkExample(workExampleId)
       .subscribe(workExample => {
-        console.log(workExample)
         this.workExample = workExample;
       })
     })
   }
 
-  addSection() {
-    this.workExample['content'].push({
-      sectionId: 1,
-      sectionType: 'one-column',
-      sectionContent: 'blah blah content'
-    },)
+  onSave() {
 
   }
 
+  onAddSection() {
+    this.workExample['content'].push({
+      id: this.generateSectionIndex()
+    })
+  }
+
+  onRemoveSection() {
+
+  }
+
+  generateSectionIndex() {
+    if (this.workExample['content'].length === 0) {
+      return 1;
+    }
+
+    if (this.workExample['content'].length === 1) {
+      return 2;
+    }
+
+    const largestIndex = this.workExample['content'].reduce(function (a, b) {
+      return a.id > b.id ? a.id : b.id;
+    })
+
+    return largestIndex + 1
+  }
 }

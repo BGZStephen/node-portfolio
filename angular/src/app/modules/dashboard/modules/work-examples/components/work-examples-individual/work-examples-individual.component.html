@@ -1,4 +1,4 @@
-<div id="work-example-individual" *ngIf="workExample" class="container">
+<div id="work-example-individual" class="container" ng-if="workExample">
   <h1>Work example editor - {{workExample.title}}</h1>
   <form #f="ngForm" (ngSubmit)="onUpdate(f.value)">
     <div class="row">
@@ -18,7 +18,7 @@
         <input type="text" placeholder="title">
       </div>
     </div>
-    <a class="button--green" (click)="addSection()"><i class="fa fa-plus"></i>Add Section</a>
+    <a class="button--green" (click)="onAddSection()"><i class="fa fa-plus"></i>Add Section</a>
     <a class="button--danger"><i class="fa fa-times"></i>Remove Section</a>
   </form>
 </div>

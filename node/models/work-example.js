@@ -4,9 +4,9 @@ const config = require('../config')
 const WorkExampleSchema = mongoose.Schema({
   createdOn: Date,
   description: Array,
+  content: {type: Array, default: []},
   githubUrl: String,
   images: Array,
-  summary: String,
   technologies: Array,
   title: String,
   type: String,
