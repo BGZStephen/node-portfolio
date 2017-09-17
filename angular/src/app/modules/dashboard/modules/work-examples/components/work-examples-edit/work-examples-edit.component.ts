@@ -1,28 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../../../../services/api.service';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs/Observable'
+import { Observable } from 'rxjs/Observable';
 
 class Column {
   columnType: '';
   imageUrl: '';
   imageCaption: '';
   content: '';
-}
-
-const SectionTypes = {
-  oneColumn: {
-    class: 'col-12',
-    columns: [new Column()]
-  },
-  twoColumn: {
-    class: 'col-6',
-    columns: [new Column(), new Column()]
-  },
-  threeColumn: {
-    class: 'col-4',
-    columns: [new Column(), new Column(), new Column()]
-  }
 }
 
 @Component({
@@ -32,6 +17,27 @@ const SectionTypes = {
 export class WorkExamplesEditComponent implements OnInit {
 
   workExample: any = {};
+
+  sectionTypes = [
+    {
+      option: 'One Column',
+      slug: 'oneColumn',
+      class: 'col-12',
+      columns: [new Column()]
+    },
+    {
+      option: 'Two Column',
+      slug: 'twoColumn',
+      class: 'col-6',
+      columns: [new Column(), new Column()]
+    },
+    {
+      option: 'Three Column',
+      slug: 'threeColumn',
+      class: 'col-4',
+      columns: [new Column(), new Column(), new Column()]
+    }
+  ]
 
   constructor(
     private apiService: ApiService,
@@ -58,11 +64,9 @@ export class WorkExamplesEditComponent implements OnInit {
   }
 
   onAddSection() {
-    this.workExample.content.push({
-      id: this.generateSectionIndex(),
-      type: SectionTypes.oneColumn,
-      content: SectionTypes.oneColumn.columns
-    })
+    this.workExample.content.push(
+      this.sectionTypes[0]
+    )
     console.log(this.workExample)
   }
 
@@ -86,8 +90,14 @@ export class WorkExamplesEditComponent implements OnInit {
     return largestIndex + 1
   }
 
-  updateSectionType(sectionType, sectionIndex) {
-    this.workExample.content[sectionIndex].content = SectionTypes[sectionType].columns;
-    this.workExample.content[sectionIndex].type = SectionTypes[sectionType];
+  updateSectionType(sectionTypeOption, sectionIndex) {
+    let newSectionType;
+    this.sectionTypes.forEach(function (sectionType) {
+      if(sectionType.option === sectionTypeOption) {
+        newSectionType = sectionType
+      }
+    });
+    this.workExample.content[sectionIndex] = newSectionType;
+    console.log(this.workExample)
   }
 }

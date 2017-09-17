@@ -26,13 +26,12 @@
       <div class="row">
         <div class="col-12">
           <select (change)="updateSectionType($event.target.value, i)">
-            <option value="oneColumn">One Column</option>
-            <option value="twoColumn">Two Column</option>
+            <option *ngFor="let sectionType of sectionTypes">{{sectionType.option}}</option>
           </select>
         </div>
       </div>
       <div class="row">
-        <div *ngFor="let column of section.content" [ngClass]="section.type.class">
+        <div *ngFor="let column of section.columns" [ngClass]="section.class">
           <input type="text" placeholder="title">
         </div>
       </div>
