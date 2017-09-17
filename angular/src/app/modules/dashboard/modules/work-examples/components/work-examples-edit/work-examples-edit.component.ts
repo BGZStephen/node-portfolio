@@ -4,20 +4,23 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable'
 
 class Column {
-  columnType: "text"
+  columnType: '';
+  imageUrl: '';
+  imageCaption: '';
+  content: '';
 }
 
 const SectionTypes = {
   oneColumn: {
-    class: "col-12",
+    class: 'col-12',
     columns: [new Column()]
   },
   twoColumn: {
-    class: "col-6",
+    class: 'col-6',
     columns: [new Column(), new Column()]
   },
   threeColumn: {
-    class: "col-4",
+    class: 'col-4',
     columns: [new Column(), new Column(), new Column()]
   }
 }
@@ -28,7 +31,7 @@ const SectionTypes = {
 })
 export class WorkExamplesEditComponent implements OnInit {
 
-  workExample: any;
+  workExample: any = {};
 
   constructor(
     private apiService: ApiService,
@@ -60,6 +63,7 @@ export class WorkExamplesEditComponent implements OnInit {
       type: SectionTypes.oneColumn,
       content: SectionTypes.oneColumn.columns
     })
+    console.log(this.workExample)
   }
 
   onRemoveSection(sectionIndex) {

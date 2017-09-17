@@ -2,14 +2,18 @@
   <h1>Work example editor - {{workExample.title}}</h1>
   <form #f="ngForm" (ngSubmit)="onUpdate(f.value)">
     <div class="row">
-      <div class="col-12">
+      <div class="col-2">
         <label>Title</label>
+      </div>
+      <div class="col-10">
         <input type="text" placeholder="title" value="{{workExample.title}}">
       </div>
     </div>
     <div class="row">
-      <div class="col-12">
+      <div class="col-2">
         <label>Description</label>
+      </div>
+      <div class="col-10">
         <textarea value="{{workExample.description}}"></textarea>
       </div>
     </div>
@@ -18,16 +22,26 @@
         <p>Content</p>
       </div>
     </div>
-    <div class="row" *ngFor="let section of workExample.content; let i = index">
-      <select (change)="updateSectionType($event.target.value, i)" id="sectionType">
-        <option value="oneColumn">One Column</option>
-        <option value="twoColumn">Two Column</option>
-      </select>
-      <div *ngFor="let column of section.content" class="{{section.class}}">
-        <input type="text" placeholder="title">
-        <a class="button--danger" (click)="onRemoveSection(i)"><i class="fa fa-times"></i>Remove Section</a>
+    <div *ngFor="let section of workExample.content; let i = index">
+      <div class="row">
+        <div class="col-12">
+          <select (change)="updateSectionType($event.target.value, i)">
+            <option value="oneColumn">One Column</option>
+            <option value="twoColumn">Two Column</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div *ngFor="let column of section.content" [ngClass]="section.type.class">
+          <input type="text" placeholder="title">
+        </div>
       </div>
     </div>
-    <a class="button--green" (click)="onAddSection()"><i class="fa fa-plus"></i>Add Section</a>
+    <div class="row">
+      <div class="col-12">
+        <!-- <a class="button--danger" (click)="onRemoveSection(i)"><i class="fa fa-times"></i>Remove Section</a> -->
+        <a class="button--green" (click)="onAddSection()"><i class="fa fa-plus"></i>Add Section</a>
+      </div>
+    </div>
   </form>
 </div>
