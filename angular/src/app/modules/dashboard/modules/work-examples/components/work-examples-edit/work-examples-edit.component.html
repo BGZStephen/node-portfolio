@@ -31,8 +31,8 @@
         </div>
       </div>
       <div class="row">
-        <div *ngFor="let column of section.content" [ngClass]="section.class">
-          <input type="text" placeholder="title">
+        <div *ngFor="let column of section.content" [ngClass]="section.columnClass">
+          <textarea placeholder="content" rows=3></textarea>
         </div>
       </div>
     </div>

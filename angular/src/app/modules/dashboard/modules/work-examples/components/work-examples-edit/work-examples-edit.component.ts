@@ -4,13 +4,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import * as _ from 'lodash'
 
-class Column {
-  columnType: '';
-  imageUrl: '';
-  imageCaption: '';
-  content: '';
-}
-
 @Component({
   selector: 'app-work-examples-edit',
   templateUrl: './work-examples-edit.component.html'
@@ -23,20 +16,20 @@ export class WorkExamplesEditComponent implements OnInit {
     {
       option: 'One Column',
       slug: 'oneColumn',
-      class: 'col-12',
-      content: [new Column()]
+      columnClass: 'col-12',
+      content: [this.createColumn()]
     },
     {
       option: 'Two Column',
       slug: 'twoColumn',
-      class: 'col-6',
-      content: [new Column(), new Column()]
+      columnClass: 'col-6',
+      content: [this.createColumn(), this.createColumn()]
     },
     {
       option: 'Three Column',
       slug: 'threeColumn',
-      class: 'col-4',
-      content: [new Column(), new Column(), new Column()]
+      columnClass: 'col-4',
+      content: [this.createColumn(), this.createColumn(), this.createColumn()]
     }
   ]
 
@@ -47,6 +40,16 @@ export class WorkExamplesEditComponent implements OnInit {
 
   ngOnInit() {
     this.loadWorkExample()
+  }
+
+  createColumn(columnClass?) {
+    return {
+      columnClass: columnClass || '',
+      columnType: '',
+      imageUrl: '',
+      imageCaption: '',
+      content: '',
+    }
   }
 
   loadWorkExample() {
@@ -94,9 +97,11 @@ export class WorkExamplesEditComponent implements OnInit {
     let newSectionType;
     this.sectionTypes.forEach(function (sectionType) {
       if(sectionType.option === sectionTypeOption) {
-        newSectionType = sectionType.content
+        newSectionType = sectionType
       }
     });
-    this.workExample.content[sectionIndex].content = _.cloneDeep(newSectionType)
+    this.workExample.content[sectionIndex].content = newSectionType.content;
+    console.log(newSectionType)
+    this.workExample.content[sectionIndex].columnClass = newSectionType.columnClass;
   }
 }
