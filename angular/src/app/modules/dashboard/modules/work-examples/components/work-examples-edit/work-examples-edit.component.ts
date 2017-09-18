@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../../../../services/api.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
+import * as _ from 'lodash'
 
 class Column {
   columnType: '';
@@ -23,19 +24,19 @@ export class WorkExamplesEditComponent implements OnInit {
       option: 'One Column',
       slug: 'oneColumn',
       class: 'col-12',
-      columns: [new Column()]
+      content: [new Column()]
     },
     {
       option: 'Two Column',
       slug: 'twoColumn',
       class: 'col-6',
-      columns: [new Column(), new Column()]
+      content: [new Column(), new Column()]
     },
     {
       option: 'Three Column',
       slug: 'threeColumn',
       class: 'col-4',
-      columns: [new Column(), new Column(), new Column()]
+      content: [new Column(), new Column(), new Column()]
     }
   ]
 
@@ -94,10 +95,9 @@ export class WorkExamplesEditComponent implements OnInit {
     let newSectionType;
     this.sectionTypes.forEach(function (sectionType) {
       if(sectionType.option === sectionTypeOption) {
-        newSectionType = sectionType
+        newSectionType = _.clone(sectionType.content)
       }
     });
-    this.workExample.content[sectionIndex] = newSectionType;
-    console.log(this.workExample)
+    this.workExample.content[sectionIndex].content = newSectionType
   }
 }
