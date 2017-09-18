@@ -66,9 +66,8 @@ export class WorkExamplesEditComponent implements OnInit {
 
   onAddSection() {
     this.workExample.content.push(
-      this.sectionTypes[0]
+      _.cloneDeep(this.sectionTypes[0])
     )
-    console.log(this.workExample)
   }
 
   onRemoveSection(sectionIndex) {
@@ -95,9 +94,9 @@ export class WorkExamplesEditComponent implements OnInit {
     let newSectionType;
     this.sectionTypes.forEach(function (sectionType) {
       if(sectionType.option === sectionTypeOption) {
-        newSectionType = _.clone(sectionType.content)
+        newSectionType = sectionType.content
       }
     });
-    this.workExample.content[sectionIndex].content = newSectionType
+    this.workExample.content[sectionIndex].content = _.cloneDeep(newSectionType)
   }
 }
