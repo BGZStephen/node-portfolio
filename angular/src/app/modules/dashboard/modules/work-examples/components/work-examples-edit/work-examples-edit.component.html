@@ -1,46 +1,50 @@
 <div id="work-example-edit" class="container" ng-if="workExample">
-  <h1>Work example editor - {{workExample.title}}</h1>
-  <form #f="ngForm" (ngSubmit)="onUpdate(f.value)">
-    <div class="row">
-      <div class="col-2">
-        <label>Title</label>
+  <div class="left-container">
+    <h1>Work example editor - {{workExample.title}}</h1>
+    <form #f="ngForm" (ngSubmit)="onUpdate(f.value)">
+      <div class="row">
+        <div class="col-2">
+          <label>Title</label>
+        </div>
+        <div class="col-12">
+          <input type="text" placeholder="title" value="{{workExample.title}}">
+        </div>
       </div>
-      <div class="col-10">
-        <input type="text" placeholder="title" value="{{workExample.title}}">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-2">
-        <label>Description</label>
-      </div>
-      <div class="col-10">
-        <textarea value="{{workExample.description}}"></textarea>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <p>Content</p>
-      </div>
-    </div>
-    <div *ngFor="let section of workExample.content; let i = index">
       <div class="row">
         <div class="col-12">
-          <select (change)="updateSectionType($event.target.value, i)">
-            <option *ngFor="let sectionType of sectionTypes">{{sectionType.option}}</option>
-          </select>
+          <label>Description</label>
+        </div>
+        <div class="col-12">
+          <textarea rows=5 value="{{workExample.description}}"></textarea>
         </div>
       </div>
       <div class="row">
-        <div *ngFor="let column of section.content" [ngClass]="section.columnClass">
-          <textarea placeholder="content" rows=3></textarea>
+        <div class="col-12">
+          <label>Content</label>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <!-- <a class="button--danger" (click)="onRemoveSection(i)"><i class="fa fa-times"></i>Remove Section</a> -->
-        <a class="button--green" (click)="onAddSection()"><i class="fa fa-plus"></i>Add Section</a>
+      <div *ngFor="let section of workExample.content; let i = index">
+        <div class="row">
+          <div class="col-12">
+            <select (change)="updateSectionType($event.target.value, i)">
+              <option *ngFor="let sectionType of sectionTypes">{{sectionType.option}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 panel">
+            <div *ngFor="let column of section.content" [ngClass]="section.columnClass">
+              <textarea placeholder="content" rows=5></textarea>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </form>
+      <div class="row">
+        <div class="col-12">
+          <!-- <a class="button--danger" (click)="onRemoveSection(i)"><i class="fa fa-times"></i>Remove Section</a> -->
+          <a class="button--green" (click)="onAddSection()"><i class="fa fa-plus"></i>Add Section</a>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
