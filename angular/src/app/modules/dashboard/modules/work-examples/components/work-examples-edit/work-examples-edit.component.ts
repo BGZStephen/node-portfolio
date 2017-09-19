@@ -64,7 +64,11 @@ export class WorkExamplesEditComponent implements OnInit {
   }
 
   onSave() {
-
+    this.apiService.updateWorkExample(this.workExample)
+    .subscribe(workExample => {
+      console.log(workExample);
+      this.workExample = workExample;
+    })
   }
 
   onAddSection() {
@@ -101,7 +105,6 @@ export class WorkExamplesEditComponent implements OnInit {
       }
     });
     this.workExample.content[sectionIndex].content = newSectionType.content;
-    console.log(newSectionType)
     this.workExample.content[sectionIndex].columnClass = newSectionType.columnClass;
   }
 }

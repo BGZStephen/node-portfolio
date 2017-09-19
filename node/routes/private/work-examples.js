@@ -56,25 +56,14 @@ async function deleteOne (req, res, next) {
   }
 }
 
-async function update (req, res, next) {
+async function updateOne (req, res, next) {
   if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
     return res.status(401).json({error: "Authorisation token not supplied"})
   }
 
-  let workExampleObject = {
-    _id: req.body._id,
-    description: req.body.description,
-    githubUrl: req.body.githubUrl,
-    images: req.body.images,
-    technologies: req.body.technologies,
-    summary: req.body.summary,
-    title: req.body.title,
-    type: req.body.type,
-    url: req.body.url
-  }
-
   try {
-    const workExample = await WorkExample.updateWorkExample(workExampleObject)
+    await WorkExample.updateWorkExample(req.body.workExample)
+    const workExample = await WorkExample.getOne(req.body.workExample._id)
     res.json(workExample)
   } catch (error) {
     console.log(error)
@@ -86,5 +75,5 @@ module.exports = {
   deleteOne,
   getAll,
   create,
-  update
+  updateOne
 }

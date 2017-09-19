@@ -28,4 +28,12 @@ export class ApiService {
     return this.http.get(`${this.baseUrl}/work-examples/${id}`, {headers: headers})
     .map(res => res.json());
   }
+
+  updateWorkExample(workExample) {
+    console.log(workExample)
+    const headers = new Headers();
+    headers.append('Authorization', `${this.authorization}`);;
+    return this.http.put(`${this.baseUrl}/work-examples/${workExample._id}`, {workExample}, {headers: headers})
+    .map(res => res.json());
+  }
 }

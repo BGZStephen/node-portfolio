@@ -5,9 +5,9 @@ const WorkExamples = require('./work-examples');
 
 router.get("users/:id", Users.getOne);
 
-router.get("wrok-examples", WorkExamples.getAll);
-router.post("wrok-examples", WorkExamples.create);
-router.delete("wrok-examples/:id", WorkExamples.deleteOne);
-router.put("wrok-examples/:id", WorkExamples.update);
+router.get("/work-examples", WorkExamples.getAll);
+router.post("/work-examples", WorkExamples.create);
+router.delete("/work-examples/:id", WorkExamples.deleteOne);
+router.put("/work-examples/:id", WorkExamples.updateOne);
 
 module.exports = router
