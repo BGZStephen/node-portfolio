@@ -1,13 +1,13 @@
 <div id="work-example-edit" class="container" ng-if="workExample">
   <div class="left-container">
     <h1>Work example editor - {{workExample.title}}</h1>
-    <form #f="ngForm" (ngSubmit)="onUpdate(f.value)">
+    <form #f="ngForm" (ngSubmit)="onSave(f.value)">
       <div class="row">
         <div class="col-2">
           <label>Title</label>
         </div>
         <div class="col-12">
-          <input type="text" placeholder="title" value="{{workExample.title}}">
+          <input type="text" placeholder="title" [(ngModel)]="workExample.title" name="title">
         </div>
       </div>
       <div class="row">
@@ -15,7 +15,7 @@
           <label>Description</label>
         </div>
         <div class="col-12">
-          <textarea rows=5 value="{{workExample.description}}"></textarea>
+          <textarea rows=5 [(ngModel)]="workExample.description" name="description"></textarea>
         </div>
       </div>
       <div class="row">
@@ -23,27 +23,30 @@
           <label>Content</label>
         </div>
       </div>
-      <div *ngFor="let section of workExample.content; let i = index">
+      <div *ngFor="let section of workExample.content; let sectionIndex = index">
         <div class="row">
           <div class="col-12">
-            <select (change)="updateSectionType($event.target.value, i)">
+            <select (change)="updateSectionType($event.target.value, sectionIndex)">
               <option *ngFor="let sectionType of sectionTypes">{{sectionType.option}}</option>
             </select>
           </div>
         </div>
         <div class="row">
           <div class="col-12 panel">
-            <div *ngFor="let column of section.content" [ngClass]="section.columnClass">
-              <textarea placeholder="content" rows=5></textarea>
+            <div *ngFor="let column of section.columns; let columnIndex = index; trackBy:customTrackBy" [ngClass]="section.columnClass">
+              <label>{{sectionIndex}}</label>
+              <label>{{columnIndex}}</label>
+              <label>{{workExample.content[sectionIndex].columns[0].content}}</label>
+              <textarea rows=5 value="{{workExample.content[sectionIndex].columns[columnIndex].content}}" [(ngModel)]="workExample.content[sectionIndex].columns[columnIndex].content" name="content"></textarea>
+              <a class="button--danger" (click)="onRemoveSection(i)"><i class="fa fa-times"></i>Remove Section</a>
             </div>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-12">
-          <!-- <a class="button--danger" (click)="onRemoveSection(i)"><i class="fa fa-times"></i>Remove Section</a> -->
           <a class="button--blue" (click)="onAddSection()"><i class="fa fa-plus"></i>Add Section</a>
-          <a class="button--green" (click)="onSave()"><i class="fa fa-save"></i>Save</a>
+          <button class="button--green"><i class="fa fa-save"></i>Save</button>
         </div>
       </div>
     </form>

@@ -16,20 +16,17 @@ export class WorkExamplesEditComponent implements OnInit {
     {
       option: 'One Column',
       slug: 'oneColumn',
-      columnClass: 'col-12',
-      content: [this.createColumn()]
+      columns: [this.createColumn()]
     },
     {
       option: 'Two Column',
       slug: 'twoColumn',
-      columnClass: 'col-6',
-      content: [this.createColumn(), this.createColumn()]
+      columns: [this.createColumn(), this.createColumn()]
     },
     {
       option: 'Three Column',
       slug: 'threeColumn',
-      columnClass: 'col-4',
-      content: [this.createColumn(), this.createColumn(), this.createColumn()]
+      columns: [this.createColumn(), this.createColumn(), this.createColumn()]
     }
   ]
 
@@ -66,15 +63,17 @@ export class WorkExamplesEditComponent implements OnInit {
   onSave() {
     this.apiService.updateWorkExample(this.workExample)
     .subscribe(workExample => {
-      console.log(workExample);
       this.workExample = workExample;
     })
   }
 
   onAddSection() {
-    this.workExample.content.push(
-      _.cloneDeep(this.sectionTypes[0])
-    )
+    this.workExample.content.push({
+      option: 'One Column',
+      slug: 'oneColumn',
+      columnClass: 'col-12',
+      columns: [this.createColumn()]
+    })
   }
 
   onRemoveSection(sectionIndex) {
@@ -104,7 +103,7 @@ export class WorkExamplesEditComponent implements OnInit {
         newSectionType = sectionType
       }
     });
-    this.workExample.content[sectionIndex].content = newSectionType.content;
+    this.workExample.content[sectionIndex].columns = _.clone(newSectionType.columns);
     this.workExample.content[sectionIndex].columnClass = newSectionType.columnClass;
   }
 }

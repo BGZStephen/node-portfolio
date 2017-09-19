@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AuthGuard } from './guards/auth.guard';
 import { ApiService } from './services/api.service';
@@ -21,7 +20,6 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpModule,
     AppRouter,
     WebsiteModule

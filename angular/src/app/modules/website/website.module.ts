@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { WebsiteRouter } from './website.routes';
 import {
@@ -23,7 +22,6 @@ import {
   ],
   imports: [
     CommonModule,
-    FormsModule,
     HttpModule,
     WebsiteRouter
   ],
