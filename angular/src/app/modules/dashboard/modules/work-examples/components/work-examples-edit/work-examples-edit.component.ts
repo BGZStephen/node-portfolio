@@ -35,18 +35,17 @@ export class WorkExamplesEditComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
   ) {}
 
-  ngOnInit() {
-    this.loadWorkExample()
-  }
-
-  createColumn(columnClass?) {
+  createColumn() {
     return {
-      columnClass: columnClass || '',
       columnType: '',
       imageUrl: '',
       imageCaption: '',
       content: '',
     }
+  }
+
+  ngOnInit() {
+    this.loadWorkExample()
   }
 
   loadWorkExample() {
@@ -68,12 +67,9 @@ export class WorkExamplesEditComponent implements OnInit {
   }
 
   onAddSection() {
-    this.workExample.content.push({
-      option: 'One Column',
-      slug: 'oneColumn',
-      columnClass: 'col-12',
-      columns: [this.createColumn()]
-    })
+    this.workExample.content.push(
+      _.cloneDeep(this.sectionTypes[0])
+    )
   }
 
   onRemoveSection(sectionIndex) {
@@ -103,7 +99,6 @@ export class WorkExamplesEditComponent implements OnInit {
         newSectionType = sectionType
       }
     });
-    this.workExample.content[sectionIndex].columns = _.clone(newSectionType.columns);
-    this.workExample.content[sectionIndex].columnClass = newSectionType.columnClass;
+    this.workExample.content[sectionIndex].columns = _.cloneDeep(newSectionType.columns);
   }
 }

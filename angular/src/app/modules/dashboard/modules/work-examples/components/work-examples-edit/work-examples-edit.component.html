@@ -33,11 +33,8 @@
         </div>
         <div class="row">
           <div class="col-12 panel">
-            <div *ngFor="let column of section.columns; let columnIndex = index; trackBy:customTrackBy" [ngClass]="section.columnClass">
-              <label>{{sectionIndex}}</label>
-              <label>{{columnIndex}}</label>
-              <label>{{workExample.content[sectionIndex].columns[0].content}}</label>
-              <textarea rows=5 value="{{workExample.content[sectionIndex].columns[columnIndex].content}}" [(ngModel)]="workExample.content[sectionIndex].columns[columnIndex].content" name="content"></textarea>
+            <div *ngFor="let column of section.columns; let columnIndex = index" [ngClass]="section.columnClass">
+              <textarea rows=5 [(ngModel)]="workExample.content[sectionIndex].columns[columnIndex].content" name="content-{{sectionIndex}}-{{columnIndex}}"></textarea>
               <a class="button--danger" (click)="onRemoveSection(i)"><i class="fa fa-times"></i>Remove Section</a>
             </div>
           </div>
