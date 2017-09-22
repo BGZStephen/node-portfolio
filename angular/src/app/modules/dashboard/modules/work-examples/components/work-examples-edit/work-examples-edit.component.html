@@ -48,7 +48,7 @@
           <button class="button--green"><i class="fa fa-save"></i>Save</button>
         </div>
         <div class="col-4">
-          <input class="button--orange" type="file" name="image" (change)="onUpload($event)" placeholder="Upload file" accept=".pdf,.doc,.docx">
+          <input class="button--orange" type="file" name="image" (change)="onUpload($event, workExample._id)" placeholder="Upload file" accept=".png,.jpg,.jpeg">
         </div>
       </div>
     </form>

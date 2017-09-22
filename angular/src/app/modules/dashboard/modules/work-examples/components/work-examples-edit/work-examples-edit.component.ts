@@ -98,9 +98,10 @@ export class WorkExamplesEditComponent implements OnInit {
     return largestIndex + 1
   }
 
-  onUpload(event) {
+  onUpload(event, workExampleId) {
     const file: File = event.target.files[0];
     const formData: FormData = new FormData();
+    formData.append('workExampleId', workExampleId);
     formData.append('image', file, file.name);
     this.http.post(`http://localhost:9000/work-examples/imageUpload`, formData)
     .map(res => res.json())

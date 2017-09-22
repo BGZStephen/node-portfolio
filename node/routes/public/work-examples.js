@@ -32,11 +32,16 @@ async function getOne (req, res, next) {
 }
 
 async function uploadImage(req, res, next) {
-  console.log(req.file)
-  cloudinary.uploader.upload(req.file.path, function(result) {
-    console.log(result)
-  });
-
+  console.log(req.file);
+  console.log(req.body.workExampleId);
+  const workExample = await WorkExample.getOne(req.body.workExampleId);
+  const cloudinaryFile = await cloudinary.uploader.upload(req.file.path);
+  workExample.images.push(cloudinaryFile.secure_url);
+  workExample.markModified('images')
+  workExample.save()
+  .then(workExample => {
+    console.log(workExample)
+  })
 }
 
 module.exports = {
