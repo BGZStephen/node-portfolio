@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const config = require('./config');
-const winston = require('winston');
+const cloudinary = require('cloudinary');
 
 // connect to mongodb
 mongoose.connect(config.database);
@@ -35,6 +35,8 @@ app.use(bodyParser.json());
 // routing
 app.use(require('./routes/public'));
 app.use(require('./routes/private'));
+
+cloudinary.config(config.cloudinarySettings);
 
 // define port
 const port = 9000;

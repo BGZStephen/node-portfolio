@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const config = require('../../config');
 const WorkExample = require('../../models/work-example');
+const cloudinary = require('cloudinary')
 
 async function getAll (req, res, next) {
   if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
@@ -32,6 +33,10 @@ async function getOne (req, res, next) {
 
 async function uploadImage(req, res, next) {
   console.log(req.file)
+  cloudinary.uploader.upload(req.file.path, function(result) {
+    console.log(result)
+  });
+
 }
 
 module.exports = {
