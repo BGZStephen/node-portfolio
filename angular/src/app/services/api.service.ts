@@ -30,10 +30,9 @@ export class ApiService {
   }
 
   updateWorkExample(workExample) {
-    console.log(workExample)
     const headers = new Headers();
     headers.append('Authorization', `${this.authorization}`);;
-    return this.http.put(`${this.baseUrl}/work-examples/${workExample._id}`, {workExample}, {headers: headers})
+    return this.http.put(`${this.baseUrl}/work-examples/${workExample._id}`, workExample, {headers: headers})
     .map(res => res.json());
   }
 }

@@ -38,12 +38,17 @@
               <a class="button--danger" (click)="onRemoveSection(i)"><i class="fa fa-times"></i>Remove Section</a>
             </div>
           </div>
+          <div class="col-12">
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="col-12">
           <a class="button--blue" (click)="onAddSection()"><i class="fa fa-plus"></i>Add Section</a>
           <button class="button--green"><i class="fa fa-save"></i>Save</button>
+        </div>
+        <div class="col-4">
+          <input class="button--orange" type="file" name="image" (change)="onUpload($event)" placeholder="Upload file" accept=".pdf,.doc,.docx">
         </div>
       </div>
     </form>

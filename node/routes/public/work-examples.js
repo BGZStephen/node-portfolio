@@ -30,7 +30,12 @@ async function getOne (req, res, next) {
   }
 }
 
+async function uploadImage(req, res, next) {
+  console.log(req.file)
+}
+
 module.exports = {
   getAll,
-  getOne
+  getOne,
+  uploadImage
 }

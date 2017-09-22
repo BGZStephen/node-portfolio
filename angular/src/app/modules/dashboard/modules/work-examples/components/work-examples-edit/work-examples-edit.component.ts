@@ -3,6 +3,7 @@ import { ApiService } from '../../../../../../services/api.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import * as _ from 'lodash'
+import { Http, Headers } from '@angular/http'
 
 @Component({
   selector: 'app-work-examples-edit',
@@ -33,6 +34,7 @@ export class WorkExamplesEditComponent implements OnInit {
   constructor(
     private apiService: ApiService,
     private activatedRoute: ActivatedRoute,
+    private http: Http,
   ) {}
 
   ngOnInit() {
@@ -94,6 +96,18 @@ export class WorkExamplesEditComponent implements OnInit {
     })
 
     return largestIndex + 1
+  }
+
+  onUpload(event) {
+    const file: File = event.target.files[0];
+    const formData: FormData = new FormData();
+    formData.append('image', file, file.name);
+    this.http.post(`http://localhost:9000/work-examples/imageUpload`, formData)
+    .map(res => res.json())
+    .subscribe(
+        data => console.log('success'),
+        error => console.log(error)
+    )
   }
 
   updateSectionType(sectionTypeOption, sectionIndex) {
