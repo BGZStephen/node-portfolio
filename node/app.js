@@ -5,7 +5,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const config = require('./config');
 const cloudinary = require('cloudinary');
-const winston = require('winston')
+const winston = require('winston');
 
 // connect to mongodb
 mongoose.connect(config.database);
