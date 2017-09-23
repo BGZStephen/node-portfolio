@@ -1,6 +1,5 @@
 const config = require('../../config');
-const WorkExample = require('../../models/work-example');
-const cloudinary = require('cloudinary');
+const WorkExample = require('../../models/work-example')
 const winston = require('winston');
 
 async function getAll (req, res) {
@@ -31,19 +30,7 @@ async function getOne (req, res) {
 	}
 }
 
-async function uploadImage(req, res) {
-	const workExample = await WorkExample.getOne(req.body.workExampleId);
-	const cloudinaryFile = await cloudinary.uploader.upload(req.file.path);
-	workExample.images.push(cloudinaryFile.secure_url);
-	workExample.markModified('images');
-	workExample.save()
-		.then(workExample => {
-			res.json(workExample);
-		});
-}
-
 module.exports = {
 	getAll,
 	getOne,
-	uploadImage
 };

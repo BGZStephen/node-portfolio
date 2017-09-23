@@ -107,8 +107,12 @@ export class WorkExamplesEditComponent implements OnInit {
 
     this.apiService.uploadImage(params)
     .subscribe(
-      data => console.log('success'),
-      error => console.log(error)
+      res => {
+        this.workExample = res;
+      },
+      error => {
+        console.log(error);
+      }
     );
   }
 

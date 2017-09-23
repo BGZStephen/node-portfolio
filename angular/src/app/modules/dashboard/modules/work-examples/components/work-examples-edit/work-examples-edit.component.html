@@ -44,7 +44,7 @@
       </div>
       <div class="row">
         <div class="col-12">
-          <input class="image-selector" type="file" id="image" name="image" (change)="onUpload($event)" placeholder="Upload file" accept=".png,.jpg,.jpeg">
+          <input class="image-selector" type="file" id="image" name="image" (change)="onImageUpload($event)" placeholder="Upload file" accept=".png,.jpg,.jpeg">
           <label class="image-selector-label button--orange" for="image"><i class="fa fa-picture-o"></i>Upload image</label>
           <a class="button--blue" (click)="onAddSection()"><i class="fa fa-plus"></i>Add Section</a>
           <button class="button--green"><i class="fa fa-save"></i>Save</button>
