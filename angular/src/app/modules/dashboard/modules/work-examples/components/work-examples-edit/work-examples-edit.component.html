@@ -44,11 +44,10 @@
       </div>
       <div class="row">
         <div class="col-12">
+          <input class="image-selector" type="file" id="image" name="image" (change)="onUpload($event)" placeholder="Upload file" accept=".png,.jpg,.jpeg">
+          <label class="image-selector-label button--orange" for="image"><i class="fa fa-picture-o"></i>Upload image</label>
           <a class="button--blue" (click)="onAddSection()"><i class="fa fa-plus"></i>Add Section</a>
           <button class="button--green"><i class="fa fa-save"></i>Save</button>
-        </div>
-        <div class="col-4">
-          <input class="button--orange" type="file" name="image" (change)="onUpload($event, workExample._id)" placeholder="Upload file" accept=".png,.jpg,.jpeg">
         </div>
       </div>
     </form>

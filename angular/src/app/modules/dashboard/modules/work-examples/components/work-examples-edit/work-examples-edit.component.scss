@@ -19,7 +19,8 @@
 
   .button--green,
   .button--danger,
-  .button--blue {
+  .button--blue,
+  .button--orange {
     color: black;
     cursor: pointer;
     font-size: 0.8em;
@@ -60,5 +61,14 @@
     textarea {
       width: 100%;
     }
+  }
+
+  .image-selector {
+  	width: 0.1px;
+  	height: 0.1px;
+  	opacity: 0;
+  	overflow: hidden;
+  	position: absolute;
+  	z-index: -1;
   }
 }
