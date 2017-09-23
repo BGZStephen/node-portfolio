@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../../../../services/api.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import * as _ from 'lodash'
-import { Http, Headers } from '@angular/http'
+import * as _ from 'lodash';
+import { Http, Headers } from '@angular/http';
 
 @Component({
   selector: 'app-work-examples-edit',
@@ -29,7 +29,7 @@ export class WorkExamplesEditComponent implements OnInit {
       slug: 'threeColumn',
       columns: [this.createColumn(), this.createColumn(), this.createColumn()]
     }
-  ]
+  ];
 
   constructor(
     private apiService: ApiService,
@@ -38,7 +38,7 @@ export class WorkExamplesEditComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.loadWorkExample()
+    this.loadWorkExample();
   }
 
   createColumn(columnClass?) {
@@ -48,7 +48,7 @@ export class WorkExamplesEditComponent implements OnInit {
       imageUrl: '',
       imageCaption: '',
       content: '',
-    }
+    };
   }
 
   loadWorkExample() {
@@ -58,15 +58,15 @@ export class WorkExamplesEditComponent implements OnInit {
       this.apiService.getWorkExample(workExampleId)
       .subscribe(workExample => {
         this.workExample = workExample;
-      })
-    })
+      });
+    });
   }
 
   onSave() {
     this.apiService.updateWorkExample(this.workExample)
     .subscribe(workExample => {
       this.workExample = workExample;
-    })
+    });
   }
 
   onAddSection() {
@@ -75,11 +75,11 @@ export class WorkExamplesEditComponent implements OnInit {
       slug: 'oneColumn',
       columnClass: 'col-12',
       columns: [this.createColumn()]
-    })
+    });
   }
 
   onRemoveSection(sectionIndex) {
-    this.workExample.content.splice(sectionIndex, 1)
+    this.workExample.content.splice(sectionIndex, 1);
   }
 
   generateSectionIndex() {
@@ -93,9 +93,9 @@ export class WorkExamplesEditComponent implements OnInit {
 
     const largestIndex = this.workExample.content.reduce(function (a, b) {
       return a.id > b.id ? a.id : b.id;
-    })
+    });
 
-    return largestIndex + 1
+    return largestIndex + 1;
   }
 
   onImageUpload(event) {
@@ -103,7 +103,7 @@ export class WorkExamplesEditComponent implements OnInit {
       file: event.target.files[0],
       association: 'workExample',
       id: this.workExample._id
-    }
+    };
 
     this.apiService.uploadImage(params)
     .subscribe(
@@ -115,8 +115,8 @@ export class WorkExamplesEditComponent implements OnInit {
   updateSectionType(sectionTypeOption, sectionIndex) {
     let newSectionType;
     this.sectionTypes.forEach(function (sectionType) {
-      if(sectionType.option === sectionTypeOption) {
-        newSectionType = sectionType
+      if (sectionType.option === sectionTypeOption) {
+        newSectionType = sectionType;
       }
     });
     this.workExample.content[sectionIndex].columns = _.clone(newSectionType.columns);

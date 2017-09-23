@@ -7,7 +7,7 @@ import { ApiService } from '../../../../services/api.service';
 })
 export class WebsiteWorkComponent implements OnInit {
 
-  workExamples = []
+  workExamples = [];
 
   constructor(
     private apiService: ApiService
@@ -19,7 +19,7 @@ export class WebsiteWorkComponent implements OnInit {
     this.apiService.getWorkExamples()
     .subscribe(workExamples => {
       this.workExamples = workExamples;
-      console.log(workExamples)
+      console.log(workExamples);
     });
   }
 }

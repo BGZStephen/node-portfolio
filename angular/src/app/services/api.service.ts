@@ -31,18 +31,18 @@ export class ApiService {
 
   updateWorkExample(workExample) {
     const headers = new Headers();
-    headers.append('Authorization', `${this.authorization}`);;
+    headers.append('Authorization', `${this.authorization}`); ;
     return this.http.put(`${this.baseUrl}/work-examples/${workExample._id}`, workExample, {headers: headers})
     .map(res => res.json());
   }
 
   uploadImage(params) {
     const formData: FormData = new FormData();
-    if(params.id && params.association) {
+    if (params.id && params.association) {
       formData.append(`${params.association}Id`, params.id);
     }
     formData.append('image', params.file, params.file.name);
     return this.http.post(`${this.baseUrl}/images/upload`, formData)
-    .map(res => res.json())
+    .map(res => res.json());
   }
 }

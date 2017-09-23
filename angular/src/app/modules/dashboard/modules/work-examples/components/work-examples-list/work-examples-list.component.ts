@@ -8,7 +8,7 @@ import { ApiService } from '../../../../../../services/api.service';
 })
 export class WorkExamplesListComponent implements OnInit {
 
-  workExamples: Array<object>
+  workExamples: Array<object>;
 
   constructor(
     private apiService: ApiService
@@ -21,6 +21,6 @@ export class WorkExamplesListComponent implements OnInit {
     },
     error => {
       console.log(error);
-    })
+    });
   }
 }

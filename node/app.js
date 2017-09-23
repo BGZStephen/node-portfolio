@@ -5,18 +5,19 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const config = require('./config');
 const cloudinary = require('cloudinary');
+const winston = require('winston')
 
 // connect to mongodb
 mongoose.connect(config.database);
 
 // once connected
 mongoose.connection.on('connected', () => {
-  console.log('Connected to database successfully');
+	winston.error('Connected to database successfully');
 });
 
 // in case of error
 mongoose.connection.on('error', (err) => {
-  console.log('Error: ' + err);
+	winston.error('Error: ' + err);
 });
 
 const app = express();
@@ -42,5 +43,5 @@ cloudinary.config(config.cloudinarySettings);
 const port = 9000;
 
 app.listen(port, () => {
-  console.log(`Server started, listening on port: ${port}`);
+	winston.info(`Server started, listening on port: ${port}`);
 });
