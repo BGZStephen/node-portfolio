@@ -46,4 +46,9 @@ export class ApiService {
     return this.http.post(`${this.baseUrl}/images/upload`, formData)
     .map(res => res.json());
   }
+
+  getAllImages() {
+    return this.http.get(`${this.baseUrl}/images`)
+    .map(res => res.json());
+  }
 }

@@ -12,5 +12,6 @@ router.delete('/work-examples/:id', WorkExamples.deleteOne);
 router.put('/work-examples/:id', WorkExamples.updateOne);
 
 router.post('/images/upload', multer({dest: 'uploads/'}).single('image'), Images.uploadOne);
+router.get('/images', Images.getAll);
 
 module.exports = router;

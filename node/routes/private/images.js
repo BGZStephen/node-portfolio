@@ -21,6 +21,11 @@ async function uploadOne(req, res) {
   }
 }
 
+async function getAll(req, res) {
+  const images = await cloudinary.v2.api.resources({type: 'upload'});
+  res.json({images: images.resources});
+}
+
 async function workExampleImageUpload(params) {
   const workExample = await WorkExample.getOne(params.id);
   const cloudinaryFile = await cloudinary.uploader.upload(params.file.path);
@@ -30,5 +35,6 @@ async function workExampleImageUpload(params) {
 }
 
 module.exports = {
-  uploadOne
+  uploadOne,
+  getAll
 };
