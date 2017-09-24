@@ -12,7 +12,7 @@ export class ApiService {
 
   constructor(
     private http: Http,
-    private router: Router
+    private router: Router,
   ) {}
 
   getWorkExamples() {
@@ -50,5 +50,9 @@ export class ApiService {
   getAllImages() {
     return this.http.get(`${this.baseUrl}/images`)
     .map(res => res.json());
+  }
+
+  testApiService() {
+    console.log('testing API service');
   }
 }

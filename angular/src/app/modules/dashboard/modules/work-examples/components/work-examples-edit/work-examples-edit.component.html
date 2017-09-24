@@ -1,13 +1,13 @@
-<div id="work-example-edit" class="container" ng-if="workExample">
+<div id="work-example-edit" class="container" *ngIf="editor">
   <div class="left-container">
-    <h1>Work example editor - {{workExample.title}}</h1>
+    <h1>Work example editor - {{editor.workExample.title}}</h1>
     <form #f="ngForm" (ngSubmit)="onSave(f.value)">
       <div class="row">
         <div class="col-2">
           <label>Title</label>
         </div>
         <div class="col-12">
-          <input type="text" placeholder="title" [(ngModel)]="workExample.title" name="title">
+          <input type="text" placeholder="title" [(ngModel)]="editor.workExample.title" name="title">
         </div>
       </div>
       <div class="row">
@@ -15,7 +15,7 @@
           <label>Description</label>
         </div>
         <div class="col-12">
-          <textarea rows=5 [(ngModel)]="workExample.description" name="description"></textarea>
+          <textarea rows=5 [(ngModel)]="editor.workExample.description" name="description"></textarea>
         </div>
       </div>
       <div class="row">
@@ -23,11 +23,11 @@
           <label>Content</label>
         </div>
       </div>
-      <div *ngFor="let section of workExample.content; let sectionIndex = index">
+      <div *ngFor="let section of editor.workExample.content; let sectionIndex = index">
         <div class="row">
           <div class="col-12">
             <select (change)="updateSectionType($event.target.value, sectionIndex)">
-              <option *ngFor="let sectionType of sectionTypes">{{sectionType.option}}</option>
+              <option *ngFor="let sectionType of editor.sectionTypes">{{sectionType.option}}</option>
             </select>
           </div>
         </div>

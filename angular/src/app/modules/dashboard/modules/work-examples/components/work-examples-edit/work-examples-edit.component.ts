@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../../../../services/api.service';
+import { WorkExampleContentEditor } from '../../../../../../services/workExampleContentEditor';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import * as _ from 'lodash';
@@ -11,25 +12,7 @@ import { Http, Headers } from '@angular/http';
 })
 export class WorkExamplesEditComponent implements OnInit {
 
-  workExample: any = {};
-
-  sectionTypes = [
-    {
-      option: 'One Column',
-      slug: 'oneColumn',
-      columns: [this.createColumn()]
-    },
-    {
-      option: 'Two Column',
-      slug: 'twoColumn',
-      columns: [this.createColumn(), this.createColumn()]
-    },
-    {
-      option: 'Three Column',
-      slug: 'threeColumn',
-      columns: [this.createColumn(), this.createColumn(), this.createColumn()]
-    }
-  ];
+  editor: any;
 
   constructor(
     private apiService: ApiService,
@@ -41,89 +24,49 @@ export class WorkExamplesEditComponent implements OnInit {
     this.loadWorkExample();
   }
 
-  createColumn(columnClass?) {
-    return {
-      columnClass: columnClass || '',
-      columnType: '',
-      imageUrl: '',
-      imageCaption: '',
-      content: '',
-    };
-  }
-
   loadWorkExample() {
     this.activatedRoute.params
     .map(params => params['id'])
     .subscribe((workExampleId) => {
       this.apiService.getWorkExample(workExampleId)
       .subscribe(workExample => {
-        this.workExample = workExample;
+        console.log('loading')
+        this.editor = new WorkExampleContentEditor(workExample);
+        console.log(this.editor.workExample);
       });
     });
   }
 
   onSave() {
-    this.apiService.updateWorkExample(this.workExample)
+    this.apiService.updateWorkExample(this.editor.workExample)
     .subscribe(workExample => {
-      this.workExample = workExample;
+      this.editor = new WorkExampleContentEditor(workExample)
     });
+  }
+
+  onRemoveSection(index) {
+    this.editor.removeSection(index)
   }
 
   onAddSection() {
-    this.workExample.content.push({
-      option: 'One Column',
-      slug: 'oneColumn',
-      columnClass: 'col-12',
-      columns: [this.createColumn()]
-    });
-  }
-
-  onRemoveSection(sectionIndex) {
-    this.workExample.content.splice(sectionIndex, 1);
-  }
-
-  generateSectionIndex() {
-    if (this.workExample.content.length === 0) {
-      return 1;
-    }
-
-    if (this.workExample.content.length === 1) {
-      return 2;
-    }
-
-    const largestIndex = this.workExample.content.reduce(function (a, b) {
-      return a.id > b.id ? a.id : b.id;
-    });
-
-    return largestIndex + 1;
+    this.editor.addSection()
   }
 
   onImageUpload(event) {
     const params = {
       file: event.target.files[0],
       association: 'workExample',
-      id: this.workExample._id
+      id: this.editor.workExample._id
     };
 
     this.apiService.uploadImage(params)
     .subscribe(
       res => {
-        this.workExample = res;
+        this.editor.workExample = res;
       },
       error => {
         console.log(error);
       }
     );
-  }
-
-  updateSectionType(sectionTypeOption, sectionIndex) {
-    let newSectionType;
-    this.sectionTypes.forEach(function (sectionType) {
-      if (sectionType.option === sectionTypeOption) {
-        newSectionType = sectionType;
-      }
-    });
-    this.workExample.content[sectionIndex].columns = _.clone(newSectionType.columns);
-    this.workExample.content[sectionIndex].columnClass = newSectionType.columnClass;
   }
 }
