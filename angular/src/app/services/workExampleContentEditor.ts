@@ -77,6 +77,11 @@ export class WorkExampleContentEditor {
     return largestIndex + 1;
   }
 
+  insertImage(imageUrl, sectionIndex, columnIndex) {
+    this.workExample.content[sectionIndex].columns[columnIndex].imageUrl = imageUrl;
+    return this.save();
+  }
+
   save() {
     this.apiService.updateWorkExample(this.workExample)
     .subscribe(workExample => {

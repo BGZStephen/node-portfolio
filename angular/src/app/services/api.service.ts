@@ -38,10 +38,6 @@ export class ApiService {
 
   uploadImage(params) {
     const formData: FormData = new FormData();
-    if (params.id && params.association) {
-      formData.append(`id`, params.id);
-      formData.append(`association`, params.association);
-    }
     formData.append('image', params.file, params.file.name);
     return this.http.post(`${this.baseUrl}/images/upload`, formData)
     .map(res => res.json());
@@ -50,9 +46,5 @@ export class ApiService {
   getAllImages() {
     return this.http.get(`${this.baseUrl}/images`)
     .map(res => res.json());
-  }
-
-  testApiService() {
-    console.log('testing API service');
   }
 }

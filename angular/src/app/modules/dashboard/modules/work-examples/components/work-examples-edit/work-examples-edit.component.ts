@@ -20,15 +20,6 @@ export class WorkExamplesEditComponent implements OnInit {
     private http: Http,
   ) {}
 
-  createColumn() {
-    return {
-      columnType: '',
-      imageUrl: '',
-      imageCaption: '',
-      content: '',
-    }
-  }
-
   ngOnInit() {
     this.loadWorkExample();
   }
@@ -56,21 +47,17 @@ export class WorkExamplesEditComponent implements OnInit {
     this.editor.removeSection(index)
   }
 
-  // onImageUpload(event) {
-  //   const params = {
-  //     file: event.target.files[0],
-  //     association: 'workExample',
-  //     id: this.editor.workExample._id
-  //   };
-  //
-  //   this.apiService.uploadImage(params)
-  //   .subscribe(
-  //     res => {
-  //       this.editor.workExample = res;
-  //     },
-  //     error => {
-  //       console.log(error);
-  //     })
-  //   this.editor.workExample.content[sectionIndex].columns = _.cloneDeep(newSectionType.columns)
-  // };
+  onImageUpload(event, sectionIndex?, columnIndex?) {
+    const image = event.target.files[0];
+    this.apiService.uploadImage(image)
+    .subscribe(res => {
+      if(sectionIndex && columnIndex) {
+        const imageUrl = res.secure_url;
+        this.editor.addImage(imageUrl, sectionIndex, columnIndex);
+      }
+    },
+    error => {
+      console.log(error);
+    });
+  }
 }
