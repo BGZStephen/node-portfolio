@@ -41,15 +41,14 @@ export class WorkExamplesEditComponent implements OnInit {
       .subscribe(workExample => {
         console.log('loading')
         this.editor = new WorkExampleContentEditor(this.apiService, workExample);
-        console.log(this.editor.workExample);
       });
     });
   }
 
   onSave() {
-    this.apiService.updateWorkExample(this.editor.workExample)
+    this.editor.save()
     .subscribe(workExample => {
-      this.editor = new WorkExampleContentEditor(this.apiService, workExample)
+      this.editor.workExample = workExample;
     });
   }
 
@@ -57,20 +56,25 @@ export class WorkExamplesEditComponent implements OnInit {
     this.editor.addSection()
   }
 
-  onImageUpload(event) {
-    const params = {
-      file: event.target.files[0],
-      association: 'workExample',
-      id: this.editor.workExample._id
-    };
-
-    this.apiService.uploadImage(params)
-    .subscribe(
-      res => {
-        this.editor.workExample = res;
-      },
-      error => {
-        console.log(error);
-      }
+  onRemoveSection(index) {
+    this.editor.removeSection(index)
   }
+
+  // onImageUpload(event) {
+  //   const params = {
+  //     file: event.target.files[0],
+  //     association: 'workExample',
+  //     id: this.editor.workExample._id
+  //   };
+  //
+  //   this.apiService.uploadImage(params)
+  //   .subscribe(
+  //     res => {
+  //       this.editor.workExample = res;
+  //     },
+  //     error => {
+  //       console.log(error);
+  //     })
+  //   this.editor.workExample.content[sectionIndex].columns = _.cloneDeep(newSectionType.columns)
+  // };
 }
