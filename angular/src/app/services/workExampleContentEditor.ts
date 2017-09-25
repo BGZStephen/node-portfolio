@@ -2,9 +2,11 @@ import * as _ from 'lodash';
 
 export class WorkExampleContentEditor {
   constructor (
+    private apiService,
     private workExample,
   ) {
     this.workExample = workExample
+    this.apiService = apiService
   }
 
   sectionTypes = [
@@ -73,5 +75,9 @@ export class WorkExampleContentEditor {
     });
 
     return largestIndex + 1;
+  }
+
+  testApiService() {
+    this.apiService.testApiService()
   }
 }
