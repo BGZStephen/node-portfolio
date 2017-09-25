@@ -20,7 +20,6 @@ export class WorkExamplesEditComponent implements OnInit {
     private http: Http,
   ) {}
 
-<<<<<<< HEAD
   createColumn() {
     return {
       columnType: '',
@@ -28,14 +27,10 @@ export class WorkExamplesEditComponent implements OnInit {
       imageCaption: '',
       content: '',
     }
-=======
-  ngOnInit() {
-    this.loadWorkExample();
->>>>>>> 6f78e37c9469aa68fad8f2afad28f74e30d124d1
   }
 
   ngOnInit() {
-    this.loadWorkExample()
+    this.loadWorkExample();
   }
 
   loadWorkExample() {
@@ -58,17 +53,6 @@ export class WorkExamplesEditComponent implements OnInit {
     });
   }
 
-<<<<<<< HEAD
-  onAddSection() {
-    this.workExample.content.push(
-      _.cloneDeep(this.sectionTypes[0])
-    )
-=======
-  onRemoveSection(index) {
-    this.editor.removeSection(index)
->>>>>>> 6f78e37c9469aa68fad8f2afad28f74e30d124d1
-  }
-
   onAddSection() {
     this.editor.addSection()
   }
@@ -88,11 +72,5 @@ export class WorkExamplesEditComponent implements OnInit {
       error => {
         console.log(error);
       }
-<<<<<<< HEAD
-    });
-    this.workExample.content[sectionIndex].columns = _.cloneDeep(newSectionType.columns);
-=======
-    );
->>>>>>> 6f78e37c9469aa68fad8f2afad28f74e30d124d1
   }
 }
