@@ -39,7 +39,6 @@ export class WorkExamplesEditComponent implements OnInit {
     .subscribe((workExampleId) => {
       this.apiService.getWorkExample(workExampleId)
       .subscribe(workExample => {
-        console.log('loading')
         this.editor = new WorkExampleContentEditor(this.apiService, workExample);
       });
     });
@@ -47,9 +46,6 @@ export class WorkExamplesEditComponent implements OnInit {
 
   onSave() {
     this.editor.save()
-    .subscribe(workExample => {
-      this.editor.workExample = workExample;
-    });
   }
 
   onAddSection() {

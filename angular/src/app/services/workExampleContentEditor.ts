@@ -77,7 +77,11 @@ export class WorkExampleContentEditor {
     return largestIndex + 1;
   }
 
-  testApiService() {
-    this.apiService.testApiService()
+  save() {
+    this.apiService.updateWorkExample(this.workExample)
+    .subscribe(workExample => {
+      this.workExample = workExample;
+      console.log('update successful')
+    });
   }
 }
