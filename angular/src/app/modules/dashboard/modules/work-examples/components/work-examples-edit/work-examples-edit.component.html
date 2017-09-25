@@ -1,13 +1,13 @@
-<div id="work-example-edit" class="container" ng-if="workExample">
+<div id="work-example-edit" class="container" *ngIf="editor">
   <div class="left-container">
-    <h1>Work example editor - {{workExample.title}}</h1>
+    <h1>Work example editor - {{editor.workExample.title}}</h1>
     <form #f="ngForm" (ngSubmit)="onSave(f.value)">
       <div class="row">
         <div class="col-2">
           <label>Title</label>
         </div>
         <div class="col-12">
-          <input type="text" placeholder="title" [(ngModel)]="workExample.title" name="title">
+          <input type="text" placeholder="title" [(ngModel)]="editor.workExample.title" name="title">
         </div>
       </div>
       <div class="row">
@@ -15,7 +15,7 @@
           <label>Description</label>
         </div>
         <div class="col-12">
-          <textarea rows=5 [(ngModel)]="workExample.description" name="description"></textarea>
+          <textarea rows=5 [(ngModel)]="editor.workExample.description" name="description"></textarea>
         </div>
       </div>
       <div class="row">
@@ -23,25 +23,34 @@
           <label>Content</label>
         </div>
       </div>
-      <div *ngFor="let section of workExample.content; let sectionIndex = index">
+      <div *ngFor="let section of editor.workExample.content; let sectionIndex = index">
         <div class="row">
           <div class="col-12">
             <select (change)="updateSectionType($event.target.value, sectionIndex)">
-              <option *ngFor="let sectionType of sectionTypes">{{sectionType.option}}</option>
+              <option *ngFor="let sectionType of editor.sectionTypes">{{sectionType.option}}</option>
             </select>
           </div>
         </div>
         <div class="row">
           <div class="col-12 panel">
+<<<<<<< HEAD
             <div *ngFor="let column of section.columns; let columnIndex = index" [ngClass]="section.columnClass">
               <textarea rows=5 [(ngModel)]="workExample.content[sectionIndex].columns[columnIndex].content" name="content-{{sectionIndex}}-{{columnIndex}}"></textarea>
+=======
+            <div *ngFor="let column of section.columns; let columnIndex = index; trackBy:customTrackBy" [ngClass]="section.columnClass">
+              <textarea rows=5 [(ngModel)]="column.content" name="content-s{{sectionIndex}}-c{{columnIndex}}"></textarea>
+>>>>>>> 6f78e37c9469aa68fad8f2afad28f74e30d124d1
               <a class="button--danger" (click)="onRemoveSection(i)"><i class="fa fa-times"></i>Remove Section</a>
             </div>
+          </div>
+          <div class="col-12">
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-12">
+          <input class="image-selector" type="file" id="image" name="image" (change)="onImageUpload($event)" placeholder="Upload file" accept=".png,.jpg,.jpeg">
+          <label class="image-selector-label button--orange" for="image"><i class="fa fa-picture-o"></i>Upload image</label>
           <a class="button--blue" (click)="onAddSection()"><i class="fa fa-plus"></i>Add Section</a>
           <button class="button--green"><i class="fa fa-save"></i>Save</button>
         </div>

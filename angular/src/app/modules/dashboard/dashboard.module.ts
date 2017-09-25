@@ -10,7 +10,7 @@ import { DashboardRouter } from './dashboard.routes';
 
 // modules
 
-import { WorkExamplesModule } from './modules/work-examples/work-examples.module'
+import { WorkExamplesModule } from './modules/work-examples/work-examples.module';
 
 // components
 import {

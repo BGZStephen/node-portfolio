@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'
-import { ApiService } from '../../../../services/api.service'
+import { ActivatedRoute } from '@angular/router';
+import { ApiService } from '../../../../services/api.service';
 
 @Component({
   selector: 'app-website-work-example',
@@ -19,16 +19,16 @@ export class WebsiteWorkExampleComponent implements OnInit {
     this.activatedRoute.params
     .map(params => params['id'])
     .subscribe((workExampleId) => {
-      let paletteObject = {_id: workExampleId}
+      const paletteObject = {_id: workExampleId};
       this.apiService.getWorkExample(workExampleId)
       .subscribe(workExample => {
-        console.log(workExample)
-        this.workExample = workExample
+        console.log(workExample);
+        this.workExample = workExample;
       },
       error => {
-        console.log(error)
-      })
-    })
+        console.log(error);
+      });
+    });
   }
 
 }

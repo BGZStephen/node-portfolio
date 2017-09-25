@@ -17,7 +17,7 @@ export class DashboardLoginComponent implements OnInit {
   }
 
   authenticate(credentials) {
-    this.authService.authenticate(credentials)
+    this.authService.authenticate(credentials);
   }
 
 }

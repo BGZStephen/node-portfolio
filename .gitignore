@@ -10,3 +10,5 @@ public/assets/
 node/config/
 
 angular/src/environments/
+
+node/uploads/

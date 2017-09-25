@@ -1,47 +1,48 @@
-const config = require('../config')
+const config = require('../config');
 const mongoose = require('mongoose');
-const workExample = require('../models/work-example')
+const workExample = require('../models/work-example');
+const winston = require('winston');
 
 function establishMongooseConnection() {
-  // connect to mongodb
-  mongoose.connect(config.database);
+	// connect to mongodb
+	mongoose.connect(config.database);
 
-  // once connected
-  mongoose.connection.on('connected', () => {
-    console.log('Connected to database successfully');
-  });
+	// once connected
+	mongoose.connection.on('connected', () => {
+		winston.info('Connected to database successfully');
+	});
 
-  mongoose.connection.on('error', (err) => {
-    console.log('Error: ' + err);
-  });
+	mongoose.connection.on('error', (error) => {
+		winston.error(error);
+	});
 }
 
 function closeMongooseConnection() {
-  mongoose.connection.close()
-  .then(() => {
-    console.log('Database connection closed')
-  })
-  .catch((error) => {
-    console.log(error)
-  })
+	mongoose.connection.close()
+		.then(() => {
+			winston.info('Database connection closed');
+		})
+		.catch((error) => {
+			winston.error(error);
+		});
 }
 
 async function processUpdates() {
-  await establishMongooseConnection()
-  await addContentSection()
-  closeMongooseConnection()
+	await establishMongooseConnection();
+	await addContentSection();
+	closeMongooseConnection();
 }
 
 async function addContentSection() {
-  const workExamplesArray = await workExample.find()
+	const workExamplesArray = await workExample.find();
 
-  workExamplesArray.forEach(async function (workExample) {
-    console.log(`Updating: ${workExample.title}`);
-    workExample.content = []
-    await workExample.save()
-  })
+	workExamplesArray.forEach(async function (workExample) {
+		winston.info(`Updating: ${workExample.title}`);
+		workExample.content = [];
+		await workExample.save();
+	});
 
-  return('success')
+	return('success');
 }
 
-processUpdates()
+processUpdates();
