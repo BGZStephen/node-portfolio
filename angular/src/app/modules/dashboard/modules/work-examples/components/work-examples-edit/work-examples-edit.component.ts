@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import * as _ from 'lodash';
 import { Http, Headers } from '@angular/http';
+import { NotificationService } from '../../../../../../services/notification.service';
 
 @Component({
   selector: 'app-work-examples-edit',
@@ -18,6 +19,7 @@ export class WorkExamplesEditComponent implements OnInit {
     private apiService: ApiService,
     private activatedRoute: ActivatedRoute,
     private http: Http,
+    private notification: NotificationService,
   ) {}
 
   ngOnInit() {
