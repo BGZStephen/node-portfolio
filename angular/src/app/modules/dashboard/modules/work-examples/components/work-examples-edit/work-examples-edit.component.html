@@ -26,16 +26,16 @@
       <div *ngFor="let section of editor.workExample.content; let sectionIndex = index">
         <div class="row">
           <div class="col-12">
-            <select (change)="updateSectionType($event.target.value, sectionIndex)">
+            <select (change)="onSectionUpdate($event.target.value, sectionIndex)">
               <option *ngFor="let sectionType of editor.sectionTypes">{{sectionType.option}}</option>
             </select>
+            <a class="button--danger" (click)="onRemoveSection(i)"><i class="fa fa-trash-o"></i>Delete</a>
           </div>
         </div>
         <div class="row">
           <div class="col-12 panel">
             <div *ngFor="let column of section.columns; let columnIndex = index; trackBy:customTrackBy" [ngClass]="section.columnClass">
               <textarea rows=5 [(ngModel)]="column.content" name="content-s{{sectionIndex}}-c{{columnIndex}}"></textarea>
-              <a class="button--danger" (click)="onRemoveSection(i)"><i class="fa fa-times"></i>Remove Section</a>
             </div>
           </div>
           <div class="col-12">

@@ -47,6 +47,10 @@ export class WorkExamplesEditComponent implements OnInit {
     this.editor.removeSection(index)
   }
 
+  onSectionUpdate(newSectionType, sectionIndex) {
+    this.editor.updateSection(newSectionType, sectionIndex);
+  }
+
   onImageUpload(event, sectionIndex?, columnIndex?) {
     const image = event.target.files[0];
     this.apiService.uploadImage(image)

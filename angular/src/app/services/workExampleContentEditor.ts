@@ -40,15 +40,12 @@ export class WorkExampleContentEditor {
     this.workExample.content.splice(sectionIndex, 1);
   }
 
-  updateSectionType(sectionTypeOption, sectionIndex) {
-    let newSectionType;
-    this.sectionTypes.forEach(function (sectionType) {
-      if (sectionType.option === sectionTypeOption) {
-        newSectionType = sectionType;
+  updateSection(newSectionType, sectionIndex) {
+    for (const sectionType of this.sectionTypes) {
+      if (sectionType.option === newSectionType) {
+        this.workExample.content[sectionIndex].columns = _.clone(sectionType.columns);
       }
-    });
-    this.workExample.content[sectionIndex].columns = _.clone(newSectionType.columns);
-    this.workExample.content[sectionIndex].columnClass = newSectionType.columnClass;
+    }
   }
 
   createColumn(columnClass?) {
