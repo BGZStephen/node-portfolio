@@ -32,7 +32,7 @@ export class WorkExamplesEditComponent implements OnInit {
     .subscribe((workExampleId) => {
       this.apiService.getWorkExample(workExampleId)
       .subscribe(workExample => {
-        this.editor = new WorkExampleContentEditor(this.apiService, workExample);
+        this.editor = new WorkExampleContentEditor(this.apiService, this.notification, workExample);
       });
     });
   }
@@ -61,9 +61,14 @@ export class WorkExamplesEditComponent implements OnInit {
         const imageUrl = res.secure_url;
         this.editor.addImage(imageUrl, sectionIndex, columnIndex);
       }
+      this.notification.success({
+        message: 'Upload successful',
+      });
     },
     error => {
-      console.log(error);
+      this.notification.error({
+        message: error,
+      });
     });
   }
 }

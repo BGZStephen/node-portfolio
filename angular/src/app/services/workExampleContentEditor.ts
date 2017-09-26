@@ -3,10 +3,12 @@ import * as _ from 'lodash';
 export class WorkExampleContentEditor {
   constructor (
     private apiService,
+    private notification,
     private workExample,
   ) {
-    this.workExample = workExample
     this.apiService = apiService
+    this.notification = notification
+    this.workExample = workExample
   }
 
   sectionTypes = [
@@ -83,7 +85,9 @@ export class WorkExampleContentEditor {
     this.apiService.updateWorkExample(this.workExample)
     .subscribe(workExample => {
       this.workExample = workExample;
-      console.log('update successful')
+      this.notification.success({
+        message: 'Upload successful',
+      });
     });
   }
 }
