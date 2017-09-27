@@ -34,14 +34,14 @@
         </div>
         <div class="row">
           <div *ngFor="let column of section.columns; let columnIndex = index; trackBy:customTrackBy" [ngClass]="getColumnClass(section.columns.length)">
-            <textarea rows=5 [(ngModel)]="column.text" name="content-s{{sectionIndex}}-c{{columnIndex}}" (click)="column.toggleType()"></textarea>
+            <textarea rows=5 [(ngModel)]="column.text" name="content-s{{sectionIndex}}-c{{columnIndex}}"></textarea>
           </div>
         </div>
-        <!-- <div class="row">
+        <div class="row">
           <div *ngFor="let column of section.columns; let columnIndex = index; trackBy:customTrackBy" [ngClass]="getColumnClass(section.columns.length)">
-            <a class="button-small button--purple">Type: <i class="fa {{column.type === 'text' ? fa-font : fa-picture-o}}"></i></a>
+            <a class="button-small button--purple" (click)="column.toggleType()">Type: <i class="fa {{column.type === 'text' ? 'fa-font' : 'fa-picture-o'}}"></i></a>
           </div>
-        </div> -->
+        </div>
       </div>
       <div class="row">
         <div class="col-12">

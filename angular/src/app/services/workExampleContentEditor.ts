@@ -16,9 +16,7 @@ class Column {
   text = '';
 
   toggleType() {
-    console.log('working')
     this.type = this.type === 'text' ? 'image' : 'text';
-    console.log(this.type)
   }
 }
 
