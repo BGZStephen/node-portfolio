@@ -1,5 +1,16 @@
 import * as _ from 'lodash';
 
+class Column {
+  type = 'text';
+  imageUrl = '';
+  imageCaption = '';
+  text = '';
+
+  toggleType() {
+    this.type = this.type === 'text' ? 'image' : 'text'
+  }
+}
+
 export class WorkExampleContentEditor {
   constructor (
     private apiService,
@@ -15,17 +26,17 @@ export class WorkExampleContentEditor {
     {
       option: 'One Column',
       slug: 'oneColumn',
-      columns: [this.createColumn()]
+      columns: [new Column()]
     },
     {
       option: 'Two Column',
       slug: 'twoColumn',
-      columns: [this.createColumn(), this.createColumn()]
+      columns: [new Column(), new Column()]
     },
     {
       option: 'Three Column',
       slug: 'threeColumn',
-      columns: [this.createColumn(), this.createColumn(), this.createColumn()]
+      columns: [new Column(), new Column(), new Column()]
     }
   ]
 
@@ -34,7 +45,7 @@ export class WorkExampleContentEditor {
       option: 'One Column',
       slug: 'oneColumn',
       columnClass: 'col-12',
-      columns: [this.createColumn()]
+      columns: [new Column()]
     });
   }
 
@@ -48,16 +59,6 @@ export class WorkExampleContentEditor {
         this.workExample.content[sectionIndex].columns = _.clone(sectionType.columns);
       }
     }
-  }
-
-  createColumn(columnClass?) {
-    return {
-      columnClass: columnClass || '',
-      columnType: '',
-      imageUrl: '',
-      imageCaption: '',
-      content: '',
-    };
   }
 
   generateSectionIndex() {

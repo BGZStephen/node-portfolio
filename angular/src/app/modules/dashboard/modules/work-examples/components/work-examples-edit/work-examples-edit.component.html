@@ -34,8 +34,8 @@
         </div>
         <div class="row">
           <div class="col-12 panel">
-            <div *ngFor="let column of section.columns; let columnIndex = index; trackBy:customTrackBy" [ngClass]="section.columnClass">
-              <textarea rows=5 [(ngModel)]="column.content" name="content-s{{sectionIndex}}-c{{columnIndex}}"></textarea>
+            <div *ngFor="let column of section.columns; let columnIndex = index; trackBy:customTrackBy" [ngClass]="getColumnClass(section.columns.length)">
+              <textarea rows=5 [(ngModel)]="column.text" name="content-s{{sectionIndex}}-c{{columnIndex}}" (click)="column.toggleType()"></textarea>
             </div>
           </div>
           <div class="col-12">
