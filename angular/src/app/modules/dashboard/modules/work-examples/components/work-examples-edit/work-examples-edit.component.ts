@@ -35,6 +35,7 @@ export class WorkExamplesEditComponent implements OnInit {
       this.apiService.getWorkExample(workExampleId)
       .subscribe(workExample => {
         this.editor = new WorkExampleContentEditor(this.apiService, this.notification, workExample);
+        this.editor.initialise()
       });
     });
   }

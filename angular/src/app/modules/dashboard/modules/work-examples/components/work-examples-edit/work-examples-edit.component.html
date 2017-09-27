@@ -33,14 +33,15 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-12 panel">
-            <div *ngFor="let column of section.columns; let columnIndex = index; trackBy:customTrackBy" [ngClass]="getColumnClass(section.columns.length)">
-              <textarea rows=5 [(ngModel)]="column.text" name="content-s{{sectionIndex}}-c{{columnIndex}}" (click)="column.toggleType()"></textarea>
-            </div>
-          </div>
-          <div class="col-12">
+          <div *ngFor="let column of section.columns; let columnIndex = index; trackBy:customTrackBy" [ngClass]="getColumnClass(section.columns.length)">
+            <textarea rows=5 [(ngModel)]="column.text" name="content-s{{sectionIndex}}-c{{columnIndex}}" (click)="column.toggleType()"></textarea>
           </div>
         </div>
+        <!-- <div class="row">
+          <div *ngFor="let column of section.columns; let columnIndex = index; trackBy:customTrackBy" [ngClass]="getColumnClass(section.columns.length)">
+            <a class="button-small button--purple">Type: <i class="fa {{column.type === 'text' ? fa-font : fa-picture-o}}"></i></a>
+          </div>
+        </div> -->
       </div>
       <div class="row">
         <div class="col-12">

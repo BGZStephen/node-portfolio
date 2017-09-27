@@ -1,13 +1,24 @@
 import * as _ from 'lodash';
 
 class Column {
+  constructor(column?) {
+    if(column) {
+      this.type = column.type || ''
+      this.imageUrl = column.imageUrl || '',
+      this.imageCaption = column.imageCaption || '',
+      this.text = column.text || ''
+    }
+  }
+
   type = 'text';
   imageUrl = '';
   imageCaption = '';
   text = '';
 
   toggleType() {
-    this.type = this.type === 'text' ? 'image' : 'text'
+    console.log('working')
+    this.type = this.type === 'text' ? 'image' : 'text';
+    console.log(this.type)
   }
 }
 
@@ -39,6 +50,20 @@ export class WorkExampleContentEditor {
       columns: [new Column(), new Column(), new Column()]
     }
   ]
+
+  initialise() {
+    if (this.workExample.content.length > 0) {
+      this.instanciateColumns()
+    }
+  }
+
+  instanciateColumns() {
+    for (let section of this.workExample.content) {
+      for (let column in section.columns) {
+        section.columns[column] = new Column(column);
+      }
+    }
+  }
 
   addSection() {
     this.workExample.content.push({
