@@ -1,0 +1,17 @@
+.loading-mask {
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  font-size: 1.2em;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9000;
+  i {
+    color: white;
+    font-size: 3em;
+  }
+}

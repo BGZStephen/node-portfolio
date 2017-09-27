@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NotificationService } from '../../../../services/notification.service';
+import { LoadingMaskService } from '../../../../services/loading-mask.service';
 
 // router
 import { WorkExamplesRouter } from './work-examples.routes';
@@ -26,7 +27,7 @@ import {
     HttpModule,
     WorkExamplesRouter
   ],
-  providers: [NotificationService],
+  providers: [NotificationService, LoadingMaskService],
   bootstrap: []
 })
 export class WorkExamplesModule { }

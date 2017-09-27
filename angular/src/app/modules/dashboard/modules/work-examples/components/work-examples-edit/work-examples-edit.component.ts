@@ -6,6 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import * as _ from 'lodash';
 import { Http, Headers } from '@angular/http';
 import { NotificationService } from '../../../../../../services/notification.service';
+import { LoadingMaskService } from '../../../../../../services/loading-mask.service';
 
 @Component({
   selector: 'app-work-examples-edit',
@@ -20,6 +21,7 @@ export class WorkExamplesEditComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private http: Http,
     private notification: NotificationService,
+    private loading: LoadingMaskService,
   ) {}
 
   ngOnInit() {
