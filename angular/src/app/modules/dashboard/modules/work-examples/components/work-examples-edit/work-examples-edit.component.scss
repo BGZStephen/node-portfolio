@@ -53,7 +53,6 @@
     font-size: 1.2em;
     padding: 8px;
     width: 100%;
-    max-width: 600px;
   }
 
   .panel {
@@ -70,5 +69,47 @@
   	overflow: hidden;
   	position: absolute;
   	z-index: -1;
+  }
+
+  .content-input {
+    position: relative;
+  }
+
+  .image-upload-selector {
+    width: 100%;
+    height: 121px;
+    opacity: 0;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  .image-upload-overlay {
+    align-items: center;
+    background: rgba(black, 0.5);
+    bottom: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    p {
+      color: white;
+      font-size: 1.2em;
+    }
+
+    i {
+      color: rgba(white, 0.3);
+      font-size: 1.6em;
+      margin-right: 15px;
+      margin-bottom: -3px;
+      transition: 0.3s ease;
+    }
+
+    &:hover i {
+      color: white;
+    }
   }
 }
