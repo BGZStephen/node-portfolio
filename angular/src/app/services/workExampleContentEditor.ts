@@ -64,12 +64,7 @@ export class WorkExampleContentEditor {
   }
 
   addSection() {
-    this.workExample.content.push({
-      option: 'One Column',
-      slug: 'oneColumn',
-      columnClass: 'col-12',
-      columns: [new Column()]
-    });
+    this.workExample.content.push(_.cloneDeep(this.sectionTypes[0]));
   }
 
   removeSection(sectionIndex) {
@@ -79,7 +74,7 @@ export class WorkExampleContentEditor {
   updateSection(newSectionType, sectionIndex) {
     for (const sectionType of this.sectionTypes) {
       if (sectionType.option === newSectionType) {
-        this.workExample.content[sectionIndex].columns = _.clone(sectionType.columns);
+        this.workExample.content[sectionIndex].columns = _.cloneDeep(sectionType.columns);
       }
     }
   }

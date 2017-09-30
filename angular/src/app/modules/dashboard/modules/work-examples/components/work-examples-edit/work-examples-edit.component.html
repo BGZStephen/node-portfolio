@@ -1,7 +1,7 @@
 <div id="work-example-edit" class="container" *ngIf="editor">
   <div class="left-container">
     <h1>Work example editor - {{editor.workExample.title}}</h1>
-    <form #f="ngForm" (ngSubmit)="onSave()">
+    <form #f="ngForm" (ngSubmit)="onSave(f.value)">
       <div class="row">
         <div class="col-2">
           <label>Title</label>
@@ -33,8 +33,8 @@
           </div>
         </div>
         <div class="row">
-          <div *ngFor="let column of section.columns; let columnIndex = index" class="content-input col-4">
-            <textarea *ngIf="column.type === 'text'" rows=5 (change)="test(column)" [(ngModel)]="column.text" name="content-s{{sectionIndex}}-c{{columnIndex}}"></textarea>
+          <div *ngFor="let column of section.columns; let columnIndex = index; trackBy:customTrackBy" class="content-input col-4">
+            <textarea *ngIf="column.type === 'text'" rows=5 [(ngModel)]="column.text" name="content-s{{sectionIndex}}-c{{columnIndex}}"></textarea>
             <input *ngIf="column.type === 'image'" class="image-upload-selector" type="file" id="content-image-{{sectionIndex}}-{{columnIndex}}" name="image" (change)="onImageUpload($event, sectionIndex, columnIndex)" placeholder="Upload file" accept=".png,.jpg,.jpeg">
             <label class="image-upload-overlay" for="content-image-{{sectionIndex}}-{{columnIndex}}" *ngIf="column.type === 'image'">
               <i class="fa fa-plus"></i><p>add image</p>

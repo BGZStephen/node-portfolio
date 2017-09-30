@@ -74,9 +74,4 @@ export class WorkExamplesEditComponent implements OnInit {
       });
     });
   }
-
-  test(value) {
-    console.log(this.editor.workExample);
-    console.log(value)
-  }
 }
