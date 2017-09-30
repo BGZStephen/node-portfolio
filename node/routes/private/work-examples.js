@@ -62,8 +62,7 @@ async function updateOne (req, res) {
 	}
 
 	try {
-		await WorkExample.updateWorkExample(req.body);
-		const workExample = await WorkExample.getOne(req.body._id);
+		const workExample = await WorkExample.updateWorkExample(req.body);
 		res.json(workExample);
 	} catch (error) {
 		winston.error(error);

@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const WorkExampleSchema = mongoose.Schema({
 	createdOn: Date,
 	description: Array,
-	content: {type: Array, default: []},
+	content: [],
 	githubUrl: String,
 	images: Array,
 	technologies: Array,
@@ -30,6 +30,8 @@ module.exports.getOne = function(workExampleId) {
 	return WorkExample.findById(workExampleId);
 };
 
-module.exports.updateWorkExample = function(workExampleObject) {
-	return WorkExample.update({_id: workExampleObject._id}, workExampleObject);
+module.exports.updateWorkExample = async function(workExampleObject) {
+	await WorkExample.update({_id: workExampleObject._id}, workExampleObject);
+	const workExample = await WorkExample.findById(workExampleObject._id);
+	return workExample;
 };

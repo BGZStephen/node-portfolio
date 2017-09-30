@@ -56,9 +56,9 @@ export class WorkExampleContentEditor {
   }
 
   instanciateColumns() {
-    for (let section of this.workExample.content) {
-      for (let column in section.columns) {
-        section.columns[column] = new Column(column);
+    for(let i = 0; i < this.workExample.content.length; i+= 1) {
+      for(let j = 0; j < this.workExample.content[i].columns.length; j += 1) {
+        this.workExample.content[i].columns[j] = new Column(this.workExample.content[i].columns[j]);
       }
     }
   }
@@ -109,6 +109,7 @@ export class WorkExampleContentEditor {
     this.apiService.updateWorkExample(this.workExample)
     .subscribe(workExample => {
       this.workExample = workExample;
+      this.instanciateColumns()
       this.notification.success({
         message: 'Upload successful',
       });

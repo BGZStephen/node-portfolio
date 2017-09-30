@@ -56,16 +56,6 @@ export class WorkExamplesEditComponent implements OnInit {
     this.editor.updateSection(newSectionType, sectionIndex);
   }
 
-  getColumnClass(numberOfColumns) {
-    if (numberOfColumns === 1) {
-      return 'col-12';
-    } else if (numberOfColumns === 2) {
-      return 'col-6';
-    } else if (numberOfColumns === 3) {
-      return 'col-4';
-    }
-  }
-
   onImageUpload(event, sectionIndex?, columnIndex?) {
     const image = event.target.files[0];
     this.apiService.uploadImage(image)
@@ -83,5 +73,10 @@ export class WorkExamplesEditComponent implements OnInit {
         message: error,
       });
     });
+  }
+
+  test(value) {
+    console.log(this.editor.workExample);
+    console.log(value)
   }
 }
