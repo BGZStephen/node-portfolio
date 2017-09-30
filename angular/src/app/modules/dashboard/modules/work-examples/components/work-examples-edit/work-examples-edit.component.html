@@ -29,16 +29,21 @@
             <select class="section-selector" (change)="onSectionUpdate($event.target.value, sectionIndex)">
               <option *ngFor="let sectionType of editor.sectionTypes">{{sectionType.option}}</option>
             </select>
-            <a class="button--danger" (click)="onRemoveSection(i)"><i class="fa fa-trash-o"></i>Delete</a>
+            <a class="button--danger" (click)="onRemoveSection(sectionIndex)"><i class="fa fa-trash-o"></i>Delete</a>
           </div>
         </div>
         <div class="row">
           <div *ngFor="let column of section.columns; let columnIndex = index; trackBy:customTrackBy" class="content-input col-4">
             <textarea *ngIf="column.type === 'text'" rows=5 [(ngModel)]="column.text" name="content-s{{sectionIndex}}-c{{columnIndex}}"></textarea>
-            <input *ngIf="column.type === 'image'" class="image-upload-selector" type="file" id="content-image-{{sectionIndex}}-{{columnIndex}}" name="image" (change)="onImageUpload($event, sectionIndex, columnIndex)" placeholder="Upload file" accept=".png,.jpg,.jpeg">
-            <label class="image-upload-overlay" for="content-image-{{sectionIndex}}-{{columnIndex}}" *ngIf="column.type === 'image'">
-              <i class="fa fa-plus"></i><p>add image</p>
-            </label>
+            <div *ngIf="column.type === 'image' && !column.imageUrl">
+              <input class="image-upload-selector" type="file" id="content-image-{{sectionIndex}}-{{columnIndex}}" name="image" (change)="onImageUpload($event, sectionIndex, columnIndex)" placeholder="Upload file" accept=".png,.jpg,.jpeg">
+              <label class="image-upload-overlay" for="content-image-{{sectionIndex}}-{{columnIndex}}">
+                <i class="fa fa-plus"></i><p>add image</p>
+              </label>
+            </div>
+            <div *ngIf="column.type === 'image' && column.imageUrl">
+              <img src="{{column.imageUrl}}">
+            </div>
           </div>
         </div>
         <div class="row">

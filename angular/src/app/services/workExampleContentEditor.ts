@@ -11,9 +11,9 @@ class Column {
   }
 
   type = 'text';
-  imageUrl = '';
-  imageCaption = '';
-  text = '';
+  imageUrl = null;
+  imageCaption = null;
+  text = null;
 
   toggleType() {
     this.type = this.type === 'text' ? 'image' : 'text';
@@ -68,7 +68,8 @@ export class WorkExampleContentEditor {
   }
 
   removeSection(sectionIndex) {
-    this.workExample.content.splice(sectionIndex, 1);
+    console.log(sectionIndex)
+    this.workExample.content.splice(sectionIndex, sectionIndex + 1);
   }
 
   updateSection(newSectionType, sectionIndex) {

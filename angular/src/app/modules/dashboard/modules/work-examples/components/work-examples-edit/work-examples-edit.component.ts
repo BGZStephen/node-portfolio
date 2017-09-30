@@ -57,16 +57,26 @@ export class WorkExamplesEditComponent implements OnInit {
   }
 
   onImageUpload(event, sectionIndex?, columnIndex?) {
+    this.loading.show()
     const image = event.target.files[0];
     this.apiService.uploadImage(image)
-    .subscribe(res => {
-      if(sectionIndex && columnIndex) {
+    .subscribe(async (res) => {
+      if(sectionIndex >= 0 && columnIndex >= 0) {
         const imageUrl = res.secure_url;
-        this.editor.addImage(imageUrl, sectionIndex, columnIndex);
+        try {
+          await this.editor.insertImage(imageUrl, sectionIndex, columnIndex);
+          this.loading.hide()
+          this.editor.save()
+          this.notification.success({
+            message: 'Upload successful',
+          });
+        } catch (error) {
+          this.loading.hide()
+          this.notification.error({
+            message: error,
+          });
+        }
       }
-      this.notification.success({
-        message: 'Upload successful',
-      });
     },
     error => {
       this.notification.error({

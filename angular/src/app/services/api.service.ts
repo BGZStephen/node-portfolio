@@ -37,8 +37,9 @@ export class ApiService {
   }
 
   uploadImage(params) {
+    console.log(params)
     const formData: FormData = new FormData();
-    formData.append('image', params.file, params.file.name);
+    formData.append('image', params, params.name);
     return this.http.post(`${this.baseUrl}/images/upload`, formData)
     .map(res => res.json());
   }
