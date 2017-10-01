@@ -9,6 +9,14 @@
     </div>
   </div>
   <div class="row">
+    <div class="col-4" [routerLink]="['add']">
+      <div class="work-example add-work-example-container">
+        <span>
+          <i class="fa fa-plus"></i>
+          <h3>Add work example</h3>
+        </span>
+      </div>
+    </div>
     <div class="col-4" *ngFor="let workExample of workExamples">
       <div class="work-example">
         <h3>{{workExample.title}}</h3>

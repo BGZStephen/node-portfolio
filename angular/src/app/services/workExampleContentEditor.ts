@@ -24,11 +24,11 @@ export class WorkExampleContentEditor {
   constructor (
     private apiService,
     private notification,
-    private workExample,
+    private workExample?,
   ) {
     this.apiService = apiService
     this.notification = notification
-    this.workExample = workExample
+    this.workExample = workExample || {}
   }
 
   sectionTypes = [
@@ -64,11 +64,13 @@ export class WorkExampleContentEditor {
   }
 
   addSection() {
+    if(!this.workExample.content) {
+      this.workExample.content = []
+    };
     this.workExample.content.push(_.cloneDeep(this.sectionTypes[0]));
   }
 
   removeSection(sectionIndex) {
-    console.log(sectionIndex)
     this.workExample.content.splice(sectionIndex, sectionIndex + 1);
   }
 
