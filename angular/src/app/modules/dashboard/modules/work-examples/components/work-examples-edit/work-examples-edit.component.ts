@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../../../../../services/api.service';
-import { WorkExampleContentEditor } from '../../../../../../services/workExampleContentEditor';
+import { ApiService } from 'app/services/api.service';
+import { WorkExampleContentEditor } from 'app/services/workExampleContentEditor';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
 import * as _ from 'lodash';
-import { Http, Headers } from '@angular/http';
-import { NotificationService } from '../../../../../../services/notification.service';
-import { LoadingMaskService } from '../../../../../../services/loading-mask.service';
+import { NotificationService } from 'app/services/notification.service';
+import { LoadingMaskService } from 'app/services/loading-mask.service';
 
 @Component({
   selector: 'app-work-examples-edit',
@@ -19,7 +17,6 @@ export class WorkExamplesEditComponent implements OnInit {
   constructor(
     private apiService: ApiService,
     private activatedRoute: ActivatedRoute,
-    private http: Http,
     private notification: NotificationService,
     private loading: LoadingMaskService,
   ) {}

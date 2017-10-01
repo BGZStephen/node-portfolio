@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from 'app/services/auth.service';
 
 // router
 import { DashboardRouter } from './dashboard.routes';

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ApiService } from '../../../../services/api.service';
+import { ApiService } from 'app/services/api.service';
 
 @Component({
   selector: 'app-website-work-example',
