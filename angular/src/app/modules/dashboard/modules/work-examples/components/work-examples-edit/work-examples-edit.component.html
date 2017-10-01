@@ -1,4 +1,4 @@
-<div class="work-example-editor" class="container" *ngIf="editor">
+<div class="container work-example-editor" *ngIf="editor">
   <div class="left-container">
     <h1>Work example editor - {{editor.workExample.title}}</h1>
     <form #f="ngForm" (ngSubmit)="onSave(f.value)">
