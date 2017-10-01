@@ -23,6 +23,7 @@ async function create (req, res) {
 
 	const workExampleObject = new WorkExample({
 		createdOn: new Date(),
+		content: req.body.content,
 		description: req.body.description,
 		githubUrl: req.body.githubUrl,
 		images: req.body.images,
@@ -34,8 +35,8 @@ async function create (req, res) {
 	});
 
 	try {
-		await WorkExample.create(workExampleObject);
-		res.sendStatus(200);
+		const workExample = await WorkExample.create(workExampleObject);
+		res.json(workExample);
 	} catch (error) {
 		winston.error(error);
 		res.sendStatus(500);

@@ -103,6 +103,10 @@ export class WorkExampleContentEditor {
     return this.save();
   }
 
+  createWorkExample() {
+    return this.apiService.createWorkExample(this.workExample)
+  }
+
   save() {
     this.apiService.updateWorkExample(this.workExample)
     .subscribe(workExample => {

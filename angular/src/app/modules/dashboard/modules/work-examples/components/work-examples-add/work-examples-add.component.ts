@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'app/services/api.service';
 import { WorkExampleContentEditor } from 'app/services/workExampleContentEditor';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import * as _ from 'lodash';
 import { NotificationService } from 'app/services/notification.service';
 import { LoadingMaskService } from 'app/services/loading-mask.service';
@@ -19,14 +19,18 @@ export class WorkExamplesAddComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private notification: NotificationService,
     private loading: LoadingMaskService,
+    private router: Router,
   ) {}
 
   ngOnInit() {
     this.editor = new WorkExampleContentEditor(this.apiService, this.notification, null);
   }
 
-  onSave() {
-    this.editor.save()
+  async onCreate() {
+    const workExample = await this.editor.createWorkExample()
+    .subscribe(workExample => {
+      this.router.navigate([`/dashboard/work-examples/${workExample._id}`])
+    })
   }
 
   onAddSection() {

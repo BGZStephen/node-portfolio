@@ -15,6 +15,13 @@ export class ApiService {
     private router: Router,
   ) {}
 
+  createWorkExample(workExample) {
+    const headers = new Headers();
+    headers.append('Authorization', `${this.authorization}`);
+    return this.http.post(`${this.baseUrl}/work-examples`, workExample, {headers: headers})
+    .map(res => res.json());
+  }
+
   getWorkExamples() {
     const headers = new Headers();
     headers.append('Authorization', `${this.authorization}`);
@@ -37,7 +44,6 @@ export class ApiService {
   }
 
   uploadImage(params) {
-    console.log(params)
     const formData: FormData = new FormData();
     formData.append('image', params, params.name);
     return this.http.post(`${this.baseUrl}/images/upload`, formData)
