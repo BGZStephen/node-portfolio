@@ -1,13 +1,14 @@
 <div class="container work-example-editor" *ngIf="editor">
   <div class="left-container">
-    <h1>Work example editor - {{editor.workExample.title}}</h1>
+    <div class="row">
+      <div class="col-10">
+        <h1>Work example editor - {{editor.workExample.title}}</h1>
+      </div>
+    </div>
     <form #f="ngForm" (ngSubmit)="onSave(f.value)">
       <div class="row">
         <div class="col-2">
           <label>Title</label>
-        </div>
-        <div class="col-4">
-          <a class="button button--danger" (click)="onDeletion()"><i class="fa fa-trash-o"></i>Delete</a>
         </div>
         <div class="col-12">
           <input id="title-input" type="text" placeholder="title" [(ngModel)]="editor.workExample.title" name="title">
@@ -57,9 +58,10 @@
       </div>
       <div class="row">
         <div class="col-12">
-          <input class="image-selector" type="file" id="image" name="image" (change)="onImageUpload($event)" placeholder="Upload file" accept=".png,.jpg,.jpeg">
-          <label class="image-selector-label button--orange" for="image"><i class="fa fa-picture-o"></i>Upload image</label>
           <a class="button--blue" (click)="onAddSection()"><i class="fa fa-plus"></i>Add Section</a>
+        </div>
+        <div class="col-12">
+          <a class="button button--danger" (click)="onDeletion()"><i class="fa fa-trash-o"></i>Delete work example</a>
           <button class="button--green"><i class="fa fa-save"></i>Save</button>
         </div>
       </div>

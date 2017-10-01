@@ -21,24 +21,19 @@
 
   .work-example-overlay {
     justify-content: center;
-    display: flex;
-    flex-direction: column;
     transition: 1.3s ease all;
     width: 100%;
     a {
-      border: 2px solid $blue-600;
       border-radius: 5px;
       color: $blue-600;
       font-weight: bold;
       margin: 10px 0;
-      padding: 8px 20px;
       position: relative;
       transition: 0.3s ease all;
       text-decoration: none;
 
       &:hover {
         background: $blue-600;
-        color: black;
       }
 
       &:nth-of-type(2n) {
@@ -52,8 +47,43 @@
       }
     }
 
+    .external-link-wrapper {
+      border: 2px solid $blue-600;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      padding: 4px 12px;
+      align-items: center;
+
+      i {
+        margin-right: 15px;
+        transition: 0.3s ease all;
+      }
+
+      @media(min-width: 768px) {
+
+        &:hover {
+          background: $blue-600;
+          transition: 0.3s ease all;
+
+          a {
+            color: black !important;
+          }
+          i {
+            color: black !important;
+          }
+        }
+        padding: 6px 18px;
+      }
+    }
+
+    .wrapper--blue {
+      border: 2px solid $blue-600;
+    }
+
     @media(min-width: 768px) {
       background: rgba(0,0,0, 0.7);
+      display: flex;
       visibility: 0;
       opacity: 0;
       position: absolute;

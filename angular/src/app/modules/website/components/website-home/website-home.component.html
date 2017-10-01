@@ -1,22 +1,21 @@
 <div id="website-home" class="container">
-  <div class="row">
-    <div class="col-12">
-      <h2>Title #1</h2>
-      <p>Lucas ipsum dolor sit amet mon mirialan vader depa jade bren glymphid qel-droma hallotan bothan. Sola k-3po talz artaru r2-d2 r5-d4. Bibble iego omas tarkin. Cerean jubnuk zannah qui-gonn skywalker veers shimrra. Gonk boba roonan allie. Besalisk ev-9d9 fode sneevel obi-wan jusik. Kast quinlan endocott dexter kiffar gricho tierce. Kushiban anzati rotta rishii kit boba shmi twi'lek. Besalisk darth celegian cato secura dexter. Kamino allie arvel desolous salacious. Letaki wuher togorian t'landa hissa tahiri latter vader vuffi.</p>
-    </div>
+  <div class="website-banner">
+    <h1>Hello!</h1>
+    <p>Welcome to my portfolio, browse at your liesure</p>
+    <i class="fa fa-caret-down"></i>
   </div>
-  <div class="row">
-    <div class="col-4">
-      <h2>Title #1</h2>
-      <p>Lucas ipsum dolor sit amet mon mirialan vader depa jade bren glymphid qel-droma hallotan bothan. Sola k-3po talz artaru r2-d2 r5-d4. Bibble iego omas tarkin. Cerean jubnuk zannah qui-gonn skywalker veers shimrra. Gonk boba roonan allie. Besalisk ev-9d9 fode sneevel obi-wan jusik. Kast quinlan endocott dexter kiffar gricho tierce. Kushiban anzati rotta rishii kit boba shmi twi'lek. Besalisk darth celegian cato secura dexter. Kamino allie arvel desolous salacious. Letaki wuher togorian t'landa hissa tahiri latter vader vuffi.</p>
-    </div>
-    <div class="col-4">
-      <h2>Title #1</h2>
-      <p>Lucas ipsum dolor sit amet mon mirialan vader depa jade bren glymphid qel-droma hallotan bothan. Sola k-3po talz artaru r2-d2 r5-d4. Bibble iego omas tarkin. Cerean jubnuk zannah qui-gonn skywalker veers shimrra. Gonk boba roonan allie. Besalisk ev-9d9 fode sneevel obi-wan jusik. Kast quinlan endocott dexter kiffar gricho tierce. Kushiban anzati rotta rishii kit boba shmi twi'lek. Besalisk darth celegian cato secura dexter. Kamino allie arvel desolous salacious. Letaki wuher togorian t'landa hissa tahiri latter vader vuffi.</p>
-    </div>
-    <div class="col-4">
-      <h2>Title #1</h2>
-      <p>Lucas ipsum dolor sit amet mon mirialan vader depa jade bren glymphid qel-droma hallotan bothan. Sola k-3po talz artaru r2-d2 r5-d4. Bibble iego omas tarkin. Cerean jubnuk zannah qui-gonn skywalker veers shimrra. Gonk boba roonan allie. Besalisk ev-9d9 fode sneevel obi-wan jusik. Kast quinlan endocott dexter kiffar gricho tierce. Kushiban anzati rotta rishii kit boba shmi twi'lek. Besalisk darth celegian cato secura dexter. Kamino allie arvel desolous salacious. Letaki wuher togorian t'landa hissa tahiri latter vader vuffi.</p>
+  <div id="work-examples-container" class="row">
+    <div class="col-4" *ngFor="let example of workExamples">
+      <div class="work-example">
+        <h3>{{example.title}}</h3>
+        <p>{{example.description}}</p>
+        <div class="work-example-overlay">
+          <span class="external-link-wrapper wrapper--blue">
+            <i class="fa fa-github"></i>
+            <a href={{example.githubUrl}} target="_blank">View on github</a>
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 </div>

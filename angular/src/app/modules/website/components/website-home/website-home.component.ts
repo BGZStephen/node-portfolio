@@ -1,4 +1,6 @@
-import { OnInit, Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ApiService } from 'app/services/api.service';
 
 @Component({
   selector: 'app-website-home',
@@ -6,12 +8,19 @@ import { OnInit, Component } from '@angular/core';
   styleUrls: ['./website-home.component.scss']
 })
 export class WebsiteHomeComponent implements OnInit {
+    workExamples = [];
 
-  constructor() {
+    constructor(
+      private apiService: ApiService
+    ) {
 
-  }
+    }
 
-  ngOnInit() {
-
-  }
+    ngOnInit() {
+      this.apiService.getWorkExamples()
+      .subscribe(workExamples => {
+        this.workExamples = workExamples;
+        console.log(workExamples);
+      });
+    }
 }
