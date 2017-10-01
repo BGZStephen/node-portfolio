@@ -74,6 +74,10 @@ export class WorkExampleContentEditor {
     this.workExample.content.splice(sectionIndex, sectionIndex + 1);
   }
 
+  deleteWorkExample() {
+    return this.apiService.deleteWorkExample(this.workExample._id);
+  }
+
   updateSection(newSectionType, sectionIndex) {
     for (const sectionType of this.sectionTypes) {
       if (sectionType.option === newSectionType) {

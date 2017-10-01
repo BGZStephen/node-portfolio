@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'app/services/api.service';
 import { WorkExampleContentEditor } from 'app/services/workExampleContentEditor';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import * as _ from 'lodash';
 import { NotificationService } from 'app/services/notification.service';
 import { LoadingMaskService } from 'app/services/loading-mask.service';
@@ -19,6 +19,7 @@ export class WorkExamplesEditComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private notification: NotificationService,
     private loading: LoadingMaskService,
+    private router: Router,
   ) {}
 
   ngOnInit() {
@@ -35,6 +36,18 @@ export class WorkExamplesEditComponent implements OnInit {
         this.editor.initialise()
       });
     });
+  }
+
+  onDeletion() {
+    this.editor.deleteWorkExample()
+    .subscribe(res => {
+      this.notification.success({
+        message: 'Work example deleted successfully'
+      })
+      setTimeout(() => {
+        this.router.navigate(['/dashboard/work-examples'])
+      }, 1000)
+    })
   }
 
   onSave() {

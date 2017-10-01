@@ -22,6 +22,13 @@ export class ApiService {
     .map(res => res.json());
   }
 
+  deleteWorkExample(id) {
+    const headers = new Headers();
+    headers.append('Authorization', `${this.authorization}`);
+    return this.http.delete(`${this.baseUrl}/work-examples/${id}`, {headers: headers})
+    .map(res => res);
+  }
+
   getWorkExamples() {
     const headers = new Headers();
     headers.append('Authorization', `${this.authorization}`);

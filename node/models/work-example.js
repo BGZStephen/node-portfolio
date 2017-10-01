@@ -18,8 +18,8 @@ module.exports.create = function(workExampleObject) {
 	return workExampleObject.save();
 };
 
-module.exports.deleteOne = function(workExampleObject) {
-	return WorkExample.findOne(workExampleObject).remove();
+module.exports.deleteOne = function(workExampleId) {
+	return WorkExample.find({_id: workExampleId}).remove().exec();
 };
 
 module.exports.getAll = function(workExampleObject) {

@@ -6,6 +6,9 @@
         <div class="col-2">
           <label>Title</label>
         </div>
+        <div class="col-4">
+          <a class="button button--danger" (click)="onDeletion()"><i class="fa fa-trash-o"></i>Delete</a>
+        </div>
         <div class="col-12">
           <input id="title-input" type="text" placeholder="title" [(ngModel)]="editor.workExample.title" name="title">
         </div>

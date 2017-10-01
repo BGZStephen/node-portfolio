@@ -49,7 +49,7 @@ async function deleteOne (req, res) {
 	}
 
 	try {
-		await WorkExample.deleteOne({_id: req.body._id});
+		await WorkExample.deleteOne(req.params.id);
 		res.sendStatus(200);
 	} catch (error) {
 		winston.error(error);
