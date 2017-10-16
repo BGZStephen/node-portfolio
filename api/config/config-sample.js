@@ -1,5 +1,3 @@
-const env = process.env.NODE_ENV || 'development';
-
 const configs = {
   development: {
     apiUrl: '$API_URL',
@@ -36,4 +34,4 @@ const configs = {
   }
 };
 
-module.exports = configs[env];
+module.exports = configs[GLOBALS.ENV];

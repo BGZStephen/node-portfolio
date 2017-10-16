@@ -7,6 +7,8 @@ const config = require('./config');
 const cloudinary = require('cloudinary');
 const winston = require('winston');
 
+const ENV = process.env.NODE_ENV || 'development';
+
 // connect to mongodb
 mongoose.connect(config.database);
 
@@ -39,9 +41,7 @@ app.use(require('./routes/private'));
 
 cloudinary.config(config.cloudinarySettings);
 
-// define port
 const port = 9000;
-
 app.listen(port, () => {
 	winston.info(`Server started, listening on port: ${port}`);
 });

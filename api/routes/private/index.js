@@ -3,7 +3,9 @@ const Users = require('./users');
 const WorkExamples = require('./work-examples');
 const Images = require('./images');
 const multer = require('multer');
+const authorizeRoute = require('../../services/auth.js').authorizeRoute;
 
+router.all('*', authorizeRoute);
 router.get('users/:id', Users.getOne);
 
 router.get('/work-examples', WorkExamples.getAll);
