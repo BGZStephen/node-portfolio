@@ -1,14 +1,5 @@
-
-config/database\.js
-
 node_modules/
 
-angular-src/src/assets/
-
-public/assets/
-
-node/config/
-
-angular/src/environments/
+node/config/index.js
 
 node/uploads/
