@@ -6,6 +6,7 @@ const multer = require('multer');
 const authorizeRoute = require('../../services/auth.js').authorizeRoute;
 
 router.all('*', authorizeRoute);
+router.all('users/:id*', Users.fetchUser);
 router.get('users/:id', Users.getOne);
 
 router.get('/work-examples', WorkExamples.getAll);

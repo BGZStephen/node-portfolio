@@ -1,41 +1,46 @@
-const config = require('../../config');
 const User = require('../../models/user');
 const winston = require('winston');
 
-async function getByEmail (req, res) {
-	if (!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
-		return res.status(401).json({error: 'Authorisation token not supplied'});
+async function fetchUser(req, res, next) {
+	const userId = req.params.id;
+	if (!userId) {
+		res.send(500).json({
+			message: 'No User ID provided'
+		});
 	}
 
 	try {
-		const user = await User.getOne(req.body.email);
-		res.json(user);
-	} catch(error) {
+		const user = await User.findById(userId);
+		if (!user) {
+			return res.send(400).json({
+				message: 'User not found'
+			});
+		}
+		req.user = user;
+		next();
+	} catch (error) {
 		winston.error(error);
-		res.sendStatus(500);
+		res.status(500).json(error);
 	}
 }
 
 async function getOne (req, res) {
-	if (!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
-		return res.status(401).json({error: 'Authorisation token not supplied'});
-	}
-
 	try {
 		const user = await User.getOne({_id: req.body.userId});
+		if (!user) {
+			return res.send(400).json({
+				message: 'User not found'
+			});
+		}
 		res.json(user);
 	} catch(error) {
 		winston.error(error);
-		res.sendStatus(500);
+		res.status(500).json(error);
 	}
 }
 
 async function update (req, res) {
-	if (!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
-		return res.status(401).json({error: 'Authorisation token not supplied'});
-	}
-
-	let userObject = {
+	const updateParams = {
 		_id: req.body.userId,
 		email: req.body.email,
 		firstName: req.body.firstName,
@@ -43,21 +48,23 @@ async function update (req, res) {
 	};
 
 	try {
-		const userEmailExists = await(User.getOne({email: userObject.email}));
-		if (userEmailExists && userEmailExists._id != userObject._id) {
-			return res.status(500).send('Email address already in use');
+		const userEmailExists = await User.getOne({email: req.body.email});
+		if (userEmailExists && userEmailExists._id.toString() !== updateParams._id.toString()) {
+			return res.status(500).send({
+				message: 'Email address already in use'
+			});
 		}
 
-		const updatedUser = await User.update(userObject);
-		res.json(updatedUser);
+		const user = await User.update(updateParams);
+		res.json(user);
 	} catch(error) {
 		winston.error(error);
-		res.sendStatus(500);
+		res.status(500).send(error);
 	}
 }
 
 module.exports = {
-	getByEmail,
+	fetchUser,
 	getOne,
 	update
 };
