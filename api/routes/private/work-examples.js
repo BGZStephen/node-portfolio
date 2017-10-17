@@ -1,5 +1,6 @@
-const WorkExample = require('../../models/work-example');
+const mongoose = require('mongoose');
 const winston = require('winston');
+const WorkExample = mongoose.model('WorkExample');
 
 async function fetchWorkExample(req, res, next) {
 	const id = req.params.id;
@@ -60,7 +61,7 @@ async function deleteOne (req, res) {
 	}
 }
 
-async function updateOne (req, res) {
+async function update (req, res) {
 	const workExample = req.workExample;
 	const updatableFields = 'content description githubUrl images technologies summary title type	url';
 	const updateParams = buildUpdateObject(req.body, updatableFields);
@@ -92,5 +93,5 @@ module.exports = {
 	deleteOne,
 	fetchWorkExample,
 	getAll,
-	updateOne,
+	update,
 };

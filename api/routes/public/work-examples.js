@@ -1,5 +1,6 @@
-const WorkExample = require('../../models/work-example');
+const mongoose = require('mongoose');
 const winston = require('winston');
+const WorkExample = mongoose.model('WorkExample');
 
 async function fetchWorkExample(req, res, next) {
 	const id = req.params.id;
@@ -34,7 +35,7 @@ async function getAll (req, res) {
 	}
 }
 
-async function getOne (req, res) {
+async function get (req, res) {
 	try {
 		const workExample = req.workExample;
 		res.json(workExample);
@@ -47,5 +48,5 @@ async function getOne (req, res) {
 module.exports = {
 	fetchWorkExample,
 	getAll,
-	getOne,
+	get,
 };

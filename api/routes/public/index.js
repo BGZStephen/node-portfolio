@@ -8,6 +8,6 @@ router.post('/users/authenticate', Users.authenticate);
 
 router.get('/work-examples', WorkExamples.getAll);
 router.all('/work-examples/:id*', WorkExamples.fetchWorkExample);
-router.get('/work-examples/:id', WorkExamples.getOne);
+router.get('/work-examples/:id', WorkExamples.get);
 
 module.exports = router;

@@ -12,7 +12,7 @@ router.get('users/:id', Users.getOne);
 router.get('/work-examples', WorkExamples.getAll);
 router.post('/work-examples', WorkExamples.create);
 router.delete('/work-examples/:id', WorkExamples.deleteOne);
-router.put('/work-examples/:id', WorkExamples.updateOne);
+router.put('/work-examples/:id', WorkExamples.update);
 
 router.post('/images/upload', multer({dest: 'uploads/'}).single('image'), Images.uploadOne);
 router.get('/images', Images.getAll);

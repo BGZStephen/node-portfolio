@@ -21,6 +21,9 @@ mongoose.connection.on('error', (err) => {
 	winston.error('Error: ' + err);
 });
 
+// require models for global 
+require('./models');
+
 const app = express();
 
 // middleware

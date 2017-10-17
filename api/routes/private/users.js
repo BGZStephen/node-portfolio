@@ -1,9 +1,8 @@
-const User = require('../../models/user');
 const winston = require('winston');
 const bcrypt = require('bcryptjs');
+const buildUpdateObject = require('../../utils').buildUpdateObject;
 const mongoose = require('mongoose');
-
-const ObjectId = mongoose.Types.ObjectId;
+const User = mongoose.model('User');
 
 async function fetchUser(req, res, next) {
 	const userId = req.params.id;
@@ -30,12 +29,7 @@ async function fetchUser(req, res, next) {
 
 async function getOne (req, res) {
 	try {
-		const user = await User.findOne({_id: ObjectId(req.body.userId)});
-		if (!user) {
-			return res.send(400).json({
-				message: 'User not found'
-			});
-		}
+		const user = req.user;
 		res.json(user);
 	} catch(error) {
 		winston.error(error);
@@ -44,19 +38,15 @@ async function getOne (req, res) {
 }
 
 async function update (req, res) {
-	const user = await User.findById(req.body.userId);
+	const user = req.user;
+	const updatableFields = 'email firstName lastName';
 	if (!user) {
 		return res.status(404).json({
 			message: 'User not found'
 		});
 	}
 
-	const updateParams = {
-		_id: req.body.userId,
-		email: req.body.email,
-		firstName: req.body.firstName,
-		lastName: req.body.lastName,
-	};
+	const updateParams = buildUpdateObject(req.body, updatableFields);
 
 	try {
 		if (req.body.password) {

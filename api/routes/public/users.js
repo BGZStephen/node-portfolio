@@ -1,8 +1,9 @@
 const config = require('../../config');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const User = require('../../models/user');
+const mongoose = require('mongoose');
 const winston = require('winston');
+const User = mongoose.model('User');
 
 async function authenticate (req, res) {
 	const authParams = {
