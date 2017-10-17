@@ -10,10 +10,10 @@ module.exports = {
     "sourceType": "module"
   },
   "rules": {
-    "linebreak-style": [
-        "error",
-        "unix"
-    ],
+    // "linebreak-style": [
+    //     "error",
+    //     "unix"
+    // ],
     "quotes": [
         "error",
         "single"
