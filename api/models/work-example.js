@@ -12,26 +12,4 @@ const WorkExampleSchema = mongoose.Schema({
 	url: String
 });
 
-const WorkExample = module.exports = mongoose.model('WorkExample', WorkExampleSchema);
-
-module.exports.create = function(workExampleObject) {
-	return workExampleObject.save();
-};
-
-module.exports.deleteOne = function(workExampleId) {
-	return WorkExample.find({_id: workExampleId}).remove().exec();
-};
-
-module.exports.getAll = function(workExampleObject) {
-	return WorkExample.find(workExampleObject);
-};
-
-module.exports.getOne = function(workExampleId) {
-	return WorkExample.findById(workExampleId);
-};
-
-module.exports.updateWorkExample = async function(workExampleObject) {
-	await WorkExample.update({_id: workExampleObject._id}, workExampleObject);
-	const workExample = await WorkExample.findById(workExampleObject._id);
-	return workExample;
-};
+module.exports = mongoose.model('WorkExample', WorkExampleSchema);

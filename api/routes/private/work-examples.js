@@ -1,27 +1,18 @@
-const config = require('../../config');
 const WorkExample = require('../../models/work-example');
 const winston = require('winston');
 
 async function getAll (req, res) {
-	if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
-		return res.status(401).json({error: 'Authorisation token not supplied'});
-	}
-
 	try {
-		const workExamples = await WorkExample.get(req.query);
+		const workExamples = await WorkExample.find({});
 		res.json(workExamples);
 	} catch(error) {
 		winston.error(error);
-		res.sendStatus(500);
+		res.status(500).json(error);
 	}
 }
 
 async function create (req, res) {
-	if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
-		return res.status(401).json({error: 'Authorisation token not supplied'});
-	}
-
-	const workExampleObject = new WorkExample({
+	const workExample = new WorkExample({
 		createdOn: new Date(),
 		content: req.body.content,
 		description: req.body.description,
@@ -35,19 +26,15 @@ async function create (req, res) {
 	});
 
 	try {
-		const workExample = await WorkExample.create(workExampleObject);
+		workExample.save();
 		res.json(workExample);
 	} catch (error) {
 		winston.error(error);
-		res.sendStatus(500);
+		res.status(500).json(error);
 	}
 }
 
 async function deleteOne (req, res) {
-	if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
-		return res.status(401).json({error: 'Authorisation token not supplied'});
-	}
-
 	try {
 		await WorkExample.deleteOne(req.params.id);
 		res.sendStatus(200);
@@ -58,10 +45,6 @@ async function deleteOne (req, res) {
 }
 
 async function updateOne (req, res) {
-	if(!req.get('Authorization') || req.get('Authorization') !== config.authorization) {
-		return res.status(401).json({error: 'Authorisation token not supplied'});
-	}
-
 	try {
 		const workExample = await WorkExample.updateWorkExample(req.body);
 		res.json(workExample);
