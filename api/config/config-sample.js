@@ -1,6 +1,5 @@
 const configs = {
   development: {
-    apiUrl: '$API_URL',
     authorization: '$AUTHORIZATION_TOKEN',
     database: '$DATABASE',
     cloudinary: {
@@ -11,7 +10,6 @@ const configs = {
     secret: '$SECRET'
   },
   staging: {
-    apiUrl: '$API_URL',
     authorization: '$AUTHORIZATION_TOKEN',
     database: '$DATABASE',
     cloudinary: {
@@ -22,7 +20,6 @@ const configs = {
     secret: '$SECRET'
   },
   production: {
-    apiUrl: '$API_URL',
     authorization: '$AUTHORIZATION_TOKEN',
     database: '$DATABASE',
     cloudinary: {
@@ -34,4 +31,4 @@ const configs = {
   }
 };
 
-module.exports = configs[GLOBALS.ENV];
+module.exports = configs[global.ENV];

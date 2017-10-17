@@ -24,7 +24,7 @@ module.exports = {
     ],
     "no-unused-vars": [
       "error",
-      { "varsIgnorePattern": "ENV" }
+      { "varsIgnorePattern": "global" }
     ]
   },
   "globals": {

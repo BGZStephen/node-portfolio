@@ -6,9 +6,6 @@ const mongoose = require('mongoose');
 const config = require('./config');
 const cloudinary = require('cloudinary');
 const winston = require('winston');
-
-const ENV = process.env.NODE_ENV || 'development';
-
 // connect to mongodb
 mongoose.connect(config.database);
 
