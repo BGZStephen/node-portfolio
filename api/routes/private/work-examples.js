@@ -1,6 +1,20 @@
 const WorkExample = require('../../models/work-example');
 const winston = require('winston');
 
+async function fetchWorkExample(req, res, next) {
+	const id = req.params.id;
+	const workExample = WorkExample.findById(id);
+
+	if(!workExample) {
+		return res.status(404).json({
+			message: 'Work example not found'
+		});
+	}
+
+	req.workExample = workExample;
+	next();
+}
+
 async function getAll (req, res) {
 	try {
 		const workExamples = await WorkExample.find({});
@@ -35,28 +49,48 @@ async function create (req, res) {
 }
 
 async function deleteOne (req, res) {
+	const workExample = req.workExample;
+
 	try {
-		await WorkExample.deleteOne(req.params.id);
+		await workExample.remove();
 		res.sendStatus(200);
 	} catch (error) {
 		winston.error(error);
-		res.sendStatus(500);
+		res.status(500).json(error);
 	}
 }
 
 async function updateOne (req, res) {
+	const workExample = req.workExample;
+	const updatableFields = 'content description githubUrl images technologies summary title type	url';
+	const updateParams = buildUpdateObject(req.body, updatableFields);
 	try {
-		const workExample = await WorkExample.updateWorkExample(req.body);
+		for(const param in updateParams) {
+			workExample[param] = updateParams[param];
+		}
+		workExample.save();
 		res.json(workExample);
 	} catch (error) {
 		winston.error(error);
-		res.sendStatus(500);
+		res.status(500).json(error);
 	}
 }
 
+function buildUpdateObject(body, updatableFields) {
+	const updateKeys = updatableFields.split(' ');
+	let updateParams = {};
+	for (const key in updateKeys) {
+		if(body[key]) {
+			updateParams[key] = body[key];
+		}
+	}
+	return updateParams;
+}
+
 module.exports = {
-	deleteOne,
-	getAll,
 	create,
-	updateOne
+	deleteOne,
+	fetchWorkExample,
+	getAll,
+	updateOne,
 };
