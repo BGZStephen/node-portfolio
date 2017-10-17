@@ -1,3 +1,4 @@
+global.ENV = process.env.NODE_ENV || 'development';
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -6,12 +7,13 @@ const mongoose = require('mongoose');
 const config = require('./config');
 const cloudinary = require('cloudinary');
 const winston = require('winston');
+
 // connect to mongodb
 mongoose.connect(config.database);
 
 // once connected
 mongoose.connection.on('connected', () => {
-	winston.error('Connected to database successfully');
+	winston.info('Connected to database successfully');
 });
 
 // in case of error
