@@ -7,12 +7,6 @@ const authorizeRoute = require('api/services/auth.js').authorizeRoute;
 router.all('*', authorizeRoute);
 router.all('/users', require('./users'));
 router.all('/work-examples', require('./work-examples'));
-
-router.post(
-	'/images/upload',
-	multer({ dest: 'uploads/' }).single('image'),
-	Images.uploadOne,
-);
-router.get('/images', Images.getAll);
+router.all('/images', require('./images'));
 
 module.exports = router;

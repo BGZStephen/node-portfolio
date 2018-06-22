@@ -5,7 +5,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const config = require('./config');
-const cloudinary = require('cloudinary');
 const errorUtils = require('./utils/error-utils');
 const debug = require('debug')('app');
 
@@ -41,8 +40,6 @@ app.use(bodyParser.json());
 // routing
 app.use(require('./routes/public'));
 app.use(require('./routes/private'));
-
-cloudinary.config(config.cloudinarySettings);
 
 // error handlers
 app.use(errorUtils.logErrors);
