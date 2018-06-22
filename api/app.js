@@ -6,22 +6,23 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const config = require('./config');
 const cloudinary = require('cloudinary');
-const winston = require('winston');
+const errorUtils = require('./utils/error-utils');
+const debug = require('debug')('app');
 
 // connect to mongodb
 mongoose.connect(config.database);
 
 // once connected
 mongoose.connection.on('connected', () => {
-	winston.info('Connected to database successfully');
+	debug('Connected to database successfully');
 });
 
 // in case of error
-mongoose.connection.on('error', (err) => {
-	winston.error('Error: ' + err);
+mongoose.connection.on('error', err => {
+	debug('Error: ' + err);
 });
 
-// require models for global 
+// require models for global
 require('./models');
 
 const app = express();
@@ -43,7 +44,11 @@ app.use(require('./routes/private'));
 
 cloudinary.config(config.cloudinarySettings);
 
+// error handlers
+app.use(errorUtils.logErrors);
+app.use(errorUtils.errorHandler);
+
 const port = 9000;
 app.listen(port, () => {
-	winston.info(`Server started, listening on port: ${port}`);
+	debug(`Server started, listening on port: ${port}`);
 });
