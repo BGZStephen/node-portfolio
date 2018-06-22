@@ -2,45 +2,36 @@ const config = require('../../config');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
-const winston = require('winston');
 const User = mongoose.model('User');
+const router = require('express').Router();
+const rest = require('api/utils/rest');
 
-async function authenticate (req, res) {
-	const authParams = {
-		email: req.body.email,
-		password: req.body.password
-	};
-
-	const user = await User.findOne({email: authParams.email});
+async function authenticate(req, res) {
+	const user = await User.findOne({ email: req.body.email });
 
 	if (!user) {
 		return res.status(404).json({
-			message: 'User not found'
+			message: 'User not found',
 		});
 	}
 
-	try {
-		if (await bcrypt.compare(req.body.password, user.password)) {
-			const token = jwt.sign(authParams, config.secret, {expiresIn: 604800});
-			res.json({
-				success: true,
-				message: 'Authentication successful',
-				token: token,
-				user: {
-					id: authParams.userId,
-				}
-			});
-		} else {
-			res.status(403).send({
-				message: 'Authentication failed'
-			});
-		}
-	} catch (error) {
-		winston.error(error);
-		res.status(500).json(error);
+	if (!await bcrypt.compare(req.body.password, user.password)) {
+		return res.status(403).send({
+			message: 'Authentication failed',
+		});
 	}
+
+	const token = jwt.sign(authParams, config.secret, { expiresIn: 604800 });
+	res.json({
+		success: true,
+		message: 'Authentication successful',
+		token: token,
+		user: {
+			id: user._id,
+		},
+	});
 }
 
-module.exports = {
-	authenticate,
-};
+router.post('/authenticate', rest.asyncwrap(authenticate));
+
+module.exports = router;

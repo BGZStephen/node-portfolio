@@ -1,52 +1,40 @@
 const mongoose = require('mongoose');
-const winston = require('winston');
 const WorkExample = mongoose.model('WorkExample');
+const rest = require('api/utils/rest');
+const router = require('express').Router();
 
-async function fetchWorkExample(req, res, next) {
+async function load(req, res, next) {
 	const id = req.params.id;
 
 	if (!id) {
 		return res.status(404).json({
-			message: 'ID is required'
+			message: 'ID is required',
 		});
 	}
-	try {
-		const workExample = await WorkExample.findById(id);
-		if (!workExample) {
-			return res.status(404).json({
-				message: 'Work example not found'
-			});
-		}
-		req.workExample = workExample;
-		next();
-	} catch (error) {
-		winston.errorlog(error);
-		res.status(500).json(error);
+
+	const workExample = await WorkExample.findById(id);
+	if (!workExample) {
+		return res.status(404).json({
+			message: 'Work example not found',
+		});
 	}
+
+	req.context.workExample = workExample;
+	next();
 }
 
-async function getAll (req, res) {
-	try {
-		const workExamples = await WorkExample.find({});
-		res.json(workExamples);
-	} catch(error) {
-		winston.errorlog(error);
-		res.status(500).json(error);
-	}
+async function getAll(req, res) {
+	const workExamples = await WorkExample.find({});
+	res.json(workExamples);
 }
 
-async function get (req, res) {
-	try {
-		const workExample = req.workExample;
-		res.json(workExample);
-	} catch (error) {
-		winston.errorlog(error);
-		res.status(500).json(error);
-	}
+async function get(req, res) {
+	const workExample = req.context.workExample;
+	res.json(workExample);
 }
 
-module.exports = {
-	fetchWorkExample,
-	getAll,
-	get,
-};
+router.get('/', rest.asyncwrap(getAll));
+router.all('/:id*', rest.asyncwrap(load));
+router.get('/:id', rest.asyncwrap(get));
+
+module.exports = router;
