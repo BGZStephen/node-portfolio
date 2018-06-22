@@ -2,6 +2,7 @@ const bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
 const router = require('express').Router();
 const rest = require('api/utils/rest');
+const _ = require('lodash');
 const User = mongoose.model('User');
 const ObjectId = mongoose.Types.ObjectId;
 

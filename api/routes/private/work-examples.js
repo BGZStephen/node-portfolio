@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-const winston = require('winston');
 const WorkExample = mongoose.model('WorkExample');
 const router = require('express').Router();
 const rest = require('api/utils/rest');
+const _ = require('lodash');
 
 async function load(req, res, next) {
 	const id = req.params.id;
@@ -19,13 +19,8 @@ async function load(req, res, next) {
 }
 
 async function getAll(req, res) {
-	try {
-		const workExamples = await WorkExample.find({});
-		res.json(workExamples);
-	} catch (error) {
-		winston.error(error);
-		res.status(500).json(error);
-	}
+	const workExamples = await WorkExample.find({});
+	res.json(workExamples);
 }
 
 async function create(req, res) {
@@ -42,53 +37,34 @@ async function create(req, res) {
 		url: req.body.url,
 	});
 
-	try {
-		workExample.save();
-		res.json(workExample);
-	} catch (error) {
-		winston.error(error);
-		res.status(500).json(error);
-	}
+	await workExample.save();
+	res.json(workExample);
 }
 
 async function deleteOne(req, res) {
 	const workExample = req.context.workExample;
 
-	try {
-		await workExample.remove();
-		res.sendStatus(200);
-	} catch (error) {
-		winston.error(error);
-		res.status(500).json(error);
-	}
+	await workExample.remove();
+	res.sendStatus(200);
 }
 
 async function update(req, res) {
 	const workExample = req.context.workExample;
-	const updatableFields =
-		'content description githubUrl images technologies summary title type	url';
-	const updateParams = buildUpdateObject(req.body, updatableFields);
-	try {
-		for (const param in updateParams) {
-			workExample[param] = updateParams[param];
-		}
-		workExample.save();
-		res.json(workExample);
-	} catch (error) {
-		winston.error(error);
-		res.status(500).json(error);
-	}
-}
+	const updatableFields = [
+		'content',
+		'description',
+		'githubUrl',
+		'images',
+		'technologies',
+		'summary',
+		'title',
+		'type',
+		'url',
+	];
 
-function buildUpdateObject(body, updatableFields) {
-	const updateKeys = updatableFields.split(' ');
-	let updateParams = {};
-	for (const key in updateKeys) {
-		if (body[key]) {
-			updateParams[key] = body[key];
-		}
-	}
-	return updateParams;
+	workExample = _.assign(workExample, _.pick(req.body, updatableFields));
+	await workExample.save();
+	res.json(workExample);
 }
 
 router.get('/', getAll);
