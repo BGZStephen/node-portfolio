@@ -1,32 +1,34 @@
 const mongoose = require('mongoose');
 const winston = require('winston');
 const WorkExample = mongoose.model('WorkExample');
+const router = require('express').Router();
+const rest = require('api/utils/rest');
 
-async function fetchWorkExample(req, res, next) {
+async function load(req, res, next) {
 	const id = req.params.id;
 	const workExample = WorkExample.findById(id);
 
-	if(!workExample) {
+	if (!workExample) {
 		return res.status(404).json({
-			message: 'Work example not found'
+			message: 'Work example not found',
 		});
 	}
 
-	req.workExample = workExample;
+	req.content.workExample = workExample;
 	next();
 }
 
-async function getAll (req, res) {
+async function getAll(req, res) {
 	try {
 		const workExamples = await WorkExample.find({});
 		res.json(workExamples);
-	} catch(error) {
+	} catch (error) {
 		winston.error(error);
 		res.status(500).json(error);
 	}
 }
 
-async function create (req, res) {
+async function create(req, res) {
 	const workExample = new WorkExample({
 		createdOn: new Date(),
 		content: req.body.content,
@@ -37,7 +39,7 @@ async function create (req, res) {
 		summary: req.body.summary,
 		title: req.body.title,
 		type: req.body.type,
-		url: req.body.url
+		url: req.body.url,
 	});
 
 	try {
@@ -49,8 +51,8 @@ async function create (req, res) {
 	}
 }
 
-async function deleteOne (req, res) {
-	const workExample = req.workExample;
+async function deleteOne(req, res) {
+	const workExample = req.context.workExample;
 
 	try {
 		await workExample.remove();
@@ -61,12 +63,13 @@ async function deleteOne (req, res) {
 	}
 }
 
-async function update (req, res) {
-	const workExample = req.workExample;
-	const updatableFields = 'content description githubUrl images technologies summary title type	url';
+async function update(req, res) {
+	const workExample = req.context.workExample;
+	const updatableFields =
+		'content description githubUrl images technologies summary title type	url';
 	const updateParams = buildUpdateObject(req.body, updatableFields);
 	try {
-		for(const param in updateParams) {
+		for (const param in updateParams) {
 			workExample[param] = updateParams[param];
 		}
 		workExample.save();
@@ -81,17 +84,17 @@ function buildUpdateObject(body, updatableFields) {
 	const updateKeys = updatableFields.split(' ');
 	let updateParams = {};
 	for (const key in updateKeys) {
-		if(body[key]) {
+		if (body[key]) {
 			updateParams[key] = body[key];
 		}
 	}
 	return updateParams;
 }
 
-module.exports = {
-	create,
-	deleteOne,
-	fetchWorkExample,
-	getAll,
-	update,
-};
+router.get('/', getAll);
+router.post('/', create);
+router.all('/:id*', rest.asyncwrap(load));
+router.delete('/:id', rest.asyncwrap(deleteOne));
+router.put('/:id', rest.asyncwrap(update));
+
+module.exports = router;
