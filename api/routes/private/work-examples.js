@@ -24,18 +24,18 @@ async function getAll(req, res) {
 }
 
 async function create(req, res) {
-	const workExample = new WorkExample({
-		createdOn: new Date(),
-		content: req.body.content,
-		description: req.body.description,
-		githubUrl: req.body.githubUrl,
-		images: req.body.images,
-		technologies: req.body.technologies,
-		summary: req.body.summary,
-		title: req.body.title,
-		type: req.body.type,
-		url: req.body.url,
-	});
+	const fields = [
+		'content',
+		'description',
+		'githubUrl',
+		'images',
+		'technologies',
+		'summary',
+		'title',
+		'type',
+		'url',
+	];
+	const workExample = new WorkExample(_.pick(req.body, fields));
 
 	await workExample.save();
 	res.json(workExample);
