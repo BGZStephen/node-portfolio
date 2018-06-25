@@ -7,7 +7,7 @@ const config = require('./config');
 const errorUtils = require('./utils/error-utils');
 const debug = require('debug')('app');
 
-const port = 9000;
+const port = 3000;
 
 // connect to mongodb
 mongoose.connect(config.database);
