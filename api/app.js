@@ -34,6 +34,19 @@ app.use(cors());
 // body partser initialize
 app.use(bodyParser.json());
 
+app.use(function(req, res, next) {
+	res.error = function(params) {
+		if (params.message) {
+			res.statusMessage = params.message;
+		}
+		return res.status(params.statusCode).json(params);
+	};
+
+	req.context = {};
+
+	next();
+});
+
 // routing
 app.use(require('./routes/public'));
 app.use(require('./routes/private'));

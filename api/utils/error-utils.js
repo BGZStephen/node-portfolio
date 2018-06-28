@@ -1,4 +1,4 @@
-const debug = require('debug')('error-utils');
+const debug = require('debug')('app');
 
 function logErrors(err, req, res, next) {
 	if (global.ENV === 'development' || global.ENV === 'testing') {

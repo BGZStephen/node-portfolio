@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 const rest = require('api/utils/rest');
 const validate = require('api/utils/validate').process;
+const _ = require('lodash');
 
 const User = mongoose.model('User');
 
@@ -46,7 +47,12 @@ async function create(req, res) {
 
 	const fields = ['name', 'email', 'password'];
 
-	const user = new User(_pick(req.body, fields));
+	const user = new User({
+		name: req.body.name,
+		email: req.body.email,
+		password: req.body.password,
+	});
+
 	await user.save();
 
 	res.json(user);
