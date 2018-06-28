@@ -23,7 +23,11 @@ async function authenticate(req, res) {
 		});
 	}
 
-	const token = jwt.sign(authParams, config.secret, { expiresIn: 604800 });
+	const token = jwt.sign(
+		_.pick(user, ['name', 'email', '_id']),
+		config.secret,
+		{ expiresIn: 604800 },
+	);
 	res.json({
 		success: true,
 		message: 'Authentication successful',

@@ -39,6 +39,7 @@ app.use(function(req, res, next) {
 		if (params.message) {
 			res.statusMessage = params.message;
 		}
+		debug(`API Error: ${params.statusCode || ''} ${params.message || ''}`);
 		return res.status(params.statusCode).json(params);
 	};
 
