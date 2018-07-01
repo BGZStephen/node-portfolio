@@ -29,8 +29,6 @@ async function authenticate(req, res) {
 		{ expiresIn: 604800 },
 	);
 	res.json({
-		success: true,
-		message: 'Authentication successful',
 		token: token,
 		user: {
 			id: user._id,

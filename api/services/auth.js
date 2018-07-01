@@ -9,7 +9,7 @@ function verifyJWT(req, res, next) {
 	const Token = req.get('x-access-token');
 
 	try {
-		jwt.verify(token, 'wrong-secret');
+		jwt.verify(token, config.secret);
 	} catch (err) {
 		return res.error({ statusCode: 400, message: 'Unauthorized access' });
 	}
