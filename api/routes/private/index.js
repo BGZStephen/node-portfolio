@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const authorizeRoute = require('api/services/auth.js').authorizeRoute;
+const authorizeRoute = require('api/services/auth.js').verifyJWT;
 
 router.all('*', authorizeRoute);
 router.use('/users', require('./users'));

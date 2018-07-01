@@ -1,20 +1,22 @@
 const config = require('../config');
+const jwt = require('jsonwebtoken');
 
-function authorizeRoute(req, res, next) {
-  if (ENV === 'development') {
-    return next();
-  }
+function verifyJWT(req, res, next) {
+	if (ENV === 'development') {
+		return next();
+	}
 
-  const AuthorizationToken = req.get('Authorization');
-  if (!AuthorizationToken || AuthorizationToken !== config.authorization) {
-    res.status(401).json({
-      message: 'Unauthorized access'
-    });
-  }
+	const Token = req.get('x-access-token');
 
-  next();
+	try {
+		jwt.verify(token, 'wrong-secret');
+	} catch (err) {
+		return res.error({ statusCode: 400, message: 'Unauthorized access' });
+	}
+
+	next();
 }
 
 module.exports = {
-  authorizeRoute,
+	verifyJWT,
 };
