@@ -50,7 +50,7 @@ app.use(function(req, res, next) {
 
 // routing
 app.use(require('./routes/public'));
-app.use(require('./routes/private'));
+app.use('/private', require('./routes/private'));
 
 // error handlers
 app.use(errorUtils.logErrors);
