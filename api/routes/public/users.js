@@ -7,7 +7,7 @@ const router = require('express').Router();
 const rest = require('api/utils/rest');
 
 async function authenticate(req, res) {
-	const user = await User.findOne({ email: req.body.email });
+	const user = await User.findOne({email: req.body.email});
 
 	if (!user) {
 		return res.status(404).json({
@@ -15,13 +15,13 @@ async function authenticate(req, res) {
 		});
 	}
 
-	if (!await bcrypt.compare(req.body.password, user.password)) {
+	if (!(await bcrypt.compare(req.body.password, user.password))) {
 		return res.status(403).send({
 			message: 'Authentication failed',
 		});
 	}
 
-	const token = jwt.sign(authParams, config.secret, { expiresIn: 604800 });
+	const token = jwt.sign(authParams, config.secret, {expiresIn: 604800});
 	res.json({
 		success: true,
 		message: 'Authentication successful',
