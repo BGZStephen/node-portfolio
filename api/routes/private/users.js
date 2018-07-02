@@ -30,6 +30,11 @@ async function getOne(req, res) {
 	res.json(user);
 }
 
+async function index(req, res) {
+	const users = await User.find();
+	res.json(users);
+}
+
 async function update(req, res) {
 	const user = req.user;
 	const updatableFields = ['email', 'firstName', 'lastName'];
@@ -68,6 +73,7 @@ function verifyPassword(passwordQuery, password) {
 	return bcrypt.compareSync(passwordQuery, password);
 }
 
+router.get('/', rest.asyncwrap(index));
 router.all('/:id*', rest.asyncwrap(load));
 router.get('/:id', rest.asyncwrap(getOne));
 
