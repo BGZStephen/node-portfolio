@@ -67,7 +67,7 @@ async function update(req, res) {
 	res.json(workExample);
 }
 
-router.get('/', getAll);
+router.get('/', rest.asyncwrap(getAll));
 router.post('/', create);
 router.all('/:id*', rest.asyncwrap(load));
 router.delete('/:id', rest.asyncwrap(deleteOne));
