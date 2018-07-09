@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const WorkExample = mongoose.model('WorkExample');
 const router = require('express').Router();
 const rest = require('api/utils/rest');
+const multer = require('multer');
 const _ = require('lodash');
 
 async function load(req, res, next) {
@@ -24,17 +25,7 @@ async function getAll(req, res) {
 }
 
 async function create(req, res) {
-	const fields = [
-		'content',
-		'description',
-		'githubUrl',
-		'images',
-		'technologies',
-		'summary',
-		'title',
-		'type',
-		'url',
-	];
+	const fields = ['content', 'description', 'githubUrl', 'images', 'technologies', 'summary', 'title', 'type', 'url'];
 	const workExample = new WorkExample(_.pick(req.body, fields));
 
 	await workExample.save();
@@ -49,7 +40,7 @@ async function deleteOne(req, res) {
 }
 
 async function update(req, res) {
-	const workExample = req.context.workExample;
+	let workExample = req.context.workExample;
 	const updatableFields = [
 		'content',
 		'description',
@@ -68,7 +59,7 @@ async function update(req, res) {
 }
 
 router.get('/', rest.asyncwrap(getAll));
-router.post('/', create);
+router.post('/', multer({ dest: 'uploads/' }).array('files', 20), rest.asyncwrap(create));
 router.all('/:id*', rest.asyncwrap(load));
 router.delete('/:id', rest.asyncwrap(deleteOne));
 router.put('/:id', rest.asyncwrap(update));
