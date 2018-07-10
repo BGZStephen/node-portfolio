@@ -6,7 +6,7 @@ const WorkExampleSchema = mongoose.Schema({
 	content: [],
 	githubUrl: String,
 	images: Array,
-	technologies: Array,
+	technologies: [{type: String, ref: 'Technology'}],
 	title: String,
 	type: String,
 	url: String
