@@ -4,6 +4,7 @@ const router = require('express').Router();
 const rest = require('api/utils/rest');
 const multer = require('multer');
 const _ = require('lodash');
+const cloudinary = require('api/services/cloudinary');
 
 async function load(req, res, next) {
 	const id = req.params.id;
@@ -25,8 +26,15 @@ async function getAll(req, res) {
 }
 
 async function create(req, res) {
-	const fields = ['content', 'description', 'githubUrl', 'images', 'technologies', 'summary', 'title', 'type', 'url'];
-	const workExample = new WorkExample(_.pick(req.body, fields));
+	const fields = ['content', 'description', 'githubUrl', 'technologies', 'title', 'type', 'url'];
+	const workExample = new WorkExample(_.assign({ images: [] }, _.pick(req.body, fields)));
+
+	if (req.files) {
+		for (const file of req.files) {
+			const cloudinaryResource = await cloudinary.uploadOne(file);
+			workExample.images.push(cloudinaryResource.url);
+		}
+	}
 
 	await workExample.save();
 	res.json(workExample);
@@ -47,7 +55,6 @@ async function update(req, res) {
 		'githubUrl',
 		'images',
 		'technologies',
-		'summary',
 		'title',
 		'type',
 		'url',
