@@ -36,7 +36,7 @@ async function index(req, res) {
 }
 
 async function update(req, res) {
-	const user = req.user;
+	let user = req.user;
 	const updatableFields = ['email', 'firstName', 'lastName'];
 
 	if (req.body.password) {
@@ -49,7 +49,7 @@ async function update(req, res) {
 				message: 'Current password does not match stored password',
 			});
 		}
-		updateParams.password = bcrypt.hashSync(updateParams.password, 10);
+		user.password = req.body.password;
 	}
 
 	const duplicateUserEmail = await User.findOne({ email: req.body.email });
@@ -76,5 +76,6 @@ function verifyPassword(passwordQuery, password) {
 router.get('/', rest.asyncwrap(index));
 router.all('/:id*', rest.asyncwrap(load));
 router.get('/:id', rest.asyncwrap(getOne));
+router.put('/:id', rest.asyncwrap(update));
 
 module.exports = router;

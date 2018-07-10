@@ -66,6 +66,4 @@ function generateSingleError(validationErrors, options) {
 	return errors[0];
 }
 
-module.exports = {
-	process,
-};
+module.exports.default = process;
