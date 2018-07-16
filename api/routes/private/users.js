@@ -20,7 +20,7 @@ async function load(req, res, next) {
 	next();
 }
 
-function getOne(req, res) {
+function get(req, res) {
 	const user = req.user;
 	res.json(user);
 }
@@ -59,7 +59,7 @@ async function update(req, res) {
 
 router.get('/', rest.asyncwrap(index));
 router.all('/:id*', rest.asyncwrap(load));
-router.get('/:id', getOne);
+router.get('/:id', get);
 router.put('/:id', rest.asyncwrap(update));
 
 module.exports = router;

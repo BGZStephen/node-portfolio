@@ -3,38 +3,32 @@ const WorkExample = mongoose.model('WorkExample');
 const rest = require('api/utils/rest');
 const router = require('express').Router();
 
+const ObjectId = mongoose.Types.ObjectId;
+
 async function load(req, res, next) {
 	const id = req.params.id;
 
-	if (!id) {
-		return res.status(404).json({
-			message: 'ID is required',
-		});
-	}
-
-	const workExample = await WorkExample.findById(id);
+	const workExample = await WorkExample.findById(ObjectId(id));
 	if (!workExample) {
-		return res.status(404).json({
-			message: 'Work example not found',
-		});
+		return res.error({message: 'Work example not found', statusCode: 404});
 	}
 
 	req.context.workExample = workExample;
 	next();
 }
 
-async function getAll(req, res) {
+async function index(req, res) {
 	const workExamples = await WorkExample.find({});
 	res.json(workExamples);
 }
 
-async function get(req, res) {
+function get(req, res) {
 	const workExample = req.context.workExample;
 	res.json(workExample);
 }
 
-router.get('/', rest.asyncwrap(getAll));
+router.get('/', rest.asyncwrap(index));
 router.all('/:id*', rest.asyncwrap(load));
-router.get('/:id', rest.asyncwrap(get));
+router.get('/:id', get);
 
 module.exports = router;

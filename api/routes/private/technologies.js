@@ -27,7 +27,7 @@ async function load(req, res, next) {
   next();
 }
 
-async function get(req, res) {
+function get(req, res) {
   res.json(req.context.technology);
 }
 
@@ -64,7 +64,7 @@ async function update(req, res) {
 router.get('/', rest.asyncwrap(index));
 router.post('/', rest.asyncwrap(create));
 router.all('/:id*', rest.asyncwrap(load));
-router.get('/:id*', rest.asyncwrap(get));
+router.get('/:id*', get);
 router.put('/:id*', rest.asyncwrap(update));
 
 module.exports = router;
