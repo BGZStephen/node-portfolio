@@ -49,9 +49,22 @@ async function create(req, res) {
     res.json(technology);
 }
 
+async function update(req, res) {
+  let technology = req.context.technology;
+
+  const fields = ['label'];
+
+  technology = _.assign(technology, _.pick(req.body, fields));
+
+  await technology.save();
+
+  res.json(technology);
+}
+
 router.get('/', rest.asyncwrap(index));
 router.post('/', rest.asyncwrap(create));
 router.all('/:id*', rest.asyncwrap(load));
 router.get('/:id*', rest.asyncwrap(get));
+router.put('/:id*', rest.asyncwrap(update));
 
 module.exports = router;
