@@ -1,7 +1,7 @@
 const cloudinary = require('cloudinary');
 const config = require('api/config');
 
-cloudinary.config(config.cloudinarySettings);
+cloudinary.config(config.cloudinary);
 
 async function uploadOne(file) {
 	return await cloudinary.uploader.upload(file.path);

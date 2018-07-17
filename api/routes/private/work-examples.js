@@ -1,3 +1,4 @@
+const fs = require('fs');
 const mongoose = require('mongoose');
 const WorkExample = mongoose.model('WorkExample');
 const router = require('express').Router();
@@ -25,11 +26,18 @@ async function index(req, res) {
 
 async function create(req, res) {
 	const fields = ['content', 'description', 'githubUrl', 'technologies', 'title', 'type', 'url'];
-	const workExample = new WorkExample(_.assign({ images: [] }, _.pick(req.body, fields)));
-
+  const workExample = new WorkExample(_.assign({ images: [] }, _.pick(req.body, fields)));
+  
   for (const file of req.files) {
-    const cloudinaryResource = await cloudinary.uploadOne(file);
-    workExample.images.push(cloudinaryResource.url);
+    try {
+      const cloudinaryResource = await cloudinary.uploadOne(file);
+      workExample.images.push(cloudinaryResource.url);
+    } catch (error) {
+      await fs.unlinkSync(file.path);
+      throw error;
+    }
+
+    await fs.unlinkSync(file.path);
   }
 
 	await workExample.save();
@@ -54,9 +62,22 @@ async function update(req, res) {
 		'title',
 		'type',
 		'url',
-	];
+  ];
+  
+  workExample = _.assign(workExample, _.pick(req.body, updatableFields));
 
-	workExample = _.assign(workExample, _.pick(req.body, updatableFields));
+  for (const file of req.files) {
+    try {
+      const cloudinaryResource = await cloudinary.uploadOne(file);
+      workExample.images.push(cloudinaryResource.url);
+    } catch (error) {
+      await fs.unlinkSync(file.path);
+      throw error;
+    }
+
+    await fs.unlinkSync(file.path);
+  }
+  
 	await workExample.save();
 	res.json(workExample);
 }
