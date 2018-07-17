@@ -1,6 +1,5 @@
 const configs = {
   development: {
-    authorization: '$AUTHORIZATION_TOKEN',
     database: '$DATABASE',
     cloudinary: {
       cloud_name: '$CLOUD_NAME',
@@ -10,7 +9,6 @@ const configs = {
     secret: '$SECRET'
   },
   staging: {
-    authorization: '$AUTHORIZATION_TOKEN',
     database: '$DATABASE',
     cloudinary: {
       cloud_name: '$CLOUD_NAME',
@@ -20,7 +18,6 @@ const configs = {
     secret: '$SECRET'
   },
   production: {
-    authorization: '$AUTHORIZATION_TOKEN',
     database: '$DATABASE',
     cloudinary: {
       cloud_name: '$CLOUD_NAME',

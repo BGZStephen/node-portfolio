@@ -1,5 +1,6 @@
 const cloudinary = require('cloudinary');
 const config = require('api/config');
+
 cloudinary.config(config.cloudinarySettings);
 
 async function uploadOne(file) {
@@ -13,5 +14,4 @@ async function getAll() {
 module.exports = {
 	uploadOne,
 	getAll,
-	// getOne,
 };

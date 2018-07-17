@@ -8,7 +8,7 @@ function logErrors(err, req, res, next) {
 }
 
 // handle all express generated errors with stacks
-function errorHandler(err, req, res, next) {
+function errorHandler(err, req, res) {
 	return res.status(err.statusCode || 500).json(err);
 }
 
