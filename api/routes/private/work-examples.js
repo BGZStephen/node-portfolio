@@ -7,15 +7,18 @@ const multer = require('multer');
 const _ = require('lodash');
 const cloudinary = require('api/services/cloudinary');
 
+const ObjectId = mongoose.Types.ObjectId;
+
 async function load(req, res, next) {
   const id = req.params.id;
-	const workExample = await WorkExample.findById(id);
+
+	const workExample = await WorkExample.findById(ObjectId(id));
 
 	if (!workExample) {
 		return res.error({message: 'Work example not found', statusCode: 404});
 	}
 
-	req.content.workExample = workExample;
+	req.context.workExample = workExample;
 	next();
 }
 
@@ -63,7 +66,7 @@ async function update(req, res) {
 		'type',
 		'url',
   ];
-  
+
   workExample = _.assign(workExample, _.pick(req.body, updatableFields));
 
   for (const file of req.files) {
@@ -86,6 +89,6 @@ router.get('/', rest.asyncwrap(index));
 router.post('/', multer({ dest: 'uploads/' }).array('files', 20), rest.asyncwrap(create));
 router.all('/:id*', rest.asyncwrap(load));
 router.delete('/:id', rest.asyncwrap(remove));
-router.put('/:id', rest.asyncwrap(update));
+router.put('/:id', multer({ dest: 'uploads/' }).array('files', 20), rest.asyncwrap(update));
 
 module.exports = router;
