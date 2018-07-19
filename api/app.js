@@ -9,29 +9,22 @@ const debug = require('debug')('app');
 
 const port = 3000;
 
-// connect to mongodb
 mongoose.connect(config.database);
 
-// once connected
 mongoose.connection.on('connected', () => {
 	debug('Connected to database successfully');
 });
 
-// in case of error
 mongoose.connection.on('error', err => {
 	debug('Error: ' + err);
 });
 
-// require models for global
 require('./models');
 
 const app = express();
 
-// middleware
-// cross origin resource sharing setup
 app.use(cors());
 
-// body partser initialize
 app.use(bodyParser.json());
 
 app.use(function(req, res, next) {
@@ -48,11 +41,9 @@ app.use(function(req, res, next) {
 	next();
 });
 
-// routing
 app.use(require('./routes/public'));
 app.use('/private', require('./routes/private'));
 
-// error handlers
 app.use(errorUtils.logErrors);
 app.use(errorUtils.errorHandler);
 

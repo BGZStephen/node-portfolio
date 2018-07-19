@@ -11,6 +11,26 @@ async function index(req, res) {
     res.json(technologies);
 }
 
+async function load(req, res, next) {
+  if (!req.params.id) {
+    return res.error({statusCode: 400, message: 'Missing ID'});
+  }
+
+  const technology = await mongoose.model('Technology').findById(req.params.id);
+
+  if (!technology) {
+    return res.error({statusCode: 404, message: 'Technology not found'});
+  }
+
+  req.context.technology = technology;
+
+  next();
+}
+
+function get(req, res) {
+  res.json(req.context.technology);
+}
+
 async function create(req, res) {
     const fields = ['_id', 'label'];
 
@@ -29,7 +49,22 @@ async function create(req, res) {
     res.json(technology);
 }
 
+async function update(req, res) {
+  let technology = req.context.technology;
+
+  const fields = ['label'];
+
+  technology = _.assign(technology, _.pick(req.body, fields));
+
+  await technology.save();
+
+  res.json(technology);
+}
+
 router.get('/', rest.asyncwrap(index));
 router.post('/', rest.asyncwrap(create));
+router.all('/:id*', rest.asyncwrap(load));
+router.get('/:id*', get);
+router.put('/:id*', rest.asyncwrap(update));
 
 module.exports = router;

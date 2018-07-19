@@ -6,7 +6,7 @@ function verifyJWT(req, res, next) {
 		return next();
 	}
 
-	const Token = req.get('x-access-token');
+	const token = req.get('x-access-token');
 
 	try {
 		jwt.verify(token, config.secret);

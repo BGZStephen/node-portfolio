@@ -12,15 +12,11 @@ async function authenticate(req, res) {
   const user = await User.findOne({email: req.body.email});
 
   if (!user) {
-    return res.status(404).json({
-      message: 'User not found',
-    });
+    return res.error({message: 'User not found', statusCode: 404});
   }
 
   if (!user.passwordsMatch(req.body.password)) {
-    return res.status(403).send({
-      message: 'Authentication failed',
-    });
+    return res.error({message: 'Authentication failed', statusCode: 403});
   }
 
   const token = jwt.sign(_.pick(user, ['name', 'email', '_id']), config.secret, {expiresIn: 604800});

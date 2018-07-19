@@ -1,9 +1,8 @@
 const router = require('express').Router();
-const authorizeRoute = require('api/services/auth.js').verifyJWT;
 
-router.all('*', authorizeRoute);
 router.use('/users', require('./users'));
 router.use('/work-examples', require('./work-examples'));
+router.use('/technologies', require('./technologies'));
 router.use('/images', require('./images'));
 
 module.exports = router;
