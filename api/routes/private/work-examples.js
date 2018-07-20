@@ -67,6 +67,10 @@ async function update(req, res) {
 		'url',
   ];
 
+  if (req.body.images === 'null') {
+    req.body.images = [];
+  }
+
   workExample = _.assign(workExample, _.pick(req.body, updatableFields));
 
   for (const file of req.files) {
