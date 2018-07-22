@@ -8,10 +8,16 @@ const ObjectId = mongoose.Types.ObjectId;
 async function load(req, res, next) {
 	const id = req.params.id;
 
-	const workExample = await WorkExample.findById(ObjectId(id));
+  const workExample = await WorkExample.findById(ObjectId(id));
+  
 	if (!workExample) {
 		return res.error({message: 'Work example not found', statusCode: 404});
-	}
+  }
+  
+  if (req.query.populate || req.body.populate) {
+    const fields = (req.query.populate || req.body.populate).split(',').join(' ');
+    await workExample.populate(fields).execPopulate();
+  }
 
 	req.context.workExample = workExample;
 	next();

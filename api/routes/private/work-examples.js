@@ -16,7 +16,12 @@ async function load(req, res, next) {
 
 	if (!workExample) {
 		return res.error({message: 'Work example not found', statusCode: 404});
-	}
+  }
+  
+  if (req.query.populate || req.body.populate) {
+    const fields = (req.query.populate || req.body.populate).split(',').join(' ');
+    await workExample.populate(fields).execPopulate();
+  }
 
 	req.context.workExample = workExample;
 	next();
@@ -69,6 +74,10 @@ async function update(req, res) {
 
   if (req.body.images === 'null') {
     req.body.images = [];
+  }
+
+  if (req.body.technologies === 'null') {
+    req.body.technologies = [];
   }
 
   workExample = _.assign(workExample, _.pick(req.body, updatableFields));
