@@ -1,22 +1,27 @@
 const config = require('../config');
 const jwt = require('jsonwebtoken');
 
-function verifyJWT(req, res, next) {
-	if (ENV === 'development') {
-		return next();
-	}
-
-	const token = req.get('x-access-token');
-
-	try {
-		jwt.verify(token, config.secret);
+function isJWTValid(token) {
+  try {
+    jwt.verify(token, config.secret);
 	} catch (err) {
-		return res.error({ statusCode: 400, message: 'Unauthorized access' });
-	}
+    return false;
+  }
+  
+	return true;
+}
 
-	next();
+function onlyAuthenticated(req, res, next) {
+  const token = req.get('x-access-token');
+
+  if (!isJWTValid(token)) {
+    return res.error({statusCode: 403, message: 'Unauthorized'});
+  }
+
+  next();
 }
 
 module.exports = {
-	verifyJWT,
+  isJWTValid,
+  onlyAuthenticated
 };
