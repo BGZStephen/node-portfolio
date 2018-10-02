@@ -3,9 +3,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const config = require('./config');
 const errorUtils = require('./utils/error-utils');
 const debug = require('debug')('app');
+
+import config from './config';
 
 const port = 3000;
 
@@ -27,7 +28,7 @@ app.use(cors());
 
 app.use(bodyParser.json());
 
-app.use(function(req, res, next) {
+app.use(function(req: Express.Request, res, next) {
 	res.error = function(params) {
 		if (params.message) {
 			res.statusMessage = params.message;

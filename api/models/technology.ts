@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+import * as mongoose from 'mongoose';
 
-const TechnologySchema = mongoose.Schema({
+const TechnologySchema = new mongoose.Schema({
 	_id: String,
     label: String,
     image: String,

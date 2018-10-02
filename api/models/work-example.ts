@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+import * as mongoose from 'mongoose';
 
-const WorkExampleSchema = mongoose.Schema({
+const WorkExampleSchema = new mongoose.Schema({
 	createdOn: Date,
 	description: Array,
 	content: Array,

@@ -12,7 +12,7 @@ function errorHandler(err, req, res) {
 	return res.status(err.statusCode || 500).json(err);
 }
 
-module.exports = {
+export default {
 	logErrors,
 	errorHandler,
 };
