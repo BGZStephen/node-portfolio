@@ -1,10 +1,12 @@
-const config = require('../../config');
-const router = require('express').Router();
+import { Router } from 'express';
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
-const rest = require('api/utils/rest');
+import rest from 'api/utils/rest';
 const validate = require('api/utils/validate');
 const _ = require('lodash');
+import config from '../../config';
+
+const router = Router();
 
 const User = mongoose.model('User');
 
@@ -51,4 +53,4 @@ async function create(req, res) {
 router.post('/authenticate', rest.asyncwrap(authenticate));
 router.post('/', rest.asyncwrap(create));
 
-module.exports = router;
+export default router;

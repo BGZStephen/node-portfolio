@@ -1,7 +1,7 @@
-const config = require('../config');
-const jwt = require('jsonwebtoken');
+import config from '../config';
+import * as jwt from 'jsonwebtoken';
 
-function isJWTValid(token) {
+export function isJWTValid(token) {
   try {
     jwt.verify(token, config.secret);
 	} catch (err) {
@@ -11,7 +11,7 @@ function isJWTValid(token) {
 	return true;
 }
 
-function onlyAuthenticated(req, res, next) {
+export function onlyAuthenticated(req, res, next) {
   const token = req.get('x-access-token');
 
   if (!isJWTValid(token)) {
@@ -20,8 +20,3 @@ function onlyAuthenticated(req, res, next) {
 
   next();
 }
-
-module.exports = {
-  isJWTValid,
-  onlyAuthenticated
-};

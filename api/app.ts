@@ -1,14 +1,15 @@
 global.ENV = process.env.NODE_ENV || 'development';
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const mongoose = require('mongoose');
-const errorUtils = require('./utils/error-utils');
-const debug = require('debug')('app');
+import * as express from 'express';
+import * as bodyParser from 'body-parser';
+import * as cors from 'cors';
+import * as mongoose from 'mongoose';
+import errorUtils from './utils/error-utils';
+import * as Debug from 'debug';
 
 import config from './config';
 
 const port = 3000;
+const debug = Debug('app');
 
 mongoose.connect(config.database);
 
@@ -42,8 +43,11 @@ app.use(function(req: Express.Request, res, next) {
 	next();
 });
 
-app.use(require('./routes/public'));
-app.use('/private', require('./routes/private'));
+import publicRoutes from './routes/public';
+import privateRoutes from './routes/private';
+
+app.use(publicRoutes);
+app.use('/private', privateRoutes);
 
 app.use(errorUtils.logErrors);
 app.use(errorUtils.errorHandler);

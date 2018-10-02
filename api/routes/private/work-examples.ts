@@ -1,11 +1,14 @@
+import { Router } from "express";
+import rest from 'api/utils/rest';
+import * as multer from 'multer';
+import _ from 'lodash';
+import * as cloudinary from 'api/services/cloudinary';
+
 const fs = require('fs');
 const mongoose = require('mongoose');
 const WorkExample = mongoose.model('WorkExample');
-const router = require('express').Router();
-const rest = require('api/utils/rest');
-const multer = require('multer');
-const _ = require('lodash');
-const cloudinary = require('api/services/cloudinary');
+
+const router = Router();
 
 const ObjectId = mongoose.Types.ObjectId;
 
@@ -104,4 +107,4 @@ router.all('/:id*', rest.asyncwrap(load));
 router.delete('/:id', rest.asyncwrap(remove));
 router.put('/:id', multer({ dest: 'uploads/' }).array('files', 20), rest.asyncwrap(update));
 
-module.exports = router;
+export default router;

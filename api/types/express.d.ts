@@ -1,5 +1,9 @@
 declare namespace Express {
   export interface Request {
-     context?: object
+     context?: object;
   }
+
+  export interface Response {
+    error?: object;
+ }
 }

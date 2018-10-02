@@ -1,5 +1,5 @@
-const cloudinary = require('cloudinary');
-const config = require('api/config');
+import * as cloudinary from 'cloudinary';
+import config from 'api/config';
 
 cloudinary.config(config.cloudinary);
 
@@ -11,7 +11,7 @@ async function getAll() {
 	return await cloudinary.v2.api.resources({type: 'upload'});
 }
 
-module.exports = {
+export default {
 	uploadOne,
 	getAll,
 };

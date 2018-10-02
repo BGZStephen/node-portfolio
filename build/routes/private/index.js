@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var express_1 = require("express");
+var auth_1 = require("api/services/auth");
+var users_1 = require("./users");
+var work_examples_1 = require("./work-examples");
+var technologies_1 = require("./technologies");
+var images_1 = require("./images");
+var router = express_1.Router();
+router.all('/*', auth_1.onlyAuthenticated);
+router.use('/users', users_1.default);
+router.use('/work-examples', work_examples_1.default);
+router.use('/technologies', technologies_1.default);
+router.use('/images', images_1.default);
+exports.default = router;

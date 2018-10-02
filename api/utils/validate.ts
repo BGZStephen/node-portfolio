@@ -1,4 +1,4 @@
-const validate = require('validate.js');
+import * as validate from 'validate.js';
 
 function process(object, constraints, options = { single: true }) {
 	const validationErrors = validate(object, constraints);
@@ -66,4 +66,4 @@ function generateSingleError(validationErrors, options) {
 	return errors[0];
 }
 
-module.exports = process;
+export default process;

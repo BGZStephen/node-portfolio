@@ -7,6 +7,6 @@ function asyncwrap(fn) {
 	};
 }
 
-module.exports = {
+export default {
 	asyncwrap,
 };

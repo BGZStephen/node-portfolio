@@ -1,9 +1,11 @@
-const mongoose = require('mongoose');
-const router = require('express').Router();
-const rest = require('api/utils/rest');
-const _ = require('lodash');
+import { Router } from "express";
+import * as mongoose from 'mongoose';
+import rest from 'api/utils/rest';
+import _ from 'lodash';
 const User = mongoose.model('User');
 const ObjectId = mongoose.Types.ObjectId;
+
+const router = Router();
 
 async function load(req, res, next) {
 	const userId = req.params.id;
@@ -62,4 +64,4 @@ router.all('/:id*', rest.asyncwrap(load));
 router.get('/:id', get);
 router.put('/:id', rest.asyncwrap(update));
 
-module.exports = router;
+export default router;

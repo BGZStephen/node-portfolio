@@ -1,8 +1,11 @@
-const router = require('express').Router();
-const rest = require('api/utils/rest');
-const mongoose = require('mongoose');
-const validate = require('api/utils/validate');
-const _ = require('lodash');
+import { Router } from "express";
+
+import rest from 'api/utils/rest';
+import * as mongoose from 'mongoose';
+import validate from 'api/utils/validate';
+import _ from 'lodash';
+
+const router = Router()
 
 const Technology = mongoose.model('Technology');
 
@@ -67,4 +70,4 @@ router.all('/:id*', rest.asyncwrap(load));
 router.get('/:id*', get);
 router.put('/:id*', rest.asyncwrap(update));
 
-module.exports = router;
+export default router;

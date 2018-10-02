@@ -1,7 +1,8 @@
+import { Router } from "express";
 const mongoose = require('mongoose');
 const WorkExample = mongoose.model('WorkExample');
-const rest = require('api/utils/rest');
-const router = require('express').Router();
+import rest  from 'api/utils/rest';
+const router = Router();
 
 const ObjectId = mongoose.Types.ObjectId;
 
@@ -37,4 +38,4 @@ router.get('/', rest.asyncwrap(index));
 router.all('/:id*', rest.asyncwrap(load));
 router.get('/:id', get);
 
-module.exports = router;
+export default router;
