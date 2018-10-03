@@ -1,9 +1,10 @@
-import { Request, Response } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import { Error } from 'api/interfaces';
+
 import * as Debug from 'debug' 
 const debug = Debug('app');
 
-function logErrors(err, req, res, next) {
+function logErrors(err: Error, req: Request, res: Response, next: NextFunction) {
 	if (global.ENV === 'development' || global.ENV === 'testing') {
 		debug(err);
 	}
