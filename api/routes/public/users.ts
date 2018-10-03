@@ -1,16 +1,17 @@
+import { Request, Response } from 'express';
 import { Router } from 'express';
-const jwt = require('jsonwebtoken');
-const mongoose = require('mongoose');
+import * as jwt from 'jsonwebtoken';
+import * as mongoose from 'mongoose';
 import rest from 'api/utils/rest';
-const validate = require('api/utils/validate');
-const _ = require('lodash');
+import validate from 'api/utils/validate';
+import * as _ from 'lodash';
 import config from '../../config';
 
 const router = Router();
 
 const User = mongoose.model('User');
 
-async function authenticate(req, res) {
+async function authenticate(req: Request, res: Response): Promise<any> {
   const user = await User.findOne({email: req.body.email});
 
   if (!user) {
@@ -30,7 +31,7 @@ async function authenticate(req, res) {
   });
 }
 
-async function create(req, res) {
+async function create(req: Request, res: Response): Promise<any> {
   const validationErrors = validate(req.body, {
     name: {presence: true},
     email: {presence: true},

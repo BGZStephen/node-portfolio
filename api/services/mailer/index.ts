@@ -9,7 +9,7 @@ mailjet.connect(config.mailJet.apiKey, config.mailJet.apiSecret, {
 	version: 'v3.1',
 });
 
-async function sendEmail(params) {
+function sendEmail(params): Promise<any> {
 
 	if (!params.from) {
 		throw new Error('From is a required parameter');
@@ -45,15 +45,10 @@ async function sendEmail(params) {
     }]
   };
 
-	try {
-		await mailjet.post('send').request(emailParams);
-		return {success: true};
-	} catch (error) {
-		throw new Error(error);
-	}
+  return mailjet.post('send').request(emailParams);
 }
 
-async function welcomeEmail(params) {
+function welcomeEmail(params): Promise<any> {
 	validate(params, {
 		from: {presence: true},
 		to: {presence: true},
@@ -62,11 +57,7 @@ async function welcomeEmail(params) {
 		user: {presence: true}
 	});
 
-	try {
-		return await sendEmail(params);
-	} catch (error) {
-		throw new Error(error);
-	}
+  return sendEmail(params);
 }
 
 export default {

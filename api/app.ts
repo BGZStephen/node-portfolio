@@ -1,3 +1,4 @@
+import { ResError } from 'api/interfaces';
 global.ENV = process.env.NODE_ENV || 'development';
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
@@ -29,7 +30,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use(function(req: express.Request, res: express.Response, next: express.NextFunction) {
-	res.error = function(params) {
+	res.error = function(params: ResError) {
 		if (params.message) {
 			res.statusMessage = params.message;
 		}

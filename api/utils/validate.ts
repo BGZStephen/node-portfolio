@@ -1,10 +1,10 @@
 import * as validate from 'validate.js';
 
-function process(object, constraints, options) {
+function process(object, constraints, options): string | string[] {
 	const validationErrors = validate(object, constraints);
 
 	if (!validationErrors) {
-		return false;
+		return;
 	}
 
 	if (!options.array && !options.single) {
@@ -20,7 +20,7 @@ function process(object, constraints, options) {
 	}
 }
 
-function generateErrorsArray(validationErrors, options) {
+function generateErrorsArray(validationErrors, options): string[] {
 	if (options.customFrontEndMessages) {
 		let errors = [];
 		for (const key of Object.keys(validationErrors)) {
@@ -43,7 +43,7 @@ function generateErrorsArray(validationErrors, options) {
 	return errors;
 }
 
-function generateSingleError(validationErrors, options) {
+function generateSingleError(validationErrors, options): string {
 	if (options.customFrontEndMessages) {
 		let errors = [];
 		for (const key of Object.keys(validationErrors)) {

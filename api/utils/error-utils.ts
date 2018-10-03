@@ -4,7 +4,7 @@ import { Error } from 'api/interfaces';
 import * as Debug from 'debug' 
 const debug = Debug('app');
 
-function logErrors(err: Error, req: Request, res: Response, next: NextFunction) {
+function logErrors(err: Error, req: Request, res: Response, next: NextFunction): void {
 	if (global.ENV === 'development' || global.ENV === 'testing') {
 		debug(err);
 	}
@@ -12,7 +12,7 @@ function logErrors(err: Error, req: Request, res: Response, next: NextFunction) 
 }
 
 // handle all express generated errors with stacks
-function errorHandler(err: Error, req: Request, res: Response) {
+function errorHandler(err: Error, req: Request, res: Response): Response {
 	return res.status(err.statusCode || 500).json(err);
 }
 
