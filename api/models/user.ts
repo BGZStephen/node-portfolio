@@ -1,7 +1,8 @@
-import * as mongoose from 'mongoose';
+import { Schema, Model, model, HookNextFunction } from 'mongoose';
+import { UserDocument } from 'api/interfaces';
 import * as bcrypt from 'bcryptjs';
 
-const UserSchema = new mongoose.Schema({
+const UserSchema: Schema = new Schema({
 	createdOn: Date,
 	email: {
 		type: String,
@@ -12,16 +13,16 @@ const UserSchema = new mongoose.Schema({
 	active: { type: Boolean, default: false },
 });
 
-UserSchema.pre('save', function() {
+UserSchema.pre('save', function(this: UserDocument, next: HookNextFunction) {
 	if (this.isModified('password')) {
 		this.password = bcrypt.hashSync(this.password, 8);
 	}
 });
 
 UserSchema.methods = {
-	passwordsMatch(password) {
+	passwordsMatch(password: string) {
 		return bcrypt.compareSync(password, this.password);
 	},
 };
 
-module.exports = mongoose.model('User', UserSchema);
+export const User: Model<UserDocument> = model<UserDocument>('User', UserSchema);

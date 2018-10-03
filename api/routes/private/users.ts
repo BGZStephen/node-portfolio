@@ -1,8 +1,9 @@
 import { Router, Request, Response, NextFunction } from "express";
 import * as mongoose from 'mongoose';
 import rest from 'api/utils/rest';
-import _ from 'lodash';
-const User = mongoose.model('User');
+import * as _ from 'lodash';
+import { UserDocument } from "../../interfaces";
+const User = mongoose.model<UserDocument>('User');
 const ObjectId = mongoose.Types.ObjectId;
 
 const router = Router();
@@ -13,7 +14,7 @@ async function load(req: Request, res: Response, next: NextFunction): Promise<an
 		return res.error({message: 'No User ID provided', statusCode: 400});
 	}
 
-	const user = await User.findById(userId);
+	const user: UserDocument = await User.findById(userId);
 	if (!user) {
 		return res.error({message: 'User not found', statusCode: 404});
 	}
@@ -23,7 +24,7 @@ async function load(req: Request, res: Response, next: NextFunction): Promise<an
 }
 
 function get(req: Request, res: Response): void {
-	const user = req.context.user;
+	const user: UserDocument = req.context.user;
 	res.json(user);
 }
 
@@ -33,7 +34,7 @@ async function index(req: Request, res: Response): Promise<any> {
 }
 
 async function update(req: Request, res: Response): Promise<any> {
-	let user = req.context.user;
+	let user: UserDocument = req.context.user;
   const updatableFields = ['email', 'firstName', 'lastName'];
 
 	if (req.body.newPassword && !req.body.currentPassword) {
