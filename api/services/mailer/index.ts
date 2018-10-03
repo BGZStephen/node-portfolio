@@ -1,13 +1,13 @@
-const Promise = require('bluebird');
-const config = require('../../config');
-const ejs = require('ejs');
-const validate = require('validate.js');
-const mailjet = require('node-mailjet').connect(config.mailJet.apiKey, config.mailJet.apiSecret, {
+import * as fs from 'fs';
+import * as ejs from 'ejs';
+import * as mailjet from 'node-mailjet'
+import config from 'api/config';
+import validate from 'api/utils/validate.js';
+
+mailjet.connect(config.mailJet.apiKey, config.mailJet.apiSecret, {
 	url: 'api.mailjet.com',
 	version: 'v3.1',
 });
-
-const ejsRenderFile = Promise.promisify(ejs.renderFile);
 
 async function sendEmail(params) {
 
@@ -25,7 +25,9 @@ async function sendEmail(params) {
 
 	if (!params.template) {
 		throw new Error('HTML template name is required');
-	}
+  }
+  
+  const template = fs.readFileSync(params.template, 'utf-8');
 
   const emailParams = {
     'Messages':[{
@@ -39,7 +41,7 @@ async function sendEmail(params) {
       }],
       'Subject': `${params.subject}`,
       'TextPart': `${params.textPart ? params.textPart : ''}`,
-      'HTMLPart': await ejsRenderFile(params.template),
+      'HTMLPart': ejs.render(template),
     }]
   };
 
@@ -67,6 +69,6 @@ async function welcomeEmail(params) {
 	}
 }
 
-module.exports = {
+export default {
 	welcomeEmail,
 };

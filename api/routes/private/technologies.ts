@@ -3,7 +3,7 @@ import { Router } from "express";
 import rest from 'api/utils/rest';
 import * as mongoose from 'mongoose';
 import validate from 'api/utils/validate';
-import _ from 'lodash';
+import * as _ from 'lodash';
 
 const router = Router()
 

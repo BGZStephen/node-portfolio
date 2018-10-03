@@ -35,97 +35,90 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var express_1 = require("express");
-var rest_1 = require("api/utils/rest");
-var mongoose = require("mongoose");
-var validate_1 = require("api/utils/validate");
-var _ = require("lodash");
-var router = express_1.Router();
-var Technology = mongoose.model('Technology');
-function index(req, res) {
+var fs = require("fs");
+var ejs = require("ejs");
+var mailjet = require("node-mailjet");
+var config_1 = require("api/config");
+var validate_js_1 = require("api/utils/validate.js");
+mailjet.connect(config_1.default.mailJet.apiKey, config_1.default.mailJet.apiSecret, {
+    url: 'api.mailjet.com',
+    version: 'v3.1',
+});
+function sendEmail(params) {
     return __awaiter(this, void 0, void 0, function () {
-        var technologies;
+        var template, emailParams, error_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, mongoose.model('Technology').find()];
+                case 0:
+                    if (!params.from) {
+                        throw new Error('From is a required parameter');
+                    }
+                    if (!params.to) {
+                        throw new Error('To is a required parameter');
+                    }
+                    if (!params.subject) {
+                        throw new Error('Subject is a required parameter');
+                    }
+                    if (!params.template) {
+                        throw new Error('HTML template name is required');
+                    }
+                    template = fs.readFileSync(params.template, 'utf-8');
+                    emailParams = {
+                        'Messages': [{
+                                'From': {
+                                    'Email': "" + params.from,
+                                    'Name': "" + (params.fromName ? params.fromName : '')
+                                },
+                                'To': [{
+                                        'Email': "" + params.to,
+                                        'Name': "" + (params.toName ? params.toName : '')
+                                    }],
+                                'Subject': "" + params.subject,
+                                'TextPart': "" + (params.textPart ? params.textPart : ''),
+                                'HTMLPart': ejs.render(template),
+                            }]
+                    };
+                    _a.label = 1;
                 case 1:
-                    technologies = _a.sent();
-                    res.json(technologies);
-                    return [2 /*return*/];
+                    _a.trys.push([1, 3, , 4]);
+                    return [4 /*yield*/, mailjet.post('send').request(emailParams)];
+                case 2:
+                    _a.sent();
+                    return [2 /*return*/, { success: true }];
+                case 3:
+                    error_1 = _a.sent();
+                    throw new Error(error_1);
+                case 4: return [2 /*return*/];
             }
         });
     });
 }
-function load(req, res, next) {
+function welcomeEmail(params) {
     return __awaiter(this, void 0, void 0, function () {
-        var technology;
+        var error_2;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    if (!req.params.id) {
-                        return [2 /*return*/, res.error({ statusCode: 400, message: 'Missing ID' })];
-                    }
-                    return [4 /*yield*/, mongoose.model('Technology').findById(req.params.id)];
-                case 1:
-                    technology = _a.sent();
-                    if (!technology) {
-                        return [2 /*return*/, res.error({ statusCode: 404, message: 'Technology not found' })];
-                    }
-                    req.context.technology = technology;
-                    next();
-                    return [2 /*return*/];
-            }
-        });
-    });
-}
-function get(req, res) {
-    res.json(req.context.technology);
-}
-function create(req, res) {
-    return __awaiter(this, void 0, void 0, function () {
-        var fields, validationErrors, technology;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    fields = ['_id', 'label'];
-                    validationErrors = validate_1.default(req.body, {
-                        _id: { presence: true },
-                        label: { presence: true },
+                    validate_js_1.default(params, {
+                        from: { presence: true },
+                        to: { presence: true },
+                        subject: { presence: true },
+                        template: { presence: true },
+                        user: { presence: true }
                     });
-                    if (validationErrors) {
-                        return [2 /*return*/, res.error({ statusCode: 400, message: validationErrors })];
-                    }
-                    technology = new Technology(_.pick(req.body, fields));
-                    return [4 /*yield*/, technology.save()];
+                    _a.label = 1;
                 case 1:
-                    _a.sent();
-                    res.json(technology);
-                    return [2 /*return*/];
+                    _a.trys.push([1, 3, , 4]);
+                    return [4 /*yield*/, sendEmail(params)];
+                case 2: return [2 /*return*/, _a.sent()];
+                case 3:
+                    error_2 = _a.sent();
+                    throw new Error(error_2);
+                case 4: return [2 /*return*/];
             }
         });
     });
 }
-function update(req, res) {
-    return __awaiter(this, void 0, void 0, function () {
-        var technology, fields;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    technology = req.context.technology;
-                    fields = ['label'];
-                    technology = _.assign(technology, _.pick(req.body, fields));
-                    return [4 /*yield*/, technology.save()];
-                case 1:
-                    _a.sent();
-                    res.json(technology);
-                    return [2 /*return*/];
-            }
-        });
-    });
-}
-router.get('/', rest_1.default.asyncwrap(index));
-router.post('/', rest_1.default.asyncwrap(create));
-router.all('/:id*', rest_1.default.asyncwrap(load));
-router.get('/:id*', get);
-router.put('/:id*', rest_1.default.asyncwrap(update));
-exports.default = router;
+exports.default = {
+    welcomeEmail: welcomeEmail,
+};
