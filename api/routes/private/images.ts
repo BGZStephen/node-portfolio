@@ -1,16 +1,16 @@
-import { Router } from "express";
+import { Router, Request, Response } from 'express';
 import * as cloudinary from 'api/services/cloudinary';
 import * as multer from 'multer';
 import rest from 'api/utils/rest';
 
 const router = Router();
 
-async function uploadOne(req, res) {
+async function uploadOne(req: Request, res: Response): Promise<any> {
 	const cloudinaryFile = await cloudinary.uploadOne(req.file);
 	res.json(cloudinaryFile);
 }
 
-async function getAll(req, res) {
+async function getAll(req: Request, res: Response): Promise<any> {
 	const images = await cloudinary.getAll();
 	res.json({ images: images.resources });
 }

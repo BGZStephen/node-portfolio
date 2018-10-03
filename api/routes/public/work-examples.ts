@@ -1,3 +1,4 @@
+import { Request, Response, NextFunction } from 'express';
 import { Router } from "express";
 const mongoose = require('mongoose');
 const WorkExample = mongoose.model('WorkExample');
@@ -6,7 +7,7 @@ const router = Router();
 
 const ObjectId = mongoose.Types.ObjectId;
 
-async function load(req, res, next) {
+async function load(req: Request, res: Response, next: NextFunction): Promise<any> {
 	const id = req.params.id;
 
   const workExample = await WorkExample.findById(ObjectId(id));
@@ -24,12 +25,12 @@ async function load(req, res, next) {
 	next();
 }
 
-async function index(req, res) {
+async function index(req: Request, res: Response): Promise<any> {
 	const workExamples = await WorkExample.find({});
 	res.json(workExamples);
 }
 
-function get(req, res) {
+function get(req: Request, res: Response): void {
 	const workExample = req.context.workExample;
 	res.json(workExample);
 }

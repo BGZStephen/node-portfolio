@@ -1,4 +1,4 @@
-import { Router } from "express";
+import { Router, Request, Response, NextFunction } from "express";
 import rest from 'api/utils/rest';
 import * as multer from 'multer';
 import _ from 'lodash';
@@ -12,7 +12,7 @@ const router = Router();
 
 const ObjectId = mongoose.Types.ObjectId;
 
-async function load(req, res, next) {
+async function load(req: Request, res: Response, next: NextFunction): Promise<any> {
   const id = req.params.id;
 
 	const workExample = await WorkExample.findById(ObjectId(id));
@@ -30,12 +30,12 @@ async function load(req, res, next) {
 	next();
 }
 
-async function index(req, res) {
+async function index(req: Request, res: Response): Promise<any> {
 	const workExamples = await WorkExample.find({});
 	res.json(workExamples);
 }
 
-async function create(req, res) {
+async function create(req: Request, res: Response): Promise<any> {
 	const fields = ['content', 'description', 'githubUrl', 'technologies', 'title', 'type', 'url'];
   const workExample = new WorkExample(_.assign({ images: [] }, _.pick(req.body, fields)));
   
@@ -55,14 +55,14 @@ async function create(req, res) {
 	res.json(workExample);
 }
 
-async function remove(req, res) {
+async function remove(req: Request, res: Response): Promise<any> {
 	const workExample = req.context.workExample;
 
 	await workExample.remove();
 	res.sendStatus(200);
 }
 
-async function update(req, res) {
+async function update(req: Request, res: Response): Promise<any> {
 	let workExample = req.context.workExample;
 	const updatableFields = [
 		'content',

@@ -5,7 +5,12 @@ interface ResErrorParams {
 
 declare namespace Express {
   export interface Request {
-    context?: object;
+    context?: {
+      user?: object,
+      workExample?: object,
+      technology?: object,
+    };
+    files: object[];
   }
 
   export interface Response {
