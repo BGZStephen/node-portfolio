@@ -1,5 +1,6 @@
 import config from '../config';
 import * as jwt from 'jsonwebtoken';
+import { Request, Response, NextFunction } from 'express';
 
 export function isJWTValid(token) {
   try {
@@ -11,11 +12,12 @@ export function isJWTValid(token) {
 	return true;
 }
 
-export function onlyAuthenticated(req, res, next) {
+export function onlyAuthenticated(req: Request, res: Response, next: NextFunction) {
   const token = req.get('x-access-token');
 
   if (!isJWTValid(token)) {
-    return res.error({statusCode: 403, message: 'Unauthorized'});
+    res.error({statusCode: 403, message: 'Unauthorized'});
+    return;
   }
 
   next();

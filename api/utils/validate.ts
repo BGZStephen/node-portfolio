@@ -1,6 +1,6 @@
 import * as validate from 'validate.js';
 
-function process(object, constraints, options = { single: true }) {
+function process(object, constraints, options) {
 	const validationErrors = validate(object, constraints);
 
 	if (!validationErrors) {

@@ -1,8 +1,9 @@
-// async wrapper to catch errors from async  route calls.
+import { Request, Response, NextFunction } from 'express';
+
 function asyncwrap(fn) {
 	const ctx = this;
 
-	return function(req, res, next) {
+	return function(req: Request, res: Response, next: NextFunction) {
 		return fn.call(ctx, req, res, next).catch(next);
 	};
 }

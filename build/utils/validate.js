@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var validate = require("validate.js");
 function process(object, constraints, options) {
-    if (options === void 0) { options = { single: true }; }
     var validationErrors = validate(object, constraints);
     if (!validationErrors) {
         return false;

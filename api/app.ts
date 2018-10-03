@@ -3,9 +3,8 @@ import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as cors from 'cors';
 import * as mongoose from 'mongoose';
-import errorUtils from './utils/error-utils';
 import * as Debug from 'debug';
-
+import errorUtils from './utils/error-utils';
 import config from './config';
 
 const port = 3000;
@@ -29,7 +28,7 @@ app.use(cors());
 
 app.use(bodyParser.json());
 
-app.use(function(req: Express.Request, res, next) {
+app.use(function(req: express.Request, res: express.Response, next: express.NextFunction) {
 	res.error = function(params) {
 		if (params.message) {
 			res.statusMessage = params.message;
