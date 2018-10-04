@@ -1,5 +1,5 @@
-import { Request, Response } from 'express';
 import { Router } from 'express';
+import { Request, Response, UserModel } from '../../interfaces';
 import * as jwt from 'jsonwebtoken';
 import * as mongoose from 'mongoose';
 import rest from 'api/utils/rest';
@@ -9,7 +9,7 @@ import config from '../../config';
 
 const router = Router();
 
-const User = mongoose.model('User');
+const User = mongoose.model<UserModel>('User');
 
 async function authenticate(req: Request, res: Response): Promise<any> {
   const user = await User.findOne({email: req.body.email});

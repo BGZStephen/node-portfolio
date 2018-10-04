@@ -1,6 +1,6 @@
 import config from '../config';
 import * as jwt from 'jsonwebtoken';
-import { Request, Response, NextFunction } from 'express';
+import { Request, Response, NextFunction } from 'api/interfaces';
 
 export function isJWTValid(token): boolean {
   try {
