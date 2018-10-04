@@ -1,10 +1,10 @@
-import * as mongoose from 'mongoose';
+import { Schema, Model, model } from 'mongoose';
+import { TechnologyModel } from '../interfaces';
 
-const TechnologySchema = new mongoose.Schema({
-	_id: String,
-    label: String,
-    image: String,
-    createdOn: {type: Date, default: () => new Date()}
+const TechnologySchema = new Schema({
+  label: String,
+  image: String,
+  createdOn: {type: Date, default: () => new Date()}
 });
 
-module.exports = mongoose.model('Technology', TechnologySchema);
+export const technology: Model<TechnologyModel> = model<TechnologyModel>('Technology', TechnologySchema);

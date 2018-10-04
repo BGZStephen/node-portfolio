@@ -1,6 +1,7 @@
-import * as mongoose from 'mongoose';
+import { Schema, Model, model } from 'mongoose';
+import { WorkExampleModel } from '../interfaces';
 
-const WorkExampleSchema = new mongoose.Schema({
+const WorkExampleSchema = new Schema({
 	createdOn: Date,
 	description: Array,
 	content: Array,
@@ -12,4 +13,4 @@ const WorkExampleSchema = new mongoose.Schema({
 	url: String
 });
 
-module.exports = mongoose.model('WorkExample', WorkExampleSchema);
+export const workExample: Model<WorkExampleModel> = model<WorkExampleModel>('WorkExample', WorkExampleSchema);
