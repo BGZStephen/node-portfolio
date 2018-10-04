@@ -1,7 +1,8 @@
-import { Router, Request, Response } from 'express';
-import * as cloudinary from 'api/services/cloudinary';
+import { Request, Response } from '../../interfaces';
+import { Router } from 'express';
+import cloudinary from '../../services/cloudinary';
+import rest from '../../utils/rest';
 import * as multer from 'multer';
-import rest from 'api/utils/rest';
 
 const router = Router();
 

@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from 'express';
+import { Request, Response, NextFunction } from '../interfaces';
 
 function asyncwrap(fn) {
 	const ctx = this;

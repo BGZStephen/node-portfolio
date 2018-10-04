@@ -1,5 +1,4 @@
-import { Request, Response, NextFunction } from 'express';
-import { Error } from 'api/interfaces';
+import { Error, Request, Response, NextFunction } from '../interfaces';
 
 import * as Debug from 'debug' 
 const debug = Debug('app');
@@ -12,8 +11,8 @@ function logErrors(err: Error, req: Request, res: Response, next: NextFunction):
 }
 
 // handle all express generated errors with stacks
-function errorHandler(err: Error, req: Request, res: Response): Response {
-	return res.status(err.statusCode || 500).json(err);
+function errorHandler(err: Error, req: Request, res: Response) {
+	return res.error({statusCode: err.statusCode, message: err.message});
 }
 
 export default {

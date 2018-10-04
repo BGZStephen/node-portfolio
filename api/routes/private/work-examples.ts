@@ -1,8 +1,9 @@
-import { Router, Request, Response, NextFunction } from "api/interfaces";
-import rest from 'api/utils/rest';
+import { Request, Response, NextFunction } from "../../interfaces";
+import { Router } from 'express';
+import rest from '../../utils/rest';
+import cloudinary from '../../services/cloudinary';
 import * as multer from 'multer';
 import * as _ from 'lodash';
-import * as cloudinary from 'api/services/cloudinary';
 
 const fs = require('fs');
 const mongoose = require('mongoose');

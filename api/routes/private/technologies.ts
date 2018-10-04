@@ -1,8 +1,9 @@
-import { Router, Request, Response, NextFunction } from 'express';
-import rest from 'api/utils/rest';
+import { Request, Response, NextFunction } from '../../interfaces';
+import { Router } from 'express';
 import * as mongoose from 'mongoose';
-import validate from 'api/utils/validate';
 import * as _ from 'lodash';
+import rest from '../../utils/rest';
+import validate from '../../utils/validate';
 
 const router = Router()
 

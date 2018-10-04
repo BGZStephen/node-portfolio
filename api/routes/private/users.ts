@@ -1,12 +1,12 @@
 import { Request, Response, NextFunction } from "../../interfaces";
 import { Router } from 'express';
-import * as mongoose from 'mongoose';
-import rest from 'api/utils/rest';
-import * as _ from 'lodash';
 import { UserModel } from "../../interfaces";
+import rest from '../../utils/rest';
+import * as mongoose from 'mongoose';
+import * as _ from 'lodash';
+
 const User = mongoose.model<UserModel>('User');
 const ObjectId = mongoose.Types.ObjectId;
-
 const router = Router();
 
 async function load(req: Request, res: Response, next: NextFunction): Promise<any> {

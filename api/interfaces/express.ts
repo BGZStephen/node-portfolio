@@ -12,7 +12,8 @@ export interface Request extends Request {
     technology?: object,
     workExample?: object,
   };
-  files: object[];
+  files: any[];
+  file: any;
 }
 
 export interface Response extends Response {
