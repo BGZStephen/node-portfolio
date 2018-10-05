@@ -1,10 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var mongoose = require("mongoose");
-var TechnologySchema = new mongoose.Schema({
-    _id: String,
+var mongoose_1 = require("mongoose");
+var TechnologySchema = new mongoose_1.Schema({
     label: String,
     image: String,
     createdOn: { type: Date, default: function () { return new Date(); } }
 });
-module.exports = mongoose.model('Technology', TechnologySchema);
+exports.technology = mongoose_1.model('Technology', TechnologySchema);

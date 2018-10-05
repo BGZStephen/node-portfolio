@@ -4,7 +4,7 @@ var validate = require("validate.js");
 function process(object, constraints, options) {
     var validationErrors = validate(object, constraints);
     if (!validationErrors) {
-        return false;
+        return;
     }
     if (!options.array && !options.single) {
         options.single = true;

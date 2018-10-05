@@ -36,9 +36,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = require("express");
-var mongoose = require('mongoose');
+var rest_1 = require("../../utils/rest");
+var mongoose = require("mongoose");
 var WorkExample = mongoose.model('WorkExample');
-var rest_1 = require("api/utils/rest");
 var router = express_1.Router();
 var ObjectId = mongoose.Types.ObjectId;
 function load(req, res, next) {

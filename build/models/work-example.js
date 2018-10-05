@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var mongoose = require("mongoose");
-var WorkExampleSchema = new mongoose.Schema({
+var mongoose_1 = require("mongoose");
+var WorkExampleSchema = new mongoose_1.Schema({
     createdOn: Date,
     description: Array,
     content: Array,
@@ -12,4 +12,4 @@ var WorkExampleSchema = new mongoose.Schema({
     type: String,
     url: String
 });
-module.exports = mongoose.model('WorkExample', WorkExampleSchema);
+exports.workExample = mongoose_1.model('WorkExample', WorkExampleSchema);

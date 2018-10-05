@@ -1,5 +1,7 @@
 import { Request, Response, NextFunction, Errback } from 'express';
 import { UserModel } from './user-model';
+import { WorkExampleModel } from './work-example-model';
+import { TechnologyModel } from './technology-model';
 
 interface ResErrorParams {
   statusCode?: number;
@@ -9,8 +11,8 @@ interface ResErrorParams {
 export interface Request extends Request {
   context?: {
     user: UserModel,
-    technology?: object,
-    workExample?: object,
+    technology?: TechnologyModel,
+    workExample?: WorkExampleModel,
   };
   files: any[];
   file: any;

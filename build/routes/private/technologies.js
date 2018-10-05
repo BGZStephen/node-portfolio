@@ -36,10 +36,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = require("express");
-var rest_1 = require("api/utils/rest");
 var mongoose = require("mongoose");
-var validate_1 = require("api/utils/validate");
 var _ = require("lodash");
+var rest_1 = require("../../utils/rest");
+var validate_1 = require("../../utils/validate");
 var router = express_1.Router();
 var Technology = mongoose.model('Technology');
 function index(req, res) {

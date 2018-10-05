@@ -36,9 +36,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = require("express");
+var rest_1 = require("../../utils/rest");
 var mongoose = require("mongoose");
-var rest_1 = require("api/utils/rest");
-var lodash_1 = require("lodash");
+var _ = require("lodash");
 var User = mongoose.model('User');
 var ObjectId = mongoose.Types.ObjectId;
 var router = express_1.Router();
@@ -66,7 +66,7 @@ function load(req, res, next) {
     });
 }
 function get(req, res) {
-    var user = req.user;
+    var user = req.context.user;
     res.json(user);
 }
 function index(req, res) {
@@ -89,7 +89,7 @@ function update(req, res) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    user = req.user;
+                    user = req.context.user;
                     updatableFields = ['email', 'firstName', 'lastName'];
                     if (req.body.newPassword && !req.body.currentPassword) {
                         return [2 /*return*/, res.error({ message: 'Please provide current password when trying to update your password', statusCode: 400 })];
@@ -106,7 +106,7 @@ function update(req, res) {
                     if (duplicateUser && !ObjectId(duplicateUser._id).equals(user._id)) {
                         return [2 /*return*/, res.error({ message: 'Email address already in use', statusCode: 400 })];
                     }
-                    user = lodash_1.default.assign(user, lodash_1.default.pick(req.body, updatableFields));
+                    user = _.assign(user, _.pick(req.body, updatableFields));
                     return [4 /*yield*/, user.save()];
                 case 2:
                     _a.sent();

@@ -36,16 +36,16 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = require("express");
-var cloudinary = require("api/services/cloudinary");
+var cloudinary_1 = require("../../services/cloudinary");
+var rest_1 = require("../../utils/rest");
 var multer = require("multer");
-var rest_1 = require("api/utils/rest");
 var router = express_1.Router();
 function uploadOne(req, res) {
     return __awaiter(this, void 0, void 0, function () {
         var cloudinaryFile;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, cloudinary.uploadOne(req.file)];
+                case 0: return [4 /*yield*/, cloudinary_1.default.uploadOne(req.file)];
                 case 1:
                     cloudinaryFile = _a.sent();
                     res.json(cloudinaryFile);
@@ -59,7 +59,7 @@ function getAll(req, res) {
         var images;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, cloudinary.getAll()];
+                case 0: return [4 /*yield*/, cloudinary_1.default.getAll()];
                 case 1:
                     images = _a.sent();
                     res.json({ images: images.resources });

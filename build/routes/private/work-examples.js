@@ -36,12 +36,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = require("express");
-var rest_1 = require("api/utils/rest");
+var rest_1 = require("../../utils/rest");
+var cloudinary_1 = require("../../services/cloudinary");
+var mongoose = require("mongoose");
 var multer = require("multer");
-var lodash_1 = require("lodash");
-var cloudinary = require("api/services/cloudinary");
-var fs = require('fs');
-var mongoose = require('mongoose');
+var _ = require("lodash");
+var fs = require("fs");
 var WorkExample = mongoose.model('WorkExample');
 var router = express_1.Router();
 var ObjectId = mongoose.Types.ObjectId;
@@ -93,7 +93,7 @@ function create(req, res) {
             switch (_b.label) {
                 case 0:
                     fields = ['content', 'description', 'githubUrl', 'technologies', 'title', 'type', 'url'];
-                    workExample = new WorkExample(lodash_1.default.assign({ images: [] }, lodash_1.default.pick(req.body, fields)));
+                    workExample = new WorkExample(_.assign({ images: [] }, _.pick(req.body, fields)));
                     _i = 0, _a = req.files;
                     _b.label = 1;
                 case 1:
@@ -102,7 +102,7 @@ function create(req, res) {
                     _b.label = 2;
                 case 2:
                     _b.trys.push([2, 4, , 6]);
-                    return [4 /*yield*/, cloudinary.uploadOne(file)];
+                    return [4 /*yield*/, cloudinary_1.default.uploadOne(file)];
                 case 3:
                     cloudinaryResource = _b.sent();
                     workExample.images.push(cloudinaryResource.url);
@@ -168,7 +168,7 @@ function update(req, res) {
                     if (req.body.technologies === 'null') {
                         req.body.technologies = [];
                     }
-                    workExample = lodash_1.default.assign(workExample, lodash_1.default.pick(req.body, updatableFields));
+                    workExample = _.assign(workExample, _.pick(req.body, updatableFields));
                     _i = 0, _a = req.files;
                     _b.label = 1;
                 case 1:
@@ -177,7 +177,7 @@ function update(req, res) {
                     _b.label = 2;
                 case 2:
                     _b.trys.push([2, 4, , 6]);
-                    return [4 /*yield*/, cloudinary.uploadOne(file)];
+                    return [4 /*yield*/, cloudinary_1.default.uploadOne(file)];
                 case 3:
                     cloudinaryResource = _b.sent();
                     workExample.images.push(cloudinaryResource.url);

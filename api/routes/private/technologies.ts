@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from '../../interfaces';
+import { Request, Response, NextFunction, TechnologyModel } from '../../interfaces';
 import { Router } from 'express';
 import * as mongoose from 'mongoose';
 import * as _ from 'lodash';
@@ -7,7 +7,7 @@ import validate from '../../utils/validate';
 
 const router = Router()
 
-const Technology = mongoose.model('Technology');
+const Technology = mongoose.model<TechnologyModel>('Technology');
 
 async function index(req: Request, res: Response): Promise<any> {
     const technologies = await mongoose.model('Technology').find();

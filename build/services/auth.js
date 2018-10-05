@@ -15,8 +15,10 @@ exports.isJWTValid = isJWTValid;
 function onlyAuthenticated(req, res, next) {
     var token = req.get('x-access-token');
     if (!isJWTValid(token)) {
-        return res.error({ statusCode: 403, message: 'Unauthorized' });
+        res.error({ statusCode: 403, message: 'Unauthorized' });
     }
-    next();
+    else {
+        next();
+    }
 }
 exports.onlyAuthenticated = onlyAuthenticated;

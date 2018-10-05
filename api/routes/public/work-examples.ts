@@ -1,9 +1,9 @@
-import { Request, Response, NextFunction } from '../../interfaces';
+import { Request, Response, NextFunction, WorkExampleModel } from '../../interfaces';
 import { Router } from "express";
 import rest from '../../utils/rest';
 import * as mongoose from 'mongoose';
 
-const WorkExample = mongoose.model('WorkExample');
+const WorkExample = mongoose.model<WorkExampleModel>('WorkExample');
 const router = Router();
 const ObjectId = mongoose.Types.ObjectId;
 

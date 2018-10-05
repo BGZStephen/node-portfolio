@@ -36,11 +36,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = require("express");
-var jwt = require('jsonwebtoken');
-var mongoose = require('mongoose');
+var jwt = require("jsonwebtoken");
+var mongoose = require("mongoose");
 var rest_1 = require("api/utils/rest");
-var validate = require('api/utils/validate');
-var _ = require('lodash');
+var validate_1 = require("api/utils/validate");
+var _ = require("lodash");
 var config_1 = require("../../config");
 var router = express_1.Router();
 var User = mongoose.model('User');
@@ -76,7 +76,7 @@ function create(req, res) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    validationErrors = validate(req.body, {
+                    validationErrors = validate_1.default(req.body, {
                         name: { presence: true },
                         email: { presence: true },
                         password: { presence: true },

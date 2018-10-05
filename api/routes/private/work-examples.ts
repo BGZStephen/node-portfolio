@@ -1,13 +1,13 @@
-import { Request, Response, NextFunction } from "../../interfaces";
+import { Request, Response, NextFunction, WorkExampleModel } from "../../interfaces";
 import { Router } from 'express';
 import rest from '../../utils/rest';
 import cloudinary from '../../services/cloudinary';
+import * as mongoose from 'mongoose';
 import * as multer from 'multer';
 import * as _ from 'lodash';
 
-const fs = require('fs');
-const mongoose = require('mongoose');
-const WorkExample = mongoose.model('WorkExample');
+import * as fs from 'fs';
+const WorkExample = mongoose.model<WorkExampleModel>('WorkExample');
 
 const router = Router();
 

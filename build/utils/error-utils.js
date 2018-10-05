@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var debug = require('debug')('app');
+var Debug = require("debug");
+var debug = Debug('app');
 function logErrors(err, req, res, next) {
     if (global.ENV === 'development' || global.ENV === 'testing') {
         debug(err);
@@ -9,7 +10,7 @@ function logErrors(err, req, res, next) {
 }
 // handle all express generated errors with stacks
 function errorHandler(err, req, res) {
-    return res.status(err.statusCode || 500).json(err);
+    return res.error({ statusCode: err.statusCode, message: err.message });
 }
 exports.default = {
     logErrors: logErrors,
